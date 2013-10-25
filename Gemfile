@@ -5,10 +5,16 @@ ruby '1.9.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-group :development do
+group :development, :test do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3', '1.3.8'
+	gem 'rspec-rails', '2.13.1'
 	# gem 'annotate'
+end
+
+group :test do
+  gem 'selenium-webdriver', '2.35.1'
+  gem 'capybara', '2.1.0'
 end
 
 group :assets do
@@ -65,4 +71,6 @@ gem 'debugger', group: [:development, :test]
 gem 'haml', '~> 4.0.3'
 gem 'haml-rails', '~> 0.4'
 
+# http://railscasts.com/episodes/314-pretty-urls-with-friendlyid?view=asciicast
+#gem 'friendly_id'
 
