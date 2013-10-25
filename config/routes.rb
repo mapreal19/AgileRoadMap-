@@ -1,5 +1,5 @@
 AgileRoadMap::Application.routes.draw do
-  get "pages/home"
+  get "home" => "pages#home"
   get "pages/about_us"
   get "pages/agile_map"
   get "pages/contact"
