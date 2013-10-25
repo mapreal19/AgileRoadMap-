@@ -8,6 +8,12 @@ gem 'rails', '4.0.0'
 group :development do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3', '1.3.8'
+	# gem 'annotate'
+end
+
+group :assets do
+	# HTML 5 support, http://modernizr.com/
+	gem "modernizr-rails", "~> 2.6.2.3"
 end
 
 #>= always install the lastest gem, whereas ~> install minor releases (e.g. from 4.0.0 to 4.0.1)
@@ -53,4 +59,10 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
+
+# HTML abstraction language (Haml)
+gem 'haml', '~> 4.0.3'
+gem 'haml-rails', '~> 0.4'
+
+

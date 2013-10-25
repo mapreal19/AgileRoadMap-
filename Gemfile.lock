@@ -35,8 +35,22 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    columnize (0.3.6)
+    debugger (1.6.0)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.1)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.2)
     erubis (2.7.0)
     execjs (2.0.2)
+    haml (4.0.3)
+      tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.2)
@@ -51,6 +65,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     minitest (4.7.5)
+    modernizr-rails (2.6.2.3)
     multi_json (1.8.2)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -108,8 +123,12 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  debugger
+  haml (~> 4.0.3)
+  haml-rails (~> 0.4)
   jbuilder (~> 1.2)
   jquery-rails
+  modernizr-rails (~> 2.6.2.3)
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sdoc
