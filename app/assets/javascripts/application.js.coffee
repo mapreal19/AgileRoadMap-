@@ -17,3 +17,9 @@
 
 $(document).ready ->
     window.wiselinks = new Wiselinks()
+
+    #---INITIALIZATION Unify scripts
+    App.init()
+	App.initSliders()
+	Index.initParallaxSlider()
+
