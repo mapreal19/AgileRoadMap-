@@ -1,0 +1,180 @@
+/ === Header ===
+.header
+  .navbar.navbar-default{role: "navigation"}
+    .container
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", type: "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{href: "index.html"}
+          %img#logo-header{alt: "Logo", src: "assets/img/logo1-default.png"}/
+      / Collect the nav links, forms, and other content for toggling
+      .collapse.navbar-collapse.navbar-responsive-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li.dropdown.active
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+              Home
+              %i.icon-angle-down
+            %ul.dropdown-menu
+              %li.active
+                %a{href: "index.html"} Option 1: Default Page
+              %li
+                %a{href: "page_home1.html"} Option 2: Layer Slider
+              %li
+                %a{href: "page_home2.html"} Option 3: Revolution Slider
+              %li
+                %a{href: "page_home3.html"} Option 4: Amazing Content
+              %li
+                %a{href: "page_home4.html"} Option 5: Home Sidebar
+              %li
+                %a{href: "page_home5.html"} Option 6: Home Flatty
+              %li
+                %a{href: "page_home6.html"} Option 7: Home Magazine
+              %li
+                %a{href: "page_home7.html"} Option 8: Home Portfolio
+          %li.dropdown
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+              Pages
+              %i.icon-angle-down
+            %ul.dropdown-menu
+              %li
+                %a{href: "page_about.html"} About Us
+              %li
+                %a{href: "page_about1.html"} About Us Option
+              %li
+                %a{href: "page_services.html"} Services
+              %li
+                %a{href: "page_services1.html"} Services Option
+              %li
+                %a{href: "page_pricing.html"} Pricing Tables
+              %li
+                %a{href: "page_invoice.html"} Invoice Page
+              %li
+                %a{href: "page_meet_our_team.html"} Meet Our Team
+              %li
+                %a{href: "page_coming_soon.html"} Coming Soon
+              %li
+                %a{href: "page_faq.html"} FAQs Page
+              %li
+                %a{href: "page_search.html"} Funny Boxes
+              %li
+                %a{href: "page_gallery.html"} Gallery Page
+              %li
+                %a{href: "page_registration.html"} Registration Page
+              %li
+                %a{href: "page_registration1.html"} Registration Option
+              %li
+                %a{href: "page_login.html"} Login Page
+              %li
+                %a{href: "page_login1.html"} Login Option
+              %li
+                %a{href: "page_404_error.html"} 404 Error
+              %li
+                %a{href: "page_404_error1.html"} 404 Error Option
+              %li
+                %a{href: "page_clients.html"} Clients Page
+              %li
+                %a{href: "page_privacy.html"} Privacy Policy
+              %li
+                %a{href: "page_terms.html"} Terms Of Service
+              %li
+                %a{href: "page_2_columns_left.html"} 2 Columns Page Left
+              %li
+                %a{href: "page_2_columns_right.html"} 2 Columns Page Right
+              %li
+                %a{href: "page_3_columns.html"} 3 Columns Page
+          %li.dropdown
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+              Features
+              %i.icon-angle-down
+            %ul.dropdown-menu
+              %li
+                %a{href: "feature_grid.html"} Grid Layout
+              %li
+                %a{href: "feature_boxes.html"} Content Boxes
+              %li
+                %a{href: "feature_typography.html"} Typography
+              %li
+                %a{href: "feature_tagline_boxes.html"} Tagline Boxes
+              %li
+                %a{href: "feature_buttons.html"} Buttons
+              %li
+                %a{href: "feature_icons.html"} Icons
+              %li
+                %a{href: "feature_thumbails.html"} Thumbails
+              %li
+                %a{href: "feature_components.html"} Components
+              %li
+                %a{href: "feature_accardion_and_tabs.html"} Accardion and Tabs
+              %li
+                %a{href: "feature_navigations.html"} Navigations
+              %li
+                %a{href: "feature_tables.html"} Tables
+              %li
+                %a{href: "feature_forms.html"} Forms
+              %li
+                %a{href: "feature_testimonials.html"} Testimonials
+          %li.dropdown
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+              Portfolio
+              %i.icon-angle-down
+            %ul.dropdown-menu
+              %li
+                %a{href: "portfolio_text_blocks.html"} Portfolio Text Blocks
+              %li
+                %a{href: "portfolio_2_column.html"} Portfolio 2 Columns
+              %li
+                %a{href: "portfolio_3_column.html"} Portfolio 3 Columns
+              %li
+                %a{href: "portfolio_4_column.html"} Portfolio 4 Columns
+              %li
+                %a{href: "portfolio_item.html"} Portfolio Item Option 1
+              %li
+                %a{href: "portfolio_item1.html"} Portfolio Item Option 2
+          %li.dropdown
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+              Blog
+              %i.icon-angle-down
+            %ul.dropdown-menu
+              %li
+                %a{href: "blog_page.html"} Blog Page
+              %li
+                %a{href: "blog_large.html"} Blog Large
+              %li
+                %a{href: "blog_medium.html"} Blog Medium
+              %li
+                %a{href: "blog_full_width.html"} Blog Full Width
+              %li
+                %a{href: "blog_left_sidebar.html"} Blog Left Sidebar
+              %li
+                %a{href: "blog_right_sidebar.html"} Blog Right Sidebar
+              %li
+                %a{href: "blog_item_option1.html"} Blog Item Option 1
+              %li
+                %a{href: "blog_item_option2.html"} Blog Item Option 2
+          %li.dropdown
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+              Contacts
+              %i.icon-angle-down
+            %ul.dropdown-menu
+              %li
+                %a{href: "page_contact1.html"} Contacts Default
+              %li
+                %a{href: "page_contact2.html"} Contacts Option 1
+              %li
+                %a{href: "page_contact3.html"} Contacts Option 2
+          %li.hidden-sm
+            %a.search
+              %i.icon-search.search-btn
+        .search-open
+          .input-group
+            %input.form-control{placeholder: "Search", type: "text"}/
+            %span.input-group-btn
+              %button.btn-u{type: "button"} Go
+          / /input-group
+      / /navbar-collapse
+/ /header
+/ === End Header ===
