@@ -81,3 +81,4 @@ gem 'haml-rails', '~> 0.4'
 # http://railscasts.com/episodes/314-pretty-urls-with-friendlyid?view=asciicast
 #gem 'friendly_id'
 
+gem 'font-awesome-sass-rails'

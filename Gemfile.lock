@@ -63,6 +63,9 @@ GEM
     execjs (2.0.2)
     ffi (1.9.0)
     ffi (1.9.0-x86-mingw32)
+    font-awesome-sass-rails (3.0.2.2)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -177,6 +180,7 @@ DEPENDENCIES
   capybara (= 2.1.0)
   coffee-rails (~> 4.0.0)
   debugger
+  font-awesome-sass-rails
   haml (~> 4.0.3)
   haml-rails (~> 0.4)
   jbuilder (~> 1.2)
