@@ -19,9 +19,11 @@ a.read-more:hover {
 /*Sliders
 ------------------------------------*/
 /*Main Parallax Sldier*/
+/*
 .da-slide h2 i {
 	background:url(../../plugins/parallax-slider/img/bg-heading-blue.png) repeat;
 }
+*/
 
 /*Sequence Parallax Sldier*/
 .sequence-inner {
