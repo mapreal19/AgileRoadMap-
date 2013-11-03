@@ -16,7 +16,7 @@
 #= require_tree .
 
 $(document).ready ->
-    window.wiselinks = new Wiselinks()
+    window.wiselinks = new Wiselinks('.content')
 
     #---INITIALIZATION Unify scripts
     App.init()

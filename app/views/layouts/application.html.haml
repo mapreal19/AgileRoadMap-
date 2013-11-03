@@ -15,7 +15,8 @@
   %body{:id => "#{params[:controller].parameterize}_controller"}
     = render 'layouts/top'
     = render 'layouts/header'
-    = yield
+    .content
+      = yield
     = render 'layouts/footer'
     = render 'layouts/copyright'
     .container
