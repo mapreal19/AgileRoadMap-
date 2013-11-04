@@ -15,11 +15,11 @@
       / Collect the nav links, forms, and other content for toggling
       .collapse.navbar-collapse.navbar-responsive-collapse
         %ul.nav.navbar-nav.navbar-right
-          %li.dropdown.active
-            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{root_url}", "data-push" => true}
+          %li.dropdown{class: "#{'active' if params[:action] == 'home'}"}
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{root_url}", "data-push" => "true"}
               Principal
-          %li.dropdown
-            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{pages_about_us_url}", "data-push" => true}
+          %li.dropdown{class: "#{'active' if params[:action] == 'about_us'}"}
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{pages_about_us_url}", "data-push" => "true"}
               Sobre Nosotros
           %li.dropdown
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
