@@ -16,4 +16,19 @@
 #= require_tree .
 
 $(document).ready ->
-    window.wiselinks = new Wiselinks()
+    window.wiselinks = new Wiselinks('.content')
+
+    #---INITIALIZATION Unify scripts
+    App.init()
+    App.initSliders()
+    Index.initParallaxSlider()
+    
+    $(document).off('page:done').on(
+        'page:done'
+        (event, $target, status, url, data) ->
+            App.init()
+            App.initSliders()
+            Index.initParallaxSlider()
+            console.log("Wiselinks status: '#{status}'")
+    )
+

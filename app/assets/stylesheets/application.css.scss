@@ -9,5 +9,24 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require _font-awesome
  *= require_tree .
  */
+
+/* mixins, variables, etc. */
+
+ @mixin box_sizing {
+ 	-moz-box-sizing: border-box; 
+ 	-webkit-box-sizing: border-box; 
+ 	box-sizing: border-box;
+ }
+
+ /* miscellaneous */
+
+ .debug_dump {
+ 	clear: both;
+ 	float: left;
+ 	width: 100%;
+ 	margin-top: 45px;
+ 	@include box_sizing;
+ }

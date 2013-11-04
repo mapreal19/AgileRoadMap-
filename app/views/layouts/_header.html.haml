@@ -1,0 +1,29 @@
+/ === Header ===
+.header
+  .navbar.navbar-default{role: "navigation"}
+    .container
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", type: "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{href: "#{root_url}", "data-push" => true}
+          %img#logo-header{alt: "Logo", src: "assets/logo1-default.png"}/
+      / Collect the nav links, forms, and other content for toggling
+      .collapse.navbar-collapse.navbar-responsive-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li.dropdown.active
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{root_url}", "data-push" => true}
+              Principal
+          %li.dropdown
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{pages_about_us_url}", "data-push" => true}
+              Sobre Nosotros
+          %li.dropdown
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+              Prácticas Ágiles
+          %li.dropdown
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
+              Contacto
+            

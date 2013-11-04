@@ -1,10 +1,23 @@
 !!!
-%html
+/[if IE 8] <html class="ie8" lang="en">
+/[if IE 9] <html class="ie9" lang="en">
+:plain
+  <!--[if gt IE 9] -->
+%html{lang: "en"}
+  /<![endif]
   %head
     %title AgileRoadMap
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     = stylesheet_link_tag    "application", media: "all"
-    = javascript_include_tag :modernizr
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
-    = yield
+  %body{:id => "#{params[:controller].parameterize}_controller"}
+    = render 'layouts/top'
+    = render 'layouts/header'
+    .content
+      = yield
+    = render 'layouts/footer'
+    = render 'layouts/copyright'
+    .container
+      = debug(params) if Rails.env.development?
