@@ -20,6 +20,15 @@ $(document).ready ->
 
     #---INITIALIZATION Unify scripts
     App.init()
-	App.initSliders()
-	Index.initParallaxSlider()
+    App.initSliders()
+    Index.initParallaxSlider()
+    
+    $(document).off('page:done').on(
+        'page:done'
+        (event, $target, status, url, data) ->
+            App.init()
+            App.initSliders()
+            Index.initParallaxSlider()
+            console.log("Wiselinks status: '#{status}'")
+    )
 
