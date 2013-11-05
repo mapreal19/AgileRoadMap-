@@ -1,17 +1,15 @@
 / === Top ===
+=# I18n.locale
+=#link_to_unless I18n.locale == :en, "English", locale: :en 
 .top
   .container
     %ul.loginbar.pull-right
       %li
         %i.icon-globe
-        %a Languages
+        %a= t('languages')
         %ul.lenguages
-          %li.active
-            %a{href: "#"}
-              English
-              %i.icon-ok
-          %li
-            %a{href: "#"} Spanish
+          = lang_link t('english'), :en 
+          = lang_link t('spanish'), :es
       %li.devider
       %li
         %a{href: "page_faq.html"} Help

@@ -1,12 +1,18 @@
 AgileRoadMap::Application.routes.draw do
-  get "pages/about_us"
-  get "pages/agile_map"
-  get "pages/contact"
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  scope "(:locale)", :locale => /en|es/ do
+    root 'pages#home'
+    get "pages/about_us"
+    get "pages/agile_map"
+    get "pages/contact"
+  end
+
+
   # You can have the root of your site routed with "root"
-  root 'pages#home'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

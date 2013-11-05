@@ -13,8 +13,6 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body{:id => "#{params[:controller].parameterize}_controller"}
-    = render 'layouts/top'
-    = render 'layouts/header'
     .content
       = yield
     = render 'layouts/footer'
