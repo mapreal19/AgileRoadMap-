@@ -24,6 +24,12 @@ group :test do
   gem 'capybara', '2.1.0'
 end
 
+# Heroku for development
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+end
+
 group :assets do
 	# HTML 5 support, http://modernizr.com/
 	gem "modernizr-rails", "~> 2.6.2.3"
