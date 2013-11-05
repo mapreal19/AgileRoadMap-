@@ -17,14 +17,14 @@
         %ul.nav.navbar-nav.navbar-right
           %li.dropdown{class: "#{'active' if params[:action] == 'home'}"}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{root_url}", "data-push" => "true"}
-              Principal
+              = t('home')
           %li.dropdown{class: "#{'active' if params[:action] == 'about_us'}"}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{pages_about_us_url}", "data-push" => "true"}
-              Sobre Nosotros
+              = t('about_us')
           %li.dropdown
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
               Prácticas Ágiles
           %li.dropdown
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
-              Contacto
+              = t('contact')
             
