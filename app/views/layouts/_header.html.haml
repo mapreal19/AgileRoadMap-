@@ -21,7 +21,7 @@
           %li.dropdown{class: "#{'active' if params[:action] == 'about_us'}"}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{pages_about_us_url}", "data-push" => "true"}
               = t('about_us')
-          %li.dropdown{class: "#{'active' if params[:action] == 'agile_map'}"}
+          %li.dropdown{class: "#{'active' if params[:action] == 'index' and params[:controller] == 'practicas'} "}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{agile_map_path}"}
               Mapa Prácticas Ágiles
           %li.dropdown
