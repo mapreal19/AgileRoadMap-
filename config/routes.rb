@@ -6,6 +6,7 @@ AgileRoadMap::Application.routes.draw do
   scope "(:locale)", :locale => /en|es/ do
     root 'pages#home'
     get "pages/about_us"
+    get 'mapa-practicas-agiles' => 'pages#agile_map', as: :agile_map
     get "pages/agile_map"
     get "pages/contact"
   end
