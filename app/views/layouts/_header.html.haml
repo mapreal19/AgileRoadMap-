@@ -9,21 +9,21 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand{href: "#{root_url}", "data-push" => true}
+        %a.navbar-brand{href: "#{root_path}", "data-push" => true}
           = image_tag("logo1-default.png", alt: "Logo", id: 'logo-header')
           -#%img#logo-header{alt: "Logo", src: "assets/logo1-default.png"}/
       / Collect the nav links, forms, and other content for toggling
       .collapse.navbar-collapse.navbar-responsive-collapse
         %ul.nav.navbar-nav.navbar-right
           %li.dropdown{class: "#{'active' if params[:action] == 'home'}"}
-            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{root_url}", "data-push" => "true"}
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{root_path}", "data-push" => "true"}
               = t('home')
           %li.dropdown{class: "#{'active' if params[:action] == 'about_us'}"}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{pages_about_us_url}", "data-push" => "true"}
               = t('about_us')
-          %li.dropdown
-            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
-              Prácticas Ágiles
+          %li.dropdown{class: "#{'active' if params[:action] == 'index' and params[:controller] == 'practicas'} "}
+            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{agile_map_path}"}
+              Mapa Prácticas Ágiles
           %li.dropdown
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
               = t('contact')
