@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106172608) do
+ActiveRecord::Schema.define(version: 20131107184140) do
 
   create_table "practicas", force: true do |t|
     t.integer  "position"
     t.string   "name"
     t.string   "agile_method"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
