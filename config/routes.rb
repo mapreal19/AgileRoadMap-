@@ -1,6 +1,5 @@
 AgileRoadMap::Application.routes.draw do
  
-  get "users/new"
   #get "practicas/show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -8,6 +7,7 @@ AgileRoadMap::Application.routes.draw do
   scope "(:locale)", :locale => /en|es/ do
     root 'pages#home'
     match '/signup', to: 'users#new', via: 'get'
+    match'/signup', to: 'users#create', via: 'post'
     get "pages/about_us"
     get 'mapa-practicas-agiles' => 'practicas#index', as: :agile_map
     get "pages/agile_map"

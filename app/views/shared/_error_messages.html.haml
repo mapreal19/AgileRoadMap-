@@ -1,0 +1,9 @@
+- if object.errors.any?
+  #error_explanation
+    .alert.alert-danger.fade.in
+      %button.close{"data-dismiss" => "alert", type: "button"} ×
+      =t(:fallo, count: object.errors.count)
+    %ul
+      - object.errors.full_messages.each do |msg|
+        %li
+          * #{msg}

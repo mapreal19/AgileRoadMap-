@@ -26,3 +26,6 @@ en:
   languages: 'languages'
   english: 'English'
   spanish: 'Spanish'
+  fallo:
+    one: 'The form contains 1 error'
+    other: "The form contains %{count} errors"
