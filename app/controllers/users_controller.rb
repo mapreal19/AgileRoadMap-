@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   		#sign_in @user
   		#flash
   		#wiselinks
+      flash[:success] = t(:welcome)
   		redirect_to root_path and return
   	else
   		render 'new'

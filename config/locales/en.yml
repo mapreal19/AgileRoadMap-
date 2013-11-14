@@ -26,6 +26,7 @@ en:
   languages: 'languages'
   english: 'English'
   spanish: 'Spanish'
+  welcome: 'Welcome'
   fallo:
     one: 'The form contains 1 error'
     other: "The form contains %{count} errors"

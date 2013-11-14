@@ -5,6 +5,7 @@ es:
   languages: 'Idiomas'
   english: 'Inglés'
   spanish: 'Español'
+  welcome: 'Bienvenido'
 
   activerecord: 
     attributes:
