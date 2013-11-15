@@ -8,6 +8,8 @@ AgileRoadMap::Application.routes.draw do
     root 'pages#home'
     get '/signup', to: 'users#new'
     post '/signup', to: 'users#create'
+    get '/signin', to: 'sessions#new'
+    delete '/signout', to: 'sessions#destroy'
     get "pages/about_us"
     get 'mapa-practicas-agiles' => 'practicas#index', as: :agile_map
     get "pages/agile_map"
