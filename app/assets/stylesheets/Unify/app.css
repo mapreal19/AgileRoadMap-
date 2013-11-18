@@ -23,6 +23,10 @@ p, a, li {
    line-height: 1.6; 
 }
 
+#error_explanation li {
+   color: #f00;
+}
+
 a,
 a:focus, 
 a:hover, 
