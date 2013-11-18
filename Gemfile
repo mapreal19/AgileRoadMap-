@@ -88,3 +88,6 @@ gem 'haml-rails', '~> 0.4'
 #gem 'friendly_id'
 
 gem 'font-awesome-sass-rails'
+
+# https://github.com/mixonic/ranked-model
+gem 'ranked-model'
