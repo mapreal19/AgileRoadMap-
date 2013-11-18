@@ -9,6 +9,7 @@ AgileRoadMap::Application.routes.draw do
     root 'pages#home'
     get '/signup', to: 'users#new'
     post '/signup', to: 'users#create'
+    get '/dashboard', to: 'users#dashboard'
     get '/signin', to: 'sessions#new'
     delete '/signout', to: 'sessions#destroy'
     get "pages/about_us"
