@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @practicas = current_user.user_practicas.rank(:position).all
+    @practicas = current_user.user_practicas
   end
 
   private
@@ -29,8 +29,8 @@ class UsersController < ApplicationController
       all_practicas = Practica.all
       
       all_practicas.each do |practica|
-        user.user_practicas.build(practica_id: practica.id,position: practica.position, name: practica.name,
-          agile_method: practica.agile_method).save
+        user.user_practicas.build(practica_id: practica.id, name: practica.name,
+          agile_method: practica.agile_method, position: practica.position).save
       end
     end
 

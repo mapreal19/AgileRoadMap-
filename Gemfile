@@ -90,4 +90,8 @@ gem 'haml-rails', '~> 0.4'
 gem 'font-awesome-sass-rails'
 
 # https://github.com/mixonic/ranked-model
-gem 'ranked-model'
+#gem 'ranked-model'
+
+# https://github.com/swanandp/acts_as_list
+gem 'acts_as_list'
+gem 'jquery-ui-rails'
