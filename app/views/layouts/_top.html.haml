@@ -15,7 +15,7 @@
           = lang_link t('spanish'), :es
       %li.devider
       %li
-        %a{href: "page_faq.html"} Help
+        = link_to 'Sign in', signup_path, {'data-push' => true}
       %li.devider
       %li
         = link_to 'Login', signin_path, {'data-push' => true}

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :signed_in_user, only: [:dashboard]
+
   def new
   	@user = User.new
   end

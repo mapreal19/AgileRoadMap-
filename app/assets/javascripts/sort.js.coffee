@@ -2,7 +2,7 @@ jQuery ->
 
   # this is a small hack; when a tr is dragged with jQuery UI sortable
   # the cells lose their width
-  cells = $('.table').find('tr')[0].cells.length
+  cells = $('.table').find('tr')[0].cells.length if $('.table').length > 0
   desired_width = 940 / cells + 'px'
   $('.table td').css('width', desired_width)
 
@@ -16,9 +16,7 @@ jQuery ->
     update: (e, ui) ->
       item_id = ui.item.data('item-id')
       position = ui.item.index()
-      console.log(item_id)
-      console.log(position)
-      console.log($(this).data('update-url'))
+
       $.ajax(
         type: 'POST'
         url: $(this).data('update-url')
