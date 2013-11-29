@@ -13,10 +13,12 @@ AgileRoadMap::Application.routes.draw do
     get '/signin', to: 'sessions#new'
     delete '/signout', to: 'sessions#destroy'
 
-    resources :user_practicas do
+    post '/user_practicas/sort', to: 'user_practicas#sort'
+
+    #resources :user_practicas do
       # The id param is passed via js, so we can use a generic route.
-      post :sort, on: :collection
-    end
+    #  post :sort, on: :collection
+    #end
 
     get "pages/about_us"
     get 'mapa-practicas-agiles' => 'practicas#index', as: :agile_map

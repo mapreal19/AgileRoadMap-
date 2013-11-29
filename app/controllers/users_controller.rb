@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   		sign_in @user
       @user.clone_practicas
       flash[:success] = t(:welcome)
-  		redirect_to root_path and return
+  		redirect_to dashboard_url and return
   	else
   		render 'new'
   	end

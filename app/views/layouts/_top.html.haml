@@ -1,8 +1,6 @@
 / === Top ===
 =# I18n.locale
 =#link_to_unless I18n.locale == :en, "English", locale: :en 
-= current_user.inspect
-=# current_user.user_practicas.inspect if signed_in?
 .top
   .container
     %ul.loginbar.pull-right
@@ -22,5 +20,3 @@
         %li.devider
         %li
           = link_to 'Login', signin_path, {'data-push' => true}
-/ /top
-/ === End Top ===

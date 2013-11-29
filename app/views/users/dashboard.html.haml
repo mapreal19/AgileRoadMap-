@@ -4,7 +4,7 @@
 .container
   .headline
     %h2 Mapa Prácticas Ágiles
-  %table.table.table-bordered.table-striped#sortable{:data => { update_url: sort_user_practicas_path }}
+  %table.table.table-bordered.table-striped#sortable{:data => { update_url: user_practicas_sort_path }}
     %thead
       %tr
         %th Id
@@ -16,7 +16,6 @@
           %td= practica.practica_id
           %td= practica.name
           %td= practica.agile_method
-          %td= practica.position
 
 :javascript
   $(document).ready( function() {
