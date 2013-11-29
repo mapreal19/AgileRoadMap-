@@ -21,6 +21,15 @@ class User < ActiveRecord::Base
 		Digest::SHA1.hexdigest(token.to_s)
 	end
 
+	 def clone_practicas
+      all_practicas = Practica.all
+
+      all_practicas.each do |practica|
+       self.user_practicas.build(practica_id: practica.id, name: practica.name,
+         agile_method: practica.agile_method, position: practica.position).save
+      end
+    end
+
 	private
 
 		def create_remember_token

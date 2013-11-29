@@ -31,7 +31,7 @@ $(document).ready ->
             App.init()
             App.initSliders()
             Index.initParallaxSlider()
-            # Need this. The dropdown wasn't working.
+            # Initialize the navbar dropdown 
             $('[data-hover="dropdown"]').dropdownHover()
             console.log("Wiselinks status: '#{status}'")
     )

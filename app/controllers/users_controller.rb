@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
   		sign_in @user
-      clone_practicas(@user)
+      @user.clone_practicas
       flash[:success] = t(:welcome)
   		redirect_to root_path and return
   	else
@@ -26,14 +26,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
-
-    def clone_practicas(user)
-      all_practicas = Practica.all
-      
-      all_practicas.each do |practica|
-        user.user_practicas.build(practica_id: practica.id, name: practica.name,
-          agile_method: practica.agile_method, position: practica.position).save
-      end
-    end
-
 end
