@@ -22,6 +22,11 @@ AgileRoadMap::Application.routes.draw do
 
     get "pages/about_us"
     get 'mapa-practicas-agiles' => 'practicas#index', as: :agile_map
+
+    # blitz.io testing
+    get '/mu-1aa710fe-9073f953-0f079b1a-b934ad37' do
+      '42'
+    end
   end
 
 
