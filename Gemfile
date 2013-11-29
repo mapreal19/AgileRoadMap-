@@ -95,3 +95,5 @@ gem 'font-awesome-sass-rails'
 # https://github.com/swanandp/acts_as_list
 gem 'acts_as_list'
 gem 'jquery-ui-rails'
+
+gem 'touchpunch-rails'
