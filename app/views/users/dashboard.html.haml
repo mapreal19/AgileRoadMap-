@@ -7,13 +7,13 @@
   %table.table.table-bordered.table-striped#sortable{:data => { update_url: user_practicas_sort_path }}
     %thead
       %tr
-        %th Id
+        %th Número
         %th Nombre
         %th Método Ágil
     %tbody
       - @practicas.each do |practica|
         %tr{data: {item_id: "#{practica.id}"}, class: 'item'}
-          %td= practica.practica_id
+          %td= practica.position
           %td= practica.name
           %td= practica.agile_method
 

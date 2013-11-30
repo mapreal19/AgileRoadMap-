@@ -96,4 +96,5 @@ gem 'font-awesome-sass-rails'
 gem 'acts_as_list'
 gem 'jquery-ui-rails'
 
+# http://touchpunch.furf.com/ Touch Event Support for jQuery UI
 gem 'touchpunch-rails'
