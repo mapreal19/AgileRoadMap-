@@ -10,12 +10,18 @@
         %th Número
         %th Nombre
         %th Método Ágil
+        %th Esfuerzo
+        %th Margen
+        %th Notas
     %tbody
       - @practicas.each do |practica|
         %tr{data: {item_id: "#{practica.id}"}, class: 'item'}
-          %td= practica.position
+          %td= practica.legacy_position
           %td= practica.name
           %td= practica.agile_method
+          %td= practica.effort
+          %td= practica.range
+          %td{style: "cursor: pointer"}= practica.comment
 
 :javascript
   $(document).ready( function() {

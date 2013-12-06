@@ -21,18 +21,19 @@ class User < ActiveRecord::Base
 		Digest::SHA1.hexdigest(token.to_s)
 	end
 
-	 def clone_practicas
-      all_practicas = Practica.all
+	def clone_practicas
+		all_practicas = Practica.all
 
-      all_practicas.each do |practica|
-       self.user_practicas.build(practica_id: practica.id, name: practica.name,
-         agile_method: practica.agile_method, position: practica.position).save
-      end
-    end
+		all_practicas.each do |practica|
+			self.user_practicas.build(practica_id: practica.id, name: practica.name,
+				agile_method: practica.agile_method, position: practica.position, 
+				legacy_position: practica.position).save
+		end
+	end
 
 	private
 
-		def create_remember_token
-			self.remember_token = User.encrypt(User.new_remember_token)
-		end
+	def create_remember_token
+		self.remember_token = User.encrypt(User.new_remember_token)
+	end
 end
