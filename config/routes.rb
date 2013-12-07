@@ -14,6 +14,7 @@ AgileRoadMap::Application.routes.draw do
     delete '/signout', to: 'sessions#destroy'
 
     post '/user_practicas/sort', to: 'user_practicas#sort'
+    post '/user_practicas/range', to: 'user_practicas#update_range'
 
     #resources :user_practicas do
       # The id param is passed via js, so we can use a generic route.

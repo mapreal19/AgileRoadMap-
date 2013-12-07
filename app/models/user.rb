@@ -26,8 +26,10 @@ class User < ActiveRecord::Base
 
 		all_practicas.each do |practica|
 			self.user_practicas.build(practica_id: practica.id, name: practica.name,
-				agile_method: practica.agile_method, position: practica.position, 
-				legacy_position: practica.position).save
+				agile_method: practica.agile_method, 
+				position: practica.position, 
+				legacy_position: practica.position,
+				effort: 3).save
 		end
 	end
 
