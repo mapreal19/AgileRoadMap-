@@ -9,4 +9,6 @@ class UserPractica < ActiveRecord::Base
 
 	MARGEN = { 0 => 'Ninguno', 1 => 'Poco', 2 => 'Medio', 3 => 'Alto'}
 	validates_inclusion_of :range, in: 0..3, allow_nil: true
+
+	validates_length_of :comment, maximum: 150
 end

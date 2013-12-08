@@ -15,6 +15,7 @@ AgileRoadMap::Application.routes.draw do
 
     post '/user_practicas/sort', to: 'user_practicas#sort'
     post '/user_practicas/range', to: 'user_practicas#update_range'
+    post '/user_practicas/comment' => 'user_practicas#update_comment'
 
     #resources :user_practicas do
       # The id param is passed via js, so we can use a generic route.

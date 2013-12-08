@@ -14,4 +14,11 @@ class UserPracticasController < ApplicationController
   	render nothing: true
   end
 
+  def update_comment
+    @user_practica = UserPractica.find(params[:id])
+    @user_practica.comment = params[:user_practica][:comment]
+    @user_practica.save
+    render nothing: true
+  end
+
 end
