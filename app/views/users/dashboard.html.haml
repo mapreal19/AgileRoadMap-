@@ -1,0 +1,36 @@
+= render 'layouts/top'
+= render 'layouts/header'
+
+.container
+  .headline
+    %h2 Mapa Prácticas Ágiles
+  .col-xs-11.col-sm-12  
+    .table-responsive
+      .row
+        %table.table.table-bordered.table-striped#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path }}
+          %thead
+            %tr
+              %th.col-sm-1.col-xs-3 Número
+              %th.col-sm-5.col-xs-9 Nombre
+              %th.col-sm-1.hidden-xs Método Ágil
+              %th.col-sm-1.hidden-xs Esfuerzo
+              %th.col-sm-2.hidden-xs Margen
+              %th.col-sm-2.hidden-xs Notas
+          %tbody
+            - @practicas.each do |practica|
+              %tr{data: {item_id: "#{practica.id}"}, class: 'item'}
+                %td= practica.legacy_position
+                %td= practica.name
+                %td.hidden-xs= practica.agile_method
+                -# http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select
+                %td.hidden-xs= practica.effort
+                -#%td=collection_select(:practica, :effort, UserPractica::ESFUERZO, :first, :last, :prompt => true)
+                %td.hidden-xs= select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range),prompt: "--", class: 'range form-control')
+                %td.hidden-xs= text_area_tag 'bio', practica.comment, class: 'comment form-control'
+
+:javascript
+  $(document).ready( function() {
+      App.sort();
+      App.updateRange();
+      App.updateComment();
+  } );

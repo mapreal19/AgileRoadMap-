@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
+  def signed_in_user
+    redirect_to signin_url, flash: {info: "Por favor haz Login."} unless signed_in?
+  end
+
   private
   	# http://xyzpub.com/en/ruby-on-rails/3.2/i18n_mehrsprachige_rails_applikation.html
   	def set_locale

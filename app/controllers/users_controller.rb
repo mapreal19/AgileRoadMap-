@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :signed_in_user, only: [:dashboard]
+
   def new
   	@user = User.new
   end
@@ -7,11 +9,16 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
   		sign_in @user
+      @user.clone_practicas
       flash[:success] = t(:welcome)
-  		redirect_to root_path and return
+  		redirect_to dashboard_url and return
   	else
   		render 'new'
   	end
+  end
+
+  def dashboard
+    @practicas = current_user.user_practicas
   end
 
   private
@@ -19,5 +26,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
-
 end

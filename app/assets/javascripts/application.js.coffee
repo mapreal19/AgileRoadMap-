@@ -12,6 +12,9 @@
 #
 #= require jquery
 #= require jquery_ujs
+#= require jquery.ui.sortable
+#= require jquery.ui.effect-highlight
+#= require jquery.ui.touch-punch
 #= require wiselinks
 #= require_tree .
 
@@ -29,6 +32,8 @@ $(document).ready ->
             App.init()
             App.initSliders()
             Index.initParallaxSlider()
+            # Initialize the navbar dropdown 
+            $('[data-hover="dropdown"]').dropdownHover()
             console.log("Wiselinks status: '#{status}'")
     )
 

@@ -8,7 +8,8 @@
           %h2 Register a new account
           %p
             Already Signed Up? Click
-            %a.color-green{href: "page_login.html"} Sign In
+            = link_to 'Sign in', signin_path, { 'class' => 'color-blue', 'data-push' => true }
+            -#%a.color-green{href: "page_login.html"} Sign In
             to login your account.
         = render 'shared/error_messages', object: f.object
         = f.label :name

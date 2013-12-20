@@ -1,5 +1,5 @@
 AgileRoadMap::Application.routes.draw do
- 
+
   #get "practicas/show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -9,10 +9,23 @@ AgileRoadMap::Application.routes.draw do
     root 'pages#home'
     get '/signup', to: 'users#new'
     post '/signup', to: 'users#create'
+    get '/dashboard', to: 'users#dashboard'
     get '/signin', to: 'sessions#new'
     delete '/signout', to: 'sessions#destroy'
+
+    # TODO SCOPE
+    post '/user_practicas/sort', to: 'user_practicas#sort'
+    post '/user_practicas/range', to: 'user_practicas#update_range'
+    post '/user_practicas/comment' => 'user_practicas#update_comment'
+
+    #resources :user_practicas do
+      # The id param is passed via js, so we can use a generic route.
+    #  post :sort, on: :collection
+    #end
+
     get "pages/about_us"
     get 'mapa-practicas-agiles' => 'practicas#index', as: :agile_map
+
   end
 
 
