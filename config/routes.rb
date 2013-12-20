@@ -13,6 +13,7 @@ AgileRoadMap::Application.routes.draw do
     get '/signin', to: 'sessions#new'
     delete '/signout', to: 'sessions#destroy'
 
+    # TODO SCOPE
     post '/user_practicas/sort', to: 'user_practicas#sort'
     post '/user_practicas/range', to: 'user_practicas#update_range'
     post '/user_practicas/comment' => 'user_practicas#update_comment'
