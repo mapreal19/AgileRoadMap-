@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 				agile_method: practica.agile_method, 
 				position: practica.position, 
 				legacy_position: practica.position,
-				effort: 3).save
+				effort: practica.effort).save
 		end
 	end
 
