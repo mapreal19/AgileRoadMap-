@@ -1,0 +1,22 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table { 
+	th {
+		text-align: center;
+		vertical-align: middle !important;
+	}
+	td {
+		vertical-align: middle !important;
+		text-align: center;
+		white-space: normal !important;
+	}
+	textarea {
+		//resize: none;
+	}
+}
+
+#users_controller {
+
+}

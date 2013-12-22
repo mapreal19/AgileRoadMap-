@@ -20,4 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home: 'Home'
+  about_us: 'About Us'
+  contact: 'Contact'
+  languages: 'languages'
+  english: 'English'
+  spanish: 'Spanish'
+  welcome: 'Welcome'
+  fallo:
+    one: 'The form contains 1 error'
+    other: "The form contains %{count} errors"

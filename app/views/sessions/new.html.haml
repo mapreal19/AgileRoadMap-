@@ -1,0 +1,29 @@
+= render 'layouts/top'
+= render 'layouts/header'
+
+/ === Content Part ===
+.container
+  .row
+    .col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3
+      = form_for :session, url: sessions_path, html: { class:'reg-page' } do |f|
+        .reg-header
+          %h2 Login to your account
+        .input-group.margin-bottom-20
+          %span.input-group-addon
+            %i.icon-envelope-alt
+          = f.text_field :email, class: 'form-control', placeholder: 'Email'
+        .input-group.margin-bottom-20
+          %span.input-group-addon
+            %i.icon-unlock
+          = f.password_field :password, class: 'form-control', placeholder: 'Password'
+        .row
+          .col-md-6
+            -#%label.checkbox
+              -#%input{type: "checkbox"}/
+              -#Stay signed in
+          .col-md-6
+            = f.submit 'Login', class: 'btn btn-u pull-right'
+        %hr/
+        %h4 New User?
+        %p
+          = link_to "Sign up now!", signup_path, {'data-push' => true}

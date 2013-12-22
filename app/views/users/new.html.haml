@@ -1,0 +1,35 @@
+= render 'layouts/top'
+= render 'layouts/header'
+.container
+  .row
+    .col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
+      = form_for @user, html: {class: 'reg-page', method: :post}, url: signup_path do |f|
+        .reg-header
+          %h2 Register a new account
+          %p
+            Already Signed Up? Click
+            = link_to 'Sign in', signin_path, { 'class' => 'color-blue', 'data-push' => true }
+            -#%a.color-green{href: "page_login.html"} Sign In
+            to login your account.
+        = render 'shared/error_messages', object: f.object
+        = f.label :name
+        = f.text_field :name, class: 'form-control margin-bottom-20'
+        = f.label :email do
+          Email
+          %span.color-red *
+        = f.text_field :email, class: 'form-control margin-bottom-20'
+        .row
+          .col-sm-6
+            = f.label :password do
+              Password
+              %span.color-red *
+            = f.password_field :password, class: 'form-control margin-bottom-20'
+          .col-sm-6
+            = f.label :password_confirmation do
+              Password Confirmation
+              %span.color-red *
+            = f.password_field :password_confirmation, class: 'form-control margin-bottom-20'
+        %hr
+        .row
+          .col-lg-6.col-lg-offset-6.text-right
+            = f.submit 'Register', class: 'btn btn-u'
