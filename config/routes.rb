@@ -25,6 +25,7 @@ AgileRoadMap::Application.routes.draw do
 
     get "pages/about_us"
     get 'mapa-practicas-agiles' => 'practicas#index', as: :agile_map
+    get 'mapa-practicas-agiles/:id' => 'practicas#show'
 
   end
 

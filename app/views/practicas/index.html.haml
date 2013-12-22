@@ -7,16 +7,15 @@
   %table.table.table-bordered.table-striped
     %thead
       %tr
-        %th.col-sm-1 Id
+        %th.col-sm-1 Número
         %th.col-sm-7 Nombre
         %th.col-sm-2 Método Ágil
         %th.col-sm-2 Esfuerzo
     %tbody
       - @practicas.each do |practica|
         %tr
-          %td= practica.id
+          %td= practica.position
           %td= practica.name
           %td= practica.agile_method
           %td= Practica::ESFUERZO[practica.effort]
-
 

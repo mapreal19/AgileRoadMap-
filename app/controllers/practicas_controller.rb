@@ -4,5 +4,6 @@ class PracticasController < ApplicationController
   end
 
   def show
+  	@practica = Practica.find_by(position: params[:id])
   end
 end
