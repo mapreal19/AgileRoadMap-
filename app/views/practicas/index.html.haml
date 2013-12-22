@@ -15,7 +15,8 @@
       - @practicas.each do |practica|
         %tr
           %td= practica.position
-          %td= practica.name
+          %td
+            = link_to practica.name, practica_path(id: practica.position), "target" => "_blank"
           %td= practica.agile_method
           %td= Practica::ESFUERZO[practica.effort]
 

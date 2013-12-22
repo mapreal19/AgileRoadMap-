@@ -24,8 +24,8 @@ AgileRoadMap::Application.routes.draw do
     #end
 
     get "pages/about_us"
-    get 'mapa-practicas-agiles' => 'practicas#index', as: :agile_map
-    get 'mapa-practicas-agiles/:id' => 'practicas#show'
+    resources :practicas, only: [:index, :show], path: 'mapa-practicas-agiles'
+    #get 'mapa-practicas-agiles/:id' => 'practicas#show', as: :practica
 
   end
 

@@ -3,6 +3,16 @@
 
 .container
   .headline
-    %h2= @practica.name
+    %h2 Nombre
+  = @practica.name
+  .headline
+    %h2 Descripción
   = @practica.description
+  .headline
+    %h2 Método Ágil
+  = @practica.agile_method
+  .headline
+    %h2 Esfuerzo
+  = Practica::ESFUERZO[@practica.effort]
+
 
