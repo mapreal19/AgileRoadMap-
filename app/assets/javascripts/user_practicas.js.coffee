@@ -1,4 +1,7 @@
 jQuery ->
+	App.autosizeTextArea = autosizeTextArea = () ->
+		$('textarea.comment').autosize()
+
 	App.updateRange = updateRange = () ->
 		$(".range").change ->
 			# p.parent().parent().data('item-id')

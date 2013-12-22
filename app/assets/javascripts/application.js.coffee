@@ -15,6 +15,7 @@
 #= require jquery.ui.sortable
 #= require jquery.ui.effect-highlight
 #= require jquery.ui.touch-punch
+#= require jquery.autosize
 #= require wiselinks
 #= require_tree .
 
