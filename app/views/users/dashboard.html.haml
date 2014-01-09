@@ -9,10 +9,10 @@
       %thead
         %tr
           %th.col-sm-1.col-xs-3 Número
-          %th.col-sm-5.col-xs-9 Nombre
+          %th.col-sm-5.col-xs-9 Nombre de la Práctica Ágil
           %th.col-sm-1.hidden-xs Método Ágil
           %th.col-sm-1.hidden-xs Esfuerzo
-          %th.col-sm-2.hidden-xs Margen
+          %th.col-sm-2.hidden-xs Margen de Mejora
           %th.col-sm-2.hidden-xs Notas
       %tbody
         - @practicas.each do |practica|
@@ -22,11 +22,11 @@
               = practica.name
               - unless practica.legacy_position.nil?
                 = link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
-            %td.hidden-xs= practica.agile_method
+            %td.hidden-xs= practica.agile_method.blank? ? '---' : practica.agile_method
             -# http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select
             %td.hidden-xs= UserPractica::ESFUERZO[practica.effort]
             -#%td=collection_select(:practica, :effort, UserPractica::ESFUERZO, :first, :last, :prompt => true)
-            %td.hidden-xs= select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range),prompt: "--", class: 'range form-control')
+            %td.hidden-xs= select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range),prompt: "No definido", class: 'range form-control')
             %td.hidden-xs= text_area_tag 'bio', practica.comment, class: 'comment form-control'
 
 :javascript
