@@ -18,7 +18,7 @@
         - @practicas.each do |practica|
           %tr{data: {item_id: "#{practica.id}"}, class: 'item'}
             %td= practica.legacy_position
-            %td
+            %td.text_left
               = practica.name
               - unless practica.legacy_position.nil?
                 = link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
