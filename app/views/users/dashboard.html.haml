@@ -15,7 +15,7 @@
           %th Productividad
       %tbody
         - @objetivos.each do |objetivo|
-          %tr
+          %tr.objetivo{data: {ids: "#{objetivo.get_json_practicas_ids}"}}
             %td= objetivo.codigo
             %td= objetivo.name
             %td= 'X' if objetivo.sat_client
@@ -23,7 +23,7 @@
             %td= 'X' if objetivo.productivity
 
   .headline
-    %h2 Mapa Prácticas Ágiles
+    %h2#mapa Mapa Prácticas Ágiles
   .col-xs-11.col-sm-12  
     %table.table.table-bordered.table-striped#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path }}
       %thead
@@ -36,7 +36,7 @@
           %th.col-sm-2.hidden-xs Notas
       %tbody
         - @practicas.each do |practica|
-          %tr{data: {item_id: "#{practica.id}"}, class: 'item'}
+          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, class: 'item'}
             %td= practica.legacy_position
             %td.text_left
               = practica.name
@@ -55,4 +55,5 @@
       App.updateRange();
       App.updateComment();
       App.autosizeTextArea();
+      App.objetivoClick();
   } );

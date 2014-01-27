@@ -29,6 +29,18 @@ jQuery ->
 				data: { id: item_id, user_practica: { comment: comment_new } }
 				)
 
+	App.objetivoClick = objetivoClick = () ->
+		#foo.data('ids')
+		$(".objetivo").click ->
+			$this = $(this)
+			ids = $this.data('ids')
+			for id in ids
+				$('tr[data-practica-id="' + id + '"]').addClass("success")
+				$("html, body").animate
+  				scrollTop: $("#mapa").offset().top
+				, 2000
+				#alert id
+
 ###$('#post_title').change(function() {
   // Do your stuff, instantiate variables, etc...
   $.ajax({
