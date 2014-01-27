@@ -14,37 +14,37 @@ require 'open-uri'
 # --- Objetivos específicos de mejoras ---
 
 Objetivo.delete_all
-Objetivo.create!({codigo: 'OBJ11', name: 'Alineación del trabajo del equipo con los objetivos del negocio', 
+Objetivo.create!({id: 1, codigo: 'OBJ11', name: 'Alineación del trabajo del equipo con los objetivos del negocio', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({codigo: 'OBJ01', name: 'Evitar o reducir los retrasos en las entregas', 
+Objetivo.create!({id: 2, codigo: 'OBJ01', name: 'Evitar o reducir los retrasos en las entregas', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({codigo: 'OBJ05', name: 'Reducir defectos en el trabajo entregado al cliente', 
+Objetivo.create!({id: 3, codigo: 'OBJ05', name: 'Reducir defectos en el trabajo entregado al cliente', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({codigo: 'OBJ21', name: 'Reducir el tiempo de entrega al cliente, acelerar el "time to market"', 
+Objetivo.create!({id: 4, codigo: 'OBJ21', name: 'Reducir el tiempo de entrega al cliente, acelerar el "time to market"', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({codigo: 'OBJ12', name: 'Involucar en mayor medida al cliente en la planificación, definición y validación del trabajo', 
+Objetivo.create!({id: 5, codigo: 'OBJ12', name: 'Involucar en mayor medida al cliente en la planificación, definición y validación del trabajo', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({codigo: 'OBJ08', name: 'Tomar decisiones en el momento oportuno', 
+Objetivo.create!({id: 6, codigo: 'OBJ08', name: 'Tomar decisiones en el momento oportuno', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({codigo: 'OBJ10', name: 'Mejorar la comunicación dentro del equipo y con el cliente', 
+Objetivo.create!({id: 7, codigo: 'OBJ10', name: 'Mejorar la comunicación dentro del equipo y con el cliente', 
 	sat_client: true, equipo: true, productivity: false})
-Objetivo.create!({codigo: 'OBJ07', name: 'Hacer más visible el trabajo del equipo', 
+Objetivo.create!({id: 8, codigo: 'OBJ07', name: 'Hacer más visible el trabajo del equipo', 
 	sat_client: false, equipo: true, productivity: false})
-Objetivo.create!({codigo: 'OBJ04', name: 'Reducir las horas extras o demanda no prevista de recursos humanos adicionales', 
+Objetivo.create!({id: 9, codigo: 'OBJ04', name: 'Reducir las horas extras o demanda no prevista de recursos humanos adicionales', 
 	sat_client: false, equipo: true, productivity: false})
-Objetivo.create!({codigo: 'OBJ22', name: 'Gestionar eficazmente el contexto multi-proyecto', 
+Objetivo.create!({id: 10, codigo: 'OBJ22', name: 'Gestionar eficazmente el contexto multi-proyecto', 
 	sat_client: true, equipo: true, productivity: true})
-Objetivo.create!({codigo: 'OBJ14', name: 'Evitar costos asociados a la realización de tareas prescindibles o dudosamente rentables', 
+Objetivo.create!({id: 11, codigo: 'OBJ14', name: 'Evitar costos asociados a la realización de tareas prescindibles o dudosamente rentables', 
 	sat_client: false, equipo: true, productivity: true})
-Objetivo.create!({codigo: 'OBJ20', name: 'Reducir el re-trabajo debido a trabajo defectuoso o incompleto detectado por el equipo', 
+Objetivo.create!({id: 12, codigo: 'OBJ20', name: 'Reducir el re-trabajo debido a trabajo defectuoso o incompleto detectado por el equipo', 
 	sat_client: false, equipo: true, productivity: true})
-Objetivo.create!({codigo: 'OBJ03', name: 'Gestionar eficazmente los cambios, tanto en los trabajos como en sus prioridades', 
+Objetivo.create!({id: 13, codigo: 'OBJ03', name: 'Gestionar eficazmente los cambios, tanto en los trabajos como en sus prioridades', 
 	sat_client: false, equipo: true, productivity: true})
-Objetivo.create!({codigo: 'OBJ19', name: 'Promover la mejora continua del proceso empleado por el equipo', 
+Objetivo.create!({id: 14, codigo: 'OBJ19', name: 'Promover la mejora continua del proceso empleado por el equipo', 
 	sat_client: false, equipo: true, productivity: true})
-Objetivo.create!({codigo: 'OBJ09', name: 'Mejorar la gestión de recursos humanos en el equipo', 
+Objetivo.create!({id: 15, codigo: 'OBJ09', name: 'Mejorar la gestión de recursos humanos en el equipo', 
 	sat_client: false, equipo: true, productivity: true})
-Objetivo.create!({codigo: 'OBJ15', name: 'Mejorar la sistematización del trabajo', 
+Objetivo.create!({id: 16, codigo: 'OBJ15', name: 'Mejorar la sistematización del trabajo', 
 	sat_client: false, equipo: true, productivity: true})
 
 # --- 42 Prácticas Ágiles ---
@@ -216,3 +216,8 @@ Practica.create!({id: 16, position: 42, name: "Mejorar continuamente la organiza
 	effort: 4, agile_method: "XP"})
 
 # --- [END]42 Prácticas Ágiles ---
+
+# --- Contribuciones TODO:
+Contribucion.delete_all
+Contribucion.create!({practica_id: 40, objetivo_id: 1, valor: 3})
+Contribucion.create!({practica_id: 16, objetivo_id: 1, valor: 2})

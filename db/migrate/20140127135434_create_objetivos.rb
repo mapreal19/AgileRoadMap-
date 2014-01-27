@@ -3,9 +3,9 @@ class CreateObjetivos < ActiveRecord::Migration
     create_table :objetivos do |t|
       t.string :codigo
       t.string :name
-      t.bool :sat_client
-      t.bool :equipo
-      t.bool :productivity
+      t.boolean :sat_client
+      t.boolean :equipo
+      t.boolean :productivity
 
       t.timestamps
     end

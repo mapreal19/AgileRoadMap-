@@ -2,6 +2,26 @@
 = render 'layouts/header'
 
 .container
+  .headline 
+    %h2 Objetivos
+  .col-sm-12
+    %table.table.table-bordered.table-striped
+      %thead
+        %tr
+          %th Código
+          %th Objetivo específico de mejora
+          %th Satisfacción del cliente
+          %th Motivación y compromiso del equipo
+          %th Productividad
+      %tbody
+        - @objetivos.each do |objetivo|
+          %tr
+            %td= objetivo.codigo
+            %td= objetivo.name
+            %td= 'X' if objetivo.sat_client
+            %td= 'X' if objetivo.equipo
+            %td= 'X' if objetivo.productivity
+
   .headline
     %h2 Mapa Prácticas Ágiles
   .col-xs-11.col-sm-12  
