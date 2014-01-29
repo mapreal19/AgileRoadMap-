@@ -34,12 +34,14 @@ jQuery ->
 		$(".objetivo").click ->
 			$this = $(this)
 			ids = $this.data('ids')
+			$('.practica').removeClass("success")
+			
 			for id in ids
 				$('tr[data-practica-id="' + id + '"]').addClass("success")
-				$("html, body").animate
-  				scrollTop: $("#mapa").offset().top
-				, 2000
-				#alert id
+			
+			$("html, body").animate
+  			scrollTop: $("#mapa").offset().top
+			, 2000
 
 ###$('#post_title').change(function() {
   // Do your stuff, instantiate variables, etc...

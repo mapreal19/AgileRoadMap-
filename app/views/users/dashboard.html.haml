@@ -36,7 +36,7 @@
           %th.col-sm-2.hidden-xs Notas
       %tbody
         - @practicas.each do |practica|
-          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, class: 'item'}
+          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, class: 'item practica'}
             %td= practica.legacy_position
             %td.text_left
               = practica.name

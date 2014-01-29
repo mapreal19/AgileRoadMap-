@@ -219,5 +219,63 @@ Practica.create!({id: 16, position: 42, name: "Mejorar continuamente la organiza
 
 # --- Contribuciones TODO:
 Contribucion.delete_all
-Contribucion.create!({practica_id: 40, objetivo_id: 1, valor: 3})
-Contribucion.create!({practica_id: 16, objetivo_id: 1, valor: 2})
+
+# Alineación del trabajo...
+Contribucion.create!({practica_id: 24, objetivo_id: 1, valor: 5})
+Contribucion.create!({practica_id: 18, objetivo_id: 1, valor: 4})
+Contribucion.create!({practica_id: 47, objetivo_id: 1, valor: 2})
+Contribucion.create!({practica_id: 23, objetivo_id: 1, valor: 2})
+
+# Evitar o reducir...
+Contribucion.create!({practica_id: 3, objetivo_id: 2, valor: 3})
+Contribucion.create!({practica_id: 41, objetivo_id: 2, valor: 3})
+Contribucion.create!({practica_id: 23, objetivo_id: 2, valor: 2})
+Contribucion.create!({practica_id: 34, objetivo_id: 2, valor: 2})
+Contribucion.create!({practica_id: 40, objetivo_id: 2, valor: 2})
+
+# Reducir defectos en...
+Contribucion.create!({practica_id: 10, objetivo_id: 3, valor: 4})
+Contribucion.create!({practica_id: 2, objetivo_id: 3, valor: 4})
+
+# Reducir el tiempo de entrega...
+Contribucion.create!({practica_id: 1, objetivo_id: 4, valor: 4})
+Contribucion.create!({practica_id: 23, objetivo_id: 4, valor: 4})
+Contribucion.create!({practica_id: 40, objetivo_id: 4, valor: 4})
+Contribucion.create!({practica_id: 34, objetivo_id: 4, valor: 3})
+Contribucion.create!({practica_id: 45, objetivo_id: 4, valor: 3})
+
+# Involucar en mayor medida al cliente en la planificación, definición y validación del trabajo 
+Contribucion.create!({practica_id: 24, objetivo_id: 5, valor: 5})
+Contribucion.create!({practica_id: 9, objetivo_id: 5, valor: 4})
+Contribucion.create!({practica_id: 26, objetivo_id: 5, valor: 4})
+Contribucion.create!({practica_id: 18, objetivo_id: 5, valor: 4})
+Contribucion.create!({practica_id: 25, objetivo_id: 6, valor: 2})
+
+# Tomar decisiones en el momento oportuno
+Contribucion.create!({practica_id: 30, objetivo_id: 6, valor: 5})
+Contribucion.create!({practica_id: 3, objetivo_id: 6, valor: 4})
+Contribucion.create!({practica_id: 28, objetivo_id: 6, valor: 3})
+Contribucion.create!({practica_id: 25, objetivo_id: 6, valor: 2})
+Contribucion.create!({practica_id: 1, objetivo_id: 6, valor: 2})
+Contribucion.create!({practica_id: 45, objetivo_id: 6, valor: 2})
+
+
+# Mejorar la comunicación dentro del equipo y con el cliente
+
+# Hacer más visible el trabajo del equipo, 
+
+# Reducir las horas extras o demanda no prevista de recursos humanos adicionales, 
+
+# Gestionar eficazmente el contexto multi-proyecto, 
+
+# Evitar costos asociados a la realización de tareas prescindibles o dudosamente rentables, 
+
+# Reducir el re-trabajo debido a trabajo defectuoso o incompleto detectado por el equipo, 
+
+# Gestionar eficazmente los cambios, tanto en los trabajos como en sus prioridades, 
+
+# Promover la mejora continua del proceso empleado por el equipo, 
+
+# Mejorar la gestión de recursos humanos en el equipo, 
+
+# Mejorar la sistematización del trabajo, 
