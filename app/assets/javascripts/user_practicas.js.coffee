@@ -35,13 +35,15 @@ jQuery ->
 			$this = $(this)
 			ids = $this.data('ids')
 			$('.practica').removeClass("success")
+			$('.contribucion').remove()
 			
 			# id[0] -> practica_id 
 			# id[1] -> valor de contribución
+			console.log(ids)
 			for id in ids
 				$('tr[data-practica-id="' + id[0] + '"]').addClass("success")
-				$('tr[data-practica-id="' + id[0] + '"]').append('<td>' + id[1] + '</td')
-			
+				$('tr[data-practica-id="' + id[0] + '"]').append('<td class="contribucion">' + id[1] + '</td')
+
 			$("html, body").animate
   			scrollTop: $("#mapa").offset().top
 			, 2000
