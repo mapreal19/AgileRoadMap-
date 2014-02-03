@@ -14,37 +14,37 @@ require 'open-uri'
 # --- Objetivos específicos de mejoras ---
 
 Objetivo.delete_all
-Objetivo.create!({id: 1, codigo: 'OBJ11', name: 'Alineación del trabajo del equipo con los objetivos del negocio', 
+Objetivo.create!({id: 11, codigo: 'OBJ11', name: 'Alineación del trabajo del equipo con los objetivos del negocio', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({id: 2, codigo: 'OBJ01', name: 'Evitar o reducir los retrasos en las entregas', 
+Objetivo.create!({id: 1, codigo: 'OBJ01', name: 'Evitar o reducir los retrasos en las entregas', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({id: 3, codigo: 'OBJ05', name: 'Reducir defectos en el trabajo entregado al cliente', 
+Objetivo.create!({id: 5, codigo: 'OBJ05', name: 'Reducir defectos en el trabajo entregado al cliente', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({id: 4, codigo: 'OBJ21', name: 'Reducir el tiempo de entrega al cliente, acelerar el "time to market"', 
+Objetivo.create!({id: 21, codigo: 'OBJ21', name: 'Reducir el tiempo de entrega al cliente, acelerar el "time to market"', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({id: 5, codigo: 'OBJ12', name: 'Involucar en mayor medida al cliente en la planificación, definición y validación del trabajo', 
+Objetivo.create!({id: 12, codigo: 'OBJ12', name: 'Involucar en mayor medida al cliente en la planificación, definición y validación del trabajo', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({id: 6, codigo: 'OBJ08', name: 'Tomar decisiones en el momento oportuno', 
+Objetivo.create!({id: 8, codigo: 'OBJ08', name: 'Tomar decisiones en el momento oportuno', 
 	sat_client: true, equipo: false, productivity: false})
-Objetivo.create!({id: 7, codigo: 'OBJ10', name: 'Mejorar la comunicación dentro del equipo y con el cliente', 
+Objetivo.create!({id: 10, codigo: 'OBJ10', name: 'Mejorar la comunicación dentro del equipo y con el cliente', 
 	sat_client: true, equipo: true, productivity: false})
-Objetivo.create!({id: 8, codigo: 'OBJ07', name: 'Hacer más visible el trabajo del equipo', 
+Objetivo.create!({id: 7, codigo: 'OBJ07', name: 'Hacer más visible el trabajo del equipo', 
 	sat_client: false, equipo: true, productivity: false})
-Objetivo.create!({id: 9, codigo: 'OBJ04', name: 'Reducir las horas extras o demanda no prevista de recursos humanos adicionales', 
+Objetivo.create!({id: 4, codigo: 'OBJ04', name: 'Reducir las horas extras o demanda no prevista de recursos humanos adicionales', 
 	sat_client: false, equipo: true, productivity: false})
-Objetivo.create!({id: 10, codigo: 'OBJ22', name: 'Gestionar eficazmente el contexto multi-proyecto', 
+Objetivo.create!({id: 22, codigo: 'OBJ22', name: 'Gestionar eficazmente el contexto multi-proyecto', 
 	sat_client: true, equipo: true, productivity: true})
-Objetivo.create!({id: 11, codigo: 'OBJ14', name: 'Evitar costos asociados a la realización de tareas prescindibles o dudosamente rentables', 
+Objetivo.create!({id: 14, codigo: 'OBJ14', name: 'Evitar costos asociados a la realización de tareas prescindibles o dudosamente rentables', 
 	sat_client: false, equipo: true, productivity: true})
-Objetivo.create!({id: 12, codigo: 'OBJ20', name: 'Reducir el re-trabajo debido a trabajo defectuoso o incompleto detectado por el equipo', 
+Objetivo.create!({id: 20, codigo: 'OBJ20', name: 'Reducir el re-trabajo debido a trabajo defectuoso o incompleto detectado por el equipo', 
 	sat_client: false, equipo: true, productivity: true})
-Objetivo.create!({id: 13, codigo: 'OBJ03', name: 'Gestionar eficazmente los cambios, tanto en los trabajos como en sus prioridades', 
+Objetivo.create!({id: 3, codigo: 'OBJ03', name: 'Gestionar eficazmente los cambios, tanto en los trabajos como en sus prioridades', 
 	sat_client: false, equipo: true, productivity: true})
-Objetivo.create!({id: 14, codigo: 'OBJ19', name: 'Promover la mejora continua del proceso empleado por el equipo', 
+Objetivo.create!({id: 19, codigo: 'OBJ19', name: 'Promover la mejora continua del proceso empleado por el equipo', 
 	sat_client: false, equipo: true, productivity: true})
-Objetivo.create!({id: 15, codigo: 'OBJ09', name: 'Mejorar la gestión de recursos humanos en el equipo', 
+Objetivo.create!({id: 9, codigo: 'OBJ09', name: 'Mejorar la gestión de recursos humanos en el equipo', 
 	sat_client: false, equipo: true, productivity: true})
-Objetivo.create!({id: 16, codigo: 'OBJ15', name: 'Mejorar la sistematización del trabajo', 
+Objetivo.create!({id: 15, codigo: 'OBJ15', name: 'Mejorar la sistematización del trabajo', 
 	sat_client: false, equipo: true, productivity: true})
 
 # --- 42 Prácticas Ágiles ---
@@ -221,61 +221,114 @@ Practica.create!({id: 16, position: 42, name: "Mejorar continuamente la organiza
 Contribucion.delete_all
 
 # Alineación del trabajo...
-Contribucion.create!({practica_id: 24, objetivo_id: 1, valor: 5})
-Contribucion.create!({practica_id: 18, objetivo_id: 1, valor: 4})
-Contribucion.create!({practica_id: 47, objetivo_id: 1, valor: 2})
-Contribucion.create!({practica_id: 23, objetivo_id: 1, valor: 2})
+Contribucion.create!({practica_id: 24, objetivo_id: 11, valor: 5})
+Contribucion.create!({practica_id: 18, objetivo_id: 11, valor: 4})
+Contribucion.create!({practica_id: 47, objetivo_id: 11, valor: 2})
+Contribucion.create!({practica_id: 23, objetivo_id: 11, valor: 2})
 
 # Evitar o reducir...
-Contribucion.create!({practica_id: 3, objetivo_id: 2, valor: 3})
-Contribucion.create!({practica_id: 41, objetivo_id: 2, valor: 3})
-Contribucion.create!({practica_id: 23, objetivo_id: 2, valor: 2})
-Contribucion.create!({practica_id: 34, objetivo_id: 2, valor: 2})
-Contribucion.create!({practica_id: 40, objetivo_id: 2, valor: 2})
+Contribucion.create!({practica_id: 3, objetivo_id: 1, valor: 3})
+Contribucion.create!({practica_id: 41, objetivo_id: 1, valor: 3})
+Contribucion.create!({practica_id: 23, objetivo_id: 1, valor: 2})
+Contribucion.create!({practica_id: 34, objetivo_id: 1, valor: 2})
+Contribucion.create!({practica_id: 40, objetivo_id: 1, valor: 2})
 
 # Reducir defectos en...
-Contribucion.create!({practica_id: 10, objetivo_id: 3, valor: 4})
-Contribucion.create!({practica_id: 2, objetivo_id: 3, valor: 4})
+Contribucion.create!({practica_id: 10, objetivo_id: 5, valor: 4})
+Contribucion.create!({practica_id: 2, objetivo_id: 5, valor: 4})
 
 # Reducir el tiempo de entrega...
-Contribucion.create!({practica_id: 1, objetivo_id: 4, valor: 4})
-Contribucion.create!({practica_id: 23, objetivo_id: 4, valor: 4})
-Contribucion.create!({practica_id: 40, objetivo_id: 4, valor: 4})
-Contribucion.create!({practica_id: 34, objetivo_id: 4, valor: 3})
-Contribucion.create!({practica_id: 45, objetivo_id: 4, valor: 3})
+Contribucion.create!({practica_id: 1, objetivo_id: 21, valor: 4})
+Contribucion.create!({practica_id: 23, objetivo_id: 21, valor: 4})
+Contribucion.create!({practica_id: 40, objetivo_id: 21, valor: 4})
+Contribucion.create!({practica_id: 34, objetivo_id: 21, valor: 3})
+Contribucion.create!({practica_id: 45, objetivo_id: 21, valor: 3})
 
 # Involucar en mayor medida al cliente en la planificación, definición y validación del trabajo 
-Contribucion.create!({practica_id: 24, objetivo_id: 5, valor: 5})
-Contribucion.create!({practica_id: 9, objetivo_id: 5, valor: 4})
-Contribucion.create!({practica_id: 26, objetivo_id: 5, valor: 4})
-Contribucion.create!({practica_id: 18, objetivo_id: 5, valor: 4})
-Contribucion.create!({practica_id: 25, objetivo_id: 6, valor: 2})
+Contribucion.create!({practica_id: 24, objetivo_id: 12, valor: 5})
+Contribucion.create!({practica_id: 9, objetivo_id: 12, valor: 4})
+Contribucion.create!({practica_id: 26, objetivo_id: 12, valor: 4})
+Contribucion.create!({practica_id: 18, objetivo_id: 12, valor: 4})
+Contribucion.create!({practica_id: 25, objetivo_id: 12, valor: 2})
 
 # Tomar decisiones en el momento oportuno
-Contribucion.create!({practica_id: 30, objetivo_id: 6, valor: 5})
-Contribucion.create!({practica_id: 3, objetivo_id: 6, valor: 4})
-Contribucion.create!({practica_id: 28, objetivo_id: 6, valor: 3})
-Contribucion.create!({practica_id: 25, objetivo_id: 6, valor: 2})
-Contribucion.create!({practica_id: 1, objetivo_id: 6, valor: 2})
-Contribucion.create!({practica_id: 45, objetivo_id: 6, valor: 2})
-
+Contribucion.create!({practica_id: 30, objetivo_id: 8, valor: 5})
+Contribucion.create!({practica_id: 3, objetivo_id: 8, valor: 4})
+Contribucion.create!({practica_id: 28, objetivo_id: 8, valor: 3})
+Contribucion.create!({practica_id: 25, objetivo_id: 8, valor: 2})
+Contribucion.create!({practica_id: 1, objetivo_id: 8, valor: 2})
+Contribucion.create!({practica_id: 45, objetivo_id: 8, valor: 2})
 
 # Mejorar la comunicación dentro del equipo y con el cliente
+Contribucion.create!({practica_id: 9, objetivo_id: 10, valor: 4})
+Contribucion.create!({practica_id: 5, objetivo_id: 10, valor: 4})
+Contribucion.create!({practica_id: 49, objetivo_id: 10, valor: 4})
+Contribucion.create!({practica_id: 26, objetivo_id: 10, valor: 3})
+Contribucion.create!({practica_id: 45, objetivo_id: 10, valor: 3})
+Contribucion.create!({practica_id: 25, objetivo_id: 10, valor: 2})
 
-# Hacer más visible el trabajo del equipo, 
+# Hacer más visible el trabajo del equipo
+Contribucion.create!({practica_id: 30, objetivo_id: 7, valor: 5})
+Contribucion.create!({practica_id: 8, objetivo_id: 7, valor: 5})
+Contribucion.create!({practica_id: 3, objetivo_id: 7, valor: 4})
+Contribucion.create!({practica_id: 28, objetivo_id: 7, valor: 4})
 
-# Reducir las horas extras o demanda no prevista de recursos humanos adicionales, 
+# Reducir las horas extras o demanda no prevista de recursos humanos adicionales
+Contribucion.create!({practica_id: 32, objetivo_id: 4, valor: 3})
+Contribucion.create!({practica_id: 25, objetivo_id: 4, valor: 3})
+Contribucion.create!({practica_id: 34, objetivo_id: 4, valor: 3})
+Contribucion.create!({practica_id: 11, objetivo_id: 4, valor: 2})
 
-# Gestionar eficazmente el contexto multi-proyecto, 
+# Gestionar eficazmente el contexto multi-proyecto
+
 
 # Evitar costos asociados a la realización de tareas prescindibles o dudosamente rentables, 
+Contribucion.create!({practica_id: 4, objetivo_id: 14, valor: 4})
+Contribucion.create!({practica_id: 14, objetivo_id: 14, valor: 4})
+Contribucion.create!({practica_id: 27, objetivo_id: 14, valor: 4})
+Contribucion.create!({practica_id: 40, objetivo_id: 14, valor: 4})
+Contribucion.create!({practica_id: 7, objetivo_id: 14, valor: 2})
 
-# Reducir el re-trabajo debido a trabajo defectuoso o incompleto detectado por el equipo, 
+# Reducir el re-trabajo debido a trabajo defectuoso o incompleto detectado por el equipo
+Contribucion.create!({practica_id: 2, objetivo_id: 20, valor: 4})
+Contribucion.create!({practica_id: 33, objetivo_id: 20, valor: 3})
+Contribucion.create!({practica_id: 16, objetivo_id: 20, valor: 2})
 
 # Gestionar eficazmente los cambios, tanto en los trabajos como en sus prioridades, 
+Contribucion.create!({practica_id: 8, objetivo_id: 3, valor: 5})
+Contribucion.create!({practica_id: 24, objetivo_id: 3, valor: 5})
+Contribucion.create!({practica_id: 44, objetivo_id: 3, valor: 4})
+Contribucion.create!({practica_id: 1, objetivo_id: 3, valor: 4})
+Contribucion.create!({practica_id: 5, objetivo_id: 3, valor: 3})
+Contribucion.create!({practica_id: 9, objetivo_id: 3, valor: 3})
+Contribucion.create!({practica_id: 25, objetivo_id: 3, valor: 3})
+Contribucion.create!({practica_id: 28, objetivo_id: 3, valor: 3})
+Contribucion.create!({practica_id: 50, objetivo_id: 3, valor: 2})
+Contribucion.create!({practica_id: 45, objetivo_id: 3, valor: 2})
 
-# Promover la mejora continua del proceso empleado por el equipo, 
+# Promover la mejora continua del proceso empleado por el equipo
+Contribucion.create!({practica_id: 14, objetivo_id: 19, valor: 4})
+Contribucion.create!({practica_id: 27, objetivo_id: 19, valor: 4})
 
-# Mejorar la gestión de recursos humanos en el equipo, 
+# Mejorar la gestión de recursos humanos en el equipo
+Contribucion.create!({practica_id: 30, objetivo_id: 9, valor: 5})
+Contribucion.create!({practica_id: 8, objetivo_id: 9, valor: 5})
+Contribucion.create!({practica_id: 43, objetivo_id: 9, valor: 4})
+Contribucion.create!({practica_id: 42, objetivo_id: 9, valor: 4})
+Contribucion.create!({practica_id: 31, objetivo_id: 9, valor: 4})
+Contribucion.create!({practica_id: 6, objetivo_id: 9, valor: 4})
+Contribucion.create!({practica_id: 13, objetivo_id: 9, valor: 4})
+Contribucion.create!({practica_id: 15, objetivo_id: 9, valor: 4})
+Contribucion.create!({practica_id: 45, objetivo_id: 9, valor: 3})
+Contribucion.create!({practica_id: 39, objetivo_id: 9, valor: 3})
+Contribucion.create!({practica_id: 5, objetivo_id: 9, valor: 3})
+Contribucion.create!({practica_id: 12, objetivo_id: 9, valor: 3})
+Contribucion.create!({practica_id: 37, objetivo_id: 9, valor: 2})
 
-# Mejorar la sistematización del trabajo, 
+# Mejorar la sistematización del trabajo
+Contribucion.create!({practica_id: 33, objetivo_id: 15, valor: 4})
+Contribucion.create!({practica_id: 41, objetivo_id: 15, valor: 3})
+Contribucion.create!({practica_id: 17, objetivo_id: 15, valor: 3})
+Contribucion.create!({practica_id: 14, objetivo_id: 15, valor: 3})
+Contribucion.create!({practica_id: 23, objetivo_id: 15, valor: 2})
+

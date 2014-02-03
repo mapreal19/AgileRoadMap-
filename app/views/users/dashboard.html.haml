@@ -17,7 +17,7 @@
         - @objetivos.each do |objetivo|
           %tr.objetivo{data: {ids: "#{objetivo.get_json_practicas_ids}"}}
             %td= objetivo.codigo
-            %td= objetivo.name
+            %td.text_left= objetivo.name
             %td= 'X' if objetivo.sat_client
             %td= 'X' if objetivo.equipo
             %td= 'X' if objetivo.productivity
@@ -31,7 +31,7 @@
           %th.col-sm-1.col-xs-3 Número
           %th.col-sm-5.col-xs-9 Nombre de la Práctica Ágil
           %th.col-sm-1.hidden-xs Método Ágil
-          %th.col-sm-1.hidden-xs Esfuerzo
+          %th.col-sm-1.hidden-xs Esfuerzo Implantación
           %th.col-sm-2.hidden-xs Margen de Mejora
           %th.col-sm-2.hidden-xs Notas
       %tbody
