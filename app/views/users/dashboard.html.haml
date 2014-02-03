@@ -2,8 +2,28 @@
 = render 'layouts/header'
 
 .container
+  .headline 
+    %h2 Objetivos
+  .col-sm-12
+    %table.table.table-bordered.table-striped
+      %thead
+        %tr
+          %th Código
+          %th Objetivo específico de mejora
+          %th Satisfacción del cliente
+          %th Motivación y compromiso del equipo
+          %th Productividad
+      %tbody
+        - @objetivos.each do |objetivo|
+          %tr.objetivo{data: {ids: "#{objetivo.get_json_practicas_ids}"}}
+            %td= objetivo.codigo
+            %td.text_left= objetivo.name
+            %td= 'X' if objetivo.sat_client
+            %td= 'X' if objetivo.equipo
+            %td= 'X' if objetivo.productivity
+
   .headline
-    %h2 Mapa Prácticas Ágiles
+    %h2#mapa Mapa Prácticas Ágiles
   .col-xs-11.col-sm-12  
     %table.table.table-bordered.table-striped#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path }}
       %thead
@@ -11,12 +31,12 @@
           %th.col-sm-1.col-xs-3 Número
           %th.col-sm-5.col-xs-9 Nombre de la Práctica Ágil
           %th.col-sm-1.hidden-xs Método Ágil
-          %th.col-sm-1.hidden-xs Esfuerzo
+          %th.col-sm-1.hidden-xs Esfuerzo Implantación
           %th.col-sm-2.hidden-xs Margen de Mejora
           %th.col-sm-2.hidden-xs Notas
       %tbody
         - @practicas.each do |practica|
-          %tr{data: {item_id: "#{practica.id}"}, class: 'item'}
+          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, class: 'item practica'}
             %td= practica.legacy_position
             %td.text_left
               = practica.name
@@ -35,4 +55,5 @@
       App.updateRange();
       App.updateComment();
       App.autosizeTextArea();
+      App.objetivoClick();
   } );

@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def dashboard
     @practicas = current_user.user_practicas
+    @objetivos = Objetivo.all
   end
 
   private
