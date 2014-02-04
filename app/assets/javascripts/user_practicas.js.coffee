@@ -1,15 +1,30 @@
 jQuery ->
   
+  App.autosizeTextArea = autosizeTextArea = () ->
+    $('textarea.comment').autosize()
+
   App.noMargenCheckBox = noMargenCheckBox = () ->
     $("#no_margen").change ->
-      console.log("margen")
       if @checked
         $(".no-margen").fadeOut "slow"
       else
         $(".no-margen").fadeIn "slow"
 
-  App.autosizeTextArea = autosizeTextArea = () ->
-    $('textarea.comment').autosize()
+  App.noAplicableCheckBox = noAplicableCheckBox = () ->
+    $(".no-aplicable").change ->
+      $this = $(this)
+      item_id = $this.parent().parent().data('item-id')
+      console.log @checked
+      ###_checked = (@checked is 'true')
+      console.log _checked###
+      $.ajax(
+        type: 'POST'
+        url: $('table#sortable').data('aplicable-url')
+        dataType: 'json'
+        data: { id: item_id, user_practica: { no_aplicable: @checked}}
+        )
+
+  
 
   App.updateRange = updateRange = () ->
     $(".range").change ->
@@ -35,7 +50,7 @@ jQuery ->
         dataType: 'json'
         data: { id: item_id, user_practica: { range: range_new } }
         )
-      
+
   App.updateComment = updateComment = () ->
     # blur: when the element loses its focus
     $(".comment").blur ->
