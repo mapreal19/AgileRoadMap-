@@ -22,7 +22,7 @@
       %tbody
         - @objetivos.each do |objetivo|
           %tr.objetivo{data: {ids: "#{objetivo.get_json_practicas_ids}"}}
-            %td= objetivo.codigo
+            %td= objetivo.id
             %td.text_left= objetivo.name
             %td= 'X' if objetivo.sat_client
             %td= 'X' if objetivo.equipo
