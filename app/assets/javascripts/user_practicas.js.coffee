@@ -16,8 +16,18 @@ jQuery ->
       # p.parent().parent().data('item-id')
       # p.val()
       $this = $(this)
-      item_id = $this.parent().parent().data('item-id')
+      fila_practica = $this.parent().parent()
+      item_id = fila_practica.data('item-id')
       range_new = $this.val()
+
+      # Si el rango es ninguno y el checkbox está activado
+      if (range_new == "0" and $('#no_margen').is(':checked'))
+        fila_practica.fadeOut "slow", ->
+          fila_practica.addClass("no-margen")
+      else if range_new == "0"
+        fila_practica.addClass("no-margen")
+      else
+        fila_practica.removeClass("no-margen")
 
       $.ajax(
         type: 'POST'
@@ -25,6 +35,7 @@ jQuery ->
         dataType: 'json'
         data: { id: item_id, user_practica: { range: range_new } }
         )
+      
   App.updateComment = updateComment = () ->
     # blur: when the element loses its focus
     $(".comment").blur ->
