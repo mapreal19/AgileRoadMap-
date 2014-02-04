@@ -35,11 +35,12 @@
       %thead
         %tr
           %th.col-sm-1.col-xs-3 Número
-          %th.col-sm-5.col-xs-9 Nombre de la Práctica Ágil
+          %th.col-sm-4.col-xs-8 Nombre de la Práctica Ágil
           %th.col-sm-1.hidden-xs Método Ágil
           %th.col-sm-1.hidden-xs Esfuerzo Implantación
           %th.col-sm-2.hidden-xs Margen de Mejora
           %th.col-sm-2.hidden-xs Notas
+          %th.col-sm-1.col-xs-1 No aplicable 
       %tbody
         - @practicas.each do |practica|
           %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, 
@@ -56,6 +57,7 @@
             -#%td=collection_select(:practica, :effort, UserPractica::ESFUERZO, :first, :last, :prompt => true)
             %td.hidden-xs= select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range),prompt: "No definido", class: 'range form-control')
             %td.hidden-xs= text_area_tag 'bio', practica.comment, class: 'comment form-control'
+            %td= practica.no_aplicable
 
 :javascript
   $(document).ready( function() {
