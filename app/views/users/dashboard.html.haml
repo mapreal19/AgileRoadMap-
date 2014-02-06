@@ -2,8 +2,6 @@
 = render 'layouts/header'
 
 .container
-  .headline 
-    %h2 Objetivos
   .row 
     .panel-body
       .checkbox
@@ -50,6 +48,7 @@
 :javascript
   $(document).ready( function() {
       App.sort();
+      App.toggleTablaObjetivos();
       App.updateRange();
       App.updateComment();
       App.autosizeTextArea();

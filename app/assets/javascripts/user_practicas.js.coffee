@@ -4,6 +4,10 @@ jQuery ->
   App.autosizeTextArea = autosizeTextArea = () ->
     $('textarea.comment').autosize()
 
+  App.toggleTablaObjetivos = toggleTablaObjetivos = () ->
+    $('#toggle_objetivos').click ->
+      $('#tabla_objetivos').toggle 'slow'
+
   App.noMargenCheckBox = noMargenCheckBox = () ->
     $("#no_margen").change ->
       if @checked
