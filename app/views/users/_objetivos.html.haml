@@ -14,7 +14,9 @@
       - @objetivos.each do |objetivo|
         %tr.objetivo{data: {ids: "#{objetivo.get_json_practicas_ids}"}}
           %td= objetivo.id
-          %td.text_left= objetivo.name
+          %td.text_left
+            = objetivo.name 
+            = link_to '(Ver Prácticas)', '#', class: 'ver-practica'
           %td= 'X' if objetivo.sat_client
           %td= 'X' if objetivo.equipo
           %td= 'X' if objetivo.productivity

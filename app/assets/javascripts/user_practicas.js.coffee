@@ -85,11 +85,12 @@ jQuery ->
         data: { id: item_id, user_practica: { comment: comment_new } }
         )
 
+  # Muestra las prácticas relacionadas con el objetivo seleccionado
   App.objetivoClick = objetivoClick = () ->
     #foo.data('ids')
-    $(".objetivo").click ->
+    $(".ver-practica").click ->
       $this = $(this)
-      ids = $this.data('ids')
+      ids = $this.parent().parent().data('ids')
       $('.practica').removeClass("success")
       $('.contribucion').remove()
       
