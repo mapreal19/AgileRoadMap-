@@ -3,7 +3,7 @@ jQuery ->
   # TextArea se modifica conforme se escribes
   App.autosizeTextArea = autosizeTextArea = () ->
     $('textarea.comment').autosize()
-
+    
   App.toggleTablaObjetivos = toggleTablaObjetivos = () ->
     $('#toggle_objetivos').click ->
       $('#tabla_objetivos').toggle 'slow'
@@ -45,8 +45,7 @@ jQuery ->
         data: { id: item_id, user_practica: { no_aplicable: @checked}}
         )
 
-  
-
+  # Actualiza el maregen de aplicación vía AJAX
   App.updateRange = updateRange = () ->
     $(".range").change ->
       # p.parent().parent().data('item-id')
@@ -72,6 +71,7 @@ jQuery ->
         data: { id: item_id, user_practica: { range: range_new } }
         )
 
+  # Actualiza los comentarios mediante AJAX
   App.updateComment = updateComment = () ->
     # blur: when the element loses its focus
     $(".comment").blur ->
@@ -87,7 +87,6 @@ jQuery ->
 
   # Muestra las prácticas relacionadas con el objetivo seleccionado
   App.objetivoClick = objetivoClick = () ->
-    #foo.data('ids')
     $(".ver-practica").click ->
       $this = $(this)
       ids = $this.parent().parent().data('ids')
