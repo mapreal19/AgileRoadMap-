@@ -21,4 +21,11 @@ class UserPracticasController < ApplicationController
     render nothing: true
   end
 
+  def update_aplicable
+    @user_practica = UserPractica.find(params[:id])
+    @user_practica.no_aplicable = params[:user_practica][:no_aplicable]
+    @user_practica.save
+    render nothing: true
+  end
+
 end
