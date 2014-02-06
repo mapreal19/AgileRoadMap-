@@ -32,7 +32,7 @@
         - @practicas.each do |practica|
           %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, 
           class: "item practica#{' no-margen' if practica.range == 0}#{' no-aplicable' if practica.no_aplicable}", 
-          style: "#{' display:none;' if practica.range == 0}"}
+          style: "#{' display:none;' if practica.range == 0 or practica.no_aplicable}"}
             %td= practica.legacy_position
             %td.text_left
               = practica.name
@@ -45,7 +45,7 @@
             %td.hidden-xs= select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range),prompt: "No definido", class: 'range form-control')
             %td.hidden-xs= text_area_tag 'bio', practica.comment, class: 'comment form-control'
             %td= check_box_tag 'no_aplicable' + practica.legacy_position.to_s, practica.no_aplicable, practica.no_aplicable,
-            class: 'no-aplicable'
+            class: 'no-aplicable-checkbox'
 
 :javascript
   $(document).ready( function() {
@@ -56,4 +56,5 @@
       App.objetivoClick();
       App.noMargenCheckBox();
       App.noAplicableCheckBox();
+      App.updateAplicableCheckBox();
   } );

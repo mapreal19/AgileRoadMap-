@@ -1,5 +1,6 @@
 jQuery ->
   
+  # TextArea se modifica conforme se escribes
   App.autosizeTextArea = autosizeTextArea = () ->
     $('textarea.comment').autosize()
 
@@ -11,9 +12,27 @@ jQuery ->
         $(".no-margen").fadeIn "slow"
 
   App.noAplicableCheckBox = noAplicableCheckBox = () ->
-    $(".no-aplicable").change ->
+    $("#no_aplicable").change ->
+      console.log 'changed checkbox no_aplicable'
+      if @checked
+        $(".no-aplicable").fadeOut "slow"
+      else
+        $(".no-aplicable").fadeIn "slow"
+
+
+  App.updateAplicableCheckBox = updateAplicableCheckBox = () ->
+    $(".no-aplicable-checkbox").change ->
       $this = $(this)
-      item_id = $this.parent().parent().data('item-id')
+      fila_practica = $this.parent().parent()
+      item_id = fila_practica.data('item-id')
+
+      if (@checked and $('#no_aplicable').is(':checked'))
+        fila_practica.fadeOut "slow", ->
+          fila_practica.addClass("no-aplicable")
+      else if @checked
+        fila_practica.addClass("no-aplicable")
+      else
+        fila_practica.removeClass("no-aplicable")
       
       $.ajax(
         type: 'POST'
