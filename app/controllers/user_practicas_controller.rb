@@ -25,6 +25,7 @@ class UserPracticasController < ApplicationController
     @user_practica = UserPractica.find(params[:id])
     @user_practica.no_aplicable = params[:user_practica][:no_aplicable]
     @user_practica.save
+    logger.debug "UserPractica attributes hash: #{@user_practica.attributes.inspect}"
     render nothing: true
   end
 
