@@ -14,9 +14,7 @@ jQuery ->
     $(".no-aplicable").change ->
       $this = $(this)
       item_id = $this.parent().parent().data('item-id')
-      console.log @checked
-      ###_checked = (@checked is 'true')
-      console.log _checked###
+      
       $.ajax(
         type: 'POST'
         url: $('table#sortable').data('aplicable-url')

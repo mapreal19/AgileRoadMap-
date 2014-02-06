@@ -9,24 +9,11 @@
       .checkbox
         %label
           %input#no_margen{type: 'checkbox', checked: 'checked'} Ocultar prácticas sin margen de mejora
+      .checkbox
+        %label
+          %input#no_aplicable{type: 'checkbox', checked: 'checked'} Ocultar practicas no aplicables
       
-  .col-sm-12
-    %table.table.table-bordered.table-striped
-      %thead
-        %tr
-          %th Código
-          %th Objetivo específico de mejora
-          %th Satisfacción del cliente
-          %th Motivación y compromiso del equipo
-          %th Productividad
-      %tbody
-        - @objetivos.each do |objetivo|
-          %tr.objetivo{data: {ids: "#{objetivo.get_json_practicas_ids}"}}
-            %td= objetivo.id
-            %td.text_left= objetivo.name
-            %td= 'X' if objetivo.sat_client
-            %td= 'X' if objetivo.equipo
-            %td= 'X' if objetivo.productivity
+  = render 'objetivos'
 
   .headline
     %h2#mapa Mapa Prácticas Ágiles
@@ -44,7 +31,7 @@
       %tbody
         - @practicas.each do |practica|
           %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, 
-          class: "item practica#{' no-margen' if practica.range == 0}", 
+          class: "item practica#{' no-margen' if practica.range == 0}#{' no-aplicable' if practica.no_aplicable}", 
           style: "#{' display:none;' if practica.range == 0}"}
             %td= practica.legacy_position
             %td.text_left
