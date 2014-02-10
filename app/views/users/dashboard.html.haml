@@ -2,6 +2,12 @@
 = render 'layouts/header'
 
 .container
+      
+  = render 'objetivos'
+
+  .headline
+    %h2#mapa Mapa Prácticas Ágiles
+
   .row 
     .panel-body
       .checkbox
@@ -10,11 +16,7 @@
       .checkbox
         %label
           %input#no_aplicable{type: 'checkbox'} Ocultar practicas no aplicables
-      
-  = render 'objetivos'
 
-  .headline
-    %h2#mapa Mapa Prácticas Ágiles
   .col-xs-12.col-sm-12  
     .table-responsive
       %table.table.table-bordered.table-striped#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
