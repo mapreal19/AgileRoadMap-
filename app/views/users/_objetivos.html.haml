@@ -2,21 +2,22 @@
   %h2 Objetivos
   = link_to "(Mostrar/Ocultar)", "#", id: 'toggle_objetivos'
 .col-sm-12
-  %table#tabla_objetivos.table.table-bordered.table-striped
-    %thead
-      %tr
-        %th Código
-        %th Objetivo específico de mejora
-        %th Satisfacción del cliente
-        %th Motivación y compromiso del equipo
-        %th Productividad
-    %tbody
-      - @objetivos.each do |objetivo|
-        %tr.objetivo{data: {ids: "#{objetivo.get_json_practicas_ids}"}}
-          %td= objetivo.id
-          %td.text_left
-            = objetivo.name 
-            = link_to '(Ver Prácticas)', '#', class: 'ver-practica'
-          %td= 'X' if objetivo.sat_client
-          %td= 'X' if objetivo.equipo
-          %td= 'X' if objetivo.productivity
+  .table-responsive
+    %table#tabla_objetivos.table.table-bordered.table-striped
+      %thead
+        %tr
+          %th Código
+          %th Objetivo específico de mejora
+          %th Satisfacción del cliente
+          %th Motivación y compromiso del equipo
+          %th Productividad
+      %tbody
+        - @objetivos.each do |objetivo|
+          %tr.objetivo{data: {ids: "#{objetivo.get_json_practicas_ids}"}}
+            %td= objetivo.id
+            %td.text_left
+              = objetivo.name 
+              = link_to '(Ver Prácticas)', '#', class: 'ver-practica'
+            %td= 'X' if objetivo.sat_client
+            %td= 'X' if objetivo.equipo
+            %td= 'X' if objetivo.productivity
