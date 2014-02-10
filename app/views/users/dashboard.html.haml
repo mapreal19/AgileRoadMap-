@@ -40,8 +40,8 @@
                 = practica.name
                 - unless practica.legacy_position.nil?
                   =# link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
-                  %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
-                    (+info)
+                  %a.tooltip-info{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
+                    %i.icon-info-sign{"style" => "text-decoration:none"}
               %td.hidden-xs= practica.agile_method.blank? ? '---' : practica.agile_method
               -# http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select
               %td.hidden-xs= UserPractica::ESFUERZO[practica.effort]
@@ -55,6 +55,7 @@
 
 :javascript
   $(document).ready( function() {
+      $('.tooltip-info').tooltip();
       App.sort();
       App.toggleTablaObjetivos();
       App.updateRange();
