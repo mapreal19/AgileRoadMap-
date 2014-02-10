@@ -91,8 +91,8 @@ jQuery ->
     $(".ver-practica").click ->
       $this = $(this)
       ids = $this.parent().parent().data('ids')
-      $('.practica').removeClass("success")
-      $('.contribucion').remove()
+      
+      App.resetFilasTablaPracs()
       
       # id[0] -> practica_id 
       # id[1] -> valor de contribución
@@ -101,15 +101,18 @@ jQuery ->
         $('tr[data-practica-id="' + id[0] + '"]').addClass("success")
         $('tr[data-practica-id="' + id[0] + '"]').append('<td class="contribucion">' + id[1] + '</td')
 
+      $('table#sortable thead tr').append('<th class="col-sm-1 col-xs-1 valor-contribucion">Contribución del objetivo</th>')
+
       $("html, body").animate
         scrollTop: $("#mapa").offset().top
       , 2000
 
-  # Helpers functions
+  # Helper functions
   
   App.resetFilasTablaPracs = () ->
     $('.practica').removeClass("success")
     $('.contribucion').remove()
+    $('.valor-contribucion').remove()
       
 
 ###$('#post_title').change(function() {

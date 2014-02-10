@@ -15,12 +15,12 @@
 
   .headline
     %h2#mapa Mapa Prácticas Ágiles
-  .col-xs-11.col-sm-12  
+  .col-xs-12.col-sm-12  
     %table.table.table-bordered.table-striped#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
       %thead
         %tr
-          %th.col-sm-1.col-xs-3 Orden
-          %th.col-sm-4.col-xs-8 Nombre de la Práctica Ágil
+          %th.col-sm-1.col-xs-2 Orden
+          %th.col-sm-3.col-xs-7 Nombre de la Práctica Ágil
           %th.col-sm-1.hidden-xs Método Ágil
           %th.col-sm-1.hidden-xs Esfuerzo Implantación
           %th.col-sm-2.hidden-xs Margen de Mejora
