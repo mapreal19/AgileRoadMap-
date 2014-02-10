@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@media (min-width: 768px) {
+	.modal-lg {
+	width: 900px;
+	}
+}
+
 table { 
 	th {
 		text-align: center;

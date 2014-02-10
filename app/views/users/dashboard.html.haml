@@ -36,6 +36,8 @@
               = practica.name
               - unless practica.legacy_position.nil?
                 = link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
+                %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
+                  Launch demo modal
             %td.hidden-xs= practica.agile_method.blank? ? '---' : practica.agile_method
             -# http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select
             %td.hidden-xs= UserPractica::ESFUERZO[practica.effort]
@@ -44,6 +46,7 @@
             %td.hidden-xs= text_area_tag 'bio', practica.comment, class: 'comment form-control'
             %td= check_box_tag 'no_aplicable' + practica.legacy_position.to_s, practica.no_aplicable, practica.no_aplicable,
             class: 'no-aplicable-checkbox'
+            = render :partial => 'modal', locals: {practica: practica}
 
 :javascript
   $(document).ready( function() {
