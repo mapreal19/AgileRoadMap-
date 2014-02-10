@@ -7,6 +7,7 @@ jQuery ->
   App.toggleTablaObjetivos = toggleTablaObjetivos = () ->
     $('#toggle_objetivos').click ->
       $('#tabla_objetivos').toggle 'slow'
+      App.resetFilasTablaPracs()
 
   App.noMargenCheckBox = noMargenCheckBox = () ->
     $("#no_margen").change ->
@@ -103,6 +104,13 @@ jQuery ->
       $("html, body").animate
         scrollTop: $("#mapa").offset().top
       , 2000
+
+  # Helpers functions
+  
+  App.resetFilasTablaPracs = () ->
+    $('.practica').removeClass("success")
+    $('.contribucion').remove()
+      
 
 ###$('#post_title').change(function() {
   // Do your stuff, instantiate variables, etc...
