@@ -1,0 +1,21 @@
+/ Modal
+.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1", id: "myModal_#{practica.id}"}
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title 
+          = practica_legacy.name
+      .modal-body       
+        .headline
+          %h2 Descripción
+        = practica_legacy.description
+        .headline
+          %h2 Método Ágil
+        = practica_legacy.agile_method
+        .headline
+          %h2 Esfuerzo
+        = Practica::ESFUERZO[practica_legacy.effort]
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cerrar
+        
