@@ -88,6 +88,8 @@ jQuery ->
 
   # Muestra las prácticas relacionadas con el objetivo seleccionado
   App.objetivoClick = objetivoClick = () ->
+    valoresContribucion = {1: 'Muy Baja', 2: 'Baja', 3: 'Media', 4: 'Alta', 5: 'Muy Alta'}
+
     $(".ver-practica").click ->
       $this = $(this)
       ids = $this.parent().parent().data('ids')
@@ -99,7 +101,7 @@ jQuery ->
       console.log(ids)
       for id in ids
         $('tr[data-practica-id="' + id[0] + '"]').addClass("success")
-        $('tr[data-practica-id="' + id[0] + '"]').append('<td class="contribucion">' + id[1] + '</td')
+        $('tr[data-practica-id="' + id[0] + '"]').append('<td class="contribucion">' + valoresContribucion[id[1]] + '</td')
 
       $('table#sortable thead tr').append('<th class="col-sm-1 col-xs-1 valor-contribucion">Contribución del objetivo</th>')
 
