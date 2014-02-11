@@ -18,43 +18,43 @@
           %input#no_aplicable{type: 'checkbox'} Ocultar practicas no aplicables
 
   .col-xs-12.col-sm-12  
-    .table-responsive
-      %table.table.table-bordered.table-striped#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
-        %thead
-          %tr
-            %th.col-sm-1 
-              %i.icon-move
-            %th.col-sm-1.col-xs-2 Orden
-            %th.col-sm-3.col-xs-7 Nombre de la Práctica Ágil
-            %th.col-sm-1.hidden-xs Método Ágil
-            %th.col-sm-1.hidden-xs Esfuerzo Implantación
-            %th.col-sm-2.hidden-xs Margen de Mejora
-            %th.col-sm-2.hidden-xs Notas
-            %th.col-sm-1.col-xs-1 No aplicable 
-        %tbody
-          - @practicas.each do |practica|
-            %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, 
-            class: "item practica#{' no-margen' if practica.range == 0}#{' no-aplicable' if practica.no_aplicable}", 
-            }
-              %td
-                %i.icon-move.handle{"style" => "cursor:move"}
-              %td.orden= practica.position
-              %td.text_left
-                = "#{practica.legacy_position}- "
-                = practica.name
-                - unless practica.legacy_position.nil?
-                  =# link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
-                  %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
-                    %i.icon-info-sign.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
-              %td.hidden-xs= practica.agile_method.blank? ? '---' : practica.agile_method
-              -# http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select
-              %td.hidden-xs= UserPractica::ESFUERZO[practica.effort]
-              -#%td=collection_select(:practica, :effort, UserPractica::ESFUERZO, :first, :last, :prompt => true)
-              %td.hidden-xs= select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range),prompt: "No definido", class: 'range form-control')
-              %td.hidden-xs= text_area_tag 'bio', practica.comment, class: 'comment form-control'
-              %td= check_box_tag 'no_aplicable' + practica.legacy_position.to_s, practica.no_aplicable, practica.no_aplicable, class: 'no-aplicable-checkbox'
-              / Modal
-              = render :partial => 'modal', locals: {practica: practica, practica_legacy: practica.practica}
+    
+    %table.table.table-bordered.table-striped#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
+      %thead
+        %tr
+          %th.col-sm-1.col-xs-3
+            %i.icon-move
+          %th.col-sm-1.hidden-xs Orden
+          %th.col-sm-3.col-xs-7 Nombre de la Práctica Ágil
+          %th.col-sm-1.hidden-xs Método Ágil
+          %th.col-sm-1.hidden-xs Esfuerzo Implantación
+          %th.col-sm-2.hidden-xs Margen de Mejora
+          %th.col-sm-2.hidden-xs Notas
+          %th.col-sm-1.col-xs-2 No aplicable 
+      %tbody
+        - @practicas.each do |practica|
+          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, 
+          class: "item practica#{' no-margen' if practica.range == 0}#{' no-aplicable' if practica.no_aplicable}", 
+          }
+            %td.handle
+              %i.icon-move{"style" => "cursor:move"}
+            %td.orden.hidden-xs= practica.position
+            %td.text_left
+              = "#{practica.legacy_position}- "
+              = practica.name
+              - unless practica.legacy_position.nil?
+                =# link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
+                %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
+                  %i.icon-info-sign.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
+            %td.hidden-xs= practica.agile_method.blank? ? '---' : practica.agile_method
+            -# http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select
+            %td.hidden-xs= UserPractica::ESFUERZO[practica.effort]
+            -#%td=collection_select(:practica, :effort, UserPractica::ESFUERZO, :first, :last, :prompt => true)
+            %td.hidden-xs= select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range),prompt: "No definido", class: 'range form-control')
+            %td.hidden-xs= text_area_tag 'bio', practica.comment, class: 'comment form-control'
+            %td= check_box_tag 'no_aplicable' + practica.legacy_position.to_s, practica.no_aplicable, practica.no_aplicable, class: 'no-aplicable-checkbox'
+            / Modal
+            = render :partial => 'modal', locals: {practica: practica, practica_legacy: practica.practica}
 
 :javascript
   $(document).ready( function() {
