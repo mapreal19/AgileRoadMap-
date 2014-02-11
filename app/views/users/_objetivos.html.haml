@@ -17,7 +17,8 @@
             %td= objetivo.id
             %td.text_left
               = objetivo.name 
-              = link_to '(Ver Prácticas)', '#', class: 'ver-practica'
+              %a.ver-practica.tooltip-info{href: '#', style: "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Remarcar prácticas que contribuyen al objetivo"}
+                %i.icon-eye-open
             %td= 'X' if objetivo.sat_client
             %td= 'X' if objetivo.equipo
             %td= 'X' if objetivo.productivity
