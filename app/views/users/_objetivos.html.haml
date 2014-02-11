@@ -19,6 +19,12 @@
               = objetivo.name 
               %a.ver-practica.tooltip-info{href: '#', style: "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Remarcar prácticas que contribuyen al objetivo"}
                 %i.icon-eye-open
-            %td= 'X' if objetivo.sat_client
-            %td= 'X' if objetivo.equipo
-            %td= 'X' if objetivo.productivity
+            %td
+              -if objetivo.sat_client
+                %i.icon-ok
+            %td
+              -if objetivo.equipo
+                %i.icon-ok
+            %td 
+              -if objetivo.productivity
+                %i.icon-ok
