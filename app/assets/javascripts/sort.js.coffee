@@ -16,11 +16,13 @@ jQuery ->
       for fila in filas
         $fila = $(fila)
         new_index = $fila.index() + 1 # Para empezar desde el 1 y no el 0
-        $(fila).find('td').first().text(new_index)
+        $(fila).find('td.orden').first().text(new_index)
 
     $('#sortable').sortable(
       axis: 'y'
       items: '.item'
+
+      handle: ".handle"
 
       # highlight the row on drop to indicate an update
       stop: (e, ui) ->
