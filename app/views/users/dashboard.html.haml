@@ -19,7 +19,7 @@
 
   .col-xs-12.col-sm-12  
     
-    %table.table.table-bordered#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
+    %table.table.table-bordered.table-hover#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
       %thead
         %tr
           %th.col-sm-1.col-xs-3
@@ -36,8 +36,8 @@
           %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, 
           class: "item practica#{' no-margen' if practica.range == 0}#{' no-aplicable' if practica.no_aplicable}#{' warning' if practica.range == -1}", 
           }
-            %td.handle
-              %i.icon-move{"style" => "cursor:move"}
+            %td.handle{"style" => "cursor:move"}
+              %i.icon-move
             %td.orden.hidden-xs= practica.position
             %td.text_left
               = "#{practica.legacy_position}- "
