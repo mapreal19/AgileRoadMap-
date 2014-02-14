@@ -10,14 +10,20 @@
 
   .row 
     .panel-body
-      .checkbox
-        %label
-          %input#no_margen{type: 'checkbox'} Ocultar prácticas sin margen de mejora
-      .checkbox
-        %label
-          %input#no_aplicable{type: 'checkbox'} Ocultar practicas no aplicables
-      %i.icon-group Práctica aplicada a nivel de equipo
-      %i.icon-wrench Práctica aplicada a nivel de producto/servicio
+      .col-xs-12 
+        .checkbox
+          %label
+            %input#no_margen{type: 'checkbox'} Ocultar prácticas sin margen de mejora
+      .col-xs-12 
+        .checkbox
+          %label
+            %input#no_aplicable{type: 'checkbox'} Ocultar practicas no aplicables
+      .col-xs-12 
+        %i.icon-group
+        Práctica aplicada a nivel de equipo
+      .col-xs-12 
+        %i.icon-wrench
+        Práctica aplicada a nivel de producto/servicio
 
   .col-xs-12.col-sm-12  
     
@@ -42,9 +48,11 @@
               %i.icon-move
             %td.orden.hidden-xs= practica.position
             %td.text_left
-              %i.icon-group
-              %i.icon-wrench
               = "#{practica.legacy_position}- "
+              - if practica.practica.ambito_decision == 'equipo'
+                %i.icon-group
+              - else
+                %i.icon-wrench
               = practica.name
               - unless practica.legacy_position.nil?
                 =# link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
@@ -52,10 +60,8 @@
                   %i.icon-info-sign.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
             / Práctica ágil
             %td.hidden-xs= practica.agile_method.blank? ? '---' : practica.agile_method
-            -# http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select
             / Esfuerzo
             %td.hidden-xs= UserPractica::ESFUERZO[practica.effort]
-            -#%td=collection_select(:practica, :effort, UserPractica::ESFUERZO, :first, :last, :prompt => true)
             / Margen de aplicación
             %td.hidden-xs= select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range), class: 'range form-control')
             %td.hidden-xs= text_area_tag 'bio', practica.comment, class: 'comment form-control'
