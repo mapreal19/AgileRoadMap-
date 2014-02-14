@@ -48,16 +48,18 @@
               %i.icon-move
             %td.orden.hidden-xs= practica.position
             %td.text_left
-              = "#{practica.legacy_position}- "
-              - if practica.practica.ambito_decision == 'equipo'
-                %i.icon-group
-              - else
-                %i.icon-wrench
+              %span.badge
+                = "#{practica.legacy_position}"
               = practica.name
               - unless practica.legacy_position.nil?
                 =# link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
                 %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
                   %i.icon-info-sign.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
+              / Ámbito de decisión
+              - if practica.practica.ambito_decision == 'equipo'
+                %i.icon-group
+              - else
+                %i.icon-wrench
             / Práctica ágil
             %td.hidden-xs= practica.agile_method.blank? ? '---' : practica.agile_method
             / Esfuerzo
