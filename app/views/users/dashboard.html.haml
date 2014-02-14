@@ -16,6 +16,8 @@
       .checkbox
         %label
           %input#no_aplicable{type: 'checkbox'} Ocultar practicas no aplicables
+      %i.icon-group Práctica aplicada a nivel de equipo
+      %i.icon-wrench Práctica aplicada a nivel de producto/servicio
 
   .col-xs-12.col-sm-12  
     
@@ -40,6 +42,8 @@
               %i.icon-move
             %td.orden.hidden-xs= practica.position
             %td.text_left
+              %i.icon-group
+              %i.icon-wrench
               = "#{practica.legacy_position}- "
               = practica.name
               - unless practica.legacy_position.nil?
