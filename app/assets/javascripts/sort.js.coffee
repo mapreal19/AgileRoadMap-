@@ -11,11 +11,18 @@ jQuery ->
     $('.table').find('tr')[0].cells[0]
     $(p).css('width')
     ###
-
+    updateRowIndex = ->
+      filas = $('.item')
+      for fila in filas
+        $fila = $(fila)
+        new_index = $fila.index() + 1 # Para empezar desde el 1 y no el 0
+        $(fila).find('td.orden').first().text(new_index)
 
     $('#sortable').sortable(
       axis: 'y'
       items: '.item'
+
+      handle: ".handle"
 
       # highlight the row on drop to indicate an update
       stop: (e, ui) ->
@@ -33,4 +40,5 @@ jQuery ->
           # row_order is the default column name expected in ranked-model
           data: { id: item_id, user_practica: { row_order_position: position } }
         )
+        updateRowIndex()        
     )

@@ -29,7 +29,8 @@ class User < ActiveRecord::Base
 				agile_method: practica.agile_method, 
 				position: practica.position, 
 				legacy_position: practica.position,
-				effort: practica.effort).save
+				effort: practica.effort,
+				range: -1).save
 		end
 	end
 

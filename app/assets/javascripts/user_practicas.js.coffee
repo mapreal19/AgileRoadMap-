@@ -7,6 +7,7 @@ jQuery ->
   App.toggleTablaObjetivos = toggleTablaObjetivos = () ->
     $('#toggle_objetivos').click ->
       $('#tabla_objetivos').toggle 'slow'
+      App.resetFilasTablaPracs()
 
   App.noMargenCheckBox = noMargenCheckBox = () ->
     $("#no_margen").change ->
@@ -55,6 +56,12 @@ jQuery ->
       item_id = fila_practica.data('item-id')
       range_new = $this.val()
 
+      # Si no se define margen añadir warning
+      if range_new >= 0
+        fila_practica.removeClass("warning")
+      else
+        fila_practica.addClass("warning")
+
       # Si el rango es ninguno y el checkbox está activado
       if (range_new == "0" and $('#no_margen').is(':checked'))
         fila_practica.fadeOut "slow", ->
@@ -87,22 +94,34 @@ jQuery ->
 
   # Muestra las prácticas relacionadas con el objetivo seleccionado
   App.objetivoClick = objetivoClick = () ->
+    valoresContribucion = {1: 'Muy Baja', 2: 'Baja', 3: 'Media', 4: 'Alta', 5: 'Muy Alta'}
+
     $(".ver-practica").click ->
       $this = $(this)
       ids = $this.parent().parent().data('ids')
-      $('.practica').removeClass("success")
-      $('.contribucion').remove()
+      
+      App.resetFilasTablaPracs()
       
       # id[0] -> practica_id 
       # id[1] -> valor de contribución
       console.log(ids)
       for id in ids
         $('tr[data-practica-id="' + id[0] + '"]').addClass("success")
-        $('tr[data-practica-id="' + id[0] + '"]').append('<td class="contribucion">' + id[1] + '</td')
+        $('tr[data-practica-id="' + id[0] + '"]').append('<td class="contribucion">' + valoresContribucion[id[1]] + '</td')
+
+      $('table#sortable thead tr').append('<th class="col-sm-1 col-xs-1 valor-contribucion">Contribución del objetivo</th>')
 
       $("html, body").animate
         scrollTop: $("#mapa").offset().top
       , 2000
+
+  # Helper functions
+  
+  App.resetFilasTablaPracs = () ->
+    $('.practica').removeClass("success")
+    $('.contribucion').remove()
+    $('.valor-contribucion').remove()
+      
 
 ###$('#post_title').change(function() {
   // Do your stuff, instantiate variables, etc...
