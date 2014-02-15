@@ -1,7 +1,7 @@
 class CreateDesafios < ActiveRecord::Migration
   def change
     create_table :desafios do |t|
-      t.string :nombre
+      t.string :name
 
       t.timestamps
     end

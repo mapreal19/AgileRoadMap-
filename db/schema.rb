@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140215171846) do
   end
 
   create_table "desafios", force: true do |t|
-    t.string   "nombre"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
