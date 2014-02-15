@@ -2,7 +2,7 @@
   %h2 Objetivos
   = link_to "(Mostrar/Ocultar)", "#", id: 'toggle_objetivos'
 .col-xs-12
-  %table#tabla_objetivos.table.table-bordered.table-striped{ style: "display:none"}
+  %table#tabla_objetivos.table.table-bordered.table-striped{ :data => { update_url: user_objetivos_sort_path }, style: "display:none"}
     %thead
       %tr
         %th.col-sm-1.col-xs-3
@@ -14,10 +14,10 @@
         %th.col-sm-1.hidden-xs Productividad
     %tbody
       - @objetivos.each do |objetivo|
-        %tr.objetivo{data: {ids: "#{objetivo.objetivo.get_json_practicas_ids}"}}
+        %tr.objetivo.item-objetivo{data: {ids: "#{objetivo.objetivo.get_json_practicas_ids}", item_id: "#{objetivo.id}"}}
           %td.handle{"style" => "cursor:move"}
             %i.icon-move
-          %td.hidden-xs= objetivo.position
+          %td.orden.hidden-xs= objetivo.position
           %td.text_left
             %span.badge
               = "#{objetivo.objetivo.id}"

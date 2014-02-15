@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
 	def clone_objetivos
 		all_objetivos = Objetivo.all
 
-		index = 0
+		index = 1
 		all_objetivos.each do |objetivo|
 			self.user_objetivos.build(
 				objetivo_id: objetivo.id, 
