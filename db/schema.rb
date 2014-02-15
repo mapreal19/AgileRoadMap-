@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140214103918) do
+ActiveRecord::Schema.define(version: 20140215103650) do
 
   create_table "contribucions", force: true do |t|
     t.integer  "practica_id"
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 20140214103918) do
     t.integer  "effort"
     t.text     "description"
     t.string   "ambito_decision"
+  end
+
+  create_table "user_objetivos", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "objetivo_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_practicas", force: true do |t|
