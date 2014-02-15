@@ -20,10 +20,10 @@
             %input#no_aplicable{type: 'checkbox'} Ocultar practicas no aplicables
       .col-xs-12 
         %i.icon-group
-        Práctica aplicada a nivel de equipo
+        Práctica definida a nivel de equipo
       .col-xs-12 
         %i.icon-wrench
-        Práctica aplicada a nivel de producto/servicio
+        Práctica definida a nivel de producto/servicio
 
   .col-xs-12.col-sm-12  
     
@@ -50,16 +50,17 @@
             %td.text_left
               %span.badge
                 = "#{practica.legacy_position}"
-              = practica.name
-              - unless practica.legacy_position.nil?
-                =# link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
-                %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
-                  %i.icon-info-sign.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
               / Ámbito de decisión
               - if practica.practica.ambito_decision == 'equipo'
                 %i.icon-group
               - else
                 %i.icon-wrench
+              = practica.name
+              - unless practica.legacy_position.nil?
+                =# link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
+                %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
+                  %i.icon-info-sign.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
+              
             / Práctica ágil
             %td.hidden-xs= practica.agile_method.blank? ? '---' : practica.agile_method
             / Esfuerzo
