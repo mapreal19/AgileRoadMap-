@@ -9,6 +9,12 @@ jQuery ->
       $('#tabla_objetivos').toggle 'slow'
       App.resetFilasTablaPracs()
 
+      # Reset Tabla Objetivos
+      $('.objetivo-eye-close').hide()
+      $('.objetivo-eye-open').show()
+      $('#tabla_objetivos tr.active').removeClass('active')
+
+
   App.noMargenCheckBox = noMargenCheckBox = () ->
     $("#no_margen").change ->
       if @checked
