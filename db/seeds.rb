@@ -217,7 +217,7 @@ Practica.create!({id: 16, position: 42, name: "Mejorar continuamente la organiza
 
 # --- [END]42 Prácticas Ágiles ---
 
-# --- Contribuciones TODO:
+# --- Contribuciones ---
 Contribucion.delete_all
 
 # Alineación del trabajo...
@@ -331,4 +331,50 @@ Contribucion.create!({practica_id: 41, objetivo_id: 15, valor: 3})
 Contribucion.create!({practica_id: 17, objetivo_id: 15, valor: 3})
 Contribucion.create!({practica_id: 14, objetivo_id: 15, valor: 3})
 Contribucion.create!({practica_id: 23, objetivo_id: 15, valor: 2})
+
+# --- [END] Contribuciones ---
+
+# --- Desafíos ---
+# Regex: ^(\d+)\s(.*) --> Desafio.create!({id: $1, name: '$2'})
+
+Desafio.delete_all
+
+
+Desafio.create!({id: 42, name: 'Medir el progreso del trabajo respecto del grado de avance de las funcionalidades, características o servicios que aprovechará el cliente, no por volumen o avance de documentación u otros artefactos que acompañan al producto o servicio'})
+Desafio.create!({id: 53, name: 'Definir el trabajo en términos de incrementos en las características que ofrece el producto o servicio que se le ofrece al cliente, no en términos de actividades o artefactos necesarios desde la perspectiva técnica'})
+Desafio.create!({id: 10, name: 'Hábito de elaboración y aprovechamiento de la documentación durante el proceso, no solo para acompañar a la entrega'})
+Desafio.create!({id: 2, name: 'Experiencia en definición y aplicación de pruebas de aceptación'})
+Desafio.create!({id: 5, name: 'Experiencia y hábito de realización de estimaciones (si el producto o servicio lo requiere)'})
+Desafio.create!({id: 29, name: 'Disciplina de registro del progreso del trabajo (si el producto o servicio lo requiere)'})
+Desafio.create!({id: 38, name: 'Tener la posibilidad de racionalizar la documentación'})
+Desafio.create!({id: 50, name: 'Conseguir el apoyo de la dirección para implantar esta práctica'})
+Desafio.create!({id: 6, name: 'Posibilidad de añadir, modificar o incluso eliminar total o parcialmente la documentación utilizada en el proceso'})
+Desafio.create!({id: 16, name: 'Conseguir reunir en el mismo espacio físico a todos los que intervienen en las actividades necasarias para realizar el trabajo'})
+Desafio.create!({id: 22, name: 'Disponer de un espacio acondicionado para el trabajo en equipo'})
+Desafio.create!({id: 23, name: 'Conseguir que los integrantes del equipo estén dispuestos a realizar actividades que no sean de su especialidad o preferencia'})
+Desafio.create!({id: 24, name: 'Conseguir tener en el equipo integrantes que tengan habilidades para abordar todas las actividades necesarias para terminar un trabajo'})
+Desafio.create!({id: 25, name: 'Disciplina de reuniones efectivas, que incluya: tener un moderador, anticipar el propósito e información relevante, etc.'})
+Desafio.create!({id: 28, name: 'Transparencia en cuanto a la información asociada al trabajo y a los encargados de realizarlo'})
+Desafio.create!({id: 30, name: 'Tener un representante de la parte cliente que ofrezca alta disponibilidad para que el equipo interactúe con él'})
+Desafio.create!({id: 41, name: 'Conseguir un único y buen representante de la parte cliente'})
+Desafio.create!({id: 31, name: 'Experiencia en automatización de pruebas'})
+Desafio.create!({id: 32, name: 'Infraestructura para la ejecución de pruebas automatizadas'})
+Desafio.create!({id: 33, name: 'Experiencia, infraestructura y disciplina para integración continua'})
+Desafio.create!({id: 34, name: 'Buena actitud de los miembros del equipo para trabajar en conjunto en una misma actividad para determinadas unidades de trabajo'})
+Desafio.create!({id: 54, name: 'Contar con un mecanismo de incentivos que valore el desempeño del equipo, no solo el desempeño de cada integrante'})
+Desafio.create!({id: 37, name: 'Experiencia y capacidad de los miembros del equipo para tomar decisiones técnicas acertadas'})
+Desafio.create!({id: 36, name: 'Proactividad y habilidad de los miembros del equipo para auto-gestionarse individualmente y/o en equipo'})
+Desafio.create!({id: 40, name: 'Experiencia en refactorización'})
+Desafio.create!({id: 44, name: 'Conseguir que el representante de la parte cliente asuma el liderazgo'})
+Desafio.create!({id: 43, name: 'Alinear la planificación con un proceso incremental, en el cual se acuerdan las unidades de trabajo que se entregan en cierto plazo, sin  detallar cómo se organiza el equipo para cumplir dicho plazo'})
+Desafio.create!({id: 1, name: 'Conseguir que no se añada trabajo adicional al acordado para un período planificado, excepto por urgencias y/o cambios de prioridades'})
+Desafio.create!({id: 46, name: 'Conseguir que representantes de la parte cliente participen en las revisiones de cada entrega'})
+Desafio.create!({id: 35, name: 'Que el equipo tenga un líder-facilitador en lugar de un jefe autoritario'})
+Desafio.create!({id: 48, name: 'Evitar que los miembros del equipo tengan damasiadas unidades de trabajo asignadas. Privilegiar el terminar unidades de trabajo asignadas en lugar de asignar(se) nuevas'})
+Desafio.create!({id: 26, name: 'Evitar las interrupciones a miembros del equipo, en su lugar promover la realización de reuniones programadas, especialmente cuando la interrupción pueda ser de más de 10 minutos (orientativo)'})
+Desafio.create!({id: 52, name: 'Desistir de realizar un balanceo de carga de trabajo de los miembros del equipo pues sólo tendrían asignado el trabajo en el cual están trabajando, no se realizarían asignaciones a futuro, salvo en casos excepcionales.'})
+Desafio.create!({id: 51, name: 'Que el cliente esté de acuerdo en recibir como entrega lo mínimo que pueda serle útil en un momento determinado'})
+Desafio.create!({id: 49, name: 'Si existe un contrato con la parte cliente, que sea flexible en cuando a contenido. Que se puedan añadir, quitar o modificar parte del trabajo acordado, pero manteniendo la consistencia entre el esfuerzo previsto y la capacidad del equipo.'})
+Desafio.create!({id: 55, name: 'Contar con una de definición de puestos de trabajo y remuneraciones compatible con la diversidad de actividades que se pretende que puedan llegar a realizar los integrantes del equipo'})
+Desafio.create!({id: 47, name: 'Evitar que el equipo esté simultaneamente trabajando en demasiados productos, servicios o proyectos. Priorizar el trabajo de manera que un equipo no se vea obligado a distribuir su capacidad entre contextos de trabajo diferentes'})
 
