@@ -1,0 +1,19 @@
+.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1", id: "desafio_#{practica_id}"}
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title 
+          Desafíos
+      .modal-body       
+        %ul.list-unstyled
+          - desafios.each do |desafio|
+            %li
+              %strong  
+                = desafio.id
+              = '- '
+              = desafio.name
+
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cerrar
+        
