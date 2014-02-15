@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   	if @user.save
   		sign_in @user
       @user.clone_practicas
+      @user.clone_objetivos
       flash[:success] = t(:welcome)
   		redirect_to dashboard_url and return
   	else
