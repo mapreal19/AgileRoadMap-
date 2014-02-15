@@ -42,8 +42,7 @@
       %tbody
         - @practicas.each do |practica|
           %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, 
-          class: "item practica#{' no-margen' if practica.range == 0}#{' no-aplicable' if practica.no_aplicable}#{' warning' if practica.range == -1}", 
-          }
+          class: "item practica#{' no-margen' if practica.range == 0} #{' no-aplicable' if practica.no_aplicable}"}
             %td.handle{"style" => "cursor:move"}
               %i.icon-move
             %td.orden.hidden-xs= practica.position
@@ -65,8 +64,9 @@
             %td.hidden-xs= practica.agile_method.blank? ? '---' : practica.agile_method
             / Esfuerzo
             %td.hidden-xs= UserPractica::ESFUERZO[practica.effort]
-            / Margen de aplicación
-            %td.hidden-xs= select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range), class: 'range form-control')
+            / Margen de mejora
+            %td.hidden-xs{ class: "#{' warning' if practica.range == -1}"}
+              = select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range), class: 'range form-control')
             %td.hidden-xs= text_area_tag 'bio', practica.comment, class: 'comment form-control'
             %td= check_box_tag 'no_aplicable' + practica.legacy_position.to_s, practica.no_aplicable, practica.no_aplicable, class: 'no-aplicable-checkbox'
             / Modal
