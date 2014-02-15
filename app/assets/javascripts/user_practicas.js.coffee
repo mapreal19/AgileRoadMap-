@@ -58,9 +58,11 @@ jQuery ->
 
       # Si no se define margen añadir warning
       if range_new >= 0
-        fila_practica.removeClass("warning")
+        $this.removeClass("amarillo")
+        #fila_practica.removeClass("warning")
       else
-        fila_practica.addClass("warning")
+        $this.addClass "amarillo"
+        #fila_practica.addClass("warning")
 
       # Si el rango es ninguno y el checkbox está activado
       if (range_new == "0" and $('#no_margen').is(':checked'))
