@@ -18,7 +18,8 @@
             %td.text_left
               = objetivo.name 
               %a.ver-practica.tooltip-info{href: '#', style: "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Remarcar prácticas que contribuyen al objetivo"}
-                %i.icon-eye-open
+                %i.icon-eye-open.objetivo-eye-open
+                %i.icon-eye-close.objetivo-eye-close{ style: "display:none"}
             %td
               -if objetivo.sat_client
                 %i.icon-ok

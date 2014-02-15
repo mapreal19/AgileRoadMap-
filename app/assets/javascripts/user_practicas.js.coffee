@@ -101,19 +101,29 @@ jQuery ->
       ids = $this.parent().parent().data('ids')
       
       App.resetFilasTablaPracs()
-      
-      # id[0] -> practica_id 
-      # id[1] -> valor de contribución
-      console.log(ids)
-      for id in ids
-        $('tr[data-practica-id="' + id[0] + '"]').addClass("success")
-        $('tr[data-practica-id="' + id[0] + '"]').append('<td class="contribucion">' + valoresContribucion[id[1]] + '</td')
 
-      $('table#sortable thead tr').append('<th class="col-sm-1 col-xs-1 valor-contribucion">Contribución del objetivo</th>')
+      # Mostramos ojo tachado y ocultamos ojo.
+      $this.find('.objetivo-eye-close').toggle()
+      $this.find('.objetivo-eye-open').toggle()
 
-      $("html, body").animate
-        scrollTop: $("#mapa").offset().top
-      , 2000
+      if $this.find('.objetivo-eye-close').css('display') == 'none'
+        # Desactivamos
+        $this.parent().parent().removeClass('active')
+        return
+      else
+        $this.parent().parent().addClass('active')
+        
+        # id[0] -> practica_id 
+        # id[1] -> valor de contribución
+        for id in ids
+          $('tr[data-practica-id="' + id[0] + '"]').addClass("success")
+          $('tr[data-practica-id="' + id[0] + '"]').append('<td class="contribucion">' + valoresContribucion[id[1]] + '</td')
+
+        $('table#sortable thead tr').append('<th class="col-sm-1 col-xs-1 valor-contribucion">Contribución del objetivo</th>')
+
+        $("html, body").animate
+          scrollTop: $("#mapa").offset().top
+        , 2000
 
   # Helper functions
   
