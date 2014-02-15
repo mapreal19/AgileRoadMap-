@@ -13,19 +13,19 @@
           %th Productividad
       %tbody
         - @objetivos.each do |objetivo|
-          %tr.objetivo{data: {ids: "#{objetivo.get_json_practicas_ids}"}}
-            %td= objetivo.id
+          %tr.objetivo{data: {ids: "#{objetivo.objetivo.get_json_practicas_ids}"}}
+            %td= objetivo.objetivo.id
             %td.text_left
-              = objetivo.name 
+              = objetivo.objetivo.name 
               %a.ver-practica.tooltip-info{href: '#', style: "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Remarcar prácticas que contribuyen al objetivo"}
                 %i.icon-eye-open.objetivo-eye-open
                 %i.icon-eye-close.objetivo-eye-close{ style: "display:none"}
             %td
-              -if objetivo.sat_client
+              -if objetivo.objetivo.sat_client
                 %i.icon-ok
             %td
-              -if objetivo.equipo
+              -if objetivo.objetivo.equipo
                 %i.icon-ok
             %td 
-              -if objetivo.productivity
+              -if objetivo.objetivo.productivity
                 %i.icon-ok
