@@ -15,4 +15,10 @@ class Practica < ActiveRecord::Base
 	has_many :inverse_relacion_practicas, class_name: "RelacionPractica", foreign_key: 'practica2_id'
 	has_many :inverse_practicas, through: :inverse_relacion_practicas, source: :practica
 
+	def get_json_relacion_practicas_ids
+		arr1 = self.relacion_practicas.pluck(:practica2_id)
+		arr2 = self.inverse_relacion_practicas.pluck(:practica_id)
+		ActiveSupport::JSON.encode(arr1 + arr2)
+	end
+
 end
