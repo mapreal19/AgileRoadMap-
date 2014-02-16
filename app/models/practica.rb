@@ -9,7 +9,10 @@ class Practica < ActiveRecord::Base
 
 	ESFUERZO = { 1 => 'Muy poco', 2 => 'Bajo', 3 => 'Medio', 4 => 'Alto', 5 => 'Muy alto'}
 
-	has_and_belongs_to_many :practicas_relacionadas, class_name: "Practica", 
-                                     join_table: "relacion_practicas",
-                                     association_foreign_key: "practica2_id"
+	has_many :relacion_practicas
+	has_many :practicas, through: :relacion_practicas
+	# Other side of the relation
+	has_many :inverse_relacion_practicas, class_name: "RelacionPractica", foreign_key: 'practica2_id'
+	has_many :inverse_practicas, through: :inverse_relacion_practicas, source: :practica
+
 end
