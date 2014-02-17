@@ -1,2 +1,16 @@
-%h1 PasswordResets#new
-%p Find me in app/views/password_resets/new.html.haml
+= render 'layouts/top'
+= render 'layouts/header'
+
+.container
+  .row
+    .col-xs-12
+      .headline
+        %h2
+          Reset Password
+      = form_tag password_resets_path, method: :post, class: 'form-inline' do
+
+        .form-group
+          = label_tag :email, nil, class: 'sr-only'
+          = text_field_tag :email, params[:email], class: 'form-control', placeholder: 'Introduce tu email'
+        .form-group
+          = submit_tag "Restablecer contraseña", class: 'btn btn-primary' 
