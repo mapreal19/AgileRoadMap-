@@ -1,5 +1,6 @@
 AgileRoadMap::Application.routes.draw do
 
+  get "password_resets/new"
   #get "practicas/show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -29,6 +30,8 @@ AgileRoadMap::Application.routes.draw do
     get "pages/about_us"
     resources :practicas, only: [:index, :show], path: 'mapa-practicas-agiles'
     #get 'mapa-practicas-agiles/:id' => 'practicas#show', as: :practica
+
+    resources :password_resets
 
   end
 
