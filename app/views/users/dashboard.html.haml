@@ -41,8 +41,7 @@
           %th.col-sm-1.col-xs-2.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Marcar cuando se considere directamente que la práctica no se aplicará", "data-container" => 'body' } No aplicable 
       %tbody
         - @practicas.each do |practica|
-          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}"}, 
-          class: "item practica#{' no-margen' if practica.range == 0} #{' no-aplicable' if practica.no_aplicable}"}
+          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}", pracs_ids: "#{practica.practica.get_json_relacion_practicas_ids}"}, class: "item practica#{' no-margen' if practica.range == 0} #{' no-aplicable' if practica.no_aplicable}"}
             %td.handle{"style" => "cursor:move"}
               %i.icon-move
             %td.orden.hidden-xs= practica.position
@@ -61,6 +60,9 @@
                   %i.icon-info-sign.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
                 %a{"href" => "#", "data-target" => "#desafio_#{practica.id}", "data-toggle" => "modal"}
                   %i.icon-exclamation-sign.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Desafíos"}
+                %a.ver-practicas-relacionadas{href: '#', style: "text-decoration:none"}
+                  %i.icon-eye-open.practica-eye-open.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Ver prácticas relacionadas" }
+                  %i.icon-eye-close.practica-eye-close.tooltip-info{ style: "display:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "No ver prácticas relacionadas" }
               
             / Práctica ágil
             %td.hidden-xs= practica.agile_method.blank? ? '---' : practica.agile_method
@@ -86,6 +88,7 @@
       App.updateComment();
       App.autosizeTextArea();
       App.objetivoClick();
+      App.practicaClick();
       App.noMargenCheckBox();
       App.noAplicableCheckBox();
       App.updateAplicableCheckBox();
