@@ -133,8 +133,36 @@ jQuery ->
           scrollTop: $("#mapa").offset().top
         , 2000
 
+  # Muestra las prácticas relacionadas con el objetivo seleccionado
+  App.practicaClick = practicaClick = () ->
+
+    $(".ver-practicas-relacionadas").click (e) ->
+      $this = $(this)
+      ids = $this.parent().parent().data('pracs-ids')
+      console.log ids
+      
+      #Reset color filas
+      $('.practica').removeClass("resaltado")
+
+
+      # Mostramos ojo tachado y ocultamos ojo.
+      $this.find('.practica-eye-close').toggle()
+      $this.find('.practica-eye-open').toggle()
+
+
+      if $this.find('.practica-eye-close').css('display') == 'none'
+        # Desactivamos
+        $this.parent().parent().removeClass('active')
+      else
+        $this.parent().parent().addClass('active')
+        
+        for id in ids
+          console.log id
+          $('tr[data-practica-id="' + id + '"]').addClass("resaltado")
+
+      e.preventDefault()
+
   # Helper functions
-  
   App.resetFilasTablaPracs = () ->
     $('.practica').removeClass("success")
     $('.contribucion').remove()
