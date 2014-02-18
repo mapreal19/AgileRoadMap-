@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 	uniqueness: { case_sensitive: false }
 
 	has_secure_password
-	validates :password, length: { minimum: 6 }, on: :create
+	validates :password, length: { minimum: 6 }
 
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64
@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
 	def send_password_reset
 	  generate_token(:password_reset_token)
 	  self.password_reset_sent_at = Time.zone.now
-	  save!
+	  save!(validate: false)
 	  UserMailer.password_reset(self).deliver
 	end
 
