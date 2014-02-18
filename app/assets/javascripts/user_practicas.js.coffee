@@ -111,7 +111,9 @@ jQuery ->
       $this = $(this)
       ids = $this.parent().parent().data('ids')
       
+      # Reset
       App.resetFilasTablaPracs()
+      App.resetFilasRelPracs()
 
       # Mostramos ojo tachado y ocultamos ojo.
       $this.find('.objetivo-eye-close').toggle()
@@ -136,16 +138,19 @@ jQuery ->
           scrollTop: $("#mapa").offset().top
         , 2000
 
-  # Muestra las prácticas relacionadas con el objetivo seleccionado
+  # Muestra las prácticas relacionadas entre sí
   App.practicaClick = practicaClick = () ->
 
     $(".ver-practicas-relacionadas").click (e) ->
       $this = $(this)
       ids = $this.parent().parent().data('pracs-ids')
-      console.log ids
       
-      #Reset color filas
-      $('.practica').removeClass("resaltado")
+      # Reset color filas
+      # Si ojo esta abierto: Lo cerramos y abrimos el que esté cerrado. REFACTOR
+      if $this.find('.practica-eye-close').css('display') == 'none'
+        App.resetFilasRelPracs()
+
+      App.resetFilasTablaPracs()
 
 
       # Mostramos ojo tachado y ocultamos ojo.
@@ -156,6 +161,7 @@ jQuery ->
       if $this.find('.practica-eye-close').css('display') == 'none'
         # Desactivamos
         $this.parent().parent().removeClass('active')
+        $('.practica').removeClass('resaltado')
       else
         $this.parent().parent().addClass('active')
         
@@ -170,6 +176,11 @@ jQuery ->
     $('.practica').removeClass("success")
     $('.contribucion').remove()
     $('.valor-contribucion').remove()
+
+  App.resetFilasRelPracs = () ->
+    $('.practica.active .practica-eye-close').hide()
+    $('.practica.active .practica-eye-open').show()
+    $('.practica').removeClass("resaltado active")
       
 
 ###$('#post_title').change(function() {
