@@ -4,8 +4,8 @@
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
         %h4#myModalLabel.modal-title 
-          Desafíos
-      .modal-body       
+          = "Desafíos de la práctica: #{practica.legacy_position} #{practica.name}"
+      .modal-body
         %ul.list-unstyled
           - desafios.each do |desafio|
             %li

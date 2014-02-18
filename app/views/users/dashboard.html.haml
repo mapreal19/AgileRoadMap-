@@ -18,12 +18,6 @@
         .checkbox
           %label
             %input#no_aplicable{type: 'checkbox'} Ocultar practicas no aplicables
-      .col-xs-12 
-        %i.icon-group
-        Práctica definida a nivel de equipo
-      .col-xs-12 
-        %i.icon-wrench
-        Práctica definida a nivel de producto/servicio
 
   .col-xs-12.col-sm-12  
     
@@ -49,9 +43,9 @@
                 = "#{practica.legacy_position}"
               / Ámbito de decisión
               - if practica.practica.ambito_decision == 'equipo'
-                %i.icon-group
+                %i.icon-group.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Práctica definida a nivel de equipo" }
               - else
-                %i.icon-wrench
+                %i.icon-wrench.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Práctica definida a nivel de producto/servicio" }
               = practica.name
               - unless practica.legacy_position.nil?
                 %br
@@ -76,7 +70,7 @@
             / Modal
             = render :partial => 'modal', locals: {practica: practica, practica_legacy: practica.practica}
             / Desafío práctica
-            = render :partial => 'desafios', locals: {desafios: practica.practica.desafios, practica_id: practica.id}
+            = render :partial => 'desafios', locals: {desafios: practica.practica.desafios, practica_id: practica.id, practica: practica}
 
 :javascript
   $(document).ready( function() {
