@@ -10,6 +10,10 @@ class PasswordResetsController < ApplicationController
   	redirect_to root_url, :notice => "Email envidado con instrucciones para restablecer la contraseña"
 	end
 
+	def edit
+  	@user = User.find_by(:password_reset_token!(params[:id]))
+	end
+
 	private
   	def password_reset_params
       params.permit(:email)
