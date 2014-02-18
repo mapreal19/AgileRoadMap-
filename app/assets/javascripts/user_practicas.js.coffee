@@ -9,6 +9,9 @@ jQuery ->
       $('#tabla_objetivos').toggle 'slow'
       App.resetFilasTablaPracs()
 
+      # Mostar/Ocular ojo
+      $('#toggle_objetivos i').toggle()
+
       # Reset Tabla Objetivos
       $('.objetivo-eye-close').hide()
       $('.objetivo-eye-open').show()
