@@ -1,12 +1,13 @@
 .headline 
-  %h2 Objetivos
-  = link_to "(Mostrar/Ocultar)", "#", id: 'toggle_objetivos'
+  %h2= 'Objetivos '
+  %a#toggle_objetivos{href: '#', style: "text-decoration:none"}
+    %i.icon-eye-open.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Ver lista de objetivos"}
+    %i.icon-eye-close.icon-large.tooltip-info{"data-toggle" => "tooltip", "data-placement" => "right", "title" => "No ver lista de objetivos", style: "display:none"}
 .col-xs-12
   %table#tabla_objetivos.table.table-bordered.table-striped{ :data => { update_url: user_objetivos_sort_path }, style: "display:none"}
     %thead
       %tr
         %th.col-sm-1.col-xs-3
-          %i.icon-move
         %th.col-sm-1.hidden-xs Orden
         %th.col-sm-7.col-xs-9 Objetivo específico de mejora
         %th.col-sm-1.hidden-xs Satisfacción del cliente

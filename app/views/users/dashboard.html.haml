@@ -18,12 +18,6 @@
         .checkbox
           %label
             %input#no_aplicable{type: 'checkbox'} Ocultar practicas no aplicables
-      .col-xs-12 
-        %i.icon-group
-        Práctica definida a nivel de equipo
-      .col-xs-12 
-        %i.icon-wrench
-        Práctica definida a nivel de producto/servicio
 
   .col-xs-12.col-sm-12  
     
@@ -31,7 +25,6 @@
       %thead
         %tr
           %th.col-sm-1.col-xs-3
-            %i.icon-move
           %th.col-sm-1.hidden-xs Orden
           %th.col-sm-3.col-xs-7 Nombre de la Práctica Ágil
           %th.col-sm-1.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Método en el cual se incluye la práctica", "data-container" => 'body' } Método Ágil
@@ -50,19 +43,20 @@
                 = "#{practica.legacy_position}"
               / Ámbito de decisión
               - if practica.practica.ambito_decision == 'equipo'
-                %i.icon-group
+                %i.icon-group.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Práctica definida a nivel de equipo" }
               - else
-                %i.icon-wrench
+                %i.icon-wrench.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Práctica definida a nivel de producto/servicio" }
               = practica.name
               - unless practica.legacy_position.nil?
+                %br
                 =# link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
                 %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
-                  %i.icon-info-sign.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
+                  %i.icon-info-sign.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
                 %a{"href" => "#", "data-target" => "#desafio_#{practica.id}", "data-toggle" => "modal"}
-                  %i.icon-exclamation-sign.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Desafíos"}
+                  %i.icon-exclamation-sign.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Desafíos"}
                 %a.ver-practicas-relacionadas{href: '#', style: "text-decoration:none"}
-                  %i.icon-eye-open.practica-eye-open.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Ver prácticas relacionadas" }
-                  %i.icon-eye-close.practica-eye-close.tooltip-info{ style: "display:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "No ver prácticas relacionadas" }
+                  %i.icon-eye-open.practica-eye-open.icon-large.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Ver prácticas relacionadas" }
+                  %i.icon-eye-close.practica-eye-close.icon-large.tooltip-info{ style: "display:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "No ver prácticas relacionadas" }
               
             / Práctica ágil
             %td.hidden-xs= practica.agile_method.blank? ? '---' : practica.agile_method
@@ -76,7 +70,7 @@
             / Modal
             = render :partial => 'modal', locals: {practica: practica, practica_legacy: practica.practica}
             / Desafío práctica
-            = render :partial => 'desafios', locals: {desafios: practica.practica.desafios, practica_id: practica.id}
+            = render :partial => 'desafios', locals: {desafios: practica.practica.desafios, practica_id: practica.id, practica: practica}
 
 :javascript
   $(document).ready( function() {
