@@ -30,6 +30,8 @@ AgileRoadMap::Application.routes.draw do
     resources :practicas, only: [:index, :show], path: 'mapa-practicas-agiles'
     #get 'mapa-practicas-agiles/:id' => 'practicas#show', as: :practica
 
+    resources :password_resets
+
   end
 
 

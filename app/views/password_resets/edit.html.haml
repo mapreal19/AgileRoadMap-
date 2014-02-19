@@ -1,0 +1,20 @@
+= render 'layouts/top'
+= render 'layouts/header'
+
+.container
+  .row
+    .col-xs-12
+      .headline
+        %h2
+          Reset Password  
+      = form_for @user, url: password_reset_path(locale, params[:id]),  html: {class: 'form-inline'} do |f|
+        = render 'shared/error_messages', object: f.object
+        .form-group
+          = f.label :password, nil, class: 'sr-only'
+          = f.password_field :password, class: 'form-control', placeholder: 'Introduce tu contraseña'
+        .form-group
+          = f.label :password_confirmation, nil, class: 'sr-only'
+          = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirma tu contraseña'
+        .form-group
+          = f.submit "Guardar contraseña", class: 'btn btn-primary'
+
