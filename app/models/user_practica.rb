@@ -12,4 +12,9 @@ class UserPractica < ActiveRecord::Base
 	validates_inclusion_of :range, in: -1..3, allow_nil: true
 
 	validates_length_of :comment, maximum: 150
+
+	# Getters
+	def legacy_position_with_prefix
+		"PRA" + self[:legacy_position].to_s
+	end
 end

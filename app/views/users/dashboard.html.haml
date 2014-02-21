@@ -40,7 +40,7 @@
             %td.orden.hidden-xs= practica.position
             %td.text_left
               %span.badge
-                = "#{practica.legacy_position}"
+                = "#{practica.legacy_position_with_prefix}"
               / Ámbito de decisión
               - if practica.practica.ambito_decision == 'equipo'
                 %i.icon-group.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Práctica definida a nivel de equipo" }

@@ -21,7 +21,7 @@
           %td.orden.hidden-xs= objetivo.position
           %td.text_left
             %span.badge
-              = "#{objetivo.objetivo.id}"
+              = "#{objetivo.objetivo.id_with_prefix}"
             = objetivo.objetivo.name 
             %a.ver-practica.tooltip-info{href: '#', style: "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Remarcar prácticas que contribuyen al objetivo"}
               %i.icon-eye-open.objetivo-eye-open
