@@ -115,6 +115,9 @@ jQuery ->
       App.resetFilasTablaPracs()
       App.resetFilasRelPracs()
 
+      # Reset tabla objetivos
+      App.resetTablaObjetivos()
+     
       # Mostramos ojo tachado y ocultamos ojo.
       $this.find('.objetivo-eye-close').toggle()
       $this.find('.objetivo-eye-open').toggle()
@@ -151,6 +154,7 @@ jQuery ->
         App.resetFilasRelPracs()
 
       App.resetFilasTablaPracs()
+      App.resetTablaObjetivos()
 
 
       # Mostramos ojo tachado y ocultamos ojo.
@@ -166,7 +170,6 @@ jQuery ->
         $this.parent().parent().addClass('active')
         
         for id in ids
-          console.log id
           $('tr[data-practica-id="' + id + '"]').addClass("resaltado")
 
       e.preventDefault()
@@ -181,6 +184,13 @@ jQuery ->
     $('.practica.active .practica-eye-close').hide()
     $('.practica.active .practica-eye-open').show()
     $('.practica').removeClass("resaltado active")
+
+  App.resetTablaObjetivos = () ->
+    $('.objetivo.active .objetivo-eye-close').hide()
+    $('.objetivo.active .objetivo-eye-open').show()
+    $('.objetivo').removeClass("active")
+
+
       
 
 ###$('#post_title').change(function() {
