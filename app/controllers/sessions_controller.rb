@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class SessionsController < ApplicationController
 	def new
 	end
@@ -8,7 +10,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_to dashboard_url
     else
-      flash.now[:danger] = 'Invalid email/password combination' # Not quite right!
+      flash.now[:danger] = 'Combinación email/contraseña inválida' # Not quite right!
       render 'new'
     end
   end
