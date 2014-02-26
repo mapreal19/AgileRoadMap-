@@ -2,30 +2,14 @@
 .footer
   .container
     .row
-      .col-md-6.md-margin-bottom-40
-        .headline
-          %h2 About
-        %p.margin-bottom-25.md-margin-bottom-40 Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals.
-        .headline
-          %h2 Monthly Newsletter
-        %p Subscribe to our newsletter and stay up to date with the latest news and deals!
-        %form.footer-subsribe
-          .input-group
-            %input.form-control{placeholder: "Email Address", type: "text"}/
-            %span.input-group-btn
-              %button.btn-u{type: "button"} Subscribe
-      .col-md-6
-        .headline
-          %h2 Contact Us
-        %address.md-margin-bottom-40
-          25, Lorem Lis Street, Orange
-          %br/
-          California, US
-          %br/
-          Phone: 800 123 3456
-          %br/
-          Fax: 800 123 3456
-          %br/
-          Email:
-          %a{href: "mailto:info@anybiz.com"} info@anybiz.com
-        
+      %a{ href: 'http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES'}
+        %img.col-centered{ alt: 'Licencia de Creative Commons', src: 'http://i.creativecommons.org/l/by-sa/3.0/88x31.png' }
+      .col-xs-12.text-center
+        Agile Roadmap by
+        = link_to 'Patricio Letelier', 'http://agilismoatwork.blogspot.com.es/p/doctor-en-informatica-profesor-del.html'
+        is licensed under a
+        = link_to 'Creative Commons Reconocimiento-CompartirIgual 3.0 Unported License', 'http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES'
+      .col-xs-12.text-center
+        Creado a partir de la obra en
+        = link_to 'blog.tuneupprocess.com', 'http://blog.tuneupprocess.com/'
+
