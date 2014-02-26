@@ -4,6 +4,16 @@ AgileRoadMap::Application.configure do
   # Mailer host TODO:
   config.action_mailer.default_url_options = { :host => "agileroadmap.herokuapp.com" }
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: 'authsmtp.tuneupprocess.com',
+      port: 587,
+      authentication: 'plain',
+      user_name: 'no-reply@tuneupprocess.com',
+      password: ENV['SMTP_PASSWORD'],
+      enable_starttls_auto: false
+  }
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
