@@ -19,6 +19,10 @@ class Practica < ActiveRecord::Base
 		arr1 = self.relacion_practicas.pluck(:practica2_id)
 		arr2 = self.inverse_relacion_practicas.pluck(:practica_id)
 		ActiveSupport::JSON.encode(arr1 + arr2)
-	end
+  end
+
+  def position_with_prefix
+    "PRA" + self[:position].to_s
+  end
 
 end

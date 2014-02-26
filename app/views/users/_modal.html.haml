@@ -4,7 +4,9 @@
     .modal-content
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#myModalLabel.modal-title 
+        %h4#myModalLabel.modal-title
+          %span.badge
+            = practica_legacy.position_with_prefix
           = practica_legacy.name
       .modal-body       
         .headline
