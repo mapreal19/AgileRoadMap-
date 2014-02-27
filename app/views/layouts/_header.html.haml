@@ -25,11 +25,11 @@
               %li
                 = link_to 'Pasos para elaborar un Agile Roadmap', agile_map_pasos_path, { 'data-push' => true }
               %li
-                = link_to 'Lista de Prácticas Ágiles', '#'
+                = link_to 'Lista de Prácticas Ágiles', practicas_path, { 'data-push' => true }
           %li.dropdown{class: "#{'active' if params[:action] == 'about_us'}"}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{pages_about_us_url}", "data-push" => "true"}
               = t('about_us')
-          %li.dropdown{class: "#{'active' if params[:action] == 'index' and params[:controller] == 'practicas'} "}
+          %li.dropdown{class: "#{active_class('index', 'practicas')} "}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{practicas_path}", "data-push" => "true"}
               Mapa Prácticas Ágiles
           %li.dropdown
