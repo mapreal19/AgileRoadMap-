@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def agile_map_definition
+  end
 end

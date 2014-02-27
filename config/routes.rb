@@ -21,11 +21,9 @@ AgileRoadMap::Application.routes.draw do
 
     post '/user_objetivos/sort', to: 'user_objetivos#sort'
 
-    #resources :user_practicas do
-      # The id param is passed via js, so we can use a generic route.
-    #  post :sort, on: :collection
-    #end
-
+    scope :controller => :pages do
+      get '/que-es-un-agile-roadmap', to: :agile_map_definition, as: 'agile_map_definition'
+    end
     get "pages/about_us"
     resources :practicas, only: [:index, :show], path: 'mapa-practicas-agiles'
     #get 'mapa-practicas-agiles/:id' => 'practicas#show', as: :practica
