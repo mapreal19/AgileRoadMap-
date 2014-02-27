@@ -15,7 +15,7 @@
       / Collect the nav links, forms, and other content for toggling
       .collapse.navbar-collapse.navbar-responsive-collapse
         %ul.nav.navbar-nav.navbar-right
-          %li.dropdown{class: "#{'active' if params[:action] == 'home'}"}
+          %li.dropdown{class: agile_roadmap_active?}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{root_path}", "data-push" => "true"}
               Agile Roadmap+
               %i.icon-angle-down
@@ -26,15 +26,9 @@
                 = link_to 'Pasos para elaborar un Agile Roadmap', agile_map_pasos_path, { 'data-push' => true }
               %li
                 = link_to 'Lista de Prácticas Ágiles', practicas_path, { 'data-push' => true }
-          %li.dropdown{class: "#{'active' if params[:action] == 'about_us'}"}
+          %li.dropdown{class: active_class('about_us', 'pages')}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{pages_about_us_url}", "data-push" => "true"}
               Acerca de nosotros
-          %li.dropdown{class: "#{active_class('index', 'practicas')} "}
-            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{practicas_path}", "data-push" => "true"}
-              Mapa Prácticas Ágiles
-          %li.dropdown
-            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
-              = t('contact')
           - if signed_in?
             %li.dropdown.active
               %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
