@@ -20,11 +20,11 @@
               Agile Roadmap+
               %i.icon-angle-down
             %ul.dropdown-menu
-              %li
+              %li{ class: active_class('agile_map_definition', 'pages')}
                 = link_to '¿Qué es un Agile Roadmap?', agile_map_definition_path, { 'data-push' => true }
-              %li
+              %li{ class: active_class('agile_map_pasos', 'pages')}
                 = link_to 'Pasos para elaborar un Agile Roadmap', agile_map_pasos_path, { 'data-push' => true }
-              %li
+              %li{ class: active_class('index', 'practicas')}
                 = link_to 'Lista de Prácticas Ágiles', practicas_path, { 'data-push' => true }
           %li.dropdown{class: active_class('about_us', 'pages')}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{pages_about_us_url}", "data-push" => "true"}
