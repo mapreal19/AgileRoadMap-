@@ -23,6 +23,7 @@ AgileRoadMap::Application.routes.draw do
 
     scope :controller => :pages do
       get '/que-es-un-agile-roadmap', to: :agile_map_definition, as: 'agile_map_definition'
+      get '/pasos-para-elaborar-un-agile-roadmap', to: :agile_map_pasos, as: 'agile_map_pasos'
     end
     get "pages/about_us"
     resources :practicas, only: [:index, :show], path: 'mapa-practicas-agiles'
