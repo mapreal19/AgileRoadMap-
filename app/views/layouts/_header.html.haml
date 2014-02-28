@@ -15,18 +15,20 @@
       / Collect the nav links, forms, and other content for toggling
       .collapse.navbar-collapse.navbar-responsive-collapse
         %ul.nav.navbar-nav.navbar-right
-          %li.dropdown{class: "#{'active' if params[:action] == 'home'}"}
+          %li.dropdown{class: agile_roadmap_active?}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{root_path}", "data-push" => "true"}
-              = t('home')
-          %li.dropdown{class: "#{'active' if params[:action] == 'about_us'}"}
+              Agile Roadmap+
+              %i.icon-angle-down
+            %ul.dropdown-menu
+              %li{ class: active_class('agile_map_definition', 'pages')}
+                = link_to '¿Qué es un Agile Roadmap?', agile_map_definition_path, { 'data-push' => true }
+              %li{ class: active_class('agile_map_pasos', 'pages')}
+                = link_to 'Pasos para elaborar un Agile Roadmap', agile_map_pasos_path, { 'data-push' => true }
+              %li{ class: active_class('index', 'practicas')}
+                = link_to 'Lista de Prácticas Ágiles', practicas_path, { 'data-push' => true }
+          %li.dropdown{class: active_class('about_us', 'pages')}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{pages_about_us_url}", "data-push" => "true"}
-              = t('about_us')
-          %li.dropdown{class: "#{'active' if params[:action] == 'index' and params[:controller] == 'practicas'} "}
-            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{practicas_path}", "data-push" => "true"}
-              Mapa Prácticas Ágiles
-          %li.dropdown
-            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
-              = t('contact')
+              Acerca de nosotros
           - if signed_in?
             %li.dropdown.active
               %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
@@ -41,4 +43,3 @@
     %div{class: "alert alert-#{key} fade in"}
       = value  
       %button.close{"data-dismiss" => "alert", type: "button"} ×
-            

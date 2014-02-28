@@ -13,6 +13,13 @@
  *= require_tree .
  */
 
+/* helper classes */
+
+.col-centered {
+  display: block;
+  margin: 0 auto;
+}
+
 /* colors */
 
 .amarillo {
