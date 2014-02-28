@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140218112618) do
+ActiveRecord::Schema.define(version: 20140228105630) do
+
+  create_table "ambito_trabajos", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contribucions", force: true do |t|
     t.integer  "practica_id"

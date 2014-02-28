@@ -9,6 +9,13 @@
 #   Mayor.create(name: "Emanuel", city: cities.first)
 require 'open-uri'
 
+# --- Ámbito de trabajo ---
+AmbitoTrabajo.delete_all
+AmbitoTrabajo.create!({id: 1, nombre: 'Desarrollo y/o mantenimiento de productos'})
+AmbitoTrabajo.create!({id: 2, nombre: 'Atención y soporte al cliente'})
+AmbitoTrabajo.create!({id: 3, nombre: 'Resolución de incidencias'})
+AmbitoTrabajo.create!({id: 4, nombre: 'Tramitación de documentos'})
+AmbitoTrabajo.create!({id: 5, nombre: 'Otro'})
 
 
 # --- Objetivos específicos de mejoras ---
