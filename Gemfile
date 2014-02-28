@@ -98,3 +98,6 @@ gem 'jquery-ui-rails'
 
 # http://touchpunch.furf.com/ Touch Event Support for jQuery UI
 gem 'touchpunch-rails'
+
+# https://github.com/stefanpenner/country_select
+gem 'country_select'
