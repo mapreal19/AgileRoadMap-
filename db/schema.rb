@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140228105630) do
+ActiveRecord::Schema.define(version: 20140228110517) do
 
   create_table "ambito_trabajos", force: true do |t|
     t.string   "nombre"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20140228105630) do
     t.string   "remember_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.integer  "ambito_trabajo_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
