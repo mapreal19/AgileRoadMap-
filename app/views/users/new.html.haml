@@ -18,6 +18,12 @@
           Email
           %span.color-red *
         = f.text_field :email, class: 'form-control margin-bottom-20'
+        = f.label :ambito_trabajo_id
+        = f.select('ambito_trabajo_id', AmbitoTrabajo.all.collect { |at| [ at.nombre, at.id ] },
+        { prompt: 'Selecciona ámbito de trabajo' }, { class: 'form-control margin-bottom-20' })
+        = f.label :sector_empresa_id
+        = f.select('sector_empresa_id', SectorEmpresa.all.collect { |at| [ at.nombre, at.id ] },
+        { prompt: 'Selecciona sector de la empresa' }, { class: 'form-control margin-bottom-20' })
         .row
           .col-sm-6
             = f.label :password do

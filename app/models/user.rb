@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
 	has_many :user_practicas, -> { order("position") }, dependent: :destroy
 	has_many :user_objetivos, -> { order("position") }, dependent: :destroy
+  belongs_to :ambito_trabajo
+  belongs_to :sector_empresa
 
 
 	validates :name, presence: true, length: { maximum: 50 }

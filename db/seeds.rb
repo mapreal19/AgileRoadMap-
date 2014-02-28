@@ -9,6 +9,25 @@
 #   Mayor.create(name: "Emanuel", city: cities.first)
 require 'open-uri'
 
+# --- Ámbito de trabajo ---
+AmbitoTrabajo.delete_all
+AmbitoTrabajo.create!({id: 1, nombre: 'Desarrollo y/o mantenimiento de productos'})
+AmbitoTrabajo.create!({id: 2, nombre: 'Atención y soporte al cliente'})
+AmbitoTrabajo.create!({id: 3, nombre: 'Resolución de incidencias'})
+AmbitoTrabajo.create!({id: 4, nombre: 'Tramitación de documentos'})
+AmbitoTrabajo.create!({id: 5, nombre: 'Otro'})
+
+# --- Sector empresa ---
+SectorEmpresa.delete_all
+SectorEmpresa.create!({id: 1, nombre: 'Tecnología y Software'})
+SectorEmpresa.create!({id: 2, nombre: 'Telecomunicaciones'})
+SectorEmpresa.create!({id: 3, nombre: 'Auditoría y Consultoría'})
+SectorEmpresa.create!({id: 4, nombre: 'Servicios'})
+SectorEmpresa.create!({id: 5, nombre: 'Industria'})
+SectorEmpresa.create!({id: 6, nombre: 'Construcción e Inmobilaria'})
+SectorEmpresa.create!({id: 7, nombre: 'Banca y Seguros'})
+SectorEmpresa.create!({id: 8, nombre: 'Otros'})
+
 
 
 # --- Objetivos específicos de mejoras ---

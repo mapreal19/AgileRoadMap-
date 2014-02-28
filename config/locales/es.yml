@@ -11,6 +11,8 @@ es:
     attributes:
       user:
         name: 'Nombre'
+        ambito_trabajo_id: 'Ámbito de trabajo'
+        sector_empresa_id: 'Sector de la empresa'
 
 
   fallo:
