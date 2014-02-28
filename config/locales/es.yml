@@ -11,6 +11,7 @@ es:
     attributes:
       user:
         name: 'Nombre'
+        ambito_trabajo_id: 'Ámbito de trabajo'
 
 
   fallo:
