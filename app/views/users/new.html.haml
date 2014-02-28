@@ -14,7 +14,7 @@
         = render 'shared/error_messages', object: f.object
         = f.label :name do
           Nombre
-          $span.color-red *
+          %span.color-red *
         = f.text_field :name, class: 'form-control margin-bottom-20'
         = f.label :email do
           Email
