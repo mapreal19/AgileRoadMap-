@@ -2,21 +2,27 @@
 = render 'layouts/header'
 
 .container
+  .row
+    .col-sm-6
+      = image_tag 'agrupacion-metodo-agil.png', class: 'img-responsive'
+    .col-sm-6
+      = image_tag 'agrupacion-ambito-practica.png', class: 'img-responsive'
+
   .headline
     %h2 Mapa Prácticas Ágiles
   %table.table.table-bordered.table-striped
     %thead
       %tr
         %th.col-sm-1 Número
-        %th.col-sm-7 Nombre
+        %th.col-sm-7 Nombre de la Práctica Ágil
         %th.col-sm-2 Método Ágil
         %th.col-sm-2 Esfuerzo
     %tbody
       - @practicas.each do |practica|
         %tr
           %td= practica.position
-          %td
+          %td.text_left
             = link_to practica.name, practica_path(id: practica.position), "target" => "_blank"
-          %td= practica.agile_method
+          %td= practica.agile_method.blank? ? '---' : practica.agile_method
           %td= Practica::ESFUERZO[practica.effort]
 

@@ -1,0 +1,37 @@
+.headline 
+  %h2= 'Objetivos '
+  %a#toggle_objetivos{href: '#', style: "text-decoration:none"}
+    %i.icon-eye-open.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Ver lista de objetivos"}
+    %i.icon-eye-close.icon-large.tooltip-info{"data-toggle" => "tooltip", "data-placement" => "right", "title" => "No ver lista de objetivos", style: "display:none"}
+.col-xs-12
+  %table#tabla_objetivos.table.table-bordered{ :data => { update_url: user_objetivos_sort_path }, style: "display:none"}
+    %thead
+      %tr
+        %th.col-sm-1.col-xs-3
+        %th.col-sm-1.hidden-xs Orden
+        %th.col-sm-7.col-xs-9 Objetivo específico de mejora
+        %th.col-sm-1.hidden-xs Satisfacción del cliente
+        %th.col-sm-1.hidden-xs Motivación y compromiso del equipo
+        %th.col-sm-1.hidden-xs Productividad
+    %tbody
+      - @objetivos.each do |objetivo|
+        %tr.objetivo.item-objetivo{data: {ids: "#{objetivo.objetivo.get_json_practicas_ids}", item_id: "#{objetivo.id}"}}
+          %td.handle{"style" => "cursor:move"}
+            %i.icon-move
+          %td.orden.hidden-xs= objetivo.position
+          %td.text_left
+            %span.badge
+              = "#{objetivo.objetivo.id_with_prefix}"
+            = objetivo.objetivo.name 
+            %a.ver-practica.tooltip-info{href: '#', style: "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Remarcar prácticas que contribuyen al objetivo"}
+              %i.icon-eye-open.objetivo-eye-open
+              %i.icon-eye-close.objetivo-eye-close{ style: "display:none"}
+          %td.hidden-xs
+            -if objetivo.objetivo.sat_client
+              %i.icon-ok
+          %td.hidden-xs
+            -if objetivo.objetivo.equipo
+              %i.icon-ok
+          %td.hidden-xs
+            -if objetivo.objetivo.productivity
+              %i.icon-ok

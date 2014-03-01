@@ -11,7 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131220163007) do
+ActiveRecord::Schema.define(version: 20140228121421) do
+
+  create_table "ambito_trabajos", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contribucions", force: true do |t|
+    t.integer  "practica_id"
+    t.integer  "objetivo_id"
+    t.integer  "valor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "desafios", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "objetivos", force: true do |t|
+    t.string   "name"
+    t.boolean  "sat_client"
+    t.boolean  "equipo"
+    t.boolean  "productivity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "practica_desafios", force: true do |t|
+    t.integer  "practica_id"
+    t.integer  "desafio_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "practicas", force: true do |t|
     t.integer  "position"
@@ -21,6 +57,26 @@ ActiveRecord::Schema.define(version: 20131220163007) do
     t.datetime "updated_at"
     t.integer  "effort"
     t.text     "description"
+    t.string   "ambito_decision"
+  end
+
+  create_table "relacion_practicas", force: true do |t|
+    t.integer "practica_id"
+    t.integer "practica2_id"
+  end
+
+  create_table "sector_empresas", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_objetivos", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "objetivo_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_practicas", force: true do |t|
@@ -35,6 +91,7 @@ ActiveRecord::Schema.define(version: 20131220163007) do
     t.text     "comment"
     t.integer  "effort"
     t.integer  "range"
+    t.boolean  "no_aplicable",    default: false
   end
 
   create_table "users", force: true do |t|
@@ -44,6 +101,11 @@ ActiveRecord::Schema.define(version: 20131220163007) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.integer  "ambito_trabajo_id"
+    t.integer  "sector_empresa_id"
+    t.string   "country"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

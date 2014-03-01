@@ -1,4 +1,40 @@
 = render 'layouts/top'
 = render 'layouts/header'
-%h1 Pages#about-us
-%p Find me in app/views/pages/about-us.html.haml
+
+.container
+  .headline
+    %h2
+      Acerca de nosotros
+  %p
+    Este sitio ha sido elaborado en el marco del enfoque Tune-up.
+  %p
+    En Tune-up somos especialistas en formación, consultoría e implantación de prácticas ágiles. Para más información acceder a nuestra web
+    = link_to 'www.tuneupprocess.com', 'http://www.tuneupprocess.com/'
+  .headline
+    %h2
+      Conoce a nuestro equipo
+  .row.team
+    .col-sm-3
+      .thumbnail-style
+        = image_tag("equipo/patricio.jpg", class: 'img-responsive')
+        %h3
+          %a
+            Patricio Letelier
+          %small
+            Project Leader
+        %p
+          Director del proyecto
+    .col-sm-3
+      .thumbnail-style
+        = image_tag("equipo/mario.jpg", class: 'img-responsive')
+        %h3
+          %a
+            Mario Pérez
+          %small
+            Developer
+        %p
+          Creador del sitio web como parte del Trabajo de Tesis de Master realizado en el Departamento de Sistemas Informáticos y Computación
+          de la Universidad Politécnica de Valencia bajo la dirección del Dr. Patricio Letelier.
+
+
+

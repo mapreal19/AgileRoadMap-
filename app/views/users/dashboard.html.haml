@@ -2,37 +2,88 @@
 = render 'layouts/header'
 
 .container
+      
+  = render 'objetivos'
+
   .headline
-    %h2 Mapa Prácticas Ágiles
-  .col-xs-11.col-sm-12  
-    %table.table.table-bordered.table-striped#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path }}
+    %h2#mapa Mapa Prácticas Ágiles
+
+  .row 
+    .panel-body.hidden-xs
+      .col-xs-12 
+        .checkbox
+          %label
+            %input#no_margen{type: 'checkbox'} Ocultar prácticas sin margen de mejora
+      .col-xs-12 
+        .checkbox
+          %label
+            %input#no_aplicable{type: 'checkbox'} Ocultar practicas no aplicables
+
+  .col-xs-12.col-sm-12  
+    
+    %table.table.table-bordered#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
       %thead
         %tr
-          %th.col-sm-1.col-xs-3 Número
-          %th.col-sm-5.col-xs-9 Nombre
-          %th.col-sm-1.hidden-xs Método Ágil
-          %th.col-sm-1.hidden-xs Esfuerzo
-          %th.col-sm-2.hidden-xs Margen
-          %th.col-sm-2.hidden-xs Notas
+          %th.col-md-1.col-sm-1.col-xs-2
+          %th.col-md-1.hidden-xs.hidden-sm Orden
+          %th.col-md-3.col-sm-6.col-xs-9 Nombre de la Práctica Ágil
+          %th.col-md-1.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Método en el cual se incluye la práctica", "data-container" => 'body' } Método Ágil
+          %th.col-md-1.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Esfuerzo necesario para conseguir implantar la práctica", "data-container" => 'body' } Esfuerzo Implantación
+          %th.col-md-2.col-sm-2.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Margen que tiene actualmente la práctica respecto del máximo nivel de aplicación posible", "data-container" => 'body' } Margen de Mejora
+          %th.col-md-2.col-sm-2.hidden-xs Notas
+          %th.col-md-1.col-sm-1.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Marcar cuando se considere directamente que la práctica no se aplicará", "data-container" => 'body' } No aplicable 
       %tbody
         - @practicas.each do |practica|
-          %tr{data: {item_id: "#{practica.id}"}, class: 'item'}
-            %td= practica.legacy_position
-            %td
+          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}", pracs_ids: "#{practica.practica.get_json_relacion_practicas_ids}"}, class: "item practica#{' no-margen' if practica.range == 0} #{' no-aplicable' if practica.no_aplicable}"}
+            %td.handle{"style" => "cursor:move"}
+              %i.icon-move
+            %td.orden.hidden-xs.hidden-sm= practica.position
+            %td.text_left
+              %span.badge
+                = "#{practica.legacy_position_with_prefix}"
+              / Ámbito de decisión
+              - if practica.practica.ambito_decision == 'equipo'
+                %i.icon-group.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Práctica definida a nivel de equipo" }
+              - else
+                %i.icon-wrench.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Práctica definida a nivel de producto/servicio" }
               = practica.name
               - unless practica.legacy_position.nil?
-                = link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
-            %td.hidden-xs= practica.agile_method
-            -# http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select
-            %td.hidden-xs= UserPractica::ESFUERZO[practica.effort]
-            -#%td=collection_select(:practica, :effort, UserPractica::ESFUERZO, :first, :last, :prompt => true)
-            %td.hidden-xs= select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range),prompt: "--", class: 'range form-control')
+                %br
+                =# link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
+                %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
+                  %i.icon-info-sign.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
+                %a{"href" => "#", "data-target" => "#desafio_#{practica.id}", "data-toggle" => "modal"}
+                  %i.icon-exclamation-sign.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Desafíos"}
+                %a.ver-practicas-relacionadas{href: '#', style: "text-decoration:none"}
+                  %i.icon-eye-open.practica-eye-open.icon-large.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Ver prácticas relacionadas" }
+                  %i.icon-eye-close.practica-eye-close.icon-large.tooltip-info{ style: "display:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "No ver prácticas relacionadas" }
+              
+            / Práctica ágil
+            %td.hidden-xs.hidden-sm= practica.agile_method.blank? ? '---' : practica.agile_method
+            / Esfuerzo
+            %td.hidden-xs.hidden-sm= UserPractica::ESFUERZO[practica.effort]
+            / Margen de mejora
+            %td.hidden-xs
+              = select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range), class: "range form-control#{' amarillo' if practica.range == -1}")
             %td.hidden-xs= text_area_tag 'bio', practica.comment, class: 'comment form-control'
+            %td.hidden-xs= check_box_tag 'no_aplicable' + practica.legacy_position.to_s, practica.no_aplicable, practica.no_aplicable, class: 'no-aplicable-checkbox'
+            / Modal
+            = render :partial => 'modal', locals: {practica: practica, practica_legacy: practica.practica}
+            / Desafío práctica
+            = render :partial => 'desafios', locals: {desafios: practica.practica.desafios, practica_id: practica.id, practica: practica}
 
 :javascript
   $(document).ready( function() {
+      $('.tooltip-info').tooltip();
       App.sort();
+      App.sort_objetivo();
+      App.toggleTablaObjetivos();
       App.updateRange();
       App.updateComment();
       App.autosizeTextArea();
+      App.objetivoClick();
+      App.practicaClick();
+      App.noMargenCheckBox();
+      App.noAplicableCheckBox();
+      App.updateAplicableCheckBox();
   } );

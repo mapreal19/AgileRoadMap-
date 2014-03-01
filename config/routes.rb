@@ -9,7 +9,7 @@ AgileRoadMap::Application.routes.draw do
     root 'pages#home'
     get '/signup', to: 'users#new'
     post '/signup', to: 'users#create'
-    get '/dashboard', to: 'users#dashboard'
+    get '/mi-agileroadmap', to: 'users#dashboard', as: 'dashboard'
     get '/signin', to: 'sessions#new'
     delete '/signout', to: 'sessions#destroy'
 
@@ -17,15 +17,19 @@ AgileRoadMap::Application.routes.draw do
     post '/user_practicas/sort', to: 'user_practicas#sort'
     post '/user_practicas/range', to: 'user_practicas#update_range'
     post '/user_practicas/comment' => 'user_practicas#update_comment'
+    post '/user_practicas/aplicable' => 'user_practicas#update_aplicable'
 
-    #resources :user_practicas do
-      # The id param is passed via js, so we can use a generic route.
-    #  post :sort, on: :collection
-    #end
+    post '/user_objetivos/sort', to: 'user_objetivos#sort'
 
+    scope :controller => :pages, :path => 'agile-roadmap' do
+      get '/que-es-un-agile-roadmap', to: :agile_map_definition, as: 'agile_map_definition'
+      get '/pasos-para-elaborar-un-agile-roadmap', to: :agile_map_pasos, as: 'agile_map_pasos'
+    end
     get "pages/about_us"
     resources :practicas, only: [:index, :show], path: 'mapa-practicas-agiles'
     #get 'mapa-practicas-agiles/:id' => 'practicas#show', as: :practica
+
+    resources :password_resets
 
   end
 
