@@ -31,6 +31,11 @@
 	background-color: #ffc !important;
 }
 
+/* progress bar */
+#nprogress .spinner-icon {
+  border-radius: 10px !important;
+}
+
  #sortable {
  	tr.item {
  		//cursor: row-resize;
