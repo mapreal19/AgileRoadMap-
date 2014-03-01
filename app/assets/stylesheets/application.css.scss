@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require _font-awesome
+ *= require nprogress
  *= require_tree .
  */
 
@@ -28,6 +29,11 @@
 
 .resaltado {
 	background-color: #ffc !important;
+}
+
+/* progress bar */
+#nprogress .spinner-icon {
+  border-radius: 10px !important;
 }
 
  #sortable {

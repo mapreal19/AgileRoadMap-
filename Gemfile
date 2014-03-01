@@ -101,3 +101,6 @@ gem 'touchpunch-rails'
 
 # https://github.com/stefanpenner/country_select
 gem 'country_select'
+
+# https://github.com/caarlos0/nprogress-rails
+gem 'nprogress-rails'
