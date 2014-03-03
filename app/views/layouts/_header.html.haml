@@ -35,12 +35,8 @@
               Acerca de nosotros
           - if signed_in?
             %li.dropdown{ class: active_class('dashboard', 'users') }
-              %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
-                = current_user.email
-                %i.icon-angle-down
-              %ul.dropdown-menu
-                %li{ class: active_class('dashboard', 'users') }
-                  = link_to 'Mi AgileRoadmap', dashboard_path, {'data-push' => true}
+              %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{dashboard_path}", 'data-push' => 'true'}
+                Mi AgileRoadmap+
 
 .container
   - flash.each do |key, value|
