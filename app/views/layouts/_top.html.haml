@@ -4,13 +4,13 @@
 .top
   .container
     %ul.loginbar.pull-right
+      -#%li
+      -#  %i.icon-globe
+      -#  %a= t('languages')
+      -#  %ul.lenguages
+      -#    = lang_link t('english'), :en
+      -#    = lang_link t('spanish'), :es
       %li
-        %i.icon-globe
-        %a= t('languages')
-        %ul.lenguages
-          = lang_link t('english'), :en 
-          = lang_link t('spanish'), :es
-      %li.devider
       - if signed_in?
         %li
           = link_to 'logout', signout_path, method: "delete"
