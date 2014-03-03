@@ -22,8 +22,9 @@ AgileRoadMap::Application.routes.draw do
     post '/user_objetivos/sort', to: 'user_objetivos#sort'
 
     scope :controller => :pages, :path => 'agile-roadmap' do
-      get '/que-es-un-agile-roadmap', to: :agile_map_definition, as: 'agile_map_definition'
+      get '/', to: :agile_map_definition, as: 'agile_map_definition'
       get '/pasos-para-elaborar-un-agile-roadmap', to: :agile_map_pasos, as: 'agile_map_pasos'
+      get '/que-es-agile-roadmap', to: :what_is_agile_map, as: 'what_is_agile_map'
     end
     get "pages/about_us"
     resources :practicas, only: [:index, :show], path: 'mapa-practicas-agiles'

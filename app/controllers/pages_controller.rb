@@ -14,6 +14,9 @@ class PagesController < ApplicationController
   def agile_map_definition
   end
 
+  def what_is_agile_map
+  end
+
   def agile_map_pasos
 
   end
