@@ -25,6 +25,7 @@ AgileRoadMap::Application.routes.draw do
       get '/', to: :agile_map_definition, as: 'agile_map_definition'
       get '/pasos-para-elaborar-un-agile-roadmap', to: :agile_map_pasos, as: 'agile_map_pasos'
       get '/que-es-agile-roadmap', to: :what_is_agile_map, as: 'what_is_agile_map'
+      get '/equipo-agile-roadmap', to: :agile_team, as: 'agile_team'
     end
     get "pages/about_us"
     resources :practicas, only: [:index, :show], path: 'mapa-practicas-agiles'

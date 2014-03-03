@@ -28,6 +28,8 @@
                 = link_to 'Pasos de AgileRoadmap+', agile_map_pasos_path, { 'data-push' => true }
               %li{ class: active_class('index', 'practicas')}
                 = link_to 'Prácticas Ágiles de AgileRoadmap+', practicas_path, { 'data-push' => true }
+              %li{ class: active_class('agile_team', 'pages')}
+                = link_to 'Equipo AgileRoadmap+', agile_team_path, { 'data-push' => true }
           %li.dropdown{class: active_class('about_us', 'pages')}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", href: "#{pages_about_us_url}", "data-push" => "true"}
               Acerca de nosotros

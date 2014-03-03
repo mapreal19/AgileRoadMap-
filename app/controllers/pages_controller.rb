@@ -18,6 +18,8 @@ class PagesController < ApplicationController
   end
 
   def agile_map_pasos
+  end
 
+  def agile_team
   end
 end

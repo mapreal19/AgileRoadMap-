@@ -1,0 +1,32 @@
+= render 'layouts/top'
+= render 'layouts/header'
+
+.container
+  .headline
+    %h2
+      Equipo AgileRoadmap+
+  %p
+    Este sitio web se ha desarrollado por Mario Pérez, como parte de su Trabajo de Tesis de Master realizado en el Departamento de Sistemas Informáticos y Computación (DSIC) de la Universidad Politécnica de Valencia (UPV), bajo la dirección del Dr. Patricio Letelier.
+  .row.team
+    .col-sm-3
+      .thumbnail-style
+        = image_tag("equipo/patricio.jpg", class: 'img-responsive')
+        %h3
+          %a
+            Patricio Letelier
+          %small
+            Dr. Ingeniero en Informática
+        %p
+          Creador del enfoque Tune-up.
+
+    .col-sm-3
+      .thumbnail-style
+        = image_tag("equipo/mario.jpg", class: 'img-responsive')
+        %h3
+          %a
+            Mario Pérez
+          %small
+            Ingeniero Informático
+        %p
+          Candidato a Máster en Ingeniería de Software.
+
