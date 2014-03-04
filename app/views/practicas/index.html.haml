@@ -2,9 +2,7 @@
 = render 'layouts/header'
 
 .container
-  %p{ style: 'margin-top: 20px'}
-    Nuestro enfoque se caracteriza por la integración de Prácticas Ágiles provenientes de diversas fuentes, principalmente desde los métodos ágiles más populares. Además, es necesario reconocer la usual necesidad de convivencia de prácticas ágiles con otras prácticas de carácter más tradicional que se quieren mantener al menos en un primer paso.
-  .row
+  .row{ style: 'margin-top: 20px'}
     .col-sm-6
       %a{ href: 'https://www.dropbox.com/s/1sw3elqny3pa15n/Diagrama%20Venn%20Pr%C3%A1cticas.ppsx'}
         = image_tag 'agrupacion-metodo-agil.png', class: 'img-responsive'
@@ -19,7 +17,7 @@
 
 
   .headline
-    %h2 Mapa Prácticas Ágiles
+    %h2 Catálogo de Prácticas Ágiles
   %table.table.table-bordered.table-striped
     %thead
       %tr
