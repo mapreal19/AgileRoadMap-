@@ -19,7 +19,7 @@
         = f.label :email do
           Email
           %span.color-red *
-        = f.text_field :email, class: 'form-control margin-bottom-20'
+        = f.email_field :email, class: 'form-control margin-bottom-20'
         / Ámbito de trabajo
         = f.label :ambito_trabajo_id do
           Ámbito de trabajo
@@ -33,8 +33,10 @@
         = f.select('sector_empresa_id', SectorEmpresa.all.collect { |at| [ at.nombre, at.id ] },
         { prompt: 'Selecciona sector de la empresa' }, { class: 'form-control margin-bottom-20' })
         / Countries
-        = f.label :country
-        = f.country_select(:country, ['España'], {}, { class: 'form-control margin-bottom-20' })
+        = f.label :country do
+          País
+          %span.color-red *
+        = f.country_select(:country, ['España'], { prompt: 'Selecciona el país'}, { class: 'form-control margin-bottom-20' })
         .row
           .col-sm-6
             = f.label :password do
