@@ -19,8 +19,9 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @practicas = current_user.user_practicas
-    @objetivos = current_user.user_objetivos
+    # 3 table join
+    @practicas = current_user.user_practicas.includes(:practica)
+    @objetivos = current_user.user_objetivos.includes(:objetivo)
   end
 
   private
