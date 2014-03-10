@@ -11,11 +11,11 @@
         .input-group.margin-bottom-20
           %span.input-group-addon
             %i.icon-envelope-alt
-          = f.text_field :email, class: 'form-control', placeholder: 'Email'
+          = f.email_field :email, class: 'form-control', placeholder: 'Email', required: true
         .input-group.margin-bottom-20
           %span.input-group-addon
             %i.icon-unlock
-          = f.password_field :password, class: 'form-control', placeholder: 'Contraseña'
+          = f.password_field :password, class: 'form-control', placeholder: 'Contraseña', required: true
         .row
           .col-md-6
             -#%label.checkbox
