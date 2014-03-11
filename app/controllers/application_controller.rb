@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   before_action :set_locale
+  before_action :allow_iframe_requests
+
 
   def signed_in_user
     redirect_to signin_url, flash: {info: "Por favor haz Login."} unless signed_in?
@@ -16,4 +18,8 @@ class ApplicationController < ActionController::Base
   		I18n.locale = params[:locale] || I18n.default_locale
   		Rails.application.routes.default_url_options[:locale]= I18n.locale 
   	end
+
+    def allow_iframe_requests
+      response.headers.delete('X-Frame-Options')
+    end
 end
