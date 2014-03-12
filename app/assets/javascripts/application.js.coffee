@@ -63,6 +63,6 @@ $(document).ready ->
             $('[data-hover="dropdown"]').dropdownHover()
 
             # Google analytics
-            ga.push(['_trackPageview', url])
+            _gaq.push(['_trackPageview', url])
     )
 
