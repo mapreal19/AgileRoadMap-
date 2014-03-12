@@ -61,6 +61,8 @@ $(document).ready ->
             Index.initParallaxSlider()
             # Initialize the navbar dropdown 
             $('[data-hover="dropdown"]').dropdownHover()
-            console.log("Wiselinks status: '#{status}'")
+
+            # Google analytics
+            ga.push(['_trackPageview', url])
     )
 
