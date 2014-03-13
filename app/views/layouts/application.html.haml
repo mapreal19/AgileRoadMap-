@@ -13,6 +13,8 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body{:id => "#{params[:controller].parameterize}_controller"}
+    #RAILS_ENV.hidden
+      = Rails.env
     .content
       = yield
     = render 'layouts/footer'

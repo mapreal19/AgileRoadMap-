@@ -63,6 +63,7 @@ $(document).ready ->
             $('[data-hover="dropdown"]').dropdownHover()
 
             # Google analytics
-            _gaq.push(['_trackPageview', url])
+            if $('RAILS_ENV').text() == 'production'
+              _gaq.push(['_trackPageview', url])
     )
 
