@@ -61,6 +61,12 @@ html,body{
 
 /* progress bar */
 
+#nprogress .spinner {
+  top: 5px !important;
+  left: 10px !important;
+  right: 0 !important;
+}
+
 #nprogress .spinner-icon {
   border-radius: 10px !important;
 }
