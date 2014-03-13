@@ -110,7 +110,14 @@ jQuery ->
     $(".ver-practica").click ->
       $this = $(this)
       ids = $this.parent().parent().data('ids')
-      
+
+      # Desmarcar objetivos si el ojo abierto esta oculto
+      if $this.find('.objetivo-eye-open').css('display') == 'none'
+        App.resetFilasTablaPracs()
+        App.resetFilasRelPracs()
+        App.resetTablaObjetivos()
+        return
+
       # Reset
       App.resetFilasTablaPracs()
       App.resetFilasRelPracs()
@@ -122,24 +129,19 @@ jQuery ->
       $this.find('.objetivo-eye-close').toggle()
       $this.find('.objetivo-eye-open').toggle()
 
-      if $this.find('.objetivo-eye-close').css('display') == 'none'
-        # Desactivamos
-        $this.parent().parent().removeClass('active')
-        return
-      else
-        $this.parent().parent().addClass('active')
-        
-        # id[0] -> practica_id 
-        # id[1] -> valor de contribución
-        for id in ids
-          $('tr[data-practica-id="' + id[0] + '"]').addClass("success")
-          $('tr[data-practica-id="' + id[0] + '"]').append('<td class="contribucion">' + valoresContribucion[id[1]] + '</td')
+      $this.parent().parent().addClass('active')
 
-        $('table#sortable thead tr').append('<th class="col-sm-1 col-xs-1 valor-contribucion">Contribución del objetivo</th>')
+      # id[0] -> practica_id
+      # id[1] -> valor de contribución
+      for id in ids
+        $('tr[data-practica-id="' + id[0] + '"]').addClass("success")
+        $('tr[data-practica-id="' + id[0] + '"]').append('<td class="contribucion">' + valoresContribucion[id[1]] + '</td')
 
-        $("html, body").animate
-          scrollTop: $("#mapa").offset().top
-        , 2000
+      $('table#sortable thead tr').append('<th class="col-sm-1 col-xs-1 valor-contribucion">Contribución del objetivo</th>')
+
+      $("html, body").animate
+        scrollTop: $("#mapa").offset().top
+      , 2000
 
   # Muestra las prácticas relacionadas entre sí
   App.practicaClick = practicaClick = () ->

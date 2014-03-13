@@ -4,19 +4,19 @@
 .top
   .container
     %ul.loginbar.pull-right
+      -#%li
+      -#  %i.icon-globe
+      -#  %a= t('languages')
+      -#  %ul.lenguages
+      -#    = lang_link t('english'), :en
+      -#    = lang_link t('spanish'), :es
       %li
-        %i.icon-globe
-        %a= t('languages')
-        %ul.lenguages
-          = lang_link t('english'), :en 
-          = lang_link t('spanish'), :es
-      %li.devider
       - if signed_in?
         %li
-          = link_to 'logout', signout_path, method: "delete"
+          = link_to 'Cerrar Sesión', signout_path, method: "delete"
       - else
         %li
-          = link_to 'Sign in', signup_path, {'data-push' => true}
+          = link_to 'Registrarse', signup_path, {'data-push' => true}
         %li.devider
         %li
           = link_to 'Login', signin_path, {'data-push' => true}

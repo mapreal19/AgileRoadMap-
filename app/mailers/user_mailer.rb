@@ -11,7 +11,7 @@ class UserMailer < ActionMailer::Base
 
   def password_reset(user)
     @user = user
-    mail to: user.email, subject: "Restablecer contraseña"
+    mail to: user.email, subject: 'Restablecer contraseña AgileRoadmap+'
   end
   
 end

@@ -14,11 +14,27 @@
  *= require_tree .
  */
 
+// Aplication wide
+html,body{
+  height: 100%;
+}
+
+.alert {
+  margin-top: 10px;
+}
+
 /* helper classes */
 
 .col-centered {
   display: block;
   margin: 0 auto;
+}
+
+.center-img-text {
+  float:none !important;
+  display:inline-block;
+  vertical-align:middle;
+  margin-right:-4px;
 }
 
 /* colors */
@@ -31,7 +47,26 @@
 	background-color: #ffc !important;
 }
 
+/* navbar */
+
+.header .navbar-brand {
+  font-size: 25px;
+}
+
+/* footer */
+
+.footer a, .footer a:hover {
+  color: #34DBD4 !important;
+}
+
 /* progress bar */
+
+#nprogress .spinner {
+  top: 5px !important;
+  left: 10px !important;
+  right: 0 !important;
+}
+
 #nprogress .spinner-icon {
   border-radius: 10px !important;
 }
@@ -84,6 +119,7 @@
  	background: #fefefe;
  	border: solid 1px #eee;
  	box-shadow: 0 0 3px #eee;
+    margin-top: 20px;
  }
 
  /*Reg Header*/

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140228121421) do
+ActiveRecord::Schema.define(version: 20140307091759) do
 
   create_table "ambito_trabajos", force: true do |t|
     t.string   "nombre"
@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20140228121421) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "contribucions", ["objetivo_id"], name: "index_contribucions_on_objetivo_id"
+  add_index "contribucions", ["practica_id"], name: "index_contribucions_on_practica_id"
 
   create_table "desafios", force: true do |t|
     t.string   "name"
@@ -49,6 +52,9 @@ ActiveRecord::Schema.define(version: 20140228121421) do
     t.datetime "updated_at"
   end
 
+  add_index "practica_desafios", ["desafio_id"], name: "index_practica_desafios_on_desafio_id"
+  add_index "practica_desafios", ["practica_id"], name: "index_practica_desafios_on_practica_id"
+
   create_table "practicas", force: true do |t|
     t.integer  "position"
     t.string   "name"
@@ -65,6 +71,9 @@ ActiveRecord::Schema.define(version: 20140228121421) do
     t.integer "practica2_id"
   end
 
+  add_index "relacion_practicas", ["practica2_id"], name: "index_relacion_practicas_on_practica2_id"
+  add_index "relacion_practicas", ["practica_id"], name: "index_relacion_practicas_on_practica_id"
+
   create_table "sector_empresas", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
@@ -78,6 +87,9 @@ ActiveRecord::Schema.define(version: 20140228121421) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "user_objetivos", ["objetivo_id"], name: "index_user_objetivos_on_objetivo_id"
+  add_index "user_objetivos", ["user_id"], name: "index_user_objetivos_on_user_id"
 
   create_table "user_practicas", force: true do |t|
     t.integer  "position"
@@ -94,6 +106,9 @@ ActiveRecord::Schema.define(version: 20140228121421) do
     t.boolean  "no_aplicable",    default: false
   end
 
+  add_index "user_practicas", ["practica_id"], name: "index_user_practicas_on_practica_id"
+  add_index "user_practicas", ["user_id"], name: "index_user_practicas_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -108,7 +123,9 @@ ActiveRecord::Schema.define(version: 20140228121421) do
     t.string   "country"
   end
 
+  add_index "users", ["ambito_trabajo_id"], name: "index_users_on_ambito_trabajo_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["sector_empresa_id"], name: "index_users_on_sector_empresa_id"
 
 end
