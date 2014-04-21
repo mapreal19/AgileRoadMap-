@@ -3,7 +3,11 @@ source 'https://rubygems.org'
 #ruby-gemset=AgileRoadMap+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '4.1'
+
+gem 'tzinfo-data'
+gem 'tzinfo'
+
 
 group :development do
 	#http://railscasts.com/episodes/402-better-errors-railspanel
