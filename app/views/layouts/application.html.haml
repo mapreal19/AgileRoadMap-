@@ -15,11 +15,10 @@
   %body{:id => "#{params[:controller].parameterize}_controller"}
     #RAILS_ENV.hidden
       = Rails.env
-    .all-content{style: 'min-height:100%;'}
-      .content
-        = yield
-      = render 'layouts/footer'
-      = render 'layouts/copyright'
+    .content{style: 'min-height:100%;'}
+      = yield
+    = render 'layouts/footer'
+    = render 'layouts/copyright'
     -if Rails.env.development?
       .container
         = debug(params)
