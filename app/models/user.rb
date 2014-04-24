@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 
   validates_presence_of :ambito_trabajo_id, :sector_empresa_id, :miembros_equipo
 
+  validates :miembros_equipo, numericality: { greater_than: 0 }
+
 	has_secure_password
 	validates :password, length: { minimum: 6 }
 
