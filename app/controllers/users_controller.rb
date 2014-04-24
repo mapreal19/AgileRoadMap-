@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
+    @user.ip = request.env['REMOTE_HOST']
   	if @user.save
   		sign_in @user
       @user.clone_practicas
