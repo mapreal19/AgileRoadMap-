@@ -31,12 +31,7 @@
           %span.color-red *
         = f.select('sector_empresa_id', SectorEmpresa.all.collect { |at| [ at.nombre, at.id ] },
         { prompt: 'Selecciona sector de la empresa' }, { class: 'form-control margin-bottom-20', required: true })
-        / Countries
-        = f.label :country do
-          País
-          %span.color-red *
-        = f.country_select(:country, ['España'], { prompt: 'Selecciona el país'},
-        { class: 'form-control margin-bottom-20', required: true })
+
         .row
           .col-sm-6
             = f.label :password do

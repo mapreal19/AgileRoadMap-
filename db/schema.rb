@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307091759) do
+ActiveRecord::Schema.define(version: 20140424100157) do
 
   create_table "ambito_trabajos", force: true do |t|
     t.string   "nombre"
@@ -120,7 +120,6 @@ ActiveRecord::Schema.define(version: 20140307091759) do
     t.datetime "password_reset_sent_at"
     t.integer  "ambito_trabajo_id"
     t.integer  "sector_empresa_id"
-    t.string   "country"
   end
 
   add_index "users", ["ambito_trabajo_id"], name: "index_users_on_ambito_trabajo_id"
