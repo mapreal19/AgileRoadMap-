@@ -2,10 +2,30 @@
 = render 'layouts/header'
 = render 'slider'
 .container
-	.headline
-		%h2 Agile Roadmap+
-	.row
-		.col-sm-12
-			¿Estás interesado en implantar prácticas ágiles? ¿No sabes por dónde comenzar?
-			Este sitio te ofrece conocimiento asociado a prácticas ágiles y te ayuda a establecer tu propio roadmap para implantación de prácticas ágiles.
+  .headline{ style: 'margin-top: 30px'}
+    %h2 Agile Roadmap+
+  .row
+    .col-sm-12
+      ¿Estás interesado en implantar prácticas ágiles? ¿No sabes por dónde comenzar?
+      Este sitio te ofrece conocimiento asociado a prácticas ágiles y te ayuda a establecer tu propio roadmap para implantación de prácticas ágiles.
 
+    / Service Blocks
+  .row{ style: 'margin-top: 40px'}
+    .col-md-4
+      .service
+        %i.icon-resize-small.service-icon
+        .desc
+          %h4 Fully Responsive
+          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...
+    .col-md-4
+      .service
+        %i.icon-cogs.service-icon
+        .desc
+          %h4 HTML5 + CSS3
+          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...
+    .col-md-4
+      .service
+        %i.icon-plane.service-icon
+        .desc
+          %h4 Launch Ready
+          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...
