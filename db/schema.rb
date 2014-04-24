@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424101009) do
+ActiveRecord::Schema.define(version: 20140424104457) do
 
   create_table "ambito_trabajos", force: true do |t|
     t.string   "nombre"
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 20140424101009) do
     t.integer  "ambito_trabajo_id"
     t.integer  "sector_empresa_id"
     t.string   "ip"
+    t.integer  "miembros_equipo"
   end
 
   add_index "users", ["ambito_trabajo_id"], name: "index_users_on_ambito_trabajo_id"
