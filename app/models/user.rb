@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 
 	uniqueness: { case_sensitive: false }
 
-  validates_presence_of :country, :ambito_trabajo_id, :sector_empresa_id
+  validates_presence_of :ambito_trabajo_id, :sector_empresa_id, :miembros_equipo
 
 	has_secure_password
 	validates :password, length: { minimum: 6 }
