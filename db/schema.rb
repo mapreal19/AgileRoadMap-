@@ -109,7 +109,23 @@ ActiveRecord::Schema.define(version: 20140424101009) do
   add_index "user_practicas", ["practica_id"], name: "index_user_practicas_on_practica_id"
   add_index "user_practicas", ["user_id"], name: "index_user_practicas_on_user_id"
 
-# Could not dump table "users" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.integer  "ambito_trabajo_id"
+    t.integer  "sector_empresa_id"
+    t.string   "ip"
+  end
+
+  add_index "users", ["ambito_trabajo_id"], name: "index_users_on_ambito_trabajo_id"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["sector_empresa_id"], name: "index_users_on_sector_empresa_id"
 
 end
