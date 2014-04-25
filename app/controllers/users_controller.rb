@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   		sign_in @user
       @user.clone_practicas
       @user.clone_objetivos
-      flash[:success] = t(:welcome, url: 'https://www.youtube.com/watch?v=VaCHhjqVKTs').html_safe
+      flash[:success] = t(:welcome, url: 'https://www.youtube.com/v/VaCHhjqVKTs').html_safe
   		redirect_to dashboard_url and return
   	else
   		render 'new'
