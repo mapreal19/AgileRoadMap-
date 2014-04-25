@@ -137,7 +137,7 @@ jQuery ->
         $('tr[data-practica-id="' + id[0] + '"]').addClass("success")
         $('tr[data-practica-id="' + id[0] + '"]').append('<td class="contribucion">' + valoresContribucion[id[1]] + '</td')
 
-      $('table#sortable thead tr').append('<th class="col-sm-1 col-xs-1 valor-contribucion">Contribución del objetivo</th>')
+      $('table#sortable thead tr').append('<th class="col-sm-1 col-xs-1 valor-contribucion">Contribución al objetivo</th>')
 
       $("html, body").animate
         scrollTop: $("#mapa").offset().top

@@ -7,11 +7,12 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
+    @user.ip = request.remote_ip
   	if @user.save
   		sign_in @user
       @user.clone_practicas
       @user.clone_objetivos
-      flash[:success] = t(:welcome)
+      flash[:success] = t(:welcome, url: 'https://www.youtube.com/watch?v=VaCHhjqVKTs').html_safe
   		redirect_to dashboard_url and return
   	else
   		render 'new'
@@ -27,6 +28,6 @@ class UsersController < ApplicationController
   private
   	def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :ambito_trabajo_id, :sector_empresa_id, :country)
+                                   :password_confirmation, :ambito_trabajo_id, :sector_empresa_id, :miembros_equipo)
     end
 end

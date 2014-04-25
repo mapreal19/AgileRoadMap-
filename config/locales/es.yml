@@ -5,7 +5,7 @@ es:
   languages: 'Idiomas'
   english: 'Inglés'
   spanish: 'Español'
-  welcome: 'Bienvenido'
+  welcome: "Bienvenido, si quieres conocer las funcionalidades de Agile Roadmap+ accede al <a href='%{url}' target='_blank'>video introductorio</a>."
 
   activerecord: 
     attributes:

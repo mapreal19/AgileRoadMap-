@@ -55,8 +55,18 @@ html,body{
 
 /* footer */
 
+.footer {
+  background: #3E4753 !important;
+  font-weight: normal;
+}
+
 .footer a, .footer a:hover {
-  color: #34DBD4 !important;
+  //color: #34DBD4 !important;
+}
+
+.copyright {
+  background: #585F69 !important;
+  font-weight: normal;
 }
 
 /* progress bar */

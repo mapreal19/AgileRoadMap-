@@ -27,13 +27,13 @@
               %li{ class: active_class('agile_map_definition', 'pages')}
                 = link_to '¿Qué es un Agile Roadmap?', agile_map_definition_path, { 'data-push' => true }
               %li{ class: active_class('what_is_agile_map', 'pages')}
-                = link_to '¿Qué es AgileRoadmap+?', what_is_agile_map_path, { 'data-push' => true }
+                = link_to '¿Qué es Agile Roadmap+?', what_is_agile_map_path, { 'data-push' => true }
               %li{ class: active_class('agile_map_pasos', 'pages')}
-                = link_to 'Pasos de AgileRoadmap+', agile_map_pasos_path, { 'data-push' => true }
+                = link_to 'Pasos de Agile Roadmap+', agile_map_pasos_path, { 'data-push' => true }
               %li{ class: active_class('index', 'practicas')}
-                = link_to 'Prácticas Ágiles de AgileRoadmap+', practicas_path, { 'data-push' => true }
+                = link_to 'Prácticas Ágiles de Agile Roadmap+', practicas_path, { 'data-push' => true }
               %li{ class: active_class('agile_team', 'pages')}
-                = link_to 'Equipo AgileRoadmap+', agile_team_path, { 'data-push' => true }
+                = link_to 'Equipo Agile Roadmap+', agile_team_path, { 'data-push' => true }
           - if signed_in?
             %li.dropdown{ class: active_class('dashboard', 'users') }
               %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{dashboard_path}", 'data-push' => 'true'}
