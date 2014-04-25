@@ -16,5 +16,20 @@ class UserPractica < ActiveRecord::Base
 	# Getters
 	def legacy_position_with_prefix
 		"PRA" + self[:legacy_position].to_s
-	end
+  end
+
+  def self.get_prac_position_stats
+    result = {}
+    UserPractica.all.each do |user_practica|
+      result[user_practica.practica_id] ||= []
+      result[user_practica.practica_id].push user_practica.position
+    end
+
+    result.each do |key, array|
+      # inject(:+) suma todos los elementos del array. to_f para que la division no sea entera.
+      result[key] = array.inject(:+).to_f / array.size
+    end
+
+    result
+  end
 end
