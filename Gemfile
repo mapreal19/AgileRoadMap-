@@ -108,3 +108,5 @@ gem 'touchpunch-rails'
 
 # https://github.com/caarlos0/nprogress-rails
 gem 'nprogress-rails'
+
+gem 'faker'
