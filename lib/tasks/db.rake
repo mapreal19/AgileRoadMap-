@@ -31,13 +31,13 @@ namespace :db do
 
       # 6 ordenamientos aleatorios de objetivos
       6.times do |i|
-        objetivo = user.user_objetivos[1 + rand(objetivos_length)]
+        objetivo = user.user_objetivos[rand(objetivos_length)]
         objetivo.insert_at(1 + rand(objetivos_length))
       end
 
       # 10 ordenamientos aleatorios de practicas
       10.times do |i|
-        practica = user.user_practicas[1 + rand(practicas_length)]
+        practica = user.user_practicas[rand(practicas_length)]
         practica.insert_at(1 + rand(practicas_length))
       end
     end
