@@ -69,6 +69,11 @@ Objetivo.create!({id: 15, name: 'Mejorar la sistematización del trabajo',
 
 # --- 42 Prácticas Ágiles ---
 
+# Obtiene la descripción de la práctica a partir del fichero proporcionado
+def get_content_from_file(filename)
+  open("#{Rails.root}/db/pracs_desc/#{filename}", "rb:UTF-8").read
+end
+
 # Borramos para asegurar que no hayan contenidos duplicados
 Practica.delete_all
 #seed_file = File.join(Rails.root, 'db', 'seed.yml')
@@ -84,7 +89,7 @@ Practica.create!({id: 1, position: 2, name: "Abordar y entregar trabajo terminad
 	description:'<p>Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: abordar el desarrollo de un producto como un todo, concentrando todo análisis en un período, luego su diseño, implementación, etc., y haciendo una sola entrega al final. Esto corresponde a un enfoque de proceso secuencial o en cascada (si hay algo de solape entre las actividades).</p><p>No trabajar de forma incremental entraña un alto riesgo, especialmente si el alcance es grande, es decir, cuando solo después de realizar una gran inversión de tiempo o recursos se producirá la entrega que el cliente podrá explotar. Dicho riesgo se asocia a que lo definido inicialmente o con demasiada anticipación cambie antes de la entrega y obligue a hacer re-trabajo para alinear el resultados a los cambios. Un enfoque incremental requiere una definición preliminar de cada unidad de trabajo, pero solo el suficiente para su priorización, dejando la definición completa para el momento justo antes de realizar el trabajo.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><a href="http://agilismoatwork.blogspot.com.es/2013/02/carta-de-practicas-agiles-arma-tu.html" target="_blank">Ver la lista y descripción de todas las prácticas</a></p>',
 	effort: 4, ambito_decision: 'equipo', agile_method: "Kanban, XP, Scrum"})
 Practica.create!({id: 23, position: 3, name: "Realizar entregas frecuentes de unidades de trabajo terminadas",
-  description:  open("#{Rails.root}/db/pracs_desc/prac3.html", "rb:UTF-8").read,
+  description:  get_content_from_file('prac3.html'),
 	effort: 5, ambito_decision: 'equipo', agile_method: "Kanban, XP, Scrum"})
 Practica.create!({id: 25, position: 4, name: "Realizar reuniones de planificación frecuentemente (frecuencia \
 	de pocas semanas, no meses).",
