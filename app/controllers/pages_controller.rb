@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class PagesController < ApplicationController
   def home
   end
@@ -49,6 +51,7 @@ class PagesController < ApplicationController
     end
 
     # --- Users
+    # Ambito Trabajo
     @user_ambitos = User.group(:ambito_trabajo_id).count
 
     mappings = AmbitoTrabajo.all.pluck(:id, :nombre)
@@ -58,6 +61,20 @@ class PagesController < ApplicationController
     end
 
     @user_ambitos = Hash[@user_ambitos.map {|k, v| [hash_mappings[k], v] }]
+
+    # Countries
+    # http://api.hostip.info/get_json.php?84.126.72.132
+    @user_countries = {}
+    User.all.each do |user|
+      result = JSON.parse(
+          open("http://ip-api.com/json/#{user.ip}")
+          .read
+      )
+      country = result["country"]
+      @user_countries[country] ||= 0
+      @user_countries[country] += 1
+    end
+
   end
 
 end
