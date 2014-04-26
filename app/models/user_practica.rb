@@ -32,4 +32,19 @@ class UserPractica < ActiveRecord::Base
 
     result
   end
+
+  def self.get_aplicable_stats
+    result = {}
+    UserPractica.all.each do |user_practica|
+      result[user_practica.practica_id] ||= []
+      result[user_practica.practica_id].push (user_practica.no_aplicable ? 0 : 1) # Si no aplicable == true, no se aplica -> valor 0
+    end
+
+    result.each do |key, array|
+      # inject(:+) suma todos los elementos del array. to_f para que la division no sea entera.
+      result[key] = array.inject(:+).to_f / array.size
+    end
+
+    result
+  end
 end

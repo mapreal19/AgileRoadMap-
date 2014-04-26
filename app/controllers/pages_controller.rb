@@ -27,20 +27,20 @@ class PagesController < ApplicationController
 
   def stats
 
-    #@objetivos_position = UserObjetivo.get_position_stats
+    @objetivos_position = UserObjetivo.get_position_stats
 
     # --- Practicas
 
-    #@pracs_position = UserPractica.get_prac_position_stats
+    @pracs_position = UserPractica.get_prac_position_stats
 
     # --- Users
 
     # Ambito Trabajo
-    #@user_ambitos = User.get_ambito_trabajo_stats
+    @user_ambitos = User.get_ambito_trabajo_stats
 
     @user_sectores = User.get_sector_empresa_stats
 
-    #@user_countries = User.get_countries_stats
+    @user_countries = User.get_countries_stats
 
   end
 
