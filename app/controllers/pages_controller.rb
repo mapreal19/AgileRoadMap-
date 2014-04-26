@@ -38,6 +38,8 @@ class PagesController < ApplicationController
     # Ambito Trabajo
     #@user_ambitos = User.get_ambito_trabajo_stats
 
+    @user_sectores = User.get_sector_empresa_stats
+
     #@user_countries = User.get_countries_stats
 
   end

@@ -82,6 +82,18 @@ class User < ActiveRecord::Base
     user_ambitos = Hash[user_ambitos.map {|k, v| [hash_mappings[k], v] }]
   end
 
+  def self.get_sector_empresa_stats
+    user_sectores = User.group(:sector_empresa_id).count
+
+    mappings = SectorEmpresa.all.pluck(:id, :nombre)
+    hash_mappings = {}
+    mappings.each do |mapping|
+      hash_mappings[mapping[0]] = mapping[1]
+    end
+
+    user_sectores = Hash[user_sectores.map {|k, v| [hash_mappings[k], v] }]
+  end
+
 	def send_password_reset
 	  generate_token(:password_reset_token)
 	  self.password_reset_sent_at = Time.zone.now
