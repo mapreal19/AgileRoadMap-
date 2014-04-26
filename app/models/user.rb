@@ -52,7 +52,33 @@ class User < ActiveRecord::Base
 				).save
 			index += 1
 		end
-	end
+  end
+
+  def self.get_countries_stats
+    user_countries = {}
+    User.all.each do |user|
+      result = JSON.parse(
+          open("http://ip-api.com/json/#{user.ip}")
+          .read
+      )
+      country = result["country"]
+      user_countries[country] ||= 0
+      user_countries[country] += 1
+    end
+    user_countries
+  end
+
+  def self.get_ambito_trabajo_stats
+    user_ambitos = User.group(:ambito_trabajo_id).count
+
+    mappings = AmbitoTrabajo.all.pluck(:id, :nombre)
+    hash_mappings = {}
+    mappings.each do |mapping|
+      hash_mappings[mapping[0]] = mapping[1]
+    end
+
+    user_ambitos = Hash[user_ambitos.map {|k, v| [hash_mappings[k], v] }]
+  end
 
 	def send_password_reset
 	  generate_token(:password_reset_token)
