@@ -74,6 +74,8 @@ GEM
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    groupdate (2.1.0)
+      activerecord (>= 3.0.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -212,6 +214,7 @@ DEPENDENCIES
   debugger
   faker
   font-awesome-sass-rails
+  groupdate
   haml (~> 4.0.3)
   haml-rails (~> 0.4)
   jbuilder (~> 1.2)

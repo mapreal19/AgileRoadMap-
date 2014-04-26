@@ -27,7 +27,7 @@ class PagesController < ApplicationController
 
   def stats
 
-    @objetivos_position = UserObjetivo.get_position_stats
+    #@objetivos_position = UserObjetivo.get_position_stats
 
     # --- Practicas
 

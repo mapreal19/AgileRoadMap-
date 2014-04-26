@@ -1,5 +1,7 @@
 = javascript_include_tag "//www.google.com/jsapi", "chartkick"
 .container
+  - if Rails.env.production? # Solo funciona con PostgreSQL
+    = line_chart User.group_by_day(:created_at).count
   = column_chart(@objetivos_position)
   = column_chart(@pracs_position)
   = @user_ambitos
