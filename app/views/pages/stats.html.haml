@@ -2,6 +2,8 @@
 .container
   %h1 Usuarios
 
+  %h1 Total
+  = User.all.count
   - if Rails.env.production? # Solo funciona con PostgreSQL
     %h2 Registros por día
     = line_chart User.group_by_day(:created_at).count
@@ -21,5 +23,7 @@
   = column_chart(@pracs_position)
   %h2 %Aplicable
   = column_chart(UserPractica.get_aplicable_stats)
+  %h2 Margen de mejora medio
+  = column_chart(UserPractica.get_margen_stats)
 
 
