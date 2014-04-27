@@ -6,7 +6,7 @@ class UserObjetivo < ActiveRecord::Base
 
   def self.get_position_stats
     result = {}
-    UserObjetivo.all.each do |user_objetivo|
+    UserObjetivo.without_yopolt.each do |user_objetivo|
       result[user_objetivo.objetivo_id] ||= []
       result[user_objetivo.objetivo_id].push user_objetivo.position
     end
@@ -18,4 +18,9 @@ class UserObjetivo < ActiveRecord::Base
 
     result
   end
+
+  def self.without_yopolt
+    UserObjetivo.joins(:user).where("email NOT LIKE ? ", 'yopolt%')
+  end
+
 end

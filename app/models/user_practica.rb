@@ -20,7 +20,7 @@ class UserPractica < ActiveRecord::Base
 
   def self.get_prac_position_stats
     result = {}
-    UserPractica.all.each do |user_practica|
+    UserPractica.without_yopolt.each do |user_practica|
       result[user_practica.practica_id] ||= []
       result[user_practica.practica_id].push user_practica.position
     end
@@ -35,7 +35,7 @@ class UserPractica < ActiveRecord::Base
 
   def self.get_aplicable_stats
     result = {}
-    UserPractica.all.each do |user_practica|
+    UserPractica.without_yopolt.each do |user_practica|
       result[user_practica.practica_id] ||= []
       result[user_practica.practica_id].push (user_practica.no_aplicable ? 0 : 1) # Si no aplicable == true, no se aplica -> valor 0
     end
@@ -50,7 +50,7 @@ class UserPractica < ActiveRecord::Base
 
   def self.get_margen_stats
     result = {}
-    UserPractica.all.each do |user_practica|
+    UserPractica.without_yopolt.each do |user_practica|
       result[user_practica.practica_id] ||= []
       # No tenemos en cuenta si range == -1 (No definido)
       result[user_practica.practica_id].push user_practica.range if user_practica.range >= 0
@@ -62,5 +62,9 @@ class UserPractica < ActiveRecord::Base
     end
 
     result
+  end
+
+  def self.without_yopolt
+    UserPractica.joins(:user).where("email NOT LIKE ? ", 'yopolt%')
   end
 end

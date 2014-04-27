@@ -3,10 +3,10 @@
   %h1 Usuarios
 
   %h1 Total
-  = User.all.count
+  = User.without_yopolt.count
   - if Rails.env.production? # Solo funciona con PostgreSQL
     %h2 Registros por día
-    = line_chart User.group_by_day(:created_at).count
+    = line_chart User.without_yopolt.group_by_day(:created_at).count
   %h2 Ámbitos de trabajo
   = pie_chart(@user_ambitos)
   %h2 Sectores de empresa
@@ -22,8 +22,8 @@
   %h2 Posición media
   = column_chart(@pracs_position)
   %h2 %Aplicable
-  = column_chart(UserPractica.get_aplicable_stats)
+  = column_chart(UserPractica.without_yopolt.get_aplicable_stats)
   %h2 Margen de mejora medio
-  = column_chart(UserPractica.get_margen_stats)
+  = column_chart(UserPractica.without_yopolt.get_margen_stats)
 
 

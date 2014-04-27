@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
 
   def self.get_countries_stats
     user_countries = {}
-    User.all.each do |user|
+    User.without_yopolt.each do |user|
       result = JSON.parse(
           open("http://ip-api.com/json/#{user.ip}")
           .read
@@ -71,7 +71,7 @@ class User < ActiveRecord::Base
   end
 
   def self.get_ambito_trabajo_stats
-    user_ambitos = User.group(:ambito_trabajo_id).count
+    user_ambitos = User.without_yopolt.group(:ambito_trabajo_id).count
 
     mappings = AmbitoTrabajo.all.pluck(:id, :nombre)
     hash_mappings = {}
@@ -83,7 +83,7 @@ class User < ActiveRecord::Base
   end
 
   def self.get_sector_empresa_stats
-    user_sectores = User.group(:sector_empresa_id).count
+    user_sectores = User.without_yopolt.group(:sector_empresa_id).count
 
     mappings = SectorEmpresa.all.pluck(:id, :nombre)
     hash_mappings = {}
