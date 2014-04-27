@@ -110,3 +110,9 @@ gem 'touchpunch-rails'
 gem 'nprogress-rails'
 
 gem 'faker'
+
+# http://ankane.github.io/chartkick/
+# For stats
+gem "chartkick"
+
+gem 'groupdate'

@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
 
+  scope :without_yopolt, -> { where("email NOT LIKE ? ", 'yopolt%') }
+
 	has_many :user_practicas, -> { order("position") }, dependent: :destroy
 	has_many :user_objetivos, -> { order("position") }, dependent: :destroy
   belongs_to :ambito_trabajo
@@ -52,7 +54,45 @@ class User < ActiveRecord::Base
 				).save
 			index += 1
 		end
-	end
+  end
+
+  def self.get_countries_stats
+    user_countries = {}
+    User.without_yopolt.each do |user|
+      result = JSON.parse(
+          open("http://ip-api.com/json/#{user.ip}")
+          .read
+      )
+      country = result["country"]
+      user_countries[country] ||= 0
+      user_countries[country] += 1
+    end
+    user_countries
+  end
+
+  def self.get_ambito_trabajo_stats
+    user_ambitos = User.without_yopolt.group(:ambito_trabajo_id).count
+
+    mappings = AmbitoTrabajo.all.pluck(:id, :nombre)
+    hash_mappings = {}
+    mappings.each do |mapping|
+      hash_mappings[mapping[0]] = mapping[1]
+    end
+
+    user_ambitos = Hash[user_ambitos.map {|k, v| [hash_mappings[k], v] }]
+  end
+
+  def self.get_sector_empresa_stats
+    user_sectores = User.without_yopolt.group(:sector_empresa_id).count
+
+    mappings = SectorEmpresa.all.pluck(:id, :nombre)
+    hash_mappings = {}
+    mappings.each do |mapping|
+      hash_mappings[mapping[0]] = mapping[1]
+    end
+
+    user_sectores = Hash[user_sectores.map {|k, v| [hash_mappings[k], v] }]
+  end
 
 	def send_password_reset
 	  generate_token(:password_reset_token)
