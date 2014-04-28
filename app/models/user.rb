@@ -56,6 +56,23 @@ class User < ActiveRecord::Base
 		end
   end
 
+  def self.get_size_team_stats
+    size_teams = {}
+    key = nil
+    User.without_yopolt.each do |user|
+      # 1-5, 6-10, 11-20, > 20
+      case user.miembros_equipo
+        when 1..5 then key = '1-5'
+        when 6..10 then key = '6-10'
+        when 11..20 then key = '11-20'
+        else key = '> 20'
+      end
+      size_teams[key] ||= 0
+      size_teams[key] += 1
+    end
+    size_teams
+  end
+
   def self.get_countries_stats
     user_countries = {}
     User.without_yopolt.each do |user|
