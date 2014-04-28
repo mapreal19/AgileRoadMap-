@@ -11,6 +11,8 @@
   = pie_chart(@user_ambitos)
   %h2 Sectores de empresa
   = pie_chart(@user_sectores)
+  %h2 Número de trabajadores
+  = pie_chart(User.get_size_team_stats)
   %h2 Países
   = geo_chart(@user_countries)
 
