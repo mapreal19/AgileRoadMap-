@@ -7,8 +7,8 @@ class UserObjetivo < ActiveRecord::Base
   def self.get_position_stats
     result = {}
     UserObjetivo.without_yopolt.each do |user_objetivo|
-      result[user_objetivo.objetivo_id] ||= []
-      result[user_objetivo.objetivo_id].push user_objetivo.position
+      result[user_objetivo.objetivo.id_with_prefix] ||= []
+      result[user_objetivo.objetivo.id_with_prefix].push user_objetivo.position
     end
 
     result.each do |key, array|
@@ -16,7 +16,7 @@ class UserObjetivo < ActiveRecord::Base
       result[key] = array.inject(:+).to_f / array.size
     end
 
-    result
+    result.sort_by &:last
   end
 
   def self.without_yopolt
