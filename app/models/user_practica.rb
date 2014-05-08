@@ -21,8 +21,8 @@ class UserPractica < ActiveRecord::Base
   def self.get_prac_position_stats
     result = {}
     UserPractica.without_yopolt.each do |user_practica|
-      result[user_practica.practica_id] ||= []
-      result[user_practica.practica_id].push user_practica.position
+      result[user_practica.practica.position_with_prefix] ||= []
+      result[user_practica.practica.position_with_prefix].push user_practica.position
     end
 
     result.each do |key, array|
@@ -30,7 +30,7 @@ class UserPractica < ActiveRecord::Base
       result[key] = array.inject(:+).to_f / array.size
     end
 
-    result
+    result.sort_by &:last
   end
 
   def self.get_aplicable_stats
