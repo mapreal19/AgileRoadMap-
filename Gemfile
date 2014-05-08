@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
+ruby '1.9.3'
 
 gem 'tzinfo-data'
 gem 'tzinfo'
