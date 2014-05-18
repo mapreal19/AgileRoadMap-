@@ -15,6 +15,10 @@ group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
 	gem 'meta_request'
+  
+  # http://rubydoc.info/gems/guard-cucumber/1.4.1/frames
+  # guard init cucumber
+  gem 'guard-cucumber'
 end
 
 group :development, :test do
