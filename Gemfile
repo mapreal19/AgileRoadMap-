@@ -27,6 +27,9 @@ end
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 # Heroku for development
