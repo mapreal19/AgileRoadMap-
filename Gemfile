@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-ruby '1.9.3'
+ruby '2.1.1'
 
 gem 'tzinfo-data'
 gem 'tzinfo'
@@ -21,6 +21,7 @@ group :development do
   # http://rubydoc.info/gems/guard-cucumber/1.4.1/frames
   # guard init cucumber
   gem 'guard-cucumber'
+
 end
 
 group :development, :test do
@@ -37,6 +38,8 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'launchy', '~> 2.4.2'
+
+  gem 'libnotify', '~> 0.8.3'
 end
 
 # Heroku for development
