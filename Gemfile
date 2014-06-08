@@ -6,8 +6,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.1'
 ruby '2.1.1'
 
+=begin
 gem 'tzinfo-data'
 gem 'tzinfo'
+=end
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
@@ -33,10 +35,11 @@ group :development, :test do
 end
 
 group :test do
-  gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.1.0'
+  gem 'selenium-webdriver', '~> 2.42.0'
+  gem 'capybara', '~> 2.3.0'
 
-  gem 'cucumber-rails', :require => false
+  #gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', '~> 1.4.1'
   gem 'database_cleaner'
   gem 'launchy', '~> 2.4.2'
 

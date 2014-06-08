@@ -27,6 +27,13 @@ Then(/^the user "(.*?)" should have (\d+) pracs$/) do |user_email, num_pracs|
   #@user.user_practicas.count.should == 42
 end
 
+Then(/^I should be able to drag the prac (\d+) to the (\d+) position$/) do |from_pos, to_pos|
+	target = find('table#sortable tr:nth-child(4) > td.handle')
+	find('table#sortable tr:nth-child(1) > td.handle').drag_to(target)
+
+end
+
+
 
 Then /^show me the page$/ do
   save_and_open_page
