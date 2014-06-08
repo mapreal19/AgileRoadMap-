@@ -16,6 +16,7 @@
 #= require jquery.ui.effect-highlight
 #= require jquery.ui.touch-punch
 #= require jquery.autosize
+#= require jquery.simulate.drag-sortable
 #= require wiselinks
 #= require nprogress
 #= require_tree .

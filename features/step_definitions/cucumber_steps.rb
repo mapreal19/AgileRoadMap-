@@ -29,8 +29,12 @@ end
 
 Then(/^I should be able to drag the prac (\d+) to the (\d+) position$/) do |from_pos, to_pos|
 	begin
-		target = find('table#sortable > tbody > tr:nth-child(1) > td.handle')
-		find('table#sortable > tbody > tr:nth-child(4) > td.handle').drag_to(target)
+		#target = find('table#sortable > tbody > tr:nth-child(1) > td.handle')
+		#find('table#sortable > tbody > tr:nth-child(4) > td.handle').drag_to(target)
+		page.execute_script %Q{
+    	$('table#sortable > tbody > tr:nth-child(4)').simulateDragSortable({move: 4, handle: '.handle'});
+  	}
+  	sleep 1
 	rescue 
 		save_and_open_page	
 		raise	
