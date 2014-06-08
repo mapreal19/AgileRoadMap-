@@ -28,8 +28,13 @@ Then(/^the user "(.*?)" should have (\d+) pracs$/) do |user_email, num_pracs|
 end
 
 Then(/^I should be able to drag the prac (\d+) to the (\d+) position$/) do |from_pos, to_pos|
-	target = find('table#sortable tr:nth-child(4) > td.handle')
-	find('table#sortable tr:nth-child(1) > td.handle').drag_to(target)
+	begin
+		target = find('table#sortable > tbody > tr:nth-child(1) > td.handle')
+		find('table#sortable > tbody > tr:nth-child(4) > td.handle').drag_to(target)
+	rescue 
+		save_and_open_page	
+		raise	
+	end
 end
 
 Then /^show me the page$/ do
