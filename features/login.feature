@@ -1,5 +1,6 @@
 Feature: login system
-
+	
+	@javascript
   Scenario: Signing in
   	Given a user with email "user1@gmail.com" and password "secret"
     When I login as "user1@gmail.com" with password "secret"

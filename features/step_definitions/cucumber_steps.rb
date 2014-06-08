@@ -1,6 +1,5 @@
 # encoding: utf-8
 
-
 # Need to rake db:migrate RAILS_ENV=test and rake db:seed RAILS_ENV=test
 
 Given(/^a user with email "(.*?)" and password "(.*?)"$/) do |email, password|
@@ -8,6 +7,7 @@ Given(/^a user with email "(.*?)" and password "(.*?)"$/) do |email, password|
 	@user.save(validate: false)
 	@user.clone_practicas
   @user.clone_objetivos
+  expect(Practica.all.count).to eq(42)
 end
 
 When /^I login as "(.*?)" with password "(.*?)"$/ do |email, password|
@@ -30,10 +30,7 @@ end
 Then(/^I should be able to drag the prac (\d+) to the (\d+) position$/) do |from_pos, to_pos|
 	target = find('table#sortable tr:nth-child(4) > td.handle')
 	find('table#sortable tr:nth-child(1) > td.handle').drag_to(target)
-
 end
-
-
 
 Then /^show me the page$/ do
   save_and_open_page
