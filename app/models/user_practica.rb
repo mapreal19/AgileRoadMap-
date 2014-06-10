@@ -11,7 +11,7 @@ class UserPractica < ActiveRecord::Base
 	MARGEN = { -1 => 'No definido', 0 => 'Ninguno', 1 => 'Poco', 2 => 'Medio', 3 => 'Alto'}
 	validates_inclusion_of :range, in: -1..3, allow_nil: true
 
-	validates_length_of :comment, maximum: 150
+	#validates_length_of :comment, maximum: 150
 
 	# Getters
 	def legacy_position_with_prefix
