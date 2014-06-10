@@ -5,6 +5,10 @@
 # files.
 
 require 'cucumber/rails'
+require 'rspec/expectations'
+require 'capybara/poltergeist'
+
+Capybara.javascript_driver = :poltergeist
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -39,12 +43,12 @@ end
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:
 #
-#   Before('@no-txn,@selenium,@culerity,@celerity,@javascript') do
-#     # { :except => [:widgets] } may not do what you expect here
-#     # as Cucumber::Rails::Database.javascript_strategy overrides
-#     # this setting.
-#     DatabaseCleaner.strategy = :truncation
-#   end
+  Before('@no-txn,@selenium,@culerity,@celerity,@javascript') do
+    # { :except => [:widgets] } may not do what you expect here
+    # as Cucumber::Rails::Database.javascript_strategy overrides
+    # this setting.
+    DatabaseCleaner.strategy = :truncation, {only: %w[users user_practicas user_objetivos]}
+  end
 #
 #   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
 #     DatabaseCleaner.strategy = :transaction
