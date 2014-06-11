@@ -27,7 +27,7 @@ Then(/^the user "(.*?)" should have (\d+) pracs$/) do |user_email, num_pracs|
   #@user.user_practicas.count.should == 42
 end
 
-Then(/^I should be able to drag the prac (\d+) to the (\d+) position$/) do |from_pos, to_pos|
+Then(/^I should be able to drag and drop a practica$/) do 
 	begin
 		#target = find('table#sortable > tbody > tr:nth-child(1) > td.handle')
 		#find('table#sortable > tbody > tr:nth-child(4) > td.handle').drag_to(target)
@@ -42,11 +42,36 @@ Then(/^I should be able to drag the prac (\d+) to the (\d+) position$/) do |from
   	}
   	sleep 1
   	expect(UserPractica.find_by(user_id: @user.id, practica_id: 25).position).to be > prac_position
+  	save_page
 	rescue 
-		save_and_open_page	
+		save_page	
 		raise	
 	end
 end
+
+Then(/^I should be able to fill notas with a long text$/) do
+	comment = 'aaaaa'
+	find('#sortable > tbody > tr:nth-child(1) > td:nth-child(7) > textarea').set(comment)
+
+=begin
+	within("table#sortable > tbody > tr:nth-child(2)") do
+		fill_in 'bio', with: 'aaaaaaa'
+		#find('.comment').set(comment)
+		find('.comment').trigger('blur')
+		sleep 1
+	end
+=end
+
+	save_and_open_page
+=begin
+click_link('Mi Agile Roadmap+')
+	within("table#sortable > tbody > tr:nth-child(1)") do
+		#fill_in 'bio', with: 'aaaaaaa'
+		expect(find('.comment').text).to eq(comment)
+	end
+=end
+end
+
 
 Then /^show me the page$/ do
   save_and_open_page
