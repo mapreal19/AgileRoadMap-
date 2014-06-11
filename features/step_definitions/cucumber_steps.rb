@@ -42,7 +42,6 @@ Then(/^I should be able to drag and drop a practica$/) do
   	}
   	sleep 1
   	expect(UserPractica.find_by(user_id: @user.id, practica_id: 25).position).to be > prac_position
-  	save_page
 	rescue 
 		save_page	
 		raise	
@@ -50,8 +49,10 @@ Then(/^I should be able to drag and drop a practica$/) do
 end
 
 Then(/^I should be able to fill notas with a long text$/) do
-	comment = 'aaaaa'
-	find('#sortable > tbody > tr:nth-child(1) > td:nth-child(7) > textarea').set(comment)
+  sleep 5
+  comment = 'aaaaa'
+  find('#sortable > tbody > tr:nth-child(1) > td:nth-child(7) > textarea').set(comment)
+  sleep 2
 
 =begin
 	within("table#sortable > tbody > tr:nth-child(2)") do
@@ -61,15 +62,14 @@ Then(/^I should be able to fill notas with a long text$/) do
 		sleep 1
 	end
 =end
-
-	save_and_open_page
-=begin
-click_link('Mi Agile Roadmap+')
+  
+  click_link('Mi Agile Roadmap+')
+  # Need this for loading all the rows
+  sleep 5
 	within("table#sortable > tbody > tr:nth-child(1)") do
 		#fill_in 'bio', with: 'aaaaaaa'
 		expect(find('.comment').text).to eq(comment)
 	end
-=end
 end
 
 

@@ -44,7 +44,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy', '~> 2.4.2'
 
-  gem 'libnotify', '~> 0.8.3'
+  # gem 'libnotify', '~> 0.8.3'
 end
 
 # Heroku for development
