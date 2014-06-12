@@ -15,6 +15,7 @@ When /^I login as "(.*?)" with password "(.*?)"$/ do |email, password|
   fill_in('Email', :with => email)
   fill_in('Contraseña', :with => password)
   click_button('Login')
+  # sleep 5
 end
 
 Then(/^I should see h2 "(.*?)"$/) do |text|
@@ -29,13 +30,6 @@ end
 
 Then(/^I should be able to drag and drop a practica$/) do 
 	begin
-		#target = find('table#sortable > tbody > tr:nth-child(1) > td.handle')
-		#find('table#sortable > tbody > tr:nth-child(4) > td.handle').drag_to(target)
-		#the_prac = find('table#sortable > tbody > tr:nth-child(4)').text
-		#the_next_prac = find('table#sortable > tbody > tr:nth-child(5)').text
-
-		#expect(page.body.index(the_prac)).to be < page.body.index(the_next_prac)
-		#page.body.should =~ /PRA4.*PRA5/  
 		prac_position = UserPractica.find_by(user_id: @user.id, practica_id: 25).position
 		page.execute_script %Q{
     	$('table#sortable > tbody > tr:nth-child(4)').simulateDragSortable({move: 4, handle: '.handle'});
@@ -49,25 +43,15 @@ Then(/^I should be able to drag and drop a practica$/) do
 end
 
 Then(/^I should be able to fill notas with a long text$/) do
-  sleep 5
-  comment = 'aaaaa'
+  # Comment 151 char long
+  comment = 'a'*151
   find('#sortable > tbody > tr:nth-child(1) > td:nth-child(7) > textarea').set(comment)
-  sleep 2
 
-=begin
-	within("table#sortable > tbody > tr:nth-child(2)") do
-		fill_in 'bio', with: 'aaaaaaa'
-		#find('.comment').set(comment)
-		find('.comment').trigger('blur')
-		sleep 1
-	end
-=end
-  
   click_link('Mi Agile Roadmap+')
+ 
   # Need this for loading all the rows
   sleep 5
 	within("table#sortable > tbody > tr:nth-child(1)") do
-		#fill_in 'bio', with: 'aaaaaaa'
 		expect(find('.comment').text).to eq(comment)
 	end
 end
