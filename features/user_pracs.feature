@@ -1,4 +1,5 @@
 Feature: user practicas
+  The user should be able to build his own agile roadmap
 	
   Background: 
     Given a user with email "user1@gmail.com" and password "secret"
@@ -15,4 +16,8 @@ Feature: user practicas
   @javascript 
   Scenario: Margen de Mejora
     Then I should be able to change the range
+    
+  @javascript
+  Scenario: No aplicable
+    Then I should be able to mark the checkbox
   
