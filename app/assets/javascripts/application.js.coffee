@@ -28,6 +28,7 @@ $(document).ready ->
     App.init()
     App.initSliders()
     Index.initParallaxSlider()
+    App.page_init()
 
     $(document).off('page:loading').on(
       'page:loading'
@@ -62,6 +63,7 @@ $(document).ready ->
             Index.initParallaxSlider()
             # Initialize the navbar dropdown 
             $('[data-hover="dropdown"]').dropdownHover()
+            App.page_init()
 
             # Google analytics
             if $('RAILS_ENV').text() == 'production'

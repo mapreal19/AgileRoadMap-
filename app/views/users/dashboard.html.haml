@@ -13,7 +13,9 @@
       .col-xs-12 
         .checkbox
           %label
-            %input#no_margen{type: 'checkbox'} Ocultar prácticas sin margen de mejora
+            = check_box_tag 'no_margen', nil
+            -#%input#no_margen{type: 'checkbox', checked: 'checked'} 
+            Ocultar prácticas sin margen de mejora
       .col-xs-12 
         .checkbox
           %label
