@@ -1,14 +1,31 @@
 App.page_init = ->
-	$("#no_margen").prop('checked', localStorage.getItem('checkbox-margen')) 
+#https://github.com/igor-alexandrov/wiselinks/issues/41
 
-	$("#no_margen").change -> 
-		#https://github.com/igor-alexandrov/wiselinks/issues/41
+	cbLocalStorage('checkbox-margen', '#no_margen', '.no-margen')
+	cbLocalStorage('checkbox-aplicable', '#no_aplicable', '.no-aplicable')
+	
 
-		console.log('no margen')
+cbLocalStorage = (itemStorage, idCheckBox, classRows) -> 
+	cbChecked = localStorage.getItem(itemStorage)
+
+	$(idCheckBox).prop('checked', cbChecked) 
+
+	if cbChecked == 'true'
+		cbChecked = true
+	else
+		cbChecked = false
+
+	$(idCheckBox).prop('checked', cbChecked) 
+
+	if cbChecked
+		$(classRows).hide()
+
+	$(idCheckBox).change ->
 		if @checked
-			localStorage.setItem('checkbox-margen', true)
+			localStorage.setItem(itemStorage, true)
 		else
-			localStorage.setItem('checkbox-margen', false)
+			localStorage.setItem(itemStorage, false)
+
 
 
 
