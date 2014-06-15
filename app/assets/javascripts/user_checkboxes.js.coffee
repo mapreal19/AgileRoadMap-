@@ -1,4 +1,4 @@
-App.page_init = ->
+App.checkBoxesLocalStorage = ->
 #https://github.com/igor-alexandrov/wiselinks/issues/41
 
 	cbLocalStorage('checkbox-margen', '#no_margen', '.no-margen')
@@ -7,8 +7,6 @@ App.page_init = ->
 
 cbLocalStorage = (itemStorage, idCheckBox, classRows) -> 
 	cbChecked = localStorage.getItem(itemStorage)
-
-	$(idCheckBox).prop('checked', cbChecked) 
 
 	if cbChecked == 'true'
 		cbChecked = true
