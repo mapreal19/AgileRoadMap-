@@ -27,7 +27,6 @@ jQuery ->
 
   App.noAplicableCheckBox = noAplicableCheckBox = () ->
     $("#no_aplicable").change ->
-      console.log 'changed checkbox no_aplicable'
       if @checked
         $(".no-aplicable").fadeOut "slow"
       else

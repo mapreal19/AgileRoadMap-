@@ -4,7 +4,8 @@
     %i.icon-eye-open.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Ver lista de objetivos"}
     %i.icon-eye-close.icon-large.tooltip-info{"data-toggle" => "tooltip", "data-placement" => "right", "title" => "No ver lista de objetivos", style: "display:none"}
 .col-xs-12
-  %table#tabla_objetivos.table.table-bordered{ :data => { update_url: user_objetivos_sort_path }, style: "display:none"}
+  %table#tabla_objetivos.table.table-bordered{ :data => { update_url: user_objetivos_sort_path, interesa_url: user_objetivos_interesa_path }, 
+  style: "display:none"}
     %thead
       %tr
         %th.col-sm-1.col-xs-3
