@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618102226) do
+ActiveRecord::Schema.define(version: 20140618154637) do
 
   create_table "ambito_trabajos", force: true do |t|
     t.string   "nombre"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20140618102226) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "no_interesa", default: false
+    t.text     "comment"
   end
 
   add_index "user_objetivos", ["objetivo_id"], name: "index_user_objetivos_on_objetivo_id"
