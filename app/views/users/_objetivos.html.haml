@@ -9,10 +9,11 @@
       %tr
         %th.col-sm-1.col-xs-3
         %th.col-sm-1.hidden-xs Orden
-        %th.col-sm-7.col-xs-9 Objetivo específico de mejora
+        %th.col-sm-6.col-xs-9 Objetivo específico de mejora
         %th.col-sm-1.hidden-xs Satisfacción del cliente
         %th.col-sm-1.hidden-xs Motivación y compromiso del equipo
         %th.col-sm-1.hidden-xs Productividad
+        %th.col-sm-1.hidden-xs No interesa
     %tbody
       - @objetivos.each do |objetivo|
         %tr.objetivo.item-objetivo{data: {ids: "#{objetivo.objetivo.get_json_practicas_ids}", item_id: "#{objetivo.id}"}}
