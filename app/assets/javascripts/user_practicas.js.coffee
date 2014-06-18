@@ -6,6 +6,7 @@ jQuery ->
     
   App.toggleTablaObjetivos = toggleTablaObjetivos = () ->
     $('#toggle_objetivos').click ->
+      $('#checkbox_objetivo').toggle 'slow'
       $('#tabla_objetivos').toggle 'slow'
       App.resetFilasTablaPracs()
 

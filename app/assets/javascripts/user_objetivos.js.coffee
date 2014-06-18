@@ -4,13 +4,13 @@ App.updateNoInteresaCheckbox = ->
       fila_objetivo = $this.parent().parent()
       objetivo_id = fila_objetivo.data('item-id')
 
-      ###if (@checked and $('#no_aplicable').is(':checked'))
-        fila_practica.fadeOut "slow", ->
-          fila_practica.addClass("no-aplicable")
+      if (@checked and $('#no_interesa').is(':checked'))
+        fila_objetivo.fadeOut "slow", ->
+          fila_objetivo.addClass("no-interesa")
       else if @checked
-        fila_practica.addClass("no-aplicable")
+        fila_objetivo.addClass("no-interesa")
       else
-        fila_practica.removeClass("no-aplicable")###
+        fila_objetivo.removeClass("no-interesa")
       
       $.ajax(
         type: 'POST'
@@ -19,5 +19,11 @@ App.updateNoInteresaCheckbox = ->
         data: { id: objetivo_id, user_objetivo: { no_interesa: @checked}}
         )
 
+App.noInteresaCheckBox = ->
+  $("#no_interesa").change ->
+    if @checked
+      $(".no-interesa").fadeOut "slow"
+    else
+      $(".no-interesa").fadeIn "slow"
 
 
