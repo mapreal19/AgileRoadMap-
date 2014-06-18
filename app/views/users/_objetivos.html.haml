@@ -36,3 +36,8 @@
           %td.hidden-xs
             -if objetivo.objetivo.productivity
               %i.icon-ok
+          %td.hidden-xs
+            = check_box_tag 'no_interesa' + objetivo.objetivo.id.to_s, 
+            objetivo.no_interesa, 
+            objetivo.no_interesa, 
+            class: 'no-interesa-checkbox'
