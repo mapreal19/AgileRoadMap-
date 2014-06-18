@@ -27,9 +27,10 @@ class UserObjetivosController < ApplicationController
     render nothing: true
   end
 
-
-  def user_objetivo_params
-    params.require(:user_objetivo).permit(:comment, :no_interesa)
-  end
+  private
+    
+    def user_objetivo_params
+      params.require(:user_objetivo).permit(:comment, :no_interesa)
+    end
 
 end
