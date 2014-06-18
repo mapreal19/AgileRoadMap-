@@ -13,7 +13,7 @@
           Ocultar objetivos que no interesan
 
 .col-xs-12
-  %table#tabla_objetivos.table.table-bordered{ :data => { update_url: user_objetivos_sort_path, interesa_url: user_objetivos_interesa_path }, 
+  %table#tabla_objetivos.table.table-bordered{ :data => { update_url: user_objetivos_sort_path, interesa_url: user_objetivos_interesa_path, update_rest: user_objetivos_update_path }, 
   style: "display:none"}
     %thead
       %tr
@@ -47,7 +47,7 @@
           %td.hidden-xs
             -if objetivo.objetivo.productivity
               %i.icon-ok
-          %td.hidden-xs= text_area_tag 'objetivo_comment' + objetivo.objetivo.id.to_s, objetivo.comment, class: 'comment form-control'
+          %td.hidden-xs= text_area_tag 'objetivo_comment' + objetivo.objetivo.id.to_s, objetivo.comment, class: 'objetivo-comment form-control'
           %td.hidden-xs
             = check_box_tag 'no_interesa' + objetivo.objetivo.id.to_s, 
             objetivo.no_interesa, 
