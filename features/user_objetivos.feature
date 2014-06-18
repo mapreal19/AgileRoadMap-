@@ -8,4 +8,8 @@ Feature: user objetivos
   @javascript
   Scenario: Notas en objetivo
     Then I should be able to fill a comment in table objetivo 
+
+  @javascript
+  Scenario: No interesa
+    Then I should be able to mark the checkbox in table objetivo
     
