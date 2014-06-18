@@ -5,4 +5,5 @@ App.roadmapInitialize = () ->
 	# OBJETIVOS
 	App.noInteresaCheckBox()
 	App.updateNoInteresaCheckbox()
+	App.updateCommentObjetivo()
 	

@@ -1,3 +1,15 @@
+App.updateCommentObjetivo = ->
+  $(".objetivo-comment").blur ->
+    $this = $(this)
+    item_id = $this.parent().parent().data('item-id')
+    comment_new = $this.val()
+    $.ajax(
+      type: 'POST'
+      url: $('table#tabla_objetivos').data('update-rest')
+      dataType: 'json'
+      data: { id: item_id, user_objetivo: { comment: comment_new } }
+      )
+
 App.updateNoInteresaCheckbox = ->
 	$(".no-interesa-checkbox").change ->
       $this = $(this)

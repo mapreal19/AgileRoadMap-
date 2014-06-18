@@ -21,6 +21,7 @@ AgileRoadMap::Application.routes.draw do
 
     post '/user_objetivos/sort', to: 'user_objetivos#sort'
     post '/user_objetivos/interesa', to: 'user_objetivos#update_aplicable'
+    post '/user_objetivos/update', to: 'user_objetivos#update'
 
     scope :controller => :pages, :path => 'agile-roadmap' do
       get '/', to: :agile_map_definition, as: 'agile_map_definition'
