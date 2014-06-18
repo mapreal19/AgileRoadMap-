@@ -9,4 +9,15 @@ class UserObjetivosController < ApplicationController
     render nothing: true
   end
 
+  def update_aplicable
+    @user_objetivo = UserObjetivo.find(params[:id])
+    if current_user?(@user_objetivo.user)
+      @user_objetivo.no_interesa = params[:user_objetivo][:no_interesa]
+      @user_objetivo.save
+      logger.debug "UserObjetivo attributes hash: #{@user_objetivo.attributes.inspect}"
+    end
+    render nothing: true
+  end
+
+
 end
