@@ -1,6 +1,6 @@
 jQuery ->
 
-  App.sort = sort = () ->
+  App.sort = ->
     
     $('#sortable').sortable(
       axis: 'y'

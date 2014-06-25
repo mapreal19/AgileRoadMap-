@@ -1,6 +1,6 @@
 jQuery ->
 
-  App.sort_objetivo = sort_objetivo = () ->
+  App.sort_objetivo = ->
   
     $('#tabla_objetivos').sortable(
       axis: 'y'
