@@ -17,9 +17,8 @@
   style: "display:none"}
     %thead
       %tr
-        %th.col-sm-1.col-xs-3
-        %th.col-sm-1.hidden-xs Orden
-        %th.col-sm-5.col-xs-9 Objetivo específico de mejora
+        %th.col-sm-1.col-xs-2
+        %th.col-sm-5.col-xs-10 Objetivo específico de mejora
         %th.col-sm-1.hidden-xs Satisfacción del cliente
         %th.col-sm-1.hidden-xs Motivación y compromiso del equipo
         %th.col-sm-1.hidden-xs Productividad
@@ -30,7 +29,6 @@
         %tr.objetivo.item-objetivo{data: {ids: "#{objetivo.objetivo.get_json_practicas_ids}", item_id: "#{objetivo.id}"}, class: "#{' no-interesa' if objetivo.no_interesa}"}
           %td.handle{"style" => "cursor:move"}
             %i.icon-move
-          %td.orden.hidden-xs= objetivo.position
           %td.text_left
             %span.badge
               = "#{objetivo.objetivo.id_with_prefix}"

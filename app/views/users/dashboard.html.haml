@@ -27,8 +27,7 @@
       %thead
         %tr
           %th.col-md-1.col-sm-1.col-xs-2
-          %th.col-md-1.hidden-xs.hidden-sm Orden
-          %th.col-md-3.col-sm-6.col-xs-9 Nombre de la Práctica Ágil
+          %th.col-md-4.col-sm-6.col-xs-10 Nombre de la Práctica Ágil
           %th.col-md-1.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Método en el cual se incluye la práctica", "data-container" => 'body' } Método Ágil
           %th.col-md-1.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Esfuerzo necesario para conseguir implantar la práctica", "data-container" => 'body' } Esfuerzo Implantación
           %th.col-md-2.col-sm-2.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Margen que tiene actualmente la práctica respecto del máximo nivel de aplicación posible", "data-container" => 'body' } Margen de Mejora
@@ -39,7 +38,6 @@
           %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}", pracs_ids: "#{practica.practica.get_json_relacion_practicas_ids}"}, class: "item practica#{' no-margen' if practica.range == 0} #{' no-aplicable' if practica.no_aplicable}"}
             %td.handle{"style" => "cursor:move"}
               %i.icon-move
-            %td.orden.hidden-xs.hidden-sm= practica.position
             %td.text_left
               %span.badge
                 = "#{practica.legacy_position_with_prefix}"

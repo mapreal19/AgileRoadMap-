@@ -1,23 +1,7 @@
 jQuery ->
 
-  # this is a small hack; when a tr is dragged with jQuery UI sortable
-  # the cells lose their width
   App.sort = sort = () ->
-    # console.log ($($('.table').find('tr')[0].cells[0]).css('width'))
-    ###cells = $('.table').find('tr')[0].cells.length 
-    desired_width = 940 / cells + 'px'
-    $('.table td').css('width', desired_width)###
-    ###
-    $('.table').find('tr')[0].cells[0]
-    $(p).css('width')
-    ###
-    updateRowIndex = ->
-      filas = $('.item')
-      for fila in filas
-        $fila = $(fila)
-        new_index = $fila.index() + 1 # Para empezar desde el 1 y no el 0
-        $(fila).find('td.orden').first().text(new_index)
-
+    
     $('#sortable').sortable(
       axis: 'y'
       items: '.item'
@@ -40,5 +24,4 @@ jQuery ->
           # row_order is the default column name expected in ranked-model
           data: { id: item_id, user_practica: { row_order_position: position } }
         )
-        updateRowIndex()        
     )
