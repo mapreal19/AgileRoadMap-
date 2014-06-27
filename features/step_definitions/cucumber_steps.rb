@@ -45,7 +45,7 @@ end
 Then(/^I should be able to fill notas with a long text$/) do
   # Comment 151 char long
   comment = 'a'*151
-  find('#sortable > tbody > tr:nth-child(1) > td:nth-child(7) > textarea').set(comment)
+  find('#sortable > tbody > tr:nth-child(1) > td:nth-child(6) > textarea').set(comment)
 
   click_link('Mi Agile Roadmap+')
  
