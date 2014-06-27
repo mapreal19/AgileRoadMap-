@@ -38,8 +38,8 @@ class UserPractica < ActiveRecord::Base
   def self.get_aplicable_stats
     result = {}
     UserPractica.without_yopolt.each do |user_practica|
-      result[user_practica.practica_id] ||= []
-      result[user_practica.practica_id].push (user_practica.no_aplicable ? 0 : 1) # Si no aplicable == true, no se aplica -> valor 0
+      result[user_practica.practica.position_with_prefix] ||= []
+      result[user_practica.practica.position_with_prefix].push (user_practica.no_aplicable ? 0 : 1) # Si no aplicable == true, no se aplica -> valor 0
     end
 
     result.each do |key, array|
@@ -53,9 +53,9 @@ class UserPractica < ActiveRecord::Base
   def self.get_margen_stats
     result = {}
     UserPractica.without_yopolt.each do |user_practica|
-      result[user_practica.practica_id] ||= []
+      result[user_practica.practica.position_with_prefix] ||= []
       # No tenemos en cuenta si range == -1 (No definido)
-      result[user_practica.practica_id].push user_practica.range if user_practica.range >= 0
+      result[user_practica.practica.position_with_prefix].push user_practica.range if user_practica.range >= 0
     end
 
     result.each do |key, array|

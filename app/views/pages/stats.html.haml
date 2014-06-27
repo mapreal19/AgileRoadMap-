@@ -29,7 +29,7 @@
   = column_chart(@pracs_position)
   %h2 %Aplicable
   = column_chart(UserPractica.without_yopolt.get_aplicable_stats)
-  %h2 Margen de mejora medio
+  %h2 Nivel de aplicación
   = column_chart(UserPractica.without_yopolt.get_margen_stats)
 
 
