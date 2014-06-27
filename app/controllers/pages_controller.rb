@@ -1,7 +1,7 @@
 require 'open-uri'
 
 class PagesController < ApplicationController
-  before_action :authenticate, only: :stats
+  #before_action :authenticate, only: :stats
 
   def home
   end
