@@ -89,6 +89,20 @@ jQuery ->
         data: { id: item_id, user_practica: { range: range_new } }
         )
 
+  App.updateEffort = ->
+    $(".effort").change ->
+      $this = $(this)
+      fila_practica = $this.parent().parent()
+      item_id = fila_practica.data('item-id')
+      effort_new = $this.val()
+
+      $.ajax(
+        type: 'POST'
+        url: $('table#sortable').data('update-rest')
+        dataType: 'json'
+        data: { id: item_id, user_practica: { effort: effort_new } }
+        )
+
   # Actualiza los comentarios mediante AJAX
   App.updateComment = updateComment = () ->
     # blur: when the element loses its focus
