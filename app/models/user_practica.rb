@@ -47,7 +47,7 @@ class UserPractica < ActiveRecord::Base
       result[key] = array.inject(:+).to_f / array.size
     end
 
-    result
+    result.sort_by &:last
   end
 
   def self.get_margen_stats
@@ -62,8 +62,15 @@ class UserPractica < ActiveRecord::Base
       # inject(:+) suma todos los elementos del array. to_f para que la division no sea entera.
       result[key] = array.inject(:+).to_f / array.size
     end
-
-    result
+    
+    # if nan lo ponemos a cero. 
+    result.each do |k,v|
+      if v.nan?
+        result[k] = 0
+      end
+    end
+    
+    result.sort_by &:last
   end
 
   def self.without_yopolt
