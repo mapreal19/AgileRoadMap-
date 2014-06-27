@@ -23,7 +23,7 @@
 
   .col-xs-12.col-sm-12  
     
-    %table.table.table-bordered#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
+    %table.table.table-bordered#sortable{:data => { update_rest: user_practicas_update_path, update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
       %thead
         %tr
           %th.col-md-1.col-sm-1.col-xs-2
@@ -49,7 +49,6 @@
               = practica.name
               - unless practica.legacy_position.nil?
                 %br
-                =# link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
                 %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
                   %i.icon-info-sign.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
                 %a{"href" => "#", "data-target" => "#desafio_#{practica.id}", "data-toggle" => "modal"}
@@ -61,7 +60,9 @@
             / Práctica ágil
             %td.hidden-xs.hidden-sm= practica.agile_method.blank? ? '---' : practica.agile_method
             / Esfuerzo
-            %td.hidden-xs.hidden-sm= UserPractica::ESFUERZO[practica.effort]
+            %td.hidden-xs.hidden-sm
+              =# UserPractica::ESFUERZO[practica.effort]
+              = select_tag('effort', options_from_collection_for_select(UserPractica::ESFUERZO, :first, :last, practica.effort), class: "effort form-control")
             / Margen de mejora
             %td.hidden-xs
               = select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range), class: "range form-control#{' amarillo' if practica.range == -1}")
