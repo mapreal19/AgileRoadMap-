@@ -21,16 +21,14 @@
   %table.table.table-bordered.table-striped
     %thead
       %tr
-        %th.col-sm-1 Número
-        %th.col-sm-7 Nombre de la Práctica Ágil
+        %th.col-sm-10 Nombre de la Práctica Ágil
         %th.col-sm-2 Método Ágil
-        %th.col-sm-2 Esfuerzo
     %tbody
       - @practicas.each do |practica|
         %tr
-          %td= practica.position
           %td.text_left
+            %span.badge  
+              = practica.position_with_prefix
             = link_to practica.name, practica_path(id: practica.position), "target" => "_blank"
           %td= practica.agile_method.blank? ? '---' : practica.agile_method
-          %td= Practica::ESFUERZO[practica.effort]
 
