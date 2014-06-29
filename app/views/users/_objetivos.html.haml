@@ -3,22 +3,32 @@
   %a#toggle_objetivos{href: '#', style: "text-decoration:none"}
     %i.icon-eye-open.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Ver lista de objetivos"}
     %i.icon-eye-close.icon-large.tooltip-info{"data-toggle" => "tooltip", "data-placement" => "right", "title" => "No ver lista de objetivos", style: "display:none"}
+
+#checkbox_objetivo.row{ style: "display:none" } 
+  .panel-body.hidden-xs
+    .col-xs-12 
+      .checkbox
+        %label
+          = check_box_tag 'no_interesa'
+          Ocultar objetivos que no interesan
+
 .col-xs-12
-  %table#tabla_objetivos.table.table-bordered{ :data => { update_url: user_objetivos_sort_path }, style: "display:none"}
+  %table#tabla_objetivos.table.table-bordered{ :data => { update_url: user_objetivos_sort_path, interesa_url: user_objetivos_interesa_path, update_rest: user_objetivos_update_path }, 
+  style: "display:none"}
     %thead
       %tr
-        %th.col-sm-1.col-xs-3
-        %th.col-sm-1.hidden-xs Orden
-        %th.col-sm-7.col-xs-9 Objetivo específico de mejora
+        %th.col-sm-1.col-xs-2
+        %th.col-sm-5.col-xs-10 Objetivo específico de mejora
         %th.col-sm-1.hidden-xs Satisfacción del cliente
         %th.col-sm-1.hidden-xs Motivación y compromiso del equipo
         %th.col-sm-1.hidden-xs Productividad
+        %th.col-sm-2.hidden-xs Notas
+        %th.col-sm-1.hidden-xs No interesa
     %tbody
       - @objetivos.each do |objetivo|
-        %tr.objetivo.item-objetivo{data: {ids: "#{objetivo.objetivo.get_json_practicas_ids}", item_id: "#{objetivo.id}"}}
+        %tr.objetivo.item-objetivo{data: {ids: "#{objetivo.objetivo.get_json_practicas_ids}", item_id: "#{objetivo.id}"}, class: "#{' no-interesa' if objetivo.no_interesa}"}
           %td.handle{"style" => "cursor:move"}
             %i.icon-move
-          %td.orden.hidden-xs= objetivo.position
           %td.text_left
             %span.badge
               = "#{objetivo.objetivo.id_with_prefix}"
@@ -35,3 +45,9 @@
           %td.hidden-xs
             -if objetivo.objetivo.productivity
               %i.icon-ok
+          %td.hidden-xs= text_area_tag 'objetivo_comment' + objetivo.objetivo.id.to_s, objetivo.comment, class: 'objetivo-comment form-control'
+          %td.hidden-xs
+            = check_box_tag 'no_interesa' + objetivo.objetivo.id.to_s, 
+            objetivo.no_interesa, 
+            objetivo.no_interesa, 
+            class: 'no-interesa-checkbox'

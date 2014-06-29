@@ -6,6 +6,7 @@ jQuery ->
     
   App.toggleTablaObjetivos = toggleTablaObjetivos = () ->
     $('#toggle_objetivos').click ->
+      $('#checkbox_objetivo').toggle 'slow'
       $('#tabla_objetivos').toggle 'slow'
       App.resetFilasTablaPracs()
 
@@ -27,7 +28,6 @@ jQuery ->
 
   App.noAplicableCheckBox = noAplicableCheckBox = () ->
     $("#no_aplicable").change ->
-      console.log 'changed checkbox no_aplicable'
       if @checked
         $(".no-aplicable").fadeOut "slow"
       else
@@ -87,6 +87,20 @@ jQuery ->
         url: $('table#sortable').data('range-url')
         dataType: 'json'
         data: { id: item_id, user_practica: { range: range_new } }
+        )
+
+  App.updateEffort = ->
+    $(".effort").change ->
+      $this = $(this)
+      fila_practica = $this.parent().parent()
+      item_id = fila_practica.data('item-id')
+      effort_new = $this.val()
+
+      $.ajax(
+        type: 'POST'
+        url: $('table#sortable').data('update-rest')
+        dataType: 'json'
+        data: { id: item_id, user_practica: { effort: effort_new } }
         )
 
   # Actualiza los comentarios mediante AJAX

@@ -13,7 +13,9 @@
       .col-xs-12 
         .checkbox
           %label
-            %input#no_margen{type: 'checkbox'} Ocultar prácticas sin margen de mejora
+            = check_box_tag 'no_margen', nil
+            -#%input#no_margen{type: 'checkbox', checked: 'checked'} 
+            Ocultar prácticas sin margen de mejora
       .col-xs-12 
         .checkbox
           %label
@@ -21,15 +23,14 @@
 
   .col-xs-12.col-sm-12  
     
-    %table.table.table-bordered#sortable{:data => { update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
+    %table.table.table-bordered#sortable{:data => { update_rest: user_practicas_update_path, update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
       %thead
         %tr
           %th.col-md-1.col-sm-1.col-xs-2
-          %th.col-md-1.hidden-xs.hidden-sm Orden
-          %th.col-md-3.col-sm-6.col-xs-9 Nombre de la Práctica Ágil
+          %th.col-md-4.col-sm-6.col-xs-10 Nombre de la Práctica Ágil
           %th.col-md-1.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Método en el cual se incluye la práctica", "data-container" => 'body' } Método Ágil
           %th.col-md-1.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Esfuerzo necesario para conseguir implantar la práctica", "data-container" => 'body' } Esfuerzo Implantación
-          %th.col-md-2.col-sm-2.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Margen que tiene actualmente la práctica respecto del máximo nivel de aplicación posible", "data-container" => 'body' } Margen de Mejora
+          %th.col-md-2.col-sm-2.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Nivel de aplicación que tiene actualmente la práctica ", "data-container" => 'body' } Nivel de aplicación
           %th.col-md-2.col-sm-2.hidden-xs Notas
           %th.col-md-1.col-sm-1.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Marcar cuando se considere directamente que la práctica no se aplicará", "data-container" => 'body' } No aplicable 
       %tbody
@@ -37,7 +38,6 @@
           %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}", pracs_ids: "#{practica.practica.get_json_relacion_practicas_ids}"}, class: "item practica#{' no-margen' if practica.range == 0} #{' no-aplicable' if practica.no_aplicable}"}
             %td.handle{"style" => "cursor:move"}
               %i.icon-move
-            %td.orden.hidden-xs.hidden-sm= practica.position
             %td.text_left
               %span.badge
                 = "#{practica.legacy_position_with_prefix}"
@@ -49,9 +49,10 @@
               = practica.name
               - unless practica.legacy_position.nil?
                 %br
-                =# link_to " (+info)", practica_path(id: practica.legacy_position), target: :_blank 
                 %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
                   %i.icon-info-sign.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Más información"}
+                %a{"href" => "#", "data-target" => "#objetivos_de_#{practica.id}", "data-toggle" => "modal"}
+                  %i.icon-screenshot.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Objetivos"}
                 %a{"href" => "#", "data-target" => "#desafio_#{practica.id}", "data-toggle" => "modal"}
                   %i.icon-exclamation-sign.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Desafíos"}
                 %a.ver-practicas-relacionadas{href: '#', style: "text-decoration:none"}
@@ -61,7 +62,9 @@
             / Práctica ágil
             %td.hidden-xs.hidden-sm= practica.agile_method.blank? ? '---' : practica.agile_method
             / Esfuerzo
-            %td.hidden-xs.hidden-sm= UserPractica::ESFUERZO[practica.effort]
+            %td.hidden-xs.hidden-sm
+              =# UserPractica::ESFUERZO[practica.effort]
+              = select_tag('effort', options_from_collection_for_select(UserPractica::ESFUERZO, :first, :last, practica.effort), class: "effort form-control")
             / Margen de mejora
             %td.hidden-xs
               = select_tag('name', options_from_collection_for_select(UserPractica::MARGEN, :first, :last, practica.range), class: "range form-control#{' amarillo' if practica.range == -1}")
@@ -71,6 +74,9 @@
             = render :partial => 'modal', locals: {practica: practica, practica_legacy: practica.practica}
             / Desafío práctica
             = render :partial => 'desafios', locals: {desafios: practica.practica.desafios, practica_id: practica.id, practica: practica}
+            / Objetivos
+            = render :partial => 'objetivos_de_practica', locals: {practica: practica}
+            
 
 :javascript
   $(document).ready( function() {
@@ -86,4 +92,6 @@
       App.noMargenCheckBox();
       App.noAplicableCheckBox();
       App.updateAplicableCheckBox();
+
+      App.roadmapInitialize();
   } );

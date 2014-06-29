@@ -3,17 +3,27 @@ source 'https://rubygems.org'
 #ruby-gemset=AgileRoadMap+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1'
+gem 'rails', '4.1.1'
+ruby '2.1.1'
 
+=begin
 gem 'tzinfo-data'
 gem 'tzinfo'
+=end
 
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring',        group: :development
 
 group :development do
 	#http://railscasts.com/episodes/402-better-errors-railspanel
 	gem 'better_errors'
 	gem 'binding_of_caller'
 	gem 'meta_request'
+  
+  # http://rubydoc.info/gems/guard-cucumber/1.4.1/frames
+  # guard init cucumber
+  gem 'guard-cucumber'
+
 end
 
 group :development, :test do
@@ -21,11 +31,20 @@ group :development, :test do
 	gem 'sqlite3', '1.3.8'
 	gem 'rspec-rails', '2.13.1'
 	# gem 'annotate'
+  gem "spring-commands-cucumber"
 end
 
 group :test do
-  gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.1.0'
+  gem 'selenium-webdriver', '~> 2.42.0'
+  gem 'capybara', '~> 2.3.0'
+  gem 'poltergeist'
+
+  #gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', '~> 1.4.1', :require => false
+  gem 'database_cleaner'
+  gem 'launchy', '~> 2.4.2'
+
+  # gem 'libnotify', '~> 0.8.3'
 end
 
 # Heroku for development
