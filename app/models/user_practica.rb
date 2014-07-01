@@ -3,6 +3,10 @@ class UserPractica < ActiveRecord::Base
 	belongs_to :practica
 
 	acts_as_list scope: :user
+  
+  scope :only_aplicable, -> { where(no_aplicable: false) }
+
+	has_many :user_practicas, -> { order("position") }, dependent: :destroy
 
 	# http://apidock.com/rails/v2.3.8/ActiveModel/Validations/ClassMethods/validates_inclusion_of
 	ESFUERZO = { 1 => 'Muy poco', 2 => 'Bajo', 3 => 'Medio', 4 => 'Alto', 5 => 'Muy alto'}
@@ -74,6 +78,6 @@ class UserPractica < ActiveRecord::Base
   end
 
   def self.without_yopolt
-    UserPractica.joins(:user).where("email NOT LIKE ? ", 'yopolt%')
+    UserPractica.joins(:user).where("email NOT LIKE ? ", 'yopolt%').only_aplicable
   end
 end

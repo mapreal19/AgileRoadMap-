@@ -3,6 +3,8 @@ class UserObjetivo < ActiveRecord::Base
 	belongs_to :objetivo
 
 	acts_as_list scope: :user
+  
+  scope :only_interesa, -> { where(no_interesa: false) }
 
   def self.get_position_stats
     result = {}
@@ -20,7 +22,7 @@ class UserObjetivo < ActiveRecord::Base
   end
 
   def self.without_yopolt
-    UserObjetivo.joins(:user).where("email NOT LIKE ? ", 'yopolt%')
+    UserObjetivo.joins(:user).where("email NOT LIKE ? ", 'yopolt%').only_interesa
   end
 
 end
