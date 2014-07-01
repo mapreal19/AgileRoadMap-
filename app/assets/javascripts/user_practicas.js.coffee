@@ -74,10 +74,10 @@ jQuery ->
         #fila_practica.addClass("warning")
 
       # Si el rango es ninguno y el checkbox está activado
-      if (range_new == "0" and $('#no_margen').is(':checked'))
+      if (range_new == "4" and $('#no_margen').is(':checked'))
         fila_practica.fadeOut "slow", ->
           fila_practica.addClass("no-margen")
-      else if range_new == "0"
+      else if range_new == "4"
         fila_practica.addClass("no-margen")
       else
         fila_practica.removeClass("no-margen")
@@ -205,20 +205,3 @@ jQuery ->
     $('.objetivo.active .objetivo-eye-close').hide()
     $('.objetivo.active .objetivo-eye-open').show()
     $('.objetivo').removeClass("active")
-
-
-      
-
-###$('#post_title').change(function() {
-  // Do your stuff, instantiate variables, etc...
-  $.ajax({
-    type: post_or_get,
-    url: your_url,
-    data: your_data,
-    success: function(data) {
-      // Handle stuff after hitting the server here
-    },
-    error: function(data) {
-    }
-  });
-});###

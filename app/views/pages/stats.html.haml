@@ -4,18 +4,14 @@
 = render 'layouts/header'
 
 .container
-  %h1 Usuarios
-
-  %h1 Total
+  %h1 Roadmaps registrados
   = User.without_yopolt.count
-  - if Rails.env.production? # Solo funciona con PostgreSQL
-    %h2 Registros por día
-    = line_chart User.without_yopolt.group_by_day(:created_at).count
+  
   %h2 Ámbitos de trabajo
   = pie_chart(@user_ambitos)
   %h2 Sectores de empresa
   = pie_chart(@user_sectores)
-  %h2 Número de trabajadores
+  %h2 Número de integrantes de equipo
   = pie_chart(User.get_size_team_stats)
   %h2 Países
   = geo_chart(@user_countries)

@@ -15,7 +15,7 @@
           %label
             = check_box_tag 'no_margen', nil
             -#%input#no_margen{type: 'checkbox', checked: 'checked'} 
-            Ocultar prácticas sin margen de mejora
+            Ocultar prácticas nivel de aplicación muy alto
       .col-xs-12 
         .checkbox
           %label
@@ -35,7 +35,7 @@
           %th.col-md-1.col-sm-1.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Marcar cuando se considere directamente que la práctica no se aplicará", "data-container" => 'body' } No aplicable 
       %tbody
         - @practicas.each do |practica|
-          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}", pracs_ids: "#{practica.practica.get_json_relacion_practicas_ids}"}, class: "item practica#{' no-margen' if practica.range == 0} #{' no-aplicable' if practica.no_aplicable}"}
+          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}", pracs_ids: "#{practica.practica.get_json_relacion_practicas_ids}"}, class: "item practica#{' no-margen' if practica.range == 4} #{' no-aplicable' if practica.no_aplicable}"}
             %td.handle{"style" => "cursor:move"}
               %i.icon-move
             %td.text_left
