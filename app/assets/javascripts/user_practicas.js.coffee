@@ -1,10 +1,10 @@
 jQuery ->
   
   # TextArea se modifica conforme se escribes
-  App.autosizeTextArea = autosizeTextArea = () ->
+  App.autosizeTextArea = ->
     $('textarea.comment').autosize()
     
-  App.toggleTablaObjetivos = toggleTablaObjetivos = () ->
+  App.toggleTablaObjetivos = ->
     $('#toggle_objetivos').click ->
       $('#checkbox_objetivo').toggle 'slow'
       $('#tabla_objetivos').toggle 'slow'
@@ -19,14 +19,14 @@ jQuery ->
       $('#tabla_objetivos tr.active').removeClass('active')
 
 
-  App.noMargenCheckBox = noMargenCheckBox = () ->
+  App.noMargenCheckBox = ->
     $("#no_margen").change ->
       if @checked
         $(".no-margen").fadeOut "slow"
       else
         $(".no-margen").fadeIn "slow"
 
-  App.noAplicableCheckBox = noAplicableCheckBox = () ->
+  App.noAplicableCheckBox = ->
     $("#no_aplicable").change ->
       if @checked
         $(".no-aplicable").fadeOut "slow"
@@ -34,7 +34,7 @@ jQuery ->
         $(".no-aplicable").fadeIn "slow"
 
 
-  App.updateAplicableCheckBox = updateAplicableCheckBox = () ->
+  App.updateAplicableCheckBox = ->
     $(".no-aplicable-checkbox").change ->
       $this = $(this)
       fila_practica = $this.parent().parent()
@@ -56,7 +56,7 @@ jQuery ->
         )
 
   # Actualiza el maregen de aplicación vía AJAX
-  App.updateRange = updateRange = () ->
+  App.updateRange = ->
     $(".range").change ->
       # p.parent().parent().data('item-id')
       # p.val()
@@ -104,7 +104,7 @@ jQuery ->
         )
 
   # Actualiza los comentarios mediante AJAX
-  App.updateComment = updateComment = () ->
+  App.updateComment = ->
     # blur: when the element loses its focus
     $(".comment").blur ->
       $this = $(this)
@@ -118,7 +118,7 @@ jQuery ->
         )
 
   # Muestra las prácticas relacionadas con el objetivo seleccionado
-  App.objetivoClick = objetivoClick = () ->
+  App.objetivoClick = ->
     valoresContribucion = {1: 'Muy Baja', 2: 'Baja', 3: 'Media', 4: 'Alta', 5: 'Muy Alta'}
 
     $(".ver-practica").click ->
@@ -158,7 +158,7 @@ jQuery ->
       , 2000
 
   # Muestra las prácticas relacionadas entre sí
-  App.practicaClick = practicaClick = () ->
+  App.practicaClick = ->
 
     $(".ver-practicas-relacionadas").click (e) ->
       $this = $(this)
