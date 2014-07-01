@@ -22,7 +22,6 @@
   %h2 Posición media de cada práctica
   = column_chart(@pracs_position)
 
-
   %h2 Nivel medio de aplicación de cada práctica
   = column_chart(UserPractica.without_yopolt.get_margen_stats)
 

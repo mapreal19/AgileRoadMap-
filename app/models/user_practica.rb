@@ -27,8 +27,8 @@ class UserPractica < ActiveRecord::Base
   def self.get_prac_position_stats
     result = {}
     UserPractica.without_yopolt.each do |user_practica|
-      result[user_practica.practica.position_with_prefix] ||= []
-      result[user_practica.practica.position_with_prefix].push user_practica.position
+      result[user_practica.practica.position_with_prefix_and_name] ||= []
+      result[user_practica.practica.position_with_prefix_and_name].push user_practica.position
     end
 
     result.each do |key, array|
@@ -57,9 +57,9 @@ class UserPractica < ActiveRecord::Base
   def self.get_margen_stats
     result = {}
     UserPractica.without_yopolt.each do |user_practica|
-      result[user_practica.practica.position_with_prefix] ||= []
+      result[user_practica.practica.position_with_prefix_and_name] ||= []
       # No tenemos en cuenta si range == -1 (No definido)
-      result[user_practica.practica.position_with_prefix].push user_practica.range if user_practica.range >= 0
+      result[user_practica.practica.position_with_prefix_and_name].push user_practica.range if user_practica.range >= 0
     end
 
     result.each do |key, array|
