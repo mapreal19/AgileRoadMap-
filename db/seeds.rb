@@ -305,7 +305,9 @@ Contribucion.create!({practica_id: 34, objetivo_id: 4, valor: 3})
 Contribucion.create!({practica_id: 11, objetivo_id: 4, valor: 2})
 
 # Gestionar eficazmente el contexto multi-proyecto
-Contribucion.create!({practica_id: 43, objetivo_id: 22, valor: 1})
+Contribucion.create!({practica_id: 8, objetivo_id: 22, valor: 5})
+Contribucion.create!({practica_id: 31, objetivo_id: 22, valor: 4})
+Contribucion.create!({practica_id: 30, objetivo_id: 22, valor: 4})
 
 # Evitar costos asociados a la realización de tareas prescindibles o dudosamente rentables, 
 Contribucion.create!({practica_id: 4, objetivo_id: 14, valor: 4})
