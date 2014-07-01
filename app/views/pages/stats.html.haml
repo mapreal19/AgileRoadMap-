@@ -7,22 +7,25 @@
   %h1 Roadmaps registrados
   = User.without_yopolt.count
   
+  %h2 Países
+  = geo_chart(@user_countries)
+  
   %h2 Ámbitos de trabajo
   = pie_chart(@user_ambitos)
   %h2 Sectores de empresa
   = pie_chart(@user_sectores)
   %h2 Número de integrantes de equipo
   = pie_chart(User.get_size_team_stats)
-  %h2 Países
-  = geo_chart(@user_countries)
+ 
 
   %h2 Posición media de cada objetivo
   = column_chart(@objetivos_position)
 
   %h2 Posición media de cada práctica
   = column_chart(@pracs_position)
-
+  
   %h2 Nivel medio de aplicación de cada práctica
-  = column_chart(UserPractica.without_yopolt.get_margen_stats)
+  = column_chart(@margen_stats)
 
+ 
 

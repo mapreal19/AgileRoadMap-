@@ -34,7 +34,8 @@ class PagesController < ApplicationController
     # --- Practicas
 
     @pracs_position = UserPractica.get_prac_position_stats
-
+    
+    @margen_stats = UserPractica.get_margen_stats
     # --- Users
 
     # Ambito Trabajo
