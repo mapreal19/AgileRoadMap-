@@ -32,10 +32,10 @@
                 = link_to 'Pasos de Agile Roadmap+', agile_map_pasos_path, { 'data-push' => true }
               %li{ class: active_class('index', 'practicas')}
                 = link_to 'Prácticas Ágiles de Agile Roadmap+', practicas_path, { 'data-push' => true }
-              %li{ class: active_class('agile_team', 'pages')}
-                = link_to 'Equipo Agile Roadmap+', agile_team_path, { 'data-push' => true }
               %li{ class: active_class('stats', 'pages')}
                 = link_to 'Estadísticas', stats_path
+              %li{ class: active_class('agile_team', 'pages')}
+                = link_to 'Equipo Agile Roadmap+', agile_team_path, { 'data-push' => true }
           - if signed_in?
             %li.dropdown{ class: active_class('dashboard', 'users') }
               %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{dashboard_path}", 'data-push' => 'true'}
