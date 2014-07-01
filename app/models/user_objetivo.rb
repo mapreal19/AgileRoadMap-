@@ -9,8 +9,8 @@ class UserObjetivo < ActiveRecord::Base
   def self.get_position_stats
     result = {}
     UserObjetivo.without_yopolt.each do |user_objetivo|
-      result[user_objetivo.objetivo.id_with_prefix] ||= []
-      result[user_objetivo.objetivo.id_with_prefix].push user_objetivo.position
+      result[user_objetivo.objetivo.id_with_prefix_and_name] ||= []
+      result[user_objetivo.objetivo.id_with_prefix_and_name].push user_objetivo.position
     end
 
     result.each do |key, array|
