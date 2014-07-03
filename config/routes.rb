@@ -36,6 +36,8 @@ AgileRoadMap::Application.routes.draw do
     #get 'mapa-practicas-agiles/:id' => 'practicas#show', as: :practica
 
     resources :password_resets
+    
+    get 'user_countries', to: 'charts#user_countries'
 
   end
 

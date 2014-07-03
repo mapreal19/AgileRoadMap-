@@ -8,7 +8,7 @@
   = User.without_yopolt.count
   
   %h2 Países
-  = geo_chart(@user_countries)
+  =  geo_chart user_countries_path
   
   %h2 Ámbitos de trabajo
   = pie_chart(@user_ambitos)
