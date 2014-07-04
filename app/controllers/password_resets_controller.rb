@@ -27,7 +27,7 @@ end
 
 	private
   	def password_reset_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :miembros_equipo)
     end
 
 end

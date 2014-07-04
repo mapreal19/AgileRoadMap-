@@ -14,8 +14,7 @@
         .checkbox
           %label
             = check_box_tag 'no_margen', nil
-            -#%input#no_margen{type: 'checkbox', checked: 'checked'} 
-            Ocultar prácticas sin margen de mejora
+            Ocultar prácticas sin margen de mejora (nivel de aplicación muy alto)
       .col-xs-12 
         .checkbox
           %label
@@ -27,15 +26,15 @@
       %thead
         %tr
           %th.col-md-1.col-sm-1.col-xs-2
-          %th.col-md-4.col-sm-6.col-xs-10 Nombre de la Práctica Ágil
+          %th.col-md-3.col-sm-6.col-xs-10 Nombre de la Práctica Ágil
           %th.col-md-1.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Método en el cual se incluye la práctica", "data-container" => 'body' } Método Ágil
-          %th.col-md-1.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Esfuerzo necesario para conseguir implantar la práctica", "data-container" => 'body' } Esfuerzo Implantación
+          %th.col-md-2.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Esfuerzo necesario para conseguir implantar la práctica", "data-container" => 'body' } Esfuerzo Implantación
           %th.col-md-2.col-sm-2.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Nivel de aplicación que tiene actualmente la práctica ", "data-container" => 'body' } Nivel de aplicación
           %th.col-md-2.col-sm-2.hidden-xs Notas
           %th.col-md-1.col-sm-1.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Marcar cuando se considere directamente que la práctica no se aplicará", "data-container" => 'body' } No aplicable 
       %tbody
         - @practicas.each do |practica|
-          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}", pracs_ids: "#{practica.practica.get_json_relacion_practicas_ids}"}, class: "item practica#{' no-margen' if practica.range == 0} #{' no-aplicable' if practica.no_aplicable}"}
+          %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}", pracs_ids: "#{practica.practica.get_json_relacion_practicas_ids}"}, class: "item practica#{' no-margen' if practica.range == 4} #{' no-aplicable' if practica.no_aplicable}"}
             %td.handle{"style" => "cursor:move"}
               %i.icon-move
             %td.text_left

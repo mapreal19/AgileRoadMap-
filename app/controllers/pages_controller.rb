@@ -9,12 +9,6 @@ class PagesController < ApplicationController
   def about_us
   end
 
-  def agile_map
-  end
-
-  def contact
-  end
-
   def agile_map_definition
   end
 
@@ -34,7 +28,8 @@ class PagesController < ApplicationController
     # --- Practicas
 
     @pracs_position = UserPractica.get_prac_position_stats
-
+    
+    @margen_stats = UserPractica.get_margen_stats
     # --- Users
 
     # Ambito Trabajo
@@ -42,7 +37,7 @@ class PagesController < ApplicationController
 
     @user_sectores = User.get_sector_empresa_stats
 
-    @user_countries = User.get_countries_stats
+    #@user_countries = User.get_countries_stats
 
   end
 

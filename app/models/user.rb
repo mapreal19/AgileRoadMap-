@@ -15,9 +15,9 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 
 	uniqueness: { case_sensitive: false }
 
-  validates_presence_of :ambito_trabajo_id, :sector_empresa_id, :miembros_equipo
+  validates_presence_of :ambito_trabajo_id, :sector_empresa_id, :miembros_equipo, on: :create
 
-  validates :miembros_equipo, numericality: { greater_than: 0 }
+  validates :miembros_equipo, numericality: { greater_than: 0 }, on: :create
 
 	has_secure_password
 	validates :password, length: { minimum: 6 }

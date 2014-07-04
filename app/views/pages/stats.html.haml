@@ -4,32 +4,28 @@
 = render 'layouts/header'
 
 .container
-  %h1 Usuarios
-
-  %h1 Total
+  %h1 Roadmaps registrados
   = User.without_yopolt.count
-  - if Rails.env.production? # Solo funciona con PostgreSQL
-    %h2 Registros por día
-    = line_chart User.without_yopolt.group_by_day(:created_at).count
+  
+  %h2 Países
+  =  geo_chart user_countries_path
+  
   %h2 Ámbitos de trabajo
   = pie_chart(@user_ambitos)
   %h2 Sectores de empresa
   = pie_chart(@user_sectores)
-  %h2 Número de trabajadores
+  %h2 Número de integrantes de equipo
   = pie_chart(User.get_size_team_stats)
-  %h2 Países
-  = geo_chart(@user_countries)
+ 
 
-  %h1 Objetivos
-  %h2 Posición media
+  %h2 Posición media de cada objetivo
   = column_chart(@objetivos_position)
 
-  %h1 Prácticas
-  %h2 Posición media
+  %h2 Posición media de cada práctica
   = column_chart(@pracs_position)
-  %h2 %Aplicable
-  = column_chart(UserPractica.without_yopolt.get_aplicable_stats)
-  %h2 Nivel de aplicación
-  = column_chart(UserPractica.without_yopolt.get_margen_stats)
+  
+  %h2 Nivel medio de aplicación de cada práctica
+  = column_chart(@margen_stats)
 
+ 
 

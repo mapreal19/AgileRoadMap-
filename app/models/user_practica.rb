@@ -3,6 +3,10 @@ class UserPractica < ActiveRecord::Base
 	belongs_to :practica
 
 	acts_as_list scope: :user
+  
+  scope :only_aplicable, -> { where(no_aplicable: false) }
+
+	has_many :user_practicas, -> { order("position") }, dependent: :destroy
 
 	# http://apidock.com/rails/v2.3.8/ActiveModel/Validations/ClassMethods/validates_inclusion_of
 	ESFUERZO = { 1 => 'Muy poco', 2 => 'Bajo', 3 => 'Medio', 4 => 'Alto', 5 => 'Muy alto'}
@@ -23,8 +27,8 @@ class UserPractica < ActiveRecord::Base
   def self.get_prac_position_stats
     result = {}
     UserPractica.without_yopolt.each do |user_practica|
-      result[user_practica.practica.position_with_prefix] ||= []
-      result[user_practica.practica.position_with_prefix].push user_practica.position
+      result[user_practica.practica.position_with_prefix_and_name] ||= []
+      result[user_practica.practica.position_with_prefix_and_name].push user_practica.position
     end
 
     result.each do |key, array|
@@ -53,9 +57,9 @@ class UserPractica < ActiveRecord::Base
   def self.get_margen_stats
     result = {}
     UserPractica.without_yopolt.each do |user_practica|
-      result[user_practica.practica.position_with_prefix] ||= []
+      result[user_practica.practica.position_with_prefix_and_name] ||= []
       # No tenemos en cuenta si range == -1 (No definido)
-      result[user_practica.practica.position_with_prefix].push user_practica.range if user_practica.range >= 0
+      result[user_practica.practica.position_with_prefix_and_name].push user_practica.range if user_practica.range >= 0
     end
 
     result.each do |key, array|
@@ -74,6 +78,6 @@ class UserPractica < ActiveRecord::Base
   end
 
   def self.without_yopolt
-    UserPractica.joins(:user).where("email NOT LIKE ? ", 'yopolt%')
+    UserPractica.joins(:user).where("email NOT LIKE ? ", 'yopolt%').only_aplicable
   end
 end

@@ -24,5 +24,9 @@ class Practica < ActiveRecord::Base
   def position_with_prefix
     "PRA" + self[:position].to_s
   end
+  
+  def position_with_prefix_and_name
+    position_with_prefix + ' ' + self[:name]
+  end
 
 end

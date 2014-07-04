@@ -5,6 +5,10 @@ class Objetivo < ActiveRecord::Base
 	def id_with_prefix
 		"OBJ" + self[:id].to_s
 	end
+  
+  def id_with_prefix_and_name
+    id_with_prefix + ' ' + self[:name]
+	end
 
 	def get_json_practicas_ids
 		ActiveSupport::JSON.encode(self.contribucions.pluck(:practica_id, :valor))
