@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-ruby '2.1.1'
+ruby '2.1.5'
 
 =begin
 gem 'tzinfo-data'
@@ -99,9 +99,6 @@ gem 'bcrypt-ruby', '3.1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-
-# Use debugger
-gem 'debugger', group: [:development, :test]
 
 # HTML abstraction language (Haml)
 gem 'haml', '~> 4.0.3'
