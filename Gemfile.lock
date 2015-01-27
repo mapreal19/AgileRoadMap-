@@ -109,6 +109,8 @@ GEM
       railties (>= 4.0.1)
     hike (1.2.3)
     i18n (0.7.0)
+    it (0.2.5)
+      actionpack (>= 3.0.0)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -269,6 +271,7 @@ DEPENDENCIES
   guard-cucumber
   haml (~> 4.0.3)
   haml-rails (~> 0.4)
+  it
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails
