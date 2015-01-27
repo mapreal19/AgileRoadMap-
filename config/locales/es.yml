@@ -5,7 +5,15 @@ es:
   languages: 'Idiomas'
   english: 'Inglés'
   spanish: 'Español'
+
+  #translation chains
   welcome: "Bienvenido, si quieres conocer las funcionalidades de Agile Roadmap+ accede al <a href='%{url}' target='_blank'>video introductorio</a>."
+  agile_map_definition: 
+    title: "¿Qué es un Agile Roadmap?"
+    paragraph: 
+      one: "Un Agile Roadmap es la hoja de ruta para la implantación de prácticas ágiles en un equipo de trabajo (conocido también como Improvement Backlog). Se trata de una lista ordenada de mejoras de proceso que se quiere ir implantando a lo largo del tiempo en el equipo de trabajo."
+      two: "Para poder elaborar un Agile Roadmap se necesita conocer y entender el conjunto de prácticas ágiles que ofrecen los métodos ágiles. En <a href='http://agilismoatwork.blogspot.com.es/2013/02/carta-de-practicas-agiles-arma-tu.html'>Carta de Prácticas Ágiles: Arma tu propio menú ágil</a>, elaboramos una lista de 42 prácticas recogidas de los métodos ágiles más populares (Kanban, Lean Development, Scrum y Extreme Programming)."
+      three: "Un Agile Roadmap implícitamente reconoce el hecho que es difícil y muchas veces no recomendable implantar muchas prácticas a la vez y en toda su profundidad (lectura recomendada <a href='http://agilismoatwork.blogspot.com.es/2011/10/revolucion-o-evolucion-hacia-el.html'>¿Revolución o evolución hacia el agilismo?</a> Por esto es útil tener una lista ordenada de prácticas candidatas que podrían irse implantando paulatinamente. También implícitamente un Agile Roadmap centra el foco en la aplicación de prácticas, NO en conseguir aplicar una metodología ágil en particular."
 
   activerecord: 
     attributes:
