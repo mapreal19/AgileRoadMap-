@@ -13,10 +13,10 @@
       %li
       - if signed_in?
         %li
-          = link_to 'Cerrar Sesión', signout_path, method: "delete"
+          = link_to it('top.signout'), signout_path, method: "delete"
       - else
         %li
-          = link_to 'Registrarse', signup_path, {'data-push' => true}
+          = link_to it('top.signup'), signup_path, {'data-push' => true}
         %li.devider
         %li
-          = link_to 'Login', signin_path, {'data-push' => true}
+          = link_to it('top.signin'), signin_path, {'data-push' => true}
