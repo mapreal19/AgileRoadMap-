@@ -18,28 +18,28 @@
         %ul.nav.navbar-nav.navbar-right
           %li.dropdown{ class: active_class('home', 'pages') }
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{root_path}", 'data-push' => 'true'}
-              Inicio
+              = it('header.home')
           %li.dropdown{class: agile_roadmap_active?}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
-              Agile Roadmap+
+              = it('header.dropdown.title') 
               %i.icon-angle-down
             %ul.dropdown-menu
               %li{ class: active_class('agile_map_definition', 'pages')}
-                = link_to '¿Qué es un Agile Roadmap?', agile_map_definition_path, { 'data-push' => true }
+                = link_to it('header.dropdown.one'), agile_map_definition_path, { 'data-push' => true }
               %li{ class: active_class('what_is_agile_map', 'pages')}
-                = link_to '¿Qué es Agile Roadmap+?', what_is_agile_map_path, { 'data-push' => true }
+                = link_to it('header.dropdown.two'), what_is_agile_map_path, { 'data-push' => true }
               %li{ class: active_class('agile_map_pasos', 'pages')}
-                = link_to 'Pasos de Agile Roadmap+', agile_map_pasos_path, { 'data-push' => true }
+                = link_to it('header.dropdown.three'), agile_map_pasos_path, { 'data-push' => true }
               %li{ class: active_class('index', 'practicas')}
-                = link_to 'Prácticas Ágiles de Agile Roadmap+', practicas_path, { 'data-push' => true }
+                = link_to it('header.dropdown.four'), practicas_path, { 'data-push' => true }
               %li{ class: active_class('stats', 'pages')}
-                = link_to 'Estadísticas', stats_path
+                = link_to it('header.dropdown.five'), stats_path
               %li{ class: active_class('agile_team', 'pages')}
-                = link_to 'Equipo Agile Roadmap+', agile_team_path, { 'data-push' => true }
+                = link_to it('header.dropdown.six'), agile_team_path, { 'data-push' => true }
           - if signed_in?
             %li.dropdown{ class: active_class('dashboard', 'users') }
               %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{dashboard_path}", 'data-push' => 'true'}
-                Mi Agile Roadmap+
+                = it('header.myagile')
 
 .container
   - flash.each do |key, value|

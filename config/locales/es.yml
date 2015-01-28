@@ -12,6 +12,23 @@ es:
     signout: "Cerrar Sesión"
     signup: "Registrarse"
     signin: "Login"
+  header:
+    home: "Inicio"
+    dropdown:
+      title: "Agile Roadmap+"
+      one: '¿Qué es un Agile Roadmap?'
+      two: '¿Qué es Agile Roadmap+?'
+      three: 'Pasos de Agile Roadmap+'
+      four: 'Prácticas Ágiles de Agile Roadmap+'
+      five: 'Estadísticas'
+      six: 'Equipo Agile Roadmap+'
+    myagile: 'Mi Agile Roadmap+'
+  slider:
+    one: 'TU ROADMAP ÁGIL'
+    two: 'DE FORMA RAZONADA'
+    three: 'Y SENCILLA'
+    four: 'Herramienta de apoyo para establecer'
+    five: 'el Roadmap Ágil de tu equipo de trabajo'
   home:
     intro: "¿Estás interesado en implantar prácticas ágiles? ¿No sabes por dónde comenzar? Este sitio te ofrece conocimiento asociado a prácticas ágiles y te ayuda a establecer tu propio roadmap para implantación de prácticas ágiles. %{link_video:Ver video explicativo}"
     services:
