@@ -4,27 +4,35 @@
 = render 'layouts/header'
 
 .container
-  %h1 Roadmaps registrados
+  %h1 
+    = it "agile_stats.title"
   = User.without_yopolt.count
   
-  %h2 Países
+  %h2 
+    = it "agile_stats.countries"
   =  geo_chart user_countries_path
   
-  %h2 Ámbitos de trabajo
+  %h2 
+    = it "agile_stats.work"
   = pie_chart(@user_ambitos)
-  %h2 Sectores de empresa
+  %h2 
+    = it "agile_stats.sectors" 
   = pie_chart(@user_sectores)
-  %h2 Número de integrantes de equipo
+  %h2 
+    = it "agile_stats.team" 
   = pie_chart(User.get_size_team_stats)
  
 
-  %h2 Posición media de cada objetivo
+  %h2 
+    = it "agile_stats.position"
   = column_chart(@objetivos_position)
 
-  %h2 Posición media de cada práctica
+  %h2 
+    = it "agile_stats.average_position" 
   = column_chart(@pracs_position)
   
-  %h2 Nivel medio de aplicación de cada práctica
+  %h2 
+    = it "agile_stats.average_level"
   = column_chart(@margen_stats)
 
  

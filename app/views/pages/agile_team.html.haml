@@ -4,9 +4,9 @@
 .container
   .headline
     %h2
-      Equipo Agile Roadmap+
+      = it "agile_team.title"
   %p
-    Este sitio web se ha desarrollado por Mario Pérez, como parte de su Trabajo de Tesis de Master realizado en el Departamento de Sistemas Informáticos y Computación (DSIC) de la Universidad Politécnica de Valencia (UPV), bajo la dirección del Dr. Patricio Letelier.
+    = it "agile_team.intro"
   .row.team
     .col-sm-3
       .thumbnail-style{ style: 'padding: 30px'}
@@ -15,7 +15,7 @@
           %a
             Patricio Letelier
           %small
-            Dr. Ingeniero en Informática
+            = it "agile_team.patricio"
         %p
           %a{ href:"mailto:letelier@dsic.upv.es"}
             Email
@@ -40,7 +40,7 @@
           %a
             Mario Pérez
           %small
-            Ingeniero Informático
+            = it "agile_team.mario" 
         -#%p
         -#  Candidato a Máster en Ingeniería de Software.
         %ul.list-unstyled.list-inline.team-socail

@@ -1,8 +1,9 @@
 .headline 
-  %h2= 'Objetivos de mejora '
+  %h2 
+    = it "my_agile.objectives.title"
   %a#toggle_objetivos{href: '#', style: "text-decoration:none"}
-    %i.icon-eye-open.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "right", "title" => "Ver lista de objetivos"}
-    %i.icon-eye-close.icon-large.tooltip-info{"data-toggle" => "tooltip", "data-placement" => "right", "title" => "No ver lista de objetivos", style: "display:none"}
+    %i.icon-eye-open.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "right", "title" => it("my_agile.objectives.tooltip-open")}
+    %i.icon-eye-close.icon-large.tooltip-info{"data-toggle" => "tooltip", "data-placement" => "right", "title" => it("my_agile.objectives.tooltip-close"), style: "display:none"}
 
 #checkbox_objetivo.row{ style: "display:none" } 
   .panel-body.hidden-xs
@@ -10,7 +11,7 @@
       .checkbox
         %label
           = check_box_tag 'no_interesa'
-          Ocultar objetivos que no interesan
+          = it "my_agile.objectives.hide" 
 
 .col-xs-12
   %table#tabla_objetivos.table.table-bordered{ :data => { update_url: user_objetivos_sort_path, interesa_url: user_objetivos_interesa_path, update_rest: user_objetivos_update_path }, 
