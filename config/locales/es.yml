@@ -137,7 +137,34 @@ es:
           six: 
             name: "No aplicable"
             tooltip: "Marcar cuando se considere directamente que la práctica no se aplicará"
-
+  register:
+    new_account: "Registrar una nueva cuenta"
+    already_registered: "¿Ya está registrado?"
+    access_account: "Acceda a su cuenta"
+    name: "Nombre"
+    email: "Email"
+    scope: "Ámbito de trabajo"
+    select_scope: "Selecciona ámbito de trabajo"
+    sector: "Sector de la empresa"
+    select_sector: "Selecciona sector de la empresa"
+    number_members: "Número promedio de integrantes de equipo"
+    passwd: "Contraseña"
+    repeat_passwd: "Repetir contraseña"
+    submit: 'Registrarse'
+  login:
+    access: "Acceso a cuenta"
+    new: "¿Usuario nuevo?"
+    now: "¡Regístrese ahora mismo!"
+    forgot_passwd: "¿Olvidaste la contraseña?"
+    click: "Haz clic aquí"
+    restablish: "para restablecerla"
+  passwd:
+    reset: "Reiniciar contraseña"
+    input_passwd: 'Introduce tu contraseña'
+    confirm_passwd: 'Confirma tu contraseña'
+    submit: "Guardar contraseña"
+    email: 'Introduce tu email'
+    submit: "Restablecer contraseña"
 
 
   footer: "Creado a partir de la obra en"

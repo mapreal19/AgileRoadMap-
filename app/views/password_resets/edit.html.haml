@@ -6,15 +6,15 @@
     .col-xs-12
       .headline
         %h2
-          Reset Password  
+          = it "passwd.reset"   
       = form_for @user, url: password_reset_path(locale, params[:id]),  html: {class: 'form-inline'} do |f|
         = render 'shared/error_messages', object: f.object
         .form-group
           = f.label :password, nil, class: 'sr-only'
-          = f.password_field :password, class: 'form-control', placeholder: 'Introduce tu contraseña'
+          = f.password_field :password, class: 'form-control', placeholder: it "passwd.input_passwd"
         .form-group
           = f.label :password_confirmation, nil, class: 'sr-only'
-          = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirma tu contraseña'
+          = f.password_field :password_confirmation, class: 'form-control', placeholder: it "passwd.confirm_passwd"
         .form-group
-          = f.submit "Guardar contraseña", class: 'btn btn-primary'
+          = f.submit it("passwd.submit"), class: 'btn btn-primary'
 
