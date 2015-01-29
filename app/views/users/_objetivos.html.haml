@@ -11,7 +11,7 @@
       .checkbox
         %label
           = check_box_tag 'no_interesa'
-          = it "my_agile.objectives.hide" 
+          = it "my_agile.objectives.hide-checkbox" 
 
 .col-xs-12
   %table#tabla_objetivos.table.table-bordered{ :data => { update_url: user_objetivos_sort_path, interesa_url: user_objetivos_interesa_path, update_rest: user_objetivos_update_path }, 
@@ -19,12 +19,18 @@
     %thead
       %tr
         %th.col-sm-1.col-xs-2
-        %th.col-sm-5.col-xs-10 Objetivo específico de mejora
-        %th.col-sm-1.hidden-xs Satisfacción del cliente
-        %th.col-sm-1.hidden-xs Motivación y compromiso del equipo
-        %th.col-sm-1.hidden-xs Productividad
-        %th.col-sm-2.hidden-xs Notas
-        %th.col-sm-1.hidden-xs No interesa
+        %th.col-sm-5.col-xs-10 
+          = it "my_agile.objectives.table.one"
+        %th.col-sm-1.hidden-xs 
+          = it "my_agile.objectives.table.two"
+        %th.col-sm-1.hidden-xs 
+          = it "my_agile.objectives.table.three"
+        %th.col-sm-1.hidden-xs 
+          = it "my_agile.objectives.table.four"
+        %th.col-sm-2.hidden-xs 
+          = it "my_agile.objectives.table.five"
+        %th.col-sm-1.hidden-xs 
+          = it "my_agile.objectives.table.six"
     %tbody
       - @objetivos.each do |objetivo|
         %tr.objetivo.item-objetivo{data: {ids: "#{objetivo.objetivo.get_json_practicas_ids}", item_id: "#{objetivo.id}"}, class: "#{' no-interesa' if objetivo.no_interesa}"}
@@ -34,7 +40,7 @@
             %span.badge
               = "#{objetivo.objetivo.id_with_prefix}"
             = objetivo.objetivo.name 
-            %a.ver-practica.tooltip-info{href: '#', style: "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Remarcar prácticas que contribuyen al objetivo"}
+            %a.ver-practica.tooltip-info{href: '#', style: "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.objectives.tooltip-remark")}
               %i.icon-eye-open.objetivo-eye-open
               %i.icon-eye-close.objetivo-eye-close{ style: "display:none"}
           %td.hidden-xs

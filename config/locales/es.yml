@@ -99,7 +99,47 @@ es:
       title: "Objetivos de mejora"
       tooltip-open: "Ver lista de objetivos"
       tooltip-close: "Cerrar lista de objetivos"
-      hide: "Ocultar objetivos que no interesan"
+      tooltip-remark: "Remarcar prácticas que contribuyen al objetivo"
+      hide-checkbox: "Ocultar objetivos que no interesan"
+      table:
+        one: "Objetivo específico de mejora"
+        two: "Satisfacción del cliente"
+        three: "Motivación y compromiso del equipo"
+        four: "Productividad"
+        five: "Notas"
+        six: "No interesa"
+    dashboard:
+      title: "Roadmap de Prácticas Ágiles"
+      hidemargin-checkbox: "Ocultar prácticas sin margen de mejora (nivel de aplicación muy alto)"
+      hideapplicable-checkbox: "Ocultar practicas no aplicables"
+      tooltip-group: "Práctica definida a nivel de equipo"
+      tooltip-service: "Práctica definida a nivel de producto/servicio"
+      tooltip-moreinfo: "Más información"
+      tooltip-objectives: "Objetivos"
+      tooltip-challenges: "Desafíos"
+      tooltip-related: "Ver prácticas relacionadas"
+      tooltip-closerelated: "No ver prácticas relacionadas"
+      table:
+        col:
+          one: 
+            name: "Nombre de la Práctica Ágil"
+          two: 
+            name: "Método Ágil"
+            tooltip: "Método en el cual se incluye la práctica"
+          three: 
+            name: "Esfuerzo Implantación"
+            tooltip: "Esfuerzo necesario para conseguir implantar la práctica"
+          four: 
+            name: "Nivel de aplicación"
+            tooltip: "Nivel de aplicación que tiene actualmente la práctica "
+          five: 
+            name: "Notas"
+          six: 
+            name: "No aplicable"
+            tooltip: "Marcar cuando se considere directamente que la práctica no se aplicará"
+
+
+
   footer: "Creado a partir de la obra en"
   activerecord: 
     attributes:
