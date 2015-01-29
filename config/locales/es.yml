@@ -46,7 +46,22 @@ es:
       one: "Un Agile Roadmap es la hoja de ruta para la implantación de prácticas ágiles en un equipo de trabajo (conocido también como Improvement Backlog). Se trata de una lista ordenada de mejoras de proceso que se quiere ir implantando a lo largo del tiempo en el equipo de trabajo."
       two: "Para poder elaborar un Agile Roadmap se necesita conocer y entender el conjunto de prácticas ágiles que ofrecen los métodos ágiles. En %{link:Carta de Prácticas Ágiles: Arma tu propio menú ágil}, elaboramos una lista de 42 prácticas recogidas de los métodos ágiles más populares (Kanban, Lean Development, Scrum y Extreme Programming)."
       three: "Un Agile Roadmap implícitamente reconoce el hecho que es difícil y muchas veces no recomendable implantar muchas prácticas a la vez y en toda su profundidad (lectura recomendada %{link:¿Revolución o evolución hacia el agilismo?} Por esto es útil tener una lista ordenada de prácticas candidatas que podrían irse implantando paulatinamente. También implícitamente un Agile Roadmap centra el foco en la aplicación de prácticas, NO en conseguir aplicar una metodología ágil en particular."
+  what_is_agile_map:
+    title: "¿Qué es Agile Roadmap+?"
+    paragraph:
+      one: "Agile Roadmap+ es parte del enfoque Tune-up (%{tuneup_link:www.tuneupprocess.com}). Tune-up ofrece una solución integral para mejorar procesos de producción, centrada en la gestión ágil de proyectos y equipos de trabajo. Tune-up cubre los cuatro aspectos que debería abordar un proceso de mejora centrado en métodos ágiles:"
+      two: "Agile Roadmap+ condensa nuestra experiencia en el punto 2, es decir, en el diagnóstico y en la evaluación de prácticas ágiles."
+      three: "Esta imagen presenta el modelo asociado a Agile Roadmap+. Debe establecerse una priorización de los objetivos de mejora que se quieren conseguir. Cada práctica ágil contribuye a ciertos objetivos de mejora. Así, las prácticas ágiles pueden ordenarse según su contribución a los objetivos más importantes. Además, el esfuerzo de preparación para poder aplicar una práctica debería considerarse como un factor que puede hacer desistir de su aplicación, o al menos en decidir postergar su aplicación. Por otra parte, el nivel de aplicación de una práctica dará un margen mayor o menor de mejora, por ejemplo, si la práctica no está aplicada aportaría un mayor margen de mejora. También habría que considerar las relaciones entre prácticas, una práctica podría verse reforzada por la aplicación de otra práctica o verse inhibida por la ausencia de otra práctica. Finalmente, debería considerarse también los desafíos que suele enfrentar la implantación de una práctica, como otra consideración para la postergación de la implantación o descarte de una práctica."
+    li: 
+      one: "Formación en los conocimientos necesarios (Kanban, Lean Development, Scrum y Extreme Programming)."
+      two: "Diagnóstico del ámbito en el que se realizará la implantación y evaluación de prácticas ágiles que se aplicarán."
+      three: "Herramienta de apoyo para el enfoque. Disponemos de una herramienta propia Tune-up Process."
+      four: "Consultoría para el seguimiento y apoyo durante la implantación."
+  agile_map_steps:
+    title: "Pasos para elaborar un Agile Roadmap+"
 
+
+  footer: "Creado a partir de la obra en"
   activerecord: 
     attributes:
       user:
