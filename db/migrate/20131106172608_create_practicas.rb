@@ -3,6 +3,7 @@ class CreatePracticas < ActiveRecord::Migration
     create_table :practicas do |t|
       t.integer :position
       t.string :name
+      t.string :name_en
       t.string :agile_method
 
       t.timestamps

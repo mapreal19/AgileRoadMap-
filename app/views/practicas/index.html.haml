@@ -32,6 +32,9 @@
           %td.text_left
             %span.badge  
               = practica.position_with_prefix
-            = link_to practica.name, practica_path(id: practica.position), "target" => "_blank"
+            - if I18n.locale == :es 
+              = link_to practica.name_es, practica_path(id: practica.position), "target" => "_blank" 
+            - else
+              = link_to practica.name_en, practica_path(id: practica.position), "target" => "_blank" 
           %td= practica.agile_method.blank? ? '---' : practica.agile_method
 

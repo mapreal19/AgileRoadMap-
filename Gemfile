@@ -93,3 +93,6 @@ gem 'groupdate'
 
 #Tool to improve the translations with links embedded https://github.com/iGEL/it
 gem 'it'
+
+#translations from databases
+gem 'globalize', '~> 4.0.2'

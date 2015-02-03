@@ -81,7 +81,7 @@ Practica.delete_all
 #Practica.create!(config["practicas"])
 #file = File.open("db/p1.txt", "rb")
 #contents = file.read
-Practica.create!({id: 40, position: 1, name: "Promover la sencillez en todos los aspectos. Ofrecer \
+Practica.create!({id: 40, position: 1, name_es: "Promover la sencillez en todos los aspectos. Ofrecer \
 	la solución más simple y mínima que pueda ser satisfactoria para el cliente.",
   description: get_content_from_file('prac1.html'),
 	effort: 2, ambito_decision: 'equipo', agile_method: "Lean, XP"})
@@ -273,6 +273,7 @@ Practica.create!({id: 16, position: 42, name: "Mejorar continuamente la organiza
   description: '<p>Corresponde a la práctica "Refactoring" de Extreme Programming, que consiste en mejorar la arquitectura del producto sin cambiar su funcionalidad (sin cambiar su comportamiento externo).</p><p>Ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: si no hay una preocupación y dedicación constante por la mejora de la arquitectura, ésta probablemente se irá degradando con los cambios asociados a los mantenimientos del producto.</p><p>Una buena arquitectura interna del producto es clave para facilitar el mantenimiento, las pruebas y la reutilización, con lo cual debería ser un objetivo de cualquier metodología, sin embargo, las estrategias para conseguirlo pueden ser muy diferentes, y lo son. La estrategia tradicional es invertir un importante esfuerzo al inicio del desarrollo del producto (especificando y modelando intensamente), antes de comenzar a construirlo. Por contraparte, la estrategia ágil es iniciar rápidamente la construcción del producto para poder cuanto antes ir consiguiendo la confirmación del cliente, al menos de lo construido hasta el momento. Esta estrategia ágil conlleva que la preocupación por la arquitectura se centre principalmente en la parte del producto que se está construyendo en el momento, limitando el esfuerzo de especificación o modelado, y asumiendo el riesgo del re-trabajo que posteriormente puedan suponer las mejoras de arquitectura necesarias para garantizar que en última instancia también se conseguirá una buena arquitectura. La refactorización debería aplicarse continuamente, como parte de cualquier trabajo sobre el producto, es decir, no debería acumularse el trabajo de refactorización para hacerlo puntualmente cuando la arquitectura ya está obstaculizando de forma significativa el mantenimiento, las pruebas o la reutilización. Es importante destacar que la refactorización debe estar acompañada de buenos mecanismos para probar el comportamiento externo del producto y así asegurar que estos cambios de organización interna del producto no se están afectando dicho comportamiento. Lectura recomendada: <a href="http://agilismoatwork.blogspot.com.es/2011/11/cuando-y-como-el-trabajo-de.html" target="_blank">¿Cuando y cómo el trabajo de arquitectura cobra protagonismo en el contexto ágil?</a>.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
 	effort: 4, ambito_decision: 'producto/servicio', agile_method: "XP"})
+
 
 # --- [END]42 Prácticas Ágiles ---
 
