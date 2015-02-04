@@ -20,3 +20,15 @@
         %li.devider
         %li
           = link_to it('top.signin'), signin_path, {'data-push' => true}
+    %ul.switch-language  
+      - if I18n.locale == I18n.default_locale 
+        %li.active Español
+        %li.devider
+        %li 
+          = link_to "English", :locale=> 'en'
+      - else 
+        %li 
+          = link_to "Español", :locale=>'es'
+        %li.devider
+        %li.active English
+

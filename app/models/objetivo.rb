@@ -7,7 +7,11 @@ class Objetivo < ActiveRecord::Base
 	end
   
   def id_with_prefix_and_name
-    id_with_prefix + ' ' + self[:name]
+  	if I18n.locale == :es
+    	id_with_prefix + ' ' + self[:name_es]
+    else
+    	id_with_prefix + ' ' + self[:name_en]
+    end
 	end
 
 	def get_json_practicas_ids

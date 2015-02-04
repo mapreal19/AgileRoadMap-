@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203192531) do
+ActiveRecord::Schema.define(version: 20150204123745) do
 
   create_table "ambito_trabajos", force: true do |t|
-    t.string   "nombre"
+    t.string   "name_es"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name_en"
   end
 
   create_table "contribucions", force: true do |t|
@@ -31,18 +32,20 @@ ActiveRecord::Schema.define(version: 20150203192531) do
   add_index "contribucions", ["practica_id"], name: "index_contribucions_on_practica_id"
 
   create_table "desafios", force: true do |t|
-    t.string   "name"
+    t.string   "name_es"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name_en"
   end
 
   create_table "objetivos", force: true do |t|
-    t.string   "name"
+    t.string   "name_es"
     t.boolean  "sat_client"
     t.boolean  "equipo"
     t.boolean  "productivity"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name_en"
   end
 
   create_table "practica_desafios", force: true do |t|
@@ -62,9 +65,10 @@ ActiveRecord::Schema.define(version: 20150203192531) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "effort"
-    t.text     "description"
+    t.text     "description_es"
     t.string   "ambito_decision"
     t.string   "name_en"
+    t.string   "description_en"
   end
 
   create_table "relacion_practicas", force: true do |t|
@@ -76,9 +80,10 @@ ActiveRecord::Schema.define(version: 20150203192531) do
   add_index "relacion_practicas", ["practica_id"], name: "index_relacion_practicas_on_practica_id"
 
   create_table "sector_empresas", force: true do |t|
-    t.string   "nombre"
+    t.string   "name_es"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name_en"
   end
 
   create_table "user_objetivos", force: true do |t|
@@ -96,7 +101,7 @@ ActiveRecord::Schema.define(version: 20150203192531) do
 
   create_table "user_practicas", force: true do |t|
     t.integer  "position"
-    t.string   "name"
+    t.string   "name_es"
     t.string   "agile_method"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -107,6 +112,7 @@ ActiveRecord::Schema.define(version: 20150203192531) do
     t.integer  "effort"
     t.integer  "range"
     t.boolean  "no_aplicable",    default: false
+    t.string   "name_en"
   end
 
   add_index "user_practicas", ["practica_id"], name: "index_user_practicas_on_practica_id"

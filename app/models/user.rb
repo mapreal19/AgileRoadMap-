@@ -90,7 +90,11 @@ class User < ActiveRecord::Base
   def self.get_ambito_trabajo_stats
     user_ambitos = User.without_yopolt.group(:ambito_trabajo_id).count
 
-    mappings = AmbitoTrabajo.all.pluck(:id, :nombre)
+    if I18n.locale == :es
+      mappings = AmbitoTrabajo.all.pluck(:id, :name_es)
+    else
+      mappings = AmbitoTrabajo.all.pluck(:id, :name_en)
+    end
     hash_mappings = {}
     mappings.each do |mapping|
       hash_mappings[mapping[0]] = mapping[1]
@@ -102,7 +106,12 @@ class User < ActiveRecord::Base
   def self.get_sector_empresa_stats
     user_sectores = User.without_yopolt.group(:sector_empresa_id).count
 
-    mappings = SectorEmpresa.all.pluck(:id, :nombre)
+    if I18n.locale == :es
+      mappings = SectorEmpresa.all.pluck(:id, :name_es)
+    else
+      mappings = SectorEmpresa.all.pluck(:id, :name_en)
+    end
+    
     hash_mappings = {}
     mappings.each do |mapping|
       hash_mappings[mapping[0]] = mapping[1]

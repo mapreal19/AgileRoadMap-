@@ -39,7 +39,7 @@
           %td.text_left
             %span.badge
               = "#{objetivo.objetivo.id_with_prefix}"
-            = objetivo.objetivo.name 
+            = if I18n.locale == :es then objetivo.objetivo.name_es else objetivo.objetivo.name_en end
             %a.ver-practica.tooltip-info{href: '#', style: "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.objectives.tooltip-remark")}
               %i.icon-eye-open.objetivo-eye-open
               %i.icon-eye-close.objetivo-eye-close{ style: "display:none"}

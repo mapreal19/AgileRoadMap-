@@ -24,13 +24,13 @@
         = f.label :ambito_trabajo_id do
           = it "register.scope"
           %span.color-red *
-        = f.select('ambito_trabajo_id', AmbitoTrabajo.all.collect { |at| [ at.nombre, at.id ] },
+        = f.select('ambito_trabajo_id', AmbitoTrabajo.all.collect { |at| [ if I18n.locale == :es then at.name_es else at.name_en end, at.id ] },
         { prompt: it("register.select_scope") }, { class: 'form-control margin-bottom-20', required: true })
         / Sector empresa
         = f.label :sector_empresa_id do
           = it "register.sector"
           %span.color-red *
-        = f.select('sector_empresa_id', SectorEmpresa.all.collect { |at| [ at.nombre, at.id ] },
+        = f.select('sector_empresa_id', SectorEmpresa.all.collect { |at| [ if I18n.locale == :es then at.name_es else at.name_en end, at.id ] },
         { prompt: it("register.select_sector") }, { class: 'form-control margin-bottom-20', required: true })
         / Miembros equipo
         = f.label :miembros_equipo do

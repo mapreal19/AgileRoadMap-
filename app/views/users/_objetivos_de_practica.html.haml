@@ -8,14 +8,14 @@
           %br
         %span.badge
           = practica.legacy_position_with_prefix
-        = practica.name
+        = if I18n.locale == :es then practica.name_es else practica.name_en end
       .modal-body
         %ul.list-unstyled
           - practica.practica.contribucions.each do |contribucion|
             %li
               %span.badge  
                 = contribucion.objetivo.id_with_prefix
-              = contribucion.objetivo.name
+              = if I18n.locale == :es then contribucion.objetivo.name_es else contribucion.objetivo.name_en end
               = "(#{contribucion.valor})"
 
       .modal-footer

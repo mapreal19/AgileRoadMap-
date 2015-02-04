@@ -7,7 +7,7 @@ class Practica < ActiveRecord::Base
 	has_many :practica_desafios
 	has_many :desafios, through: :practica_desafios
 
-	ESFUERZO = { 1 => 'Muy poco', 2 => 'Bajo', 3 => 'Medio', 4 => 'Alto', 5 => 'Muy alto'}
+	ESFUERZO = { 1 => 'Muy poco', 2 =>'Bajo', 3 => 'Medio', 4 => 'Alto', 5 => 'Muy alto'}
 
 	has_many :relacion_practicas
 	has_many :practicas, through: :relacion_practicas
@@ -26,7 +26,11 @@ class Practica < ActiveRecord::Base
   end
   
   def position_with_prefix_and_name
-    position_with_prefix + ' ' + self[:name]
+    if I18n.locale == :es 
+      position_with_prefix + ' ' + self[:name_es]
+    else
+      position_with_prefix + ' ' + self[:name_en]
+    end
   end
 
 end
