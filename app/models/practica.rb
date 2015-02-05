@@ -31,6 +31,10 @@ class Practica < ActiveRecord::Base
     self["name_#{I18n.locale}"]
   end
 
+  def description
+    self["description_#{I18n.locale}"]
+  end
+
   def position_with_prefix
     "PRA#{self[:position]}"
   end

@@ -173,6 +173,7 @@ es:
     five: 'Muy alto'
   modal:
     description: 'Descripción'
+    name: 'Nombre'
   challenges:
     intro: 'Desafíos de la práctica: '
 

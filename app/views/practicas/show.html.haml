@@ -2,19 +2,12 @@
 = render 'layouts/header'
 
 .container
-  - if I18n.locale == :es
-    .headline
-      %h2 Nombre
-    = @practica.name_es
-    .headline
-      %h2 Descripción
-    = @practica.description_es.html_safe
-  - else
-    .headline
-      %h2 Name
-    = @practica.name_en
-    .headline
-      %h2 Description
-    = @practica.description_en.html_safe
-
+  .headline
+    %h2 
+      = it 'modal.name'
+  = @practica.name
+  .headline
+    %h2 
+      = it 'modal.description'
+  = @practica.description.html_safe
 
