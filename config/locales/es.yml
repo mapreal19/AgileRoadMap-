@@ -171,6 +171,10 @@ es:
     three: 'Medio'
     four: 'Alto'
     five: 'Muy alto'
+  modal:
+    description: 'Descripción'
+  challenges:
+    intro: 'Desafíos de la práctica: '
 
 
   footer: "Creado a partir de la obra en"
