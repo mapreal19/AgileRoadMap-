@@ -27,6 +27,12 @@ en:
   english: 'English'
   spanish: 'Spanish'
   welcome: 'Welcome'
+
+#translation chains
+  welcome: "Bienvenido, si quieres conocer las funcionalidades de Agile Roadmap+ accede al <a href='%{url}' target='_blank'>video introductorio</a>."
+  agile_map_definition: 
+    title: "¿Qué es un Agile Roadmap?"
+
   fallo:
     one: 'The form contains 1 error'
     other: "The form contains %{count} errors"

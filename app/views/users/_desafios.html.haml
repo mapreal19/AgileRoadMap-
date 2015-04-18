@@ -4,18 +4,18 @@
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
         %h4#myModalLabel.modal-title 
-          = "Desafíos de la práctica: "
+          = it "challenges.intro"
           %br
         %span.badge
           = practica.legacy_position_with_prefix
-        = practica.name
+        = if I18n.locale == :es then practica.name_es else practica.name_en end
       .modal-body
         %ul.list-unstyled
           - desafios.each do |desafio|
             %li
               %span.badge  
                 = desafio.id_with_prefix
-              = desafio.name
+              = if I18n.locale == :es then desafio.name_es else desafio.name_en end
 
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cerrar

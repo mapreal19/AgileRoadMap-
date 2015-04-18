@@ -7,7 +7,8 @@
     .col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3
       = form_for :session, url: sessions_path, html: { class:'reg-page' } do |f|
         .reg-header
-          %h2 Acceso a cuenta
+          %h2 
+            = it "login.access"
         .input-group.margin-bottom-20
           %span.input-group-addon
             %i.icon-envelope-alt
@@ -15,7 +16,7 @@
         .input-group.margin-bottom-20
           %span.input-group-addon
             %i.icon-unlock
-          = f.password_field :password, class: 'form-control', placeholder: 'Contraseña', required: true
+          = f.password_field :password, class: 'form-control', placeholder: it("register.passwd"), required: true
         .row
           .col-md-6
             -#%label.checkbox
@@ -24,11 +25,13 @@
           .col-md-6
             = f.submit 'Login', class: 'btn btn-u pull-right'
         %hr/
-        %h4 ¿Usuario nuevo?
+        %h4 
+          = it "login.new" 
         %p
-          = link_to '¡Regístrese ahora mismo!', signup_path, {'data-push' => true}
-        %h4 ¿Olvidaste la contraseña?
+          = link_to it("login.now"), signup_path, {'data-push' => true}
+        %h4 
+          = it "login.forgot_passwd"
         %p
-          = link_to "Haz clic aquí", new_password_reset_path, { 'data-push' => true }
-          para restablecerla
+          = link_to it("login.click"), new_password_reset_path, { 'data-push' => true }
+          = it "login.restablish"
 

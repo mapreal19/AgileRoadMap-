@@ -9,11 +9,21 @@ class UserPractica < ActiveRecord::Base
 	has_many :user_practicas, -> { order("position") }, dependent: :destroy
 
 	# http://apidock.com/rails/v2.3.8/ActiveModel/Validations/ClassMethods/validates_inclusion_of
-	ESFUERZO = { 1 => 'Muy poco', 2 => 'Bajo', 3 => 'Medio', 4 => 'Alto', 5 => 'Muy alto'}
+	if I18n.locale == :es then 
+    ESFUERZO = { 1 => 'Muy poco', 2 => 'Bajo', 3 => 'Medio', 4 => 'Alto', 5 => 'Muy alto'}
+  else
+    ESFUERZO = { 1 => 'Very little', 2 => 'Low', 3 => 'Medium', 4 => 'High', 5 => 'Very High'}
+  end
+
 	validates_inclusion_of :effort, in: 1..5, allow_nil: true
 
 	#MARGEN = { -1 => 'No definido', 0 => 'Ninguno', 1 => 'Poco', 2 => 'Medio', 3 => 'Alto'}
-  MARGEN = { -1 => 'No definido', 0 => 'Muy Bajo', 1 => 'Bajo', 2 => 'Medio', 3 => 'Alto', 4 => 'Muy Alto'}
+  if I18n.locale == :es then 
+    MARGEN = { -1 => 'No definido', 0 => 'Muy Bajo', 1 => 'Bajo', 2 => 'Medio', 3 => 'Alto', 4 => 'Muy Alto'}
+  else
+    MARGEN = { -1 => 'Not defined', 0 => 'Very Low', 1 => 'Low', 2 => 'Medium', 3 => 'High', 4 => 'Very High'}
+  end
+  
 
 	validates_inclusion_of :range, in: -1..4, allow_nil: true
 

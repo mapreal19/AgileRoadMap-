@@ -6,11 +6,11 @@
     .col-xs-12
       .headline
         %h2
-          Reset Password
+          = it "passwd.reset"   
       = form_tag password_resets_path, method: :post, class: 'form-inline' do
 
         .form-group
           = label_tag :email, nil, class: 'sr-only'
-          = text_field_tag :email, params[:email], class: 'form-control', placeholder: 'Introduce tu email'
+          = text_field_tag :email, params[:email], class: 'form-control', placeholder: it("passwd.email")
         .form-group
-          = submit_tag "Restablecer contraseña", class: 'btn btn-primary' 
+          = submit_tag it("passwd.submit"), class: 'btn btn-primary' 

@@ -6,9 +6,7 @@
     %h2 Agile Roadmap+
   .row
     .col-sm-12
-      ¿Estás interesado en implantar prácticas ágiles? ¿No sabes por dónde comenzar?
-      Este sitio te ofrece conocimiento asociado a prácticas ágiles y te ayuda a establecer tu propio roadmap para implantación de prácticas ágiles.
-      = link_to 'Ver video explicativo', 'https://www.youtube.com/v/VaCHhjqVKTs'
+      = it "home.intro", link_video: 'https://www.youtube.com/v/VaCHhjqVKTs'
 
     / Service Blocks
   .row{ style: 'margin-top: 40px'}
@@ -16,17 +14,23 @@
       .service
         %i.icon-resize-small.service-icon
         .desc
-          %h4 Conoce las prácticas ágiles
-          %p Te ofrecemos un catálogo de prácticas ágiles que provienen de los métodos ágiles más populares y están explicadas de forma genérica para ser entendidas incluso en contextos diferentes al de desarrollo de software.
+          %h4 
+            = it "home.services.title.one"
+          %p 
+            = it "home.services.content.one"
     .col-md-4
       .service
         %i.icon-cogs.service-icon
         .desc
-          %h4 Evalúa prácticas versus objetivos
-          %p Reflexiona respecto de tus objetivos de mejora y detecta qué prácticas pueden ayudarte a conseguir dichos objetivos.
+          %h4 
+            = it "home.services.title.two"
+          %p 
+            = it "home.services.content.two"
     .col-md-4
       .service
         %i.icon-plane.service-icon
         .desc
-          %h4 Construye tu Roadmap Ágil
-          %p Crea tu propia lista ordenada de práctica ágiles que guiarán tus esfuerzos y estrategia de implantación del agilismo en tu contexto de trabajo.
+          %h4 
+            = it "home.services.title.three"
+          %p 
+            = it "home.services.content.three"

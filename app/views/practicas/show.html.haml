@@ -3,10 +3,11 @@
 
 .container
   .headline
-    %h2 Nombre
+    %h2 
+      = it 'modal.name'
   = @practica.name
   .headline
-    %h2 Descripción
+    %h2 
+      = it 'modal.description'
   = @practica.description.html_safe
-
 

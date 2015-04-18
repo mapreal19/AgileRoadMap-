@@ -7,11 +7,12 @@
         %h4#myModalLabel.modal-title
           %span.badge
             = practica_legacy.position_with_prefix
-          = practica_legacy.name
+          = if I18n.locale == :es then practica_legacy.name_es else practica_legacy.name_en end
       .modal-body       
         .headline
-          %h2 Descripción
-        = practica_legacy.description.html_safe
+          %h2 
+            = it "modal.description"
+        = if I18n.locale == :es then practica_legacy.description_es.html_safe else practica_legacy.description_en.html_safe end
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cerrar
         
