@@ -1,11 +1,11 @@
 
 ###############################    Translation chains     ##############################
 es:
-  home: 'Principal'
+  home: 'Inicio'
   about_us: 'Sobre Nosotros'
   contact: 'Contacto'
   languages: 'Idiomas'
-  english: 'Inglés'
+  english: 'Inglish'
   spanish: 'Español'
   welcome: "Bienvenido, si quieres conocer las funcionalidades de Agile Roadmap+ accede al <a href='%{url}' target='_blank'>video introductorio</a>."
   top:
@@ -30,7 +30,7 @@ es:
     four: 'Herramienta de apoyo para establecer'
     five: 'el Roadmap Ágil de tu equipo de trabajo'
   home:
-    intro: "¿Estás interesado en implantar prácticas ágiles? ¿No sabes por dónde comenzar? Este sitio te ofrece conocimiento asociado a prácticas ágiles y te ayuda a establecer tu propio roadmap para implantación de prácticas ágiles. %{link_video:Ver video explicativo}"
+    intro: "¿Estás interesado en implantar métodos ágiles? ¿No sabes por dónde comenzar? Este sitio te ofrece conocimiento asociado a prácticas ágiles y te ayuda a establecer tu propio roadmap para implantación de prácticas ágiles. %{link_video:Ver video explicativo}"
     services:
       title:
         one: "Conoce las prácticas ágiles"
@@ -50,7 +50,7 @@ es:
     title: "¿Qué es Agile Roadmap+?"
     paragraph:
       one: "Agile Roadmap+ es parte del enfoque Tune-up (%{tuneup_link:www.tuneupprocess.com}). Tune-up ofrece una solución integral para mejorar procesos de producción, centrada en la gestión ágil de proyectos y equipos de trabajo. Tune-up cubre los cuatro aspectos que debería abordar un proceso de mejora centrado en métodos ágiles:"
-      two: "Agile Roadmap+ condensa nuestra experiencia en el punto 2, es decir, en el diagnóstico y en la evaluación de prácticas ágiles."
+      two: "Agile Roadmap+ condensa nuestra experiencia en diagnóstico y en la evaluación de prácticas ágiles."
       three: "Esta imagen presenta el modelo asociado a Agile Roadmap+. Debe establecerse una priorización de los objetivos de mejora que se quieren conseguir. Cada práctica ágil contribuye a ciertos objetivos de mejora. Así, las prácticas ágiles pueden ordenarse según su contribución a los objetivos más importantes. Además, el esfuerzo de preparación para poder aplicar una práctica debería considerarse como un factor que puede hacer desistir de su aplicación, o al menos en decidir postergar su aplicación. Por otra parte, el nivel de aplicación de una práctica dará un margen mayor o menor de mejora, por ejemplo, si la práctica no está aplicada aportaría un mayor margen de mejora. También habría que considerar las relaciones entre prácticas, una práctica podría verse reforzada por la aplicación de otra práctica o verse inhibida por la ausencia de otra práctica. Finalmente, debería considerarse también los desafíos que suele enfrentar la implantación de una práctica, como otra consideración para la postergación de la implantación o descarte de una práctica."
     li: 
       one: "Formación en los conocimientos necesarios (Kanban, Lean Development, Scrum y Extreme Programming)."
@@ -60,17 +60,17 @@ es:
   agile_map_steps:
     title: "Pasos para elaborar un Agile Roadmap+"
     parag:
-      one: "Un Agile Roadmap+ debería ser el resultado de un diagnóstico y evaluación del contexto del equipo de trabajo. En nuestra experiencia en implantación de prácticas ágiles hemos ido refinando un protocolo para este trabajo de diagnóstico y evaluación, el cual consta de los siguientes pasos:"
+      one: "Un roadmap ágil debería ser el resultado de un diagnóstico y evaluación del contexto del equipo de trabajo. En nuestra experiencia en implantación de prácticas ágiles hemos ido refinando un protocolo para este trabajo de diagnóstico y evaluación, el cual consta de los siguientes pasos:"
       two: "Agile Roadmap+ permite realizar un roadmap de forma muy flexible, ofreciendo además un espacio para el usuario en el cual se almacena su roadmap, de manera que puede acceder a él y completarlo/modificarlo en cualquier momento."
     steps:
-      one: "Seleccionar el equipo de trabajo en el cual se aplicarán las prácticas ágiles. Nuestra aproximación al respecto es siempre bottom-up, es decir, implantar prácticas ágiles trabajando muy estrechamente con cada equipo. Si bien es necesario hacer un trabajo previo de promoción hasta un determinado nivel directivo (para conseguir el apoyo de la iniciativa), el trabajo de implantación se hace con el equipo, no debe ser impuesto desde 'arriba' ni debe dejarse a la motivación y esfuerzo heroico de algunos integrantes del equipo."
+      one: "Seleccionar el equipo de trabajo en el cual se aplicarán las prácticas ágiles. Nuestra recomendación es implantar prácticas ágiles trabajando muy estrechamente con cada equipo. Si bien es necesario hacer un trabajo previo de promoción hasta un determinado nivel directivo (para conseguir el apoyo de la iniciativa), el trabajo de implantación se hace con el equipo, no debe ser impuesto desde 'arriba' ni debe dejarse a la motivación y esfuerzo heroico de algunos integrantes del equipo."
       two: "Estudiar los productos, servicios y/o proyectos encargados al equipo seleccionado. Obviamente lo ideal sería que el equipo sólo trabajase en un producto, servicio o proyecto, pero desgraciadamente suele ocurrir que el equipo es responsable de varios trabajos diferentes."
-      three: "Evaluar globalmente el tipo de trabajo encargado al equipo y su posible diversidad. Hay dos factores determinantes: (a) si se trata de un producto (desarrollo y/o mantenimiento del producto) o de un servicio, y (b) cómo se organiza el trabajo, si se quiere (y puede) planificar el trabajo o si lo que interesa en atender el trabajo en la medida que se recibe. Respecto de (a), si el trabajo del equipo no está asociado a un producto simplemente se deberían descartar ciertas prácticas que son claramente orientadas a trabajo con productos. En el caso (b), dependiendo de si el trabajo se planifica o si se atiende según se recibe, correspondientemente hay ciertas prácticas aplicables a uno o a otro caso. Para un mismo equipo puede haber mezclas de situaciones respecto de (a) o (b), por ejemplo, el equipo se encarga del desarrollo de cierto producto pero también es responsable de unos servicios, o si además, para unos casos de producto o servicio interesa planificar y para otros no. Es muy importante que para cada caso se adapte adecuadamente el proceso, es decir, que se apliquen las prácticas más adecuadas. Por ejemplo, sería un error que todo el trabajo del equipo se estime y planifique siendo que, el equipo está encargado de un servicio cuya demanda no es previsible y no se quiere (o no se puede) agrupar ni planificar."
-      four: "Establecer los objetivos que pretende la iniciativa de mejorar de proceso. Este paso obliga a una reflexión y diagnóstico respecto del desempeño del equipo en contexto del producto/servicio estudiado. Cada práctica ágil contribuye en cierta medida a ciertos objetivos con lo cual, ordenando por importancia de los objetivos en el contexto del equipo de trabajo se podrán correspondientemente seleccionar prácticas candidatas según su contribución a dichos objetivos."
-      five: "Acotar las prácticas candidatas. Las prácticas candidatas estarán acotadas por la evaluación realizada en el paso 3, es decir, según los factores (a) y (b) algunas prácticas candidatas podrían ser descartadas para los pasos siguientes."
-      six: "Establecer el nivel de aplicación de cada práctica. Es importante evaluar si una práctica está ya aplicada, no aplicada, parcialmente aplicado o simplemente no interesará aplicarla. Una práctica no aplicada tendrá un mayor efecto que una práctica que se está ya aplicando de forma parcial."
-      seven: "Considerar el nivel de dificultad que tendrían los desafíos de implantación de cada práctica. Las prácticas no aplicadas o parcialmente aplicadas ofrecen un margen de mejora si se implantan, sin embargo, hay que tener presente los desafíos que normalmente deben enfrentarse al implantar cada práctica."
-      eight: "Con toda la información recopilada en los pasos anteriores valorar la aplicabilidad de cada práctica estableciendo un orden de aplicación (Roadmap). Seguir las siguientes directrices: valorar positivamente la importancia de los objetivos a los que contribuye la práctica  y valorar también la contribución de cada práctica a los objetivos, valorar positivamente el nivel de aplicación actual de la práctica (mayor si la práctica no está siendo aplicada), valorar el nivel de dificultad de los desafíos de la práctica (mientras menos mejor), valorar el esfuerzo de aplicación de la práctica (mientras menos mejor)."
+      three: "Establecer un conjunto de objetivos que motivan la iniciativa de mejora de proceso. Este paso obliga a una reflexión respecto del desempeño actual del equipo en contexto de los productos/servicios o proyectos estudiados. Ordenar dichos objetivos según prioridad de consecución." 
+      four: "Determinar un conjunto de prácticas candidatas que contribuyen en mayor medida a los objetivos seleccionados. Cada práctica ágil contribuye en cierta medida a algunos objetivos, con lo cual, para un determinado objetivo se pueden seleccionar prácticas candidatas según su contribución a dicho objetivo."
+      five: "Establecer el nivel de aplicación de cada práctica candidata. Es importante conocer si una práctica está ya totalmente aplicada, no está aplicada, o si se aplica parcialmente. Una práctica no aplicada tendrá un mayor efecto que una práctica que se está ya aplicando de forma parcial. Descartar de las candidatas aquellas prácticas ya aplicadas."
+      six: "Considerar el esfuerzo de implantación que podría suponer cada práctica candidata. Dependiendo de la práctica y del contexto de trabajo, el esfuerzo de implantación asociado a la preparación y puesta en marcha de la práctica nos puede obligar a postergarla o incluso descartarla. Cada práctica conlleva ciertos desafíos que es importante evaluar."
+      seven: "Con la información recopilada establecer un orden de aplicación para las prácticas candidatas (lista de prácticas que formarían el roadmap).   Algunas directrices para establecer el orden son: valorar positivamente la prioridad de los objetivos a los que contribuye la práctica, valorar el grado de contribución de la práctica a cada objetivo, valorar positivamente el nivel de aplicación actual de la práctica (mayor si la práctica no está siendo aplicada), y valorar el esfuerzo de implantación de la práctica (mientras menos mejor) y los posibles desafíos."
+      eight: "Probablemente no se podrán aplicar todas las prácticas deseadas a la vez ni en su total intensidad, con lo cual el roadmap de prácticas ágiles deberá evaluarse períódicamente, en la medida que se vayan implantando prácticas y considerando posibles cambios en los objetivos o en el contexto de trabajo. Finalmente, tener muy en cuenta que dependiendo de la diversidad del trabajo encargado a un equipo puede ser necesario tener diferentes roadmaps con diferentes objetivos y prácticas) para diferentes contextos de trabajo del equipo."
   agile_stats:
     title: "Roadmaps registrados"
     countries: "Países"
@@ -82,8 +82,8 @@ es:
     average_level: "Nivel medio de aplicación de cada práctica"
   agile_team:
     title: "Equipo Agile Roadmap+"
-    intro: "Este sitio web se ha desarrollado por Mario Pérez, como parte de su Trabajo de Tesis de Master realizado en el Departamento de Sistemas Informáticos y Computación (DSIC) de la Universidad Politécnica de Valencia (UPV), bajo la dirección del Dr. Patricio Letelier."
-    patricio: "Dr. Ingeniero en Informática"
+    intro: "Este sitio web se ha desarrollado por Mario Pérez, como parte de su Trabajo de Tesis de Master realizado en el Departamento de Sistemas Informáticos y Computación (DSIC) de la Universidad Politécnica de Valencia (UPV), bajo la dirección de Patricio Letelier."
+    patricio: "Doctor Ingeniero en Informática"
     mario: "Ingeniero Informático"
   agile_practices:
     intro:
@@ -188,32 +188,3 @@ es:
         country: 'País'
 
 ###############################    End of translation chains     ##############################
-
-  fallo:
-    one: 'El formulario contiene 1 error'
-    other: "El formulario contiene %{count} errores"
-
-  errors: &errors
-    format: ! '%{attribute} %{message}'
-    messages:
-      accepted: debe ser aceptado
-      blank: no puede estar en blanco
-      confirmation: no coincide con la confirmación
-      empty: no puede estar vacío
-      equal_to: debe ser igual a %{count}
-      even: debe ser par
-      exclusion: está reservado
-      greater_than: debe ser mayor que %{count}
-      greater_than_or_equal_to: debe ser mayor que o igual a %{count}
-      inclusion: no está incluido en la lista
-      invalid: no es válido
-      less_than: debe ser menor que %{count}
-      less_than_or_equal_to: debe ser menor que o igual a %{count}
-      not_a_number: no es un número
-      not_an_integer: debe ser un entero
-      odd: debe ser impar
-      record_invalid: ! 'La validación falló: %{errors}'
-      taken: ya está en uso
-      too_long: es demasiado largo (%{count} caracteres máximo)
-      too_short: es demasiado corto (%{count} caracteres mínimo)
-      wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
