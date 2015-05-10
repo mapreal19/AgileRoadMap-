@@ -4,8 +4,5 @@ class ChangeNameAttrToDesafio < ActiveRecord::Migration
     change_table :desafios do |t|
       t.rename :name, :name_es
     end
-    change_table :practicas do |p|
-      p.rename :description, :description_es
-    end
   end
 end
