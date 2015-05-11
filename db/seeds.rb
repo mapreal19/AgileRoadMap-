@@ -511,7 +511,7 @@ Desafio.delete_all
 
 Desafio.create!({id: 42, 
   name_es: 'Medir el progreso del trabajo respecto del grado de avance de las funcionalidades, características o servicios que aprovechará el cliente, no por volumen o avance de documentación u otros artefactos que acompañan al producto o servicio.',
-  name_en: 'Measuring the progress of the work with respect to the degree of advancement of the functionalities, features or services that the client will take advantage, not by volume or advancement of documentation or other artifacts  which don\'t give value to the client.'})
+  name_en: 'Measuring the progress of the work with respect to the degree of advancement of the functionalities, features or services that the client will take advantage, not by volume or advancement of documentation or other artifacts.'})
 Desafio.create!({id: 53, 
   name_es: 'Definir el trabajo en términos de incrementos en las características que ofrece el producto o servicio que se le ofrece al cliente, no en términos de actividades o artefactos necesarios desde la perspectiva técnica.', 
   name_en: 'Define the work in terms of increments in the features offered to the client by the product or service offered , not in terms of activities or necessary artifacts from a technical perspective.'})
@@ -607,7 +607,7 @@ Desafio.create!({id: 26,
   name_en: 'Avoid interruptions to team members, especially when the interruption can last a while. Promote the realization of scheduled meetings.'})
 Desafio.create!({id: 52, 
   name_es: 'Desistir de realizar un balanceo de carga de trabajo de los miembros del equipo. Solo tendrían asignado el trabajo en el cual están trabajando, no se realizarían asignaciones a futuro, salvo en casos excepcionales.', 
-  name_en: 'Not to perform load balancing of work for team members. They have only assigned the work in which they are working now, there are not assignments for the future, except in some specific cases where is neccesary that a particular person must do some work.'})
+  name_en: "Not to perform load balancing of work for team members. They have only assigned the work in which they're working now, there aren't assignments for the future, except in some specific cases where is neccesary that a particular person must do some work."})
 Desafio.create!({id: 51, 
   name_es: 'Que el cliente esté de acuerdo en recibir como entrega lo mínimo que pueda serle útil en un momento determinado.', 
   name_en: 'Have the client agreed with receiving a minimal delivery, satisfactory to start using it, but it can be improved and complemented later.'})
