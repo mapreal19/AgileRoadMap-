@@ -29,10 +29,195 @@ en:
   welcome: 'Welcome'
 
 #translation chains
-  welcome: "Bienvenido, si quieres conocer las funcionalidades de Agile Roadmap+ accede al <a href='%{url}' target='_blank'>video introductorio</a>."
-  agile_map_definition: 
-    title: "¿Qué es un Agile Roadmap?"
 
-  fallo:
-    one: 'The form contains 1 error'
-    other: "The form contains %{count} errors"
+
+###############
+###############################    Translation chains     ##############################
+en:
+  home: 'Home'
+  about_us: 'About us'
+  contact: 'Contact'
+  languages: 'Languages'
+  english: 'Inglish'
+  spanish: 'Español'
+  welcome: "Welcome, if you want to know the features of Agile Roadmap+ access to <a href='%{url}' target='_blank'>this video</a>"
+  top:
+    signout: "Close Session"
+    signup: "Sign Up"
+    signin: "Login"
+  header:
+    home: "Home"
+    dropdown:
+      title: "Agile Roadmap+"
+      one: "¿What's an Agile Roadmap?"
+      two: "¿What's Agile Roadmap+?"
+      three: 'Steps in Agile Roadmap+'
+      four: 'Agile Practices in Agile Roadmap+'
+      five: 'Site Statistics'
+      six: 'Agile Roadmap+ Team'
+    myagile: 'My Agile Roadmap+'
+  slider:
+    one: 'YOUR AGILE ROADMAP'
+    two: 'BY MEANS A REASONED'
+    three: 'AND EASY WAY'
+    four: 'Tool supporting the establisment of'
+    five: 'an Agile Roadmap for your team'
+  home:
+    intro: "¿Are you interested in applying agile methods? ¿You don't know how to start? This site offers you the knowledge associated to agile practices and helps you to establish your own roadmap to apply agile practices. %{link_video:See this video}"
+    services:
+      title:
+        one: "Know the agile practices"
+        two: "Evaluate practices versus your objectives"
+        three: "Create your Agile Roadmap"
+      content:
+        one: "Agile Roadmap+ have a catalog of agile practices coming from the most popular agile methods, and these practices are explained in a general way, in order to be understood even in contexts differents from software development."
+        two: "Think about the improvements objectives for your team and find what practices can help to achive those objectives."
+        three: "Create your own ordered list of agile practices to guide your efforts and strategy to apply agilism in your context."
+  agile_map_definition: 
+    title: "¿What's an Agile Roadmap?"
+    paragraph: 
+      one: "An Agile Roadmap is a roadmap (also called Improvement Backlog) for the implementation of agile practices in a team. This is an ordered list of process improvements that will be implemented in the team over time."
+      two: "To develop an Agile Roadmap one needs to know and understand the agile practices offered by agile methods. In %{link:Carta de Prácticas Ágiles: Arma tu propio menú ágil}, we elaborated a list of 42 practices collected from the most popular agile methods (Kanban, Lean Development, Scrum and Extreme Programming)."
+      three: "To elaborate an Agile Roadmap is necesary because is difficult, and often not recommended, to implement many practices at the same time and/or in all its depth (recommended reading %{link:¿Revolución o evolución hacia el agilismo?}. Therefore, it is useful to have an ordered list of candidate practices that could be gradually implemented. It is also implicit that an Agile Roadmap focuses on implementing agile practices, not a specific agile method."
+  what_is_agile_map:
+    title: "¿What's an Agile Roadmap+?"
+    paragraph:
+      one: "Agile Roadmap+ is part of the Tune-up approach  (%{tuneup_link: www.tuneupprocess.com}). Tune-up offers a comprehensive solution to improve production processes, focused on agile project management and teamwork. Tune-up covers four aspects to be addressed by an improvement process based on agile methods:"
+      two: "Agile Roadmap+ synthesizes our experience at  the diagnosis and evaluation of agile practices."
+      three: "This image shows the model associated with Agile Roadmap+. First, a prioritization of improvement objectives must be established. Each agile practice contributes to certain improvement objectives. Thus, agile practices can be sorted according to their contribution to the most important objectives. In addition, the effort to prepare the application of a practice should be considered as a factor that may rule out or postpone its application. Moreover, the current level of implemention of a practice will offer a greater or lesser improvement margin. For instance, if one practice is not currently applied it could offer more room for improvement. We should also consider the relationship between practices. A practice could be reinforced by the application of other practice or be inhibited by the absence of other practice. Finally, it should also be taken into account possible challenges for implementing a practice, and this could be another consideration to postpone or rule out a practice."
+    li: 
+      one: "Training including the neccesary knowledge (Kanban, Lean Development, Scrum and Extreme Programming)."
+      two: "Diagnosis of the context in which the agile practices that will be introduced."
+      three: "Tool support for the approach. We have our own tool called Tune-up Process."
+      four: "Consultancy for the follow-up and support during the introduction of agile practices."
+  agile_map_steps:
+    title: "Steps to elaborate an Agile Roadmap+"
+    parag:
+      one: "An agile roadmap should be the result of a diagnosis and evaluation of the context of the work team. In our experience in implementation of agile practices we have develop a protocol for diagnosis and assessment of agile practices which consists of the following steps:"
+      two: "Agile Roadmap+ allows to elaborate a roadmap in a very flexible way, offering also a user account where you can store your roadmap, so that you can make it progresively."
+    steps:
+      one: "Select the a team where you want to apply agile practices. Our recommendation is to implement agile practices considering the context of each team. Although is necessary to get the support for the initiative at the top level of the company, the implementation of agile practices must not be imposed to teams, probably there are differences in their work that should be taken into account. Neither should be left the initiative to the motivation and heroic effort of some members of the team."
+      two: "Study the products and/or services which the team has in charge. Obviously the ideal would be that the team is in charge of only one product, service or project, but unfortunately it often happens that the team is responsible of several at the same time."
+      three: "Establish a set of goals which motivate the process improvement initiative. This step requires a reflection on the current performance of the team in the context of its products/services or projects. Sort these goals according their priority." 
+      four: "Determine a set of candidate practices which offer certain contribution to achieve the selected objectives. Each agile practice contributes to some extent to some objectives. Thus, for a given objective we can select candidate practices according to their contribution to such objective."
+      five: "Establish the level of implementation of each candidate practice. It is important to know whether a practice is already fully applied, is not applied, or is partially applied. A non applied practice will have a greater improvement effect than a practice that is totally applied. "
+      six: "Consider the effort of implementation for each candidate practice. Depending on the practice and the context of the work, the implementation effort associated with the preparation and launching of the practice can force us to postpone it or even discard it. Each practice entails certain challenges that it is important to assess."
+      seven: "With the collected information establish implementation order for the candidate practices (list of practices that would form the roadmap). Some guidelines to establish that order are: consider the priority of objectives to which contributes the practice, consider the degree of contribution to the objetive offered by the  practice, consider the current level of implementation of the practice, and consider the effort of implementation of the practice, with its possible challenges."
+      eight: "Probably all the selected practices cannot be applied at the same time nor in its all intensity. Thus, the roadmap of agile practices should be assessed periodically, while practices are implemented, and considering possible changes in the objectives or in the context of work. Finally, keep in mind that depending on the diversity degree of the work in charge to the team, may be necessary to have different roadmaps (with different objectives and practices) for each area of work of the team."
+  agile_stats:
+    title: "Roadmaps Registered"
+    countries: "Countries"
+    work: "Area of Work"
+    sectors: "Business Sector"
+    team: "Number of Team Members"
+    position: "Average position of Objectives"
+    average_position: "Average position of Practices"
+    average_level: "Average application level of Practices"
+  agile_team:
+    title: "Agile Roadmap+ Team"
+    intro: "This web site has been developed by Mario Pérez, as part of his Master thesis which was carried out in the Department of computer systems and computation (DSIC) of the Universidad Politécnica de Valencia (UPV), and under the supervision of Ph.D. Patricio Letelier."
+    patricio: "Ph.D. Computer Science"
+    mario: "Software Engineer"
+  agile_practices:
+    intro:
+      one: "This diagram illustrates our catalog of agile practices, collected from the most popular agile methods. This diagram reinforces the fact that it is not recommended to consider exclusively the implementation of one agile method. What is important are the agile practices behind the methods and the synergy among practices. Thus, the recommendation is to apply all practices you can and in its major intensity. Below is the list of practices that correspond to the numbers shown in the figure. Click on the image to download a slide in which you can see the names of the practices focusing your mouse on a point (a practice) in the same image."
+      two: "This image shows a possible grouping of practices in order to assess its application in certain specific areas of improvement. The practice #1 appears out of the grouping because it is meybe the more fundamental al general practice. Click on the image to download a slide in which you can see the names of the practices focusing your mouse on a point (a practice) in the same image. "
+    table:
+      title: "Catalog of Agile Practices"
+      col:
+        one: "Agile Practice Name"
+        two: "Agile Method"
+  my_agile:
+    objectives:
+      title: "Improvement Objectives"
+      tooltip-open: "Show Objective List"
+      tooltip-close: "Hide Objective List"
+      tooltip-remark: "Highlight practices which contribute to the objective"
+      hide-checkbox: "Hide non interesting objectives"
+      table:
+        one: "Improvement Objective"
+        two: "Client satisfaction"
+        three: "Team motivation and commitment"
+        four: "Productivity"
+        five: "Notes"
+        six: "Non interesting"
+    dashboard:
+      title: "Roadmap of Agile Practices"
+      hidemargin-checkbox: "Hide practices totally applied (they don't offer room for improvement)"
+      hideapplicable-checkbox: "Hide non applicable practices"
+      tooltip-group: "Practice defined at team level"
+      tooltip-service: "Practice defined at product/service level"
+      tooltip-moreinfo: "More information"
+      tooltip-objectives: "Objectives"
+      tooltip-challenges: "Challenges"
+      tooltip-related: "Show related practices"
+      tooltip-closerelated: "Hide related practices"
+      table:
+        col:
+          one: 
+            name: "Agile Practice Name"
+          two: 
+            name: "Agile Method"
+            tooltip: "Méthod which includes the practice"
+          three: 
+            name: "Implementation Effort"
+            tooltip: "Effort involved in implementing the practice"
+          four: 
+            name: "Level of application"
+            tooltip: "Current level of application the practice has"
+          five: 
+            name: "Notes"
+          six: 
+            name: "Non applicable"
+            tooltip: "Select when you consider that a practice directly will not be applied"
+  register:
+    new_account: "Sign Up"
+    already_registered: "¿Do you already have an account?"
+    access_account: "Access to your account"
+    name: "Name"
+    email: "Email"
+    scope: "Area of Work"
+    select_scope: "Select one area of work"
+    sector: "Business Sector"
+    select_sector: "Select one business sector"
+    number_members: "Number of members in the team"
+    passwd: "Password"
+    repeat_passwd: "Repeat password"
+    submit: 'Send'
+  login:
+    access: "Account access"
+    new: "¿New user?"
+    now: "Sign Up now!"
+    forgot_passwd: "¿Forgot your password?"
+    click: "Click here"
+    restablish: "to reset it"
+  passwd:
+    reset: "Reset password"
+    input_passwd: 'Enter password'
+    confirm_passwd: 'Confirm password'
+    submit: "Save password"
+    email: 'Enter your email'
+    submit: "Reset password"
+  effort:
+    one: 'Very low'
+    two: 'Low'
+    three: 'Medium'
+    four: 'High'
+    five: 'Very high'
+  modal:
+    description: 'Description'
+    name: 'Name'
+  challenges:
+    intro: 'Practice Challenges: '
+
+
+  footer: "Created from the work in"
+  activerecord: 
+    attributes:
+      user:
+        name: 'Name'
+        ambito_trabajo_id: 'Area of work'
+        sector_empresa_id: 'Business sector'
+        country: 'Country'
+
+###############################    End of translation chains     ##############################

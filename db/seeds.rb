@@ -12,22 +12,22 @@ require 'open-uri'
 
 # --- Ámbito de trabajo ---
 AmbitoTrabajo.delete_all
-AmbitoTrabajo.create!({id: 1, name_es: 'Desarrollo y/o mantenimiento de productos', name_en: "To translate"})
-AmbitoTrabajo.create!({id: 2, name_es: 'Atención y soporte al cliente', name_en: "To translate"})
-AmbitoTrabajo.create!({id: 3, name_es: 'Resolución de incidencias', name_en: "To translate"})
-AmbitoTrabajo.create!({id: 4, name_es: 'Tramitación de documentos', name_en: "To translate"})
-AmbitoTrabajo.create!({id: 5, name_es: 'Otro', name_en: "To translate"})
+AmbitoTrabajo.create!({id: 1, name_es: 'Desarrollo y/o mantenimiento de productos', name_en: "Product development and/or maintenance"})
+AmbitoTrabajo.create!({id: 2, name_es: 'Atención y soporte al cliente', name_en: "Help or Service Desk"})
+AmbitoTrabajo.create!({id: 3, name_es: 'Resolución de incidencias', name_en: "Resolution of Incidents"})
+AmbitoTrabajo.create!({id: 4, name_es: 'Tramitación de documentos', name_en: "Handling of Dossiers"})
+AmbitoTrabajo.create!({id: 5, name_es: 'Otro', name_en: "Other"})
 
 # --- Sector empresa ---
 SectorEmpresa.delete_all
-SectorEmpresa.create!({id: 1, name_es: 'Tecnología y Software', name_en:""})
-SectorEmpresa.create!({id: 2, name_es: 'Telecomunicaciones', name_en:""})
-SectorEmpresa.create!({id: 3, name_es: 'Auditoría y Consultoría', name_en:""})
-SectorEmpresa.create!({id: 4, name_es: 'Servicios', name_en:""})
-SectorEmpresa.create!({id: 5, name_es: 'Industria', name_en:""})
-SectorEmpresa.create!({id: 6, name_es: 'Construcción e Inmobilaria', name_en:""})
-SectorEmpresa.create!({id: 7, name_es: 'Banca y Seguros', name_en:""})
-SectorEmpresa.create!({id: 8, name_es: 'Otros', name_en:""})
+SectorEmpresa.create!({id: 1, name_es: 'Tecnología y Software', name_en:"Software and Technology"})
+SectorEmpresa.create!({id: 2, name_es: 'Telecomunicaciones', name_en:"Telecommunications"})
+SectorEmpresa.create!({id: 3, name_es: 'Auditoría y Consultoría', name_en:"Audit and Consulting"})
+SectorEmpresa.create!({id: 4, name_es: 'Servicios', name_en:"Services"})
+SectorEmpresa.create!({id: 5, name_es: 'Industria', name_en:"Industry"})
+SectorEmpresa.create!({id: 6, name_es: 'Construcción e Inmobilaria', name_en:"Cosntruction and Real State"})
+SectorEmpresa.create!({id: 7, name_es: 'Banca y Seguros', name_en:"Bank and Insurance"})
+SectorEmpresa.create!({id: 8, name_es: 'Otros', name_en:"Other"})
 
 
 
@@ -35,53 +35,53 @@ SectorEmpresa.create!({id: 8, name_es: 'Otros', name_en:""})
 
 Objetivo.delete_all
 Objetivo.create!({id: 11, name_es: 'Alineación del trabajo del equipo con los objetivos del negocio',
-  name_en: '',
-	sat_client: true, equipo: false, productivity: false})
+  name_en: 'Alignment of the work of the team with business objectives',
+  sat_client: true, equipo: false, productivity: false})
 Objetivo.create!({id: 1, name_es: 'Evitar o reducir los retrasos en las entregas', 
-  name_en: '',
-	sat_client: true, equipo: false, productivity: false})
+  name_en: 'Avoidance or reduction of delays in releases',
+  sat_client: true, equipo: false, productivity: false})
 Objetivo.create!({id: 5, name_es: 'Reducir defectos en el trabajo entregado al cliente', 
-  name_en: '',
-	sat_client: true, equipo: false, productivity: false})
+  name_en: 'Reduction of defects in the work released to the client',
+  sat_client: true, equipo: false, productivity: false})
 Objetivo.create!({id: 21, name_es: 'Reducir el tiempo de entrega al cliente, acelerar el "time to market"', 
-  name_en: '',
-	sat_client: true, equipo: false, productivity: false})
+  name_en: 'Acceleration of “time to market”',
+  sat_client: true, equipo: false, productivity: false})
 Objetivo.create!({id: 12, name_es: 'Involucar en mayor medida al cliente en la planificación, definición y validación del trabajo', 
-  name_en: '',
-	sat_client: true, equipo: false, productivity: false})
+  name_en: 'Involvement of the customer in planning, definition and validation of work',
+  sat_client: true, equipo: false, productivity: false})
 Objetivo.create!({id: 8, name_es: 'Tomar decisiones en el momento oportuno', 
-  name_en: '',
-	sat_client: true, equipo: false, productivity: false})
+  name_en: 'Making decisions at the right moment',
+  sat_client: true, equipo: false, productivity: false})
 Objetivo.create!({id: 10, name_es: 'Mejorar la comunicación dentro del equipo y con el cliente', 
-  name_en: '',
-	sat_client: true, equipo: true, productivity: false})
+  name_en: 'Improvement of communication between team and client',
+  sat_client: true, equipo: true, productivity: false})
 Objetivo.create!({id: 7, name_es: 'Hacer más visible el trabajo del equipo', 
-  name_en: '',
-	sat_client: false, equipo: true, productivity: false})
+  name_en: 'Increased visibility of the work of the team',
+  sat_client: false, equipo: true, productivity: false})
 Objetivo.create!({id: 4, name_es: 'Reducir las horas extras o demanda no prevista de recursos humanos adicionales',
-  name_en: '', 
-	sat_client: false, equipo: true, productivity: false})
+  name_en: 'Reduction of overtime or unanticipated demand for additional human resources', 
+  sat_client: false, equipo: true, productivity: false})
 Objetivo.create!({id: 22, name_es: 'Gestionar eficazmente el contexto multi-proyecto', 
-  name_en: '',
-	sat_client: true, equipo: true, productivity: true})
+  name_en: 'Effective management of a multi-project context',
+  sat_client: true, equipo: true, productivity: true})
 Objetivo.create!({id: 14, name_es: 'Evitar costos asociados a la realización de tareas prescindibles o dudosamente rentables', 
-  name_en: '',
-	sat_client: false, equipo: true, productivity: true})
+  name_en: 'Avoidance of costs associated with performing unprofitable tasks',
+  sat_client: false, equipo: true, productivity: true})
 Objetivo.create!({id: 20, name_es: 'Reducir el re-trabajo debido a trabajo defectuoso o incompleto detectado por el equipo', 
-  name_en: '',
-	sat_client: false, equipo: true, productivity: true})
+  name_en: 'Reduction of rework generated by detecting defective or incomplete work',
+  sat_client: false, equipo: true, productivity: true})
 Objetivo.create!({id: 3, name_es: 'Gestionar eficazmente los cambios, tanto en los trabajos como en sus prioridades', 
-  name_en: '',
-	sat_client: false, equipo: true, productivity: true})
+  name_en: 'Effective management of changes, both in scope and prioritization',
+  sat_client: false, equipo: true, productivity: true})
 Objetivo.create!({id: 19, name_es: 'Promover la mejora continua del proceso empleado por el equipo', 
-  name_en: '',
-	sat_client: false, equipo: true, productivity: true})
+  name_en: 'Promotion of continuous process improvement',
+  sat_client: false, equipo: true, productivity: true})
 Objetivo.create!({id: 9, name_es: 'Mejorar la gestión de recursos humanos en el equipo', 
-  name_en: '',
-	sat_client: false, equipo: true, productivity: true})
+  name_en: 'Improvement of human resource management',
+  sat_client: false, equipo: true, productivity: true})
 Objetivo.create!({id: 15, name_es: 'Mejorar la sistematización del trabajo', 
-  name_en: '',
-	sat_client: false, equipo: true, productivity: true})
+  name_en: 'Improvement of systematization of work',
+  sat_client: false, equipo: true, productivity: true})
 
 # --- 42 Prácticas Ágiles ---
 
@@ -98,281 +98,281 @@ Practica.delete_all
 #file = File.open("db/p1.txt", "rb")
 #contents = file.read
 Practica.create!({id: 40, position: 1, name_es: "Promover la sencillez en todos los aspectos. Ofrecer \
-	la solución más simple y mínima que pueda ser satisfactoria para el cliente.",
-	name_en: "To be translated",
+  la solución más simple y mínima que pueda ser satisfactoria para el cliente.",
+  name_en: "To promote simplicity in all aspects. Providing the simplest solution that is satisfactory for the client.",
   description_es: get_content_from_file('prac1.html'),
   description_en: "",
-	effort: 2, ambito_decision: 'equipo', agile_method: "Lean, XP"})
+  effort: 2, ambito_decision: 'equipo', agile_method: "Lean, XP"})
 Practica.create!({id: 1, position: 2, name_es: "Abordar y entregar trabajo terminado de forma incremental.", 
-	name_en: "To be translated",
-	description_es:get_content_from_file('prac2.html'),
+  name_en: "To address and deliver finished work incrementally.",
+  description_es:get_content_from_file('prac2.html'),
   description_en: "",
-	effort: 4, ambito_decision: 'equipo', agile_method: "Kanban, XP, Scrum"})
-Practica.create!({id: 23, position: 3, name_es: "Realizar entregas frecuentes de unidades de trabajo terminadas",
-	name_en: "To be translated",
+  effort: 4, ambito_decision: 'equipo', agile_method: "Kanban, XP, Scrum"})
+Practica.create!({id: 23, position: 3, name_es: "Realizar entregas frecuentes de unidades de trabajo terminadas.",
+  name_en: "To make frequent deliveries of completed work units.",
   description_es:  get_content_from_file('prac3.html'),
   description_en: "",
-	effort: 5, ambito_decision: 'equipo', agile_method: "Kanban, XP, Scrum"})
+  effort: 5, ambito_decision: 'equipo', agile_method: "Kanban, XP, Scrum"})
 Practica.create!({id: 25, position: 4, name_es: "Realizar reuniones de planificación frecuentemente (frecuencia \
-	de pocas semanas, no meses).",
-	name_en: "To be translated",
+  de pocas semanas, no meses).",
+  name_en: "To conduct planning meetings frequently.",
   description_es: get_content_from_file('prac4.html'),
   description_en: "",
-	effort: 2, ambito_decision: 'producto/servicio', agile_method: "XP, Scrum" })
+  effort: 2, ambito_decision: 'producto/servicio', agile_method: "XP, Scrum" })
 Practica.create!({id: 34, position: 5, name_es: "Acotar el trabajo previsto para un período en base a su estimación \
-	y la correspondiente coherencia con la capacidad del equipo",
-	name_en: "To be translated",
+  y la correspondiente coherencia con la capacidad del equipo.",
+  name_en: "To limit the work planned for a period based on estimations and team capacity.",
   description_es: get_content_from_file('prac5.html'),
   description_en: "",
-	effort: 5, ambito_decision: 'producto/servicio', agile_method: "XP, Scrum" })
+  effort: 5, ambito_decision: 'producto/servicio', agile_method: "XP, Scrum" })
 Practica.create!({id: 41, position: 6, name_es: "Organizar el trabajo en iteraciones que agrupan unidades de trabajo \
-	que son entregadas en una fecha prevista.",
-	name_en: "To be translated",
+  que son entregadas en una fecha prevista.",
+  name_en: "To organize work in iterations, grouping work units which will be delivered together.",
   description_es: get_content_from_file('prac6.html'),
   description_en: "",
-	effort: 3, ambito_decision: 'producto/servicio', agile_method: "XP, Scrum" })
+  effort: 3, ambito_decision: 'producto/servicio', agile_method: "XP, Scrum" })
 Practica.create!({id: 50, position: 7, name_es: "Evitar invertir esfuerzo en adelantar trabajo que no esté comprometido \
-	y/o no esté cercano a su entrega.",
-	name_en: "To be translated",
+  y/o no esté cercano a su entrega.",
+  name_en: "To avoid investing effort in work that is not committed and/or is not close to delivery.",
   description_es: get_content_from_file('prac7.html'),
   description_en: "",
-	effort: 1, ambito_decision: 'equipo', agile_method: "Lean" })
+  effort: 1, ambito_decision: 'equipo', agile_method: "Lean" })
 Practica.create!({id: 44, position: 8, name_es: "Organizar el trabajo del equipo con el foco en la generación de un buen \
-	flujo de trabajo terminado.",
-	name_en: "To be translated",
+  flujo de trabajo terminado.",
+  name_en: "To organize team’s work with focus on generating a good flow of finished work.",
   description_es: get_content_from_file('prac8.html'),
   description_en: "",
-	effort: 3, ambito_decision: 'producto/servicio', agile_method: "Kanban" })
+  effort: 3, ambito_decision: 'producto/servicio', agile_method: "Kanban" })
 Practica.create!({id: 24, position: 9, name_es: "Gestión continua y multicriterio del trabajo pendiente para que esté \
-	siempre debidamente priorizado.",
-	name_en: "To be translated",
+  siempre debidamente priorizado.",
+  name_en: "To continuously manage work so that it is always properly prioritized.",
   description_es: '<p>Gran parte del éxito de un producto o servicio se basa en la adecuada priorización del trabajo de manera que el cliente vea satisfecha sus solicitudes que le aportan mayor valor, o aquellas que tienen un carácter urgente. La adecuada definición del trabajo que debe realizarse también es crucial para asegurar que el trabajo realizado satisface las expectativas del cliente. Así pues, el trabajo pendiente debe estar continuamente priorizándose de acuerdo con los cambios u oportunidades que se presenten en el negocio, junto con la entrada de nuevos trabajos solicitados por el cliente. Salvo urgencias, el trabajo antes de ser abordado por el equipo debería ser definido por el cliente y con apoyo del equipo. </p><p>Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: reaccionar de forma inmediata ante cualquier solicitud de trabajo llegada al equipo y atenderla, aunque no se trate de algo urgente, sin evaluarla contra el trabajo pendiente e incluso interrumpiendo el trabajo actual. Esto además de afectar la moral del equipo y provocar retrasos, puede llevar a que el producto o servicio que ofrece el equipo pierda el rumbo y no satisfaga globalmente a todos los clientes o usuarios. </p><p>Lectura recomendada: <a href="http://agilismoatwork.blogspot.com.es/2011/10/gestion-efectiva-del-product-backlog.html" target="_blank">Gestión efectiva del Product Backlog</a><a href="http://agilismoatwork.blogspot.com.es/2011/10/gestion-efectiva-del-product-backlog.html.">.</a></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 4, ambito_decision: 'equipo', agile_method: "Scrum" })
+  effort: 4, ambito_decision: 'equipo', agile_method: "Scrum" })
 Practica.create!({id: 31, position: 10, name_es: "Limitar el trabajo en proceso (WIP), es decir, la cantidad de unidades \
-	de trabajo que tiene el equipo en una determinada actividad.",
-	name_en: "To be translated",
+  de trabajo que tiene el equipo en una determinada actividad.",
+  name_en: "To limit Work in Progress (WIP), that is, the quantity of work units which are in some activity of the process",
   description_es: '<p>Esta práctica es uno de los pilares del método Kanban, en el cual, además de promover la utilización de un tablero kanban, se destaca en la conveniencia de limitar el trabajo en proceso (WIP) en las actividades que puedan constituir un cuello de botella. La idea de limitar el WIP proviene de la TOC (Theory of Constraints, de Eliyahu M. Goldratt), la cual destaca que una línea de producción tiene un ratio de producción global (unidades de trabajo terminadas por unidad de tiempo) que está limitado por el punto de la línea que tiene el menor ratio de producción, y no tiene sentido que otros puntos con mayor ratio que el menor aumenten su ratio. Así pues, al limitar el WIP de las actividades se obliga a tomar medidas que evitan la acumulación de unidades de trabajo en ciertas actividades, por ejemplo, parar por períodos el trabajo en ciertas actividades (por ejemplo desviando recursos a las actividades con acumulación de trabajo), o implantar mejoras que permitan elevar o prescindir de l a limitación del WIP de una actividad. De todas formas, es importante destacar que estas ideas se originaron en líneas de producción de productos físicos, y deben extrapolarse con cautela en contexto de productos software o de servicios.</p><p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: tendencia a tener muchos trabajos comenzados y no terminados en una cierta actividad, intentando avanzarlos en paralelo, pasando de uno a otro a lo largo del tiempo (cuando no hay suficientes integrantes en el equipo que puedan efectivamente realizar el trabajo en paralelo). El rendimiento del equipo se resiente por los continuos cambios de contexto de trabajo que realizan los integrantes. Lecturas recomendadas: <a href="http://agilismoatwork.blogspot.com.es/2012/07/limitar-el-wip-una-buena-idea-pero-con.html" target="_blank">Limitar el WIP, una buena idea, pero con matices y alternativas</a> y <a href="http://agilismoatwork.blogspot.com.es/2012/12/actividad-tablero-kanban-concepto-de.html" target="_blank">Actividad: Tablero kanban + concepto de WIP + Diagramas de Flujo Acumulado</a>.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 2, ambito_decision: 'equipo', agile_method: "Kanban" })
+  effort: 2, ambito_decision: 'equipo', agile_method: "Kanban" })
 Practica.create!({id: 45, position: 11, name_es: "Formar equipos pequeños y procurar que mantengan sus integrantes.",
-	name_en: "",
+  name_en: "To create small teams and try to mantain its members",
   description_es: '<p>Las prácticas ágiles intensifican la comunicación y coordinación frecuente en los equipos de trabajo, y se prefiere que se dichas actividades se realicen cara a cara. Esto es difícil de llevar a cabo si el equipo es de gran tamaño. Scrum sugiere que los equipos deberían estar formados por entre 3 y 9 integrantes. Por otra parte, es importante que el equipo en lo posible se mantenga estable en cuanto a sus integrantes puesto que el equipo irá ganando cohesión. </p> <p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: cada vez que se plantea el desarrollo de un nuevo producto o un cambio significativo en un producto ya existente se arma un nuevo equipo de trabajo para abordar dicho proyecto, cogiendo personas desde equipos ya formados. Los equipos requieren un tiempo para llegar a un nivel adecuado de compenetración, para abordar inmediatamente un nuevo proyecto puede resultar más efectivo cambiar el ámbito de trabajo de un equipo ya formado que formar un nuevo equipo, especialmente si se quiere un respuesta rápida y fiable. Además, la frecuente rotación de integrantes puede afectar el desempeño de los equipos. </p> <p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 3, ambito_decision: 'equipo', agile_method: "XP, Scrum" })
+  effort: 3, ambito_decision: 'equipo', agile_method: "XP, Scrum" })
 Practica.create!({id: 43, position: 12, name_es: "Acotar el ámbito de trabajo de cada equipo.",
-	name_en: "",
+  name_en: "To delimit the work context of teams",
   description_es: '<p> Esta práctica tiene el propósito de especializar al equipo en un ámbito de acción. Puede verse desde dos perspectivas: la primera envergadura del producto o servicio, y la segunda, diversidad de trabajos. Cuando se trata un producto o servicio de gran envergadura se debe promover la creación de equipos por partes del producto o servicio (cuidando que esas partes no tengan demasiada dependencia entre ellas). A continuación se detalla más la perspectiva asociada a la diversidad de trabajos del equipo. Es importante limitar la cantidad de productos, de servicios y/o de proyectos en los que trabaja simultáneamente cada equipo especialmente si se deben realizar actividades muy diferentes en cada caso. En este aspecto esta práctica es similar a la que propone limitar el WIP (trabajo en proceso en una actividad), la diferencia es que el WIP se refiere a la cantidad de unidades de trabajo en una actividad, en cambio en esta práctica se refiere al número de productos, servicios o proyectos encargados a un equipo. </p><p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: tendencia a que involucrar al equipo en muchos proyectos abiertos pretendiendo que los aborde en paralelo. En rendimiento del equipo se vería claramente resentido por tener que gestionar su capacidad distribuyéndola en los diferentes proyectos y teniendo que hacer cambios de contexto al cambiar de un proyecto a otro. Lecturas recomendadas: Agilismo en un contexto multi-proyecto, <a href="http://agilismoatwork.blogspot.com.es/2012/11/agilismo-en-un-contexto-multi-proyecto.html" target="_blank">parte I</a> &nbsp;y <a href="http://agilismoatwork.blogspot.com.es/2012/11/agilismo-en-un-contexto-multi-proyecto_23.html" target="_blank">parte II</a><a href="http://agilismoatwork.blogspot.com.es/2012/11/agilismo-en-un-contexto-multi-proyecto_23.html.">.</a></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 4, ambito_decision: 'equipo', agile_method: "" })
+  effort: 4, ambito_decision: 'equipo', agile_method: "" })
 Practica.create!({id: 3, position: 13, name_es: "Seguimiento continuo (frecuencia de días, no semanas).",
-	name_en: "",
+  name_en: "To track continuously (with a frequency of days, not weeks)",
   description_es: '<p>La intensidad y frecuencia del seguimiento depende del contexto del trabajo, y en particular depende de si la demanda es o no planificable. Cuando la demanda NO es planificable el seguimiento se basará en la visualización del estado del trabajo y en métricas de flujo de trabajo terminado (por ejemplo, unidades de trabajo terminadas por unidad de tiempo, tiempo de procesamiento, o tiempo de entrega desde que se solicitó el trabajo). Si la demanda es en cierta medida planificable, adicionalmente como seguimiento podemos contrastar el progreso del trabajo con el trabajo restante para el período planificado, comprobando si es posible cumplir los acuerdos respecto de la entrega.</p><p>Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: hacer el seguimiento cada 2 o 3 semanas. Mientras menos frecuente sea el seguimiento mayor puede ser la desviación respecto de lo esperado, en proyectos en los cuales existen muchos cambios, el seguimiento continuo y frecuente es esencial. Además, es importante que el equipo al completo se interese por el seguimiento, tanto a nivel de las actividades encargadas a cada integrante como a nivel de los compromisos del equipo.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 3, ambito_decision: 'equipo', agile_method: "Kanban, XP, Scrum"})
+  effort: 3, ambito_decision: 'equipo', agile_method: "Kanban, XP, Scrum"})
 Practica.create!({id: 28, position: 14, name_es: "Realizar una reunión diaria del equipo al completo, cara a cara y \
-	muy breve.",
-	name_en: "",
+  muy breve.",
+  name_en: "To conduct a short daily meeting with all team members",
   description_es: '<p>Esta reunión se llama "Stand-up Meeting" en Extreme Programming y "Daily Scrum" en Scrum, y se refiere a una reunión que realiza el equipo al iniciar su jornada de trabajo, es una reunión de pie en semi-círculo ojalá frente a la visualización de trabajo del equipo, y dura no más de 15 minutos. </p><p>Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: el equipo solo se reúne al completo y cara a cara al comienzo y al final del proyecto o al alcanzar algún hito, dejando mucho tiempo sin reunirse todos. El propósito de estas reuniones es que todo el equipo esté enterado de lo que se está haciendo y sus posibles impedimentos, promoviendo la colaboración entre los miembros del equipo y reforzando el compromiso con los objetivos del equipo, por sobre las responsabilidades individuales.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 1, ambito_decision: 'equipo', agile_method: "XP, Scrum" })
+  effort: 1, ambito_decision: 'equipo', agile_method: "XP, Scrum" })
 Practica.create!({id: 8, position: 15, name_es: "Visualización de todo el trabajo pendiente encargado al equipo.",
-	name_en: "",
+  name_en: "To visualize all work not finished which is in charged to the team",
   description_es: '<p>Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: solo el jefe del proyecto conoce el estado global del proyecto y el trabajo que resta por hacer, esa información se la presenta puntualmente al resto del equipo, normalmente no está siempre visible o disponible, y si así fuera, no está actualizada. Obviamente esta situación no es la más propicia para generar colaboración, cada miembro tenderá solo a conocer o preocuparse por lo que tiene encargado.</p><p>La visualización debería ser más completa y mostrar no solo en qué actividad y quién tiene cada trabajo, sino que debería además permitir que los miembros del equipo sepan los trabajos no terminados en los cuales están participando, incluso cuando todavía no tienen que realizar ninguna acción sobre ellos (por ejemplo, conocer lo que te llegará como trabajo o en lo que ya has participado pero que aún no está terminado). Además, dicha visualización debería conllevar el principio de transparencia indicado por Scrum, según el cual cada miembro del equipo debe tener acceso a toda la información que pueda serle útil del contexto de su trabajo (toda la información de los proyecto o productos en los cuales participa). Las visualizaciones más efectivas están basadas en tableros kanban, los cuales pueden ser físicos (en una pared) o soportados por alguna herramienta software. Lecturas recomendadas <a href="http://agilismoatwork.blogspot.com.es/2011/10/desafios-para-la-aplicacion-efectiva-de.html" target="_blank">Desafíos para la aplicación efectiva de Scrum + kanban = Scrumban</a><span style="line-height: 1.3em;">, <a href="http://agilismoatwork.blogspot.com.es/2012/05/kanban-for-free-una-evaluacion-informal.html" target="_blank">Kanban for Free. Una evaluación informal de 5 herramientas totalmente gratuitas</a>.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 4, ambito_decision: 'equipo', agile_method: "" })
+  effort: 4, ambito_decision: 'equipo', agile_method: "Kanban" })
 Practica.create!({id: 30, position: 16, name_es: "Gestión integrada de todo el trabajo asignado, tanto a nivel del equipo \
-	como a nivel de cada miembro.",
-	name_en: "",
+  como a nivel de cada miembro.",
+  name_en: "To manage all the assigned work in an integrated way, at the level of each member or the whole team.",
   description_es: '<p>Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: se le asigna un trabajo a un miembro o a un equipo sin contrastarlo con el trabajo que ya tiene asignado y sin proporcionar pautas respecto a las correspondientes prioridades. </p><p>La gestión integrada del trabajo pendiente y de su priorización es el primer paso para conseguir que los miembros del equipo estén siempre trabajando en lo más oportuno. Si bien no es lo ideal que un equipo o integrante trabaje en varios productos y/o servicios, es una situación bastante usual y difícil de cambias. Esto provoca que la gestión integrada de todo el trabajo del equipo sea un desafío, pues un simple tablero kanban de pared probablemente no será suficiente, una opción más adecuada es disponer de una herramienta software que ofrezca soporte para gestionar de forma integrada varios tableros kanban. Lecturas recomendadas: Agilismo en un contexto multi-proyecto, <a href="http://agilismoatwork.blogspot.com.es/2012/11/agilismo-en-un-contexto-multi-proyecto.html" target="_blank">parte I</a> &nbsp;y <a href="http://agilismoatwork.blogspot.com.es/2012/11/agilismo-en-un-contexto-multi-proyecto_23.html" target="_blank">parte II</a><a href="http://agilismoatwork.blogspot.com.es/2012/11/agilismo-en-un-contexto-multi-proyecto_23.html.">.</a></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 4, ambito_decision: 'equipo', agile_method: "" })
+  effort: 4, ambito_decision: 'equipo', agile_method: "" })
 Practica.create!({id: 9, position: 17, name_es: "Cliente en estrecho contacto con el equipo y altamente disponible, \
-	incluso si es posible, que esté in-situ",
-	name_en: "",
+  incluso si es posible, que esté in-situ",
+  name_en: "To strengthen the communication between the client and the team. Client must be highly available for the team, if it is possible, in-situ.",
   description_es: '<p>Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: el equipo debe pedir reuniones al cliente para aclarar cuestiones respecto del problema que solicitó resolver, esto conlleva esperar horas o días, con lo cual se producen retrasos y obliga a que mientras tanto se trabaje en otras cosas, penalizando el  rendimiento del equipo por los cambios de contexto al cambiar de trabajo.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 5, ambito_decision: 'producto/servicio', agile_method: "XP, Scrum"})
+  effort: 5, ambito_decision: 'producto/servicio', agile_method: "XP, Scrum"})
 Practica.create!({id: 18, position: 18, name_es: "Que exista una única persona que tome las decisiones respecto de las \
-	prioridades del trabajo del equipo y que sea un buen representante de la parte cliente",
-	name_en: "",
+  prioridades del trabajo del equipo y que sea un buen representante de la parte cliente",
+  name_en: "To have only one person who properly represents all the client part, who take decisions about work priorities and explains the work to the team.",
   description_es: '<p>Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: el equipo, incluso cualquiera de sus miembros recibe solicitudes de diferentes clientes para resolver sus particulares necesidades, y deben ellos mismos establecer las prioridades para organizar su dedicación a cada solicitud de trabajo. </p><p>Se debería "proteger" al equipo del ruido que le puede suponer su exposición directa a las solicitudes de los clientes y al despropósito que conllevaría que el equipo tome decisiones de negocio (prioridades de las solicitudes). Así pues, es importante establecer una barrera entre el día a día del equipo y la nueva demanda que se va generando, debe existir un solo interlocutor que represente a la parte cliente y que le proporcione al equipo las prioridades del trabajo pendiente.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 4, ambito_decision: 'producto/servicio', agile_method: "XP, Scrum"})
+  effort: 4, ambito_decision: 'producto/servicio', agile_method: "XP, Scrum"})
 Practica.create!({id: 26, position: 19, name_es: "Realizar reuniones de revisión del trabajo entregado",
-	name_en: "",
+  name_en: "To conduct review meetings each time new work is released",
   description_es: '<p>Estas reuniones corresponden a las "Review Meetings" de Scrum. En estas reuniones el equipo se reúne con representantes de la parte cliente para presentar el trabajo realizado. </p><p>Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: si bien el equipo cumple con los plazos y compromisos, esto pasa desapercibido para el cliente (existen casos en los que incluso el cliente llegar a solicitar algo ya realizado por desconocer que ya está hecho). Estas reuniones debe servir para remarcar el cumplimiento de lo acordado con el cliente, es importante que el equipo tenga esta oportunidad para "lucir" y divulgar el trabajo realizado.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 2, ambito_decision: 'equipo', agile_method: "Scrum"})
+  effort: 2, ambito_decision: 'equipo', agile_method: "Scrum"})
 Practica.create!({id: 13, position: 20, name_es: "El equipo se auto-organiza y toma las decisiones técnicas",
-	name_en: "",
+  name_en: "To promote self-organizing teams. The team should take decisions about how to get the result expected by the client.",
   description_es: '<p>Proviene del concepto "self-organizing team" de Scrum. Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: los miembros del equipo están acostumbrados a recibir instrucciones respecto de qué deben hacer, cuándo y cómo, careciendo de iniciativa o evitando asumir decisiones técnicas en el trabajo.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 4, ambito_decision: 'equipo', agile_method: "Scrum"})
+  effort: 4, ambito_decision: 'equipo', agile_method: "Scrum"})
 Practica.create!({id: 37, position: 21, name_es: "Jefe de carácter líder y facilitador en lugar de actitud del jefe \
-	autoritario y controlador",
-	name_en: "",
+  autoritario y controlador",
+  name_en: "To have a boss with a facilitator and lider profile instead of authoritarian and controler.",
   description_es: '<p>Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: el jefe del proyecto asigna el trabajo a cada miembro del equipo y controla su progreso. Situaciones como estas desbordan a los jefes de proyecto en desmedro de su desempeño en la gestión global del proyecto, comunicación con la parte cliente y con los niveles de dirección superiores.</p><p>El planteamiento de Scrum es radical al respecto: no existe el rol de jefe. El rol  Producto Owner incluye las responsabilidades de: representar a la parte cliente, definir y priorizar el trabajo, organizando qué trabajo debe abordar el equipo. Es rol Scrum Master se encarga de apoyar en cuanto a la implantación y correcta aplicación de la metodología de trabajo y de su mejora continua. Ni el Product Owner ni el Scrum Master indican al equipo quién o cómo debe llevar a cabo el trabajo técnico. En Extreme Programming existe el rol Manager, caracterizado como facilitador, encargado de resolver inconvenientes que pueda tener el equipo para realizar su trabajo. El planteamiento de Scrum, si bien es ideal, es difícil de implantar, al menos en contextos donde el rol de jefe tradicional está muy arraigado. El plantemiento de Extreme Programming respecto del rol Manager ofrece menos resistencia y podría servir de evolución hacia al escenario de Scrum.<p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 4, ambito_decision: 'equipo', agile_method: "XP, Scrum"})
+  effort: 4, ambito_decision: 'equipo', agile_method: "XP, Scrum"})
 Practica.create!({id: 5, position: 22, name_es: "Co-localización de los miembros del equipo, todo el equipo trabajando \
-	en el mismo espacio físico.",
-	name_en: "",
+  en el mismo espacio físico.",
+  name_en: "To bring together all team members in the same place",
   description_es: '<p>Un ejemplo de situación con la <strong>anti-práctica</strong> sería: un miembro del equipo requiere comentar alternativas de solución para un trabajo que está realizando, si se trata de algo complicado de explicar por chat, email o videoconferencia, lo más efectivo sería tener una reunión inmediata para no tener que parar su trabajo, pero esto no es posible porque el equipo no está físicamente en el mismo sitio.</p><p>Si bien contando con las actuales alternativas de comunicación, especialmente videoconferencias, puede compensarse en gran medida los inconvenientes de no tener un contacto cara a cara in-situ, difícilmente se consigue la misma eficacia de comunicación del contacto in-situ, pues los aspectos gestuales o en general la comunicación no verbal no se consigue transmitir completamente.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 2, ambito_decision: 'equipo', agile_method: "XP, Scrum"})
+  effort: 2, ambito_decision: 'equipo', agile_method: "XP, Scrum"})
 Practica.create!({id: 49, position: 23, name_es: "Contar con un espacio físico de trabajo que favorezca la interacción \
-	entre los miembros del equipo.",
-	name_en: "",
+  entre los miembros del equipo.",
+  name_en: "To have a work place which gives advantage to collaboration among team members. ",
   description_es: '<p>Si bien no es una de las 12 prácticas de Extreme Programming, allí donde se pone énfasis en el espacio de trabajo del equipo, un espacio abierto (sin módulos), sillas con ruedas, pizarras en las paredes, un área para hablar por teléfono, un área para comer y conversar informalmente, etc. En el contexto Lean también el espacio de trabajo, referido como el "Gemba", tiene cierto protagonismo.</p><p>Un ejemplo de situación con la <strong>anti-práctica</strong> sería:  un equipo trabajando en un espacio organizado en cubículos y sin un área cercana para poder improvisar una reunión, lo cual no favorece para que los miembros de forma natural se animen a comunicarse cara a cara. Por contraparte, el extremo opuesto lo constituiría lo que se denomina "War room", un espacio relativamente reducido sin ninguna delimitación de espacios individuales, y en el cual el equipo, ante una situación de emergencia podría, basándose en una interacción codo-a-codo, daría una pronta solución a un problema. Entre estos extremos hay un amplio abanico de alternativas, y si bien la intención debería ser alejarse del extremo asociado a un espacio con cubículos, también hay que considerar que un "War room", aunque puede ser efectivo en situaciones puntuales y por períodos cortos, no sería recomendable como espacio de trabajo habitual.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 3, ambito_decision: 'equipo', agile_method: "XP"})
+  effort: 3, ambito_decision: 'equipo', agile_method: "XP"})
 Practica.create!({id: 47, position: 24, name_es: "Establecer y comunicar al equipo la visión del producto o servicio, \
-	y reforzarla regularmente.",
-	name_en: "",
+  y reforzarla regularmente.",
+  name_en: "To establish and communicate to the team the vision of the product or service, and reinforce it frequently.",
   description_es: '<p>La Visión de un producto o servicio es básicamente su información respecto de: propósito y motivación,  principales características, tipos de usuarios, productos o servicios competidores, fortalezas y debilidades, amenazas y oportunidades. Si bien en un enfoque tradicional la recolección y especificación de esta información podría tomar un tiempo considerable y generar un documento voluminoso. Desde una perspectiva más ágil la idea sería conseguir un documento muy simplificado, con lo esencial, o bien podría incluso bastar con que el equipo esté en conocimiento de dicha información aunque no esté explícitamente escrita. En Extreme Programming la práctica Metáfora tiene un propósito similar a la Visión, y consiste en que el equipo conozca y sea capaz de relatar lo esencial del producto que se está desarrollando. En Scrum el concepto de Goal del sprint también tiene algo en común con la Visión, y permite destacar dentro de todo el trabajo de un sprint aquello que es lo esencial, representado por algunos de los ítems del sprint. Conocer la Visión del producto le proporciona al equipo un contexto para su trabajo, lo cual debería influir positivamente en su motivación y compromiso. </p><p>Un ejemplo de situación con la <strong>anti-práctica</strong> sería: un equipo desconcertado por las prioridades establecidas por el cliente (que obviamente deberían estar alineadas con la Visión) y correspondientemente menos comprometido o motivado por no comprender el aporte de su trabajo al éxito del producto o servicio. </p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 1, ambito_decision: 'equipo', agile_method: "XP"})
+  effort: 1, ambito_decision: 'equipo', agile_method: "XP"})
 Practica.create!({id: 6, position: 25, name_es: "Que el equipo sume entre sus miembros las habilidades para abordar \
-	todas las actividades necesarias para terminar el trabajo.",
-	name_en: "",
+  todas las actividades necesarias para terminar el trabajo.",
+  name_en: "To get that the team, through its members, has all necesary skills to do the work.",
   description_es: '<p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: algunas de las actividades necesarias para realizar un trabajo deben encargarse a otras unidades, equipos o incluso empresas externas (Outsourcing), y para esto se debe seguir un protocolo de solicitud y entrega de trabajo, lo cual sumado al usual re-trabajo por correcciones de defectos en la entrega ocasiona importantes retrasos. </p><p>Esta práctica corresponde al concepto de equipo cross-functional planteado es Scrum. Es indudable que la concentración de ciertas funciones en ciertas unidades en una empresa ofrece las ventajas de la especialización y permite realizar economías de escala, pero como contraparte puede constituir un cuello de botella para terminar trabajo que depende en parte de la participación de dichas unidades, y suele ralentizar el flujo de trabajo por el necesario protocolo de interacción con dichas unidades. La situación es similar en caso del Outsourcing, pero se acentúan los inconvenientes porque existe un contrato con un proveedor y el protocolo de interacción suele ser más ceremonioso. Lectura recomendada <a href="http://agilismoatwork.blogspot.com.es/2013/04/outsourcing-y-practicas-agiles-pueden.html" target="_blank">Outsourcing y prácticas ágiles: ¿pueden convivir?</a>. </p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 5, ambito_decision: 'equipo', agile_method: "Scrum"})
+  effort: 5, ambito_decision: 'equipo', agile_method: "Scrum"})
 Practica.create!({id: 42, position: 26, name_es: "Que los integrantes del equipo puedan encargarse de diferentes tipos \
-	de actividades (ojalá de todas), aunque puedan ser especialistas en alguna(s) de ellas.",
-	name_en: "",
+  de actividades (ojalá de todas), aunque puedan ser especialistas en alguna(s) de ellas.",
+  name_en: "To get that team members can be in charge of different activities, hopefully of any of them, eventhough there could exists some specialists.",
   description_es: '<p>Un ejemplo de la situación con la <strong>anti-práctica</strong> es el siguiente: el único integrante del equipo que realiza una determinada actividad no está disponible o tiene demasiado trabajo en dicha actividad, los otros integrantes del equipo no pueden echar una mano porque no trabajan en esta actividad, debido a esto la actividad se convierte en un cuello de botella para el proceso. </p><p>Sin descartar la especialización y los beneficios que ella conlleva, siempre hay trabajos de menor tamaño/complejidad en los cuales no es imprescindible un alto grado de especialización en la actividad que debe realizarse. En este caso podría encargarse de ellos cualquier integrante del equipo, o al menos colaborar con el especialista trabajando bajo su supervisión.</p><p>Los métodos ágiles promueven los roles más genéricos para acotar lo menos posible las actividades que puede desempeñar un integrante del equipo. En Scrum en el equipo sólo existe el rol "Desarrollador" el cual se encarga de todo el trabajo técnico. En Extreme Programming respecto del trabajo técnico se reconoce el rol Programador (el cual desde la perspectiva tradicional sería un analista, programador y tester en los niveles unitario, de integración y de sistema), y el rol tester (encargado de las pruebas de aceptación). Obviamente, tener estos roles más genéricos puede entrar en conflicto con las estructura de puestos de la organización, en la cual se suele hacer énfasis en roles más específicos y en sus correspondientes escalas de remuneración. </p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 4, ambito_decision: 'equipo', agile_method: "Scrum"})
+  effort: 4, ambito_decision: 'equipo', agile_method: "Scrum"})
 Practica.create!({id: 2, position: 27, name_es: "Trabajo centrado en satisfacer pruebas de aceptación acordadas \
-	con el cliente.",
-	name_en: "",
+  con el cliente.",
+  name_en: "To focus the work on the satisfaction of acceptance tests which have been agreed with the client.",
   description_es: '<p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: el equipo entrega un producto terminado al cliente pero éste lo rechaza porque no se comporta según lo esperado, el problema fue que por omisión o mala interpretación no se cumplen ciertas expectativas.</p><p>Aunque aparentemente pareciera que es suficiente que una especificación del trabajo incluya una combinación de texto descriptivo y algunos modelos u otros complementos, si no se establece con precisión el criterio de aceptación desde la perspectiva del cliente siempre habrá lugar para dichas situaciones de no conformidad. Ese criterio de aceptación no es más ni menos que un conjunto de pruebas que el cliente aplicaría para considerarse satisfecho con la entrega. Con lo cual en el mismo momento de la definición del trabajo deben quedar establecidas y acordadas con el cliente las pruebas de aceptación. Lectura recomendada: <a href="http://agilismoatwork.blogspot.com.es/2011/12/gestion-de-requisitos-agil.html" target="_blank">Gestión ágil de requisitos</a>.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 4, ambito_decision: 'equipo', agile_method: "XP"})
+  effort: 4, ambito_decision: 'equipo', agile_method: "XP"})
 Practica.create!({id: 4, position: 28, name_es: "Documentar, pero solo lo estrictamente necesario. Que sea rentable \
-	el aprovechamiento de la documentación respecto del esfuerzo asociado a elaborarla.",
-	name_en: "",
+  el aprovechamiento de la documentación respecto del esfuerzo asociado a elaborarla.",
+  name_en: "To document, but only what is strictly necessary. The effort invested in documentation should be profitable regarding the advantage that documentation provides.",
   description_es: '<p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: exigido por el proceso establecido para toda la empresa el equipo se ve obligado a elaborar documentación que saben que no les resulta útil ni a ellos ni a quienes reciben la entrega.</p><p>Suele ocurrir, especialmente en empresas grandes, donde se ha hecho una importante inversión para establecer una metodología de trabajo global, y para la cual no se hace una configuración adecuada a las necesidades de cada proyecto. Especialmente en proyectos pequeños se corre el riesgo de sobre-documentar. Lean Development insiste en eliminar toda forma de desperdicio ("waste"), es decir, trabajo que no aporta valor para el cliente. La documentación suele ser una fuente importante de desperdicio de esfuerzo. Cuando el trabajo sufre constantes cambios sobre la marcha, pretender mantener actualizada la documentación puede ser un gran desperdicio. La mínima especificación necesaria para llevar a cabo un trabajo es conocer el criterio de aceptación que aplicará el cliente, cualquier otra especificación requerida para la entrega podría generarse de forma detallada y completa una vez que el resultado adquiera cierta estabilidad, evitando o reduciendo dicho desperdicio.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 3, ambito_decision: 'equipo', agile_method: "Lean"})
+  effort: 3, ambito_decision: 'equipo', agile_method: "Lean"})
 Practica.create!({id: 48, position: 29, name_es: "Establecer pautas para gestionar convenientemente el \
-	re-trabajo.",
-	name_en: "",
+  re-trabajo.",
+  name_en: "To establish guidelines for adequately managing the rework.",
   description_es: '<p>El re-trabajo corresponde al esfuerzo gastado por volver a repetir alguna actividad asociada a un trabajo por haberse detectado defectos durante el proceso. Evidentemente el re-trabajo tiene una connotación negativa y constituye una medida importante para evaluar el desempeño de un proceso. Si bien, y dependiendo del contexto de trabajo, el re-trabajo suele ser inevitable, el objetivo es reducirlo a su mínima expresión. Esta práctica no proporciona la solución sino que más bien enfatiza el hecho que el equipo debe tener claramente establecidas pautas para actuar frente a situaciones de re-trabajo. Cuestiones tales como la priorización del trabajo asociado a corrección de fallos, o cualquier otro tratamiento específico para el re-trabajo debe estar consensuado por todo el equipo. Estas pautas deben evaluarse y mejorarse continuamente. </p><p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: el tester A tiene por costumbre devolver la unidad de trabajo al programador cada vez que detecta un fallo, por otra parte, el tester B lo que hacer es detectar todos los fallos y luego devolver la unidad de trabajo al programador. Ambas estrategias parecen razonables, sin embargo, cada una tiene sus ventajas y desventajas dependiendo de por ejemplo: el número de pruebas asociadas a la unidad de trabajo, si el tester puede continuar probando después de detectar fallos, si como parte del trabajo se incluye automatización de pruebas, etc. En este caso, dependiendo del contexto del producto o servicio, de la unidad de trabajo, y de sus pruebas, podría ser más aconsejable una u otra estrategia. </p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 1, ambito_decision: 'producto/servicio', agile_method: "Lean"})
+  effort: 1, ambito_decision: 'producto/servicio', agile_method: "Lean"})
 Practica.create!({id: 14, position: 30, name_es: "Que exista un líder de mejora de proceso disponible \
-	para el equipo.",
-	name_en: "",
+  para el equipo.",
+  name_en: "To have a leader/consultant in process improvement available for the team.",
   description_es: '<p>Esta práctica corresponde a la implantación del rol "Scrum Master" promovido por Scrum o el similar llamado "Coach" en Extreme Programming. </p><p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: no existe una persona que promocione y apoye la mejora del proceso, no existe una canalización de las iniciativas de mejora que puedan aportar los miembros del equipo, cualquier mejora que llega a implantarse suele provenir del esfuerzo heroico y poco reconocido de alguno de los miembros del equipo.</p><p>Indudablemente no es fácil implantar un sistema de mejora continua, se requiere motivación y compromiso de todos los miembros del equipo, pero además, un complemento imprescindible es el apoyo institucional materializado en un líder de mejora que pueda asesorar al equipo en la mejora de sus métodos de trabajo. Este líder debe estar en estrecho contacto con el equipo.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 3, ambito_decision: 'equipo', agile_method: "XP, Scrum"})
+  effort: 3, ambito_decision: 'equipo', agile_method: "XP, Scrum"})
 Practica.create!({id: 17, position: 31, name_es: "Establecimiento de estándares para el trabajo técnico \
-	del equipo",
-	name_en: "",
+  del equipo",
+  name_en: "To apply recommended standards for the technical work.",
   description_es: '<p>Esta práctica se propone en Extreme Programming como "Estándares de Programación". La estandarización es fundamental para independizar el trabajo de la persona que puede realizarlo y a su vez garantizar un nivel de calidad asociado al proceso estandarizado. </p><p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: si bien el equipo realiza entregas de trabajo aceptadas por el cliente, cada miembro del equipo utiliza técnicas y métodos diferentes para realizar las actividades que se le encargan, esto conlleva dificultades cuando otros integrantes del equipo deben hacer modificaciones. </p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 4, ambito_decision: 'producto/servicio', agile_method: "XP"})
+  effort: 4, ambito_decision: 'producto/servicio', agile_method: "XP"})
 Practica.create!({id: 27, position: 32, name_es: "Realizar reuniones de retrospectiva para evaluar el \
-	desempeño del equipo y sus formas de trabajo. Mejora continua del proceso.",
-	name_en: "",
+  desempeño del equipo y sus formas de trabajo. Mejora continua del proceso.",
+  name_en: "To conduct retrospective meetings in order to evaluate the the process and support the continuous process improvement.",
   description_es: '<p>Estas reuniones corresponden a las "Retrospective Meetings" de Scrum. </p><p>Un ejemplo de situación con la <strong>anti-práctica</string> es el siguiente: no existe un mecanismo establecido y regular para que surja la auto-crítica respecto del desempeño del equipo y de su método de trabajo, esto hace que sólo después de problemas graves se reaccione tomando acciones preventivas o de mejora, muchas imperfecciones o ineficiencias conocidas pero no graves pueden mantenerse largo tiempo sin que lleguen a abordarse y buscarles solución.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 3, ambito_decision: 'equipo', agile_method: "Scrum"})
+  effort: 3, ambito_decision: 'equipo', agile_method: "Scrum"})
 Practica.create!({id: 33, position: 33, name_es: "Acordar y definir qué se entiende por trabajo terminado, \
-	tanto para las actividades realizadas por el equipo como respecto de las entregas al cliente",
-	name_en: "",
+  tanto para las actividades realizadas por el equipo como respecto de las entregas al cliente",
+  name_en: "To agree and define what is meant by work completed, for each activity performed on a work unit as well as for the releases delivered to the client.",
   description_es: '<p>Esta práctica corresponde a lo que Scrum denomina “Definition of DONE”, refiriéndose al hecho que el equipo y el cliente deben tener acordado qué se entiende por trabajo terminado. Esto es importante pues para cada contexto de cliente-equipo-producto/servicio, el acuerdo respecto a qué se entiende por trabajo terminado puede variar, afectando a aspectos tales como la documentación que debe acompañar a la entrega, niveles de pruebas superados, o cualquier protocolo o actividades asociadas a la terminación de un trabajo. </p><p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: cuando no está claramente establecido y consensuado el criterio para terminar una actividad, la interpretación de un miembro puede ser incorrecta y afectar la calidad esperada de la entrega, esto también puede ser una fuente de re-trabajo, es decir, cuando se devuelve un trabajo hacia actividades previas, en este caso por no haberse realizado de forma completa o según lo esperado.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 3, ambito_decision: 'producto/servicio', agile_method: "Scrum"})
+  effort: 3, ambito_decision: 'producto/servicio', agile_method: "Scrum"})
 Practica.create!({id: 12, position: 34, name_es: "Trabajo o actividades realizadas en conjunto por dos o más \
-	integrantes",
-	name_en: "",
+  integrantes",
+  name_en: "To get that some work or activities (in some work units) be performed jointly by two or more members.",
   description_es: '<p>Proviene de la práctica "Programación en Parejas" de Extreme Programming. Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: si bien los miembros del equipo colaboran realizando diferentes actividades asociadas a una misma unidad de trabajo, no llegan a colaborar en una misma actividad, solo se van pasando entre ellos la unidad de trabajo para que cada uno realice la actividad encargada.</p><p>Muchas veces cuando un trabajo es de cierta envergadura y/o complejidad para poder abordarlo entre varias personas se intenta a priori dividirlo, lo cual no suele ser sencillo y conlleva desafíos de coordinación. Una alternativa interesante y más sencilla en cuanto a coordinación es considerar que en algunas actividades trabaje más de una persona. Los encargados de realizar la actividad, al momento de llevarla a cabo podrían repartirse el trabajo si les resulta conveniente, pero con una coordinación resuelta en dicho momento y entre ellos.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 2, ambito_decision: 'equipo', agile_method: "XP"})
+  effort: 2, ambito_decision: 'equipo', agile_method: "XP"})
 Practica.create!({id: 32, position: 35, name_es: "No abusar de las horas extras, negociar y \
-	re-planificar oportunamente para evitarlo",
-	name_en: "",
+  re-planificar oportunamente para evitarlo",
+  name_en: "Do not abuse of overtime, negotiate at the right time to avoid it.",
   description_es: '<p>Esta práctica corresponde a lo que aparece en el principio del Manifiesto Ágil referente a "desarrollo sostenible" y "paz constante" ("Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely"). Extreme Programming destaca este aspecto en su práctica "Semana de 40 horas". </p><p>Un ejemplo de una situación con la <strong>anti-práctica</strong> es el siguiente: sistemáticamente tener un muy bajo grado de tensión al comenzar un proyecto y por contra un alto grado de tensión cuando se acercan los plazos de entrega, presentándose el típico síntoma de requerir horas extras para poder cumplir con los plazos.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 3, ambito_decision: 'equipo', agile_method: "XP"})
+  effort: 3, ambito_decision: 'equipo', agile_method: "XP"})
 Practica.create!({id: 35, position: 36, name_es: "Reducir las interrupciones o cambios de contexto que \
-	afectan en su trabajo a los miembros del equipo",
-	name_en: "",
+  afectan en su trabajo a los miembros del equipo",
+  name_en: "To reduce interruptions or context changes affecting the work of team members.",
   description_es: '<p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: un integrante del equipo para solucionar una duda respecto de su trabajo se acerca e interrumpe el trabajo de otro integrante y ambos mantienen una conversación de alrededor de media hora, cuando el miembro que ha sido interrumpido retoma su trabajo gasta bastantes minutos en volver a centrarse en lo que estaba realizando previamente. </p><p>Deben existir unas pautas básicas para la utilización de los diversos medios de comunicación (cara a cara, mensajería instantánea, teléfono, videoconferencia, email o reuniones) para así conseguir un mejor desempeño global. La clave está en, por un lado, consensuar aproximadamente qué debe considerarse tan urgente como para justificar estas interrupciones sin optar por otra alternativa, y por otro, cuándo una interrupción no es tal, es decir, el integrante interrumpido realmente no se ve perjudicado por la interrupción ya sea por estar disponible o porque la interrupción es muy breve. </p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 2, ambito_decision: 'equipo', agile_method: "Lean"})
+  effort: 2, ambito_decision: 'equipo', agile_method: "Lean"})
 Practica.create!({id: 7, position: 37, name_es: "Establecer una disciplina de aprovechamiento de las reuniones",
-  name_en: "",
+  name_en: "To establish a discipline of productive meetings.",
   description_es: '<p>La introducción de prácticas ágiles conlleva intrínsecamente mayor comunicación entre los miembros del equipo y con el cliente. El entusiasmo de los miembros del equipo ante lo que puede ser una oportunidad nueva de apertura a su participación y su aportación debe ser adecuadamente conducido. Gran parte de dicha comunicación y participación de canaliza a través de reuniones. Pero estas reuniones pueden llegar a ser muy improductivas si no existe una buena disciplina para llevarlas a cabo.</p><p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: reuniones sin un buen moderador, sin la correcta elección de asistentes, sin una preparación o distribución de información anticipada, sin un registro de los acuerdos o sin ningún control respecto de su duración, con todo esto es difícil que una reunión sea eficiente y eficaz.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 3, ambito_decision: 'equipo', agile_method: ""})
+  effort: 3, ambito_decision: 'equipo', agile_method: ""})
 Practica.create!({id: 10, position: 38, name_es: "Automatizar las pruebas para poder garantizar que el producto \
-	mantiene el comportamiento deseado cuando se realizan cambios",
-	name_en: "",
+  mantiene el comportamiento deseado cuando se realizan cambios",
+  name_en: "To automate testing to ensure that the product maintains the desired behavior while some changes are made.",
   description_es: '<p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: el equipo gasta mucho tiempo en realizar actividades repetitivas o muy estructuradas que podrían ser automatizadas.</p> <p>Las actividades de pruebas son en general muy atractivas para ser automatizadas pues el esfuerzo invertido en ellas puede rentabilizarse en la ejecución frecuente de pruebas de regresión (pruebas que se repiten después de hacer un cambio para asegurar que no se ha estropeado algún comportamiento ya implementado en el producto). Cuando un producto está mejorándose continuamente y se hacen entregas frecuentes al cliente, todo este esfuerzo puede incluso llegar a ser valorado negativamente por el cliente si se estropean funcionalidades ya disponibles antes de la última entrega. La automatización está en bastante sintonía con el agilismo, sin embargo, conseguir la infraestructura de soporte para automatizar procesos (herramientas y otros recursos), debe ser evaluado en términos de la inversión y tiempo que se requerirá para ponerla en aplicación y del ahorro o mejora que se conseguirá. La automatización de pruebas es una de las prácticas que requiere mayor preparación y su rentabilización se consigue a mediano y largo plazo. El testing es un área muy amplia, existiendo diversidad de tipos de pruebas (unitarias, de integración, de aceptación, de rendimiento, etc.), multitud de herramientas y muchísimas estrategias para implantar el testeo automatizado en un determinado contexto. Por otra parte, cada prueba definida puede ser aplicada con muchísimas (o infinitas) combinaciones de valores que intervienen en el escenario asociado. El diseño de la prueba debería considerar las instanciaciones más interesantes para ser aplicadas. Así pues, en general, no será posible automatizar todo, ni en todos los tipos de pruebas, ni en todas las combinaciones de valores para cada prueba, con lo cual habrá que ser selectivo también en cuanto a qué pruebas se automatizarán. Sin embargo, esta elección tampoco no es sencilla, el criterio general sería automatizar aquello que tenga mayor probabilidad de fallar o para lo cual un fallo pueda tener consecuencias importantes para el usuario. </p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 5, ambito_decision: 'producto/servicio', agile_method: "XP"})
+  effort: 5, ambito_decision: 'producto/servicio', agile_method: "XP"})
 Practica.create!({id: 39, position: 39, name_es: "Postergar hasta último momento la asignación del encargado de \
-	realizar una actividad. ",
-	name_en: "",
+  realizar una actividad.",
+  name_en: "To postpone until the last moment the assignment of responsible of some activity.",
   description_es: '<p>Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: el trabajo se pre-asigna a encargados de realizarlo mucho antes que se vayan a poner a trabajar en esas actividades, muchas veces esto es motivado por el deseo de realizar una previsión de balanceo de carga entre los miembros del equipo. Posteriormente, por cuestiones de la dinámica del trabajo, algunos miembros se quedan ociosos mientras que otros no han podido abordar todo el trabajo previsto, y como el trabajo está pre-asignado hay que estudiar la situación y aplicar re-asignaciones. Sin embargo, es mucho más sencillo que los miembros del equipo se asignen a trabajos en el momento que terminan lo que estaban realizando y respetando las prioridades u orden del trabajo previamente establecido.</p><p>El trabajo del equipo, dependiendo del contexto, puede ser altamente dinámico, las unidades de trabajo pueden sufrir esperas no previstas y cambios que alteran su estimación, los integrantes del equipo pueden ser interrumpidos o tener que cambiar a otros trabajos por cambios de prioridades o por verse obligados a distribuir su capacidad en varios trabajos asignados. La pre-asignación demasiado anticipada conlleva un riesgo importante en cuando a ineficiencias en el aprovechamiento de los recursos humanos.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 2, ambito_decision: 'equipo', agile_method: ""})
+  effort: 2, ambito_decision: 'equipo', agile_method: ""})
 Practica.create!({id: 11, position: 40, name_es: "Integrar de forma continua en el producto el trabajo terminado",
-	name_en: "",
+  name_en: "To continuously integrate the work finished in the new version of the product.",
   description_es: '<p>Proviene de la práctica "Integración Continua"de Extreme Programming. Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: los miembros del equipo van terminando partes del trabajo pero lo conservan sin integrarlo con el resto del trabajo, más tarde al integrar las diferentes unidades de trabajo en las que está trabajando el equipo aparecen inconvenientes no previstos, lo cual provoca retrasos que pueden tener consecuencias en la planificación especialmente cuando la integración se realiza cerca de cumplirse los plazos de entrega.</p><p>Cuando varias personas colaboran en un trabajo solapándose en cuanto al resultado que debe obtenerse, y particularmente cuando se realizan cambios en paralelos en partes compartidas, es necesario gestionar los cambios y versiones de los artefactos generados, y además, tener una disciplina de integración continua para que todo el equipo disponga de la información más actualizada cuando está realizando su trabajo. Esto no solo es aplicable al ámbito del código fuente en un equipo de desarrollo de software sino también al trabajo colaborativo sobre cualquier tipo de documentos, en equipos de cualquier ámbito.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 3, ambito_decision: 'equipo', agile_method: "XP"})
+  effort: 3, ambito_decision: 'equipo', agile_method: "XP"})
 Practica.create!({id: 15, position: 41, name_es: "Promover que los miembros del equipo en su trabajo lleguen a conocer todas \
-	las partes del producto o servicio que han sido encargadas al equipo.",
-	name_en: "",
+  las partes del producto o servicio que han sido encargadas al equipo.",
+  name_en: "To promote that team members know all parts of the product or service which they are in charge.",
   description_es: '<p>Se refiere a la práctica "Propiedad Colectiva" de Extreme Programming. Un ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: los miembros del equipo se especializan en una parte del producto o servicio y se hacen imprescindibles para ser asignados al trabajo en dichas partes. Si el especialista no está disponible cuando hay que trabajar en esa parte se crea un problema por el riesgo que puede suponer que alguien sin la experiencia realice dicho trabajo.</p><p>Es importante destacar que en productos o servicios de gran envergadura, y como contraparte, probablemente trabajarán muchas personas. Existe consenso en los métodos ágiles respecto de que los equipos deben ser pequeños (a modo orientativo: menos de 10 integrantes). En estos casos lo recomendado sería organizar equipos pequeños coordinados para abordar partes del trabajo en el producto o servicio. Asociado a esto, en el ámbito de Scrum se habla de hacer "Scrum de Scrums". Al margen de los desafíos asociados a la coordinación y centrándonos en la práctica que estamos comentando, hay que destacar que el alcance de "propiedad colectiva" que se promueve está limitado por el alcance del ámbito de responsabilidad encargada al equipo sobre el producto o servicio. Es decir, si un equipo está encargado de una parte del producto, la idea es que los miembros de ese equipo lleguen a tener experiencia trabajando en todos los elementos de dicha parte del producto.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 3, ambito_decision: 'equipo', agile_method: "XP"})
+  effort: 3, ambito_decision: 'equipo', agile_method: "XP"})
 Practica.create!({id: 16, position: 42, name_es: "Mejorar continuamente la organización interna del producto para facilitar \
-	su mantenimiento.",
-	name_en: "",
+  su mantenimiento.",
+  name_en: "To continuously improve the internal organization of the product for facilitating its maintenance.",
   description_es: '<p>Corresponde a la práctica "Refactoring" de Extreme Programming, que consiste en mejorar la arquitectura del producto sin cambiar su funcionalidad (sin cambiar su comportamiento externo).</p><p>Ejemplo de situación con la <strong>anti-práctica</strong> es el siguiente: si no hay una preocupación y dedicación constante por la mejora de la arquitectura, ésta probablemente se irá degradando con los cambios asociados a los mantenimientos del producto.</p><p>Una buena arquitectura interna del producto es clave para facilitar el mantenimiento, las pruebas y la reutilización, con lo cual debería ser un objetivo de cualquier metodología, sin embargo, las estrategias para conseguirlo pueden ser muy diferentes, y lo son. La estrategia tradicional es invertir un importante esfuerzo al inicio del desarrollo del producto (especificando y modelando intensamente), antes de comenzar a construirlo. Por contraparte, la estrategia ágil es iniciar rápidamente la construcción del producto para poder cuanto antes ir consiguiendo la confirmación del cliente, al menos de lo construido hasta el momento. Esta estrategia ágil conlleva que la preocupación por la arquitectura se centre principalmente en la parte del producto que se está construyendo en el momento, limitando el esfuerzo de especificación o modelado, y asumiendo el riesgo del re-trabajo que posteriormente puedan suponer las mejoras de arquitectura necesarias para garantizar que en última instancia también se conseguirá una buena arquitectura. La refactorización debería aplicarse continuamente, como parte de cualquier trabajo sobre el producto, es decir, no debería acumularse el trabajo de refactorización para hacerlo puntualmente cuando la arquitectura ya está obstaculizando de forma significativa el mantenimiento, las pruebas o la reutilización. Es importante destacar que la refactorización debe estar acompañada de buenos mecanismos para probar el comportamiento externo del producto y así asegurar que estos cambios de organización interna del producto no se están afectando dicho comportamiento. Lectura recomendada: <a href="http://agilismoatwork.blogspot.com.es/2011/11/cuando-y-como-el-trabajo-de.html" target="_blank">¿Cuando y cómo el trabajo de arquitectura cobra protagonismo en el contexto ágil?</a>.</p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;">    <a href="https://www.mindomo.com/mindmap/4ff399fb284845ababd2ef129f15ad6b" target="_blank">
         Ver mapa de prácticas ágiles</a></p>',
   description_en: "",
-	effort: 4, ambito_decision: 'producto/servicio', agile_method: "XP"})
+  effort: 4, ambito_decision: 'producto/servicio', agile_method: "XP"})
 
 
 # --- [END]42 Prácticas Ágiles ---
@@ -383,48 +383,56 @@ Contribucion.delete_all
 # Alineación del trabajo...
 Contribucion.create!({practica_id: 24, objetivo_id: 11, valor: 5})
 Contribucion.create!({practica_id: 18, objetivo_id: 11, valor: 4})
-Contribucion.create!({practica_id: 47, objetivo_id: 11, valor: 2})
+Contribucion.create!({practica_id: 47, objetivo_id: 11, valor: 4})
 Contribucion.create!({practica_id: 23, objetivo_id: 11, valor: 2})
 
 # Evitar o reducir...
+Contribucion.create!({practica_id: 40, objetivo_id: 1, valor: 5})
+Contribucion.create!({practica_id: 23, objetivo_id: 1, valor: 4})
+Contribucion.create!({practica_id: 41, objetivo_id: 1, valor: 4})
+Contribucion.create!({practica_id: 34, objetivo_id: 1, valor: 3})
+Contribucion.create!({practica_id: 44, objetivo_id: 1, valor: 3})
 Contribucion.create!({practica_id: 3, objetivo_id: 1, valor: 3})
-Contribucion.create!({practica_id: 41, objetivo_id: 1, valor: 3})
-Contribucion.create!({practica_id: 23, objetivo_id: 1, valor: 2})
-Contribucion.create!({practica_id: 34, objetivo_id: 1, valor: 2})
-Contribucion.create!({practica_id: 40, objetivo_id: 1, valor: 2})
+Contribucion.create!({practica_id: 11, objetivo_id: 1, valor: 3})
+Contribucion.create!({practica_id: 35, objetivo_id: 1, valor: 3})
+Contribucion.create!({practica_id: 6, objetivo_id: 1, valor: 2})
+Contribucion.create!({practica_id: 48, objetivo_id: 1, valor: 2})
 
 # Reducir defectos en...
+Contribucion.create!({practica_id: 2, objetivo_id: 5, valor: 5})
 Contribucion.create!({practica_id: 10, objetivo_id: 5, valor: 4})
-Contribucion.create!({practica_id: 2, objetivo_id: 5, valor: 4})
 
 # Reducir el tiempo de entrega...
+Contribucion.create!({practica_id: 40, objetivo_id: 21, valor: 5})
 Contribucion.create!({practica_id: 1, objetivo_id: 21, valor: 4})
 Contribucion.create!({practica_id: 23, objetivo_id: 21, valor: 4})
-Contribucion.create!({practica_id: 40, objetivo_id: 21, valor: 4})
 Contribucion.create!({practica_id: 34, objetivo_id: 21, valor: 3})
-Contribucion.create!({practica_id: 45, objetivo_id: 21, valor: 3})
+Contribucion.create!({practica_id: 44, objetivo_id: 21, valor: 3})
 
 # Involucar en mayor medida al cliente en la planificación, definición y validación del trabajo 
+Contribucion.create!({practica_id: 8, objetivo_id: 12, valor: 5})
 Contribucion.create!({practica_id: 24, objetivo_id: 12, valor: 5})
 Contribucion.create!({practica_id: 9, objetivo_id: 12, valor: 4})
 Contribucion.create!({practica_id: 26, objetivo_id: 12, valor: 4})
 Contribucion.create!({practica_id: 18, objetivo_id: 12, valor: 4})
-Contribucion.create!({practica_id: 25, objetivo_id: 12, valor: 2})
+Contribucion.create!({practica_id: 25, objetivo_id: 12, valor: 3})
 
 # Tomar decisiones en el momento oportuno
 Contribucion.create!({practica_id: 30, objetivo_id: 8, valor: 5})
+Contribucion.create!({practica_id: 8, objetivo_id: 8, valor: 5})
 Contribucion.create!({practica_id: 3, objetivo_id: 8, valor: 4})
+Contribucion.create!({practica_id: 44, objetivo_id: 8, valor: 4})
 Contribucion.create!({practica_id: 28, objetivo_id: 8, valor: 3})
-Contribucion.create!({practica_id: 25, objetivo_id: 8, valor: 2})
+Contribucion.create!({practica_id: 25, objetivo_id: 8, valor: 3})
 Contribucion.create!({practica_id: 1, objetivo_id: 8, valor: 2})
-Contribucion.create!({practica_id: 45, objetivo_id: 8, valor: 2})
 
 # Mejorar la comunicación dentro del equipo y con el cliente
-Contribucion.create!({practica_id: 9, objetivo_id: 10, valor: 4})
+Contribucion.create!({practica_id: 9, objetivo_id: 10, valor: 5})
+Contribucion.create!({practica_id: 45, objetivo_id: 10, valor: 4})
 Contribucion.create!({practica_id: 5, objetivo_id: 10, valor: 4})
+Contribucion.create!({practica_id: 26, objetivo_id: 10, valor: 4})
 Contribucion.create!({practica_id: 49, objetivo_id: 10, valor: 4})
-Contribucion.create!({practica_id: 26, objetivo_id: 10, valor: 3})
-Contribucion.create!({practica_id: 45, objetivo_id: 10, valor: 3})
+Contribucion.create!({practica_id: 24, objetivo_id: 10, valor: 3})
 Contribucion.create!({practica_id: 25, objetivo_id: 10, valor: 2})
 
 # Hacer más visible el trabajo del equipo
@@ -434,22 +442,22 @@ Contribucion.create!({practica_id: 3, objetivo_id: 7, valor: 4})
 Contribucion.create!({practica_id: 28, objetivo_id: 7, valor: 4})
 
 # Reducir las horas extras o demanda no prevista de recursos humanos adicionales
-Contribucion.create!({practica_id: 32, objetivo_id: 4, valor: 3})
-Contribucion.create!({practica_id: 25, objetivo_id: 4, valor: 3})
-Contribucion.create!({practica_id: 34, objetivo_id: 4, valor: 3})
+Contribucion.create!({practica_id: 25, objetivo_id: 4, valor: 4})
+Contribucion.create!({practica_id: 34, objetivo_id: 4, valor: 4})
+Contribucion.create!({practica_id: 32, objetivo_id: 4, valor: 4})
+Contribucion.create!({practica_id: 44, objetivo_id: 4, valor: 2})
 Contribucion.create!({practica_id: 11, objetivo_id: 4, valor: 2})
 
 # Gestionar eficazmente el contexto multi-proyecto
 Contribucion.create!({practica_id: 8, objetivo_id: 22, valor: 5})
-Contribucion.create!({practica_id: 31, objetivo_id: 22, valor: 4})
 Contribucion.create!({practica_id: 30, objetivo_id: 22, valor: 4})
 
 # Evitar costos asociados a la realización de tareas prescindibles o dudosamente rentables, 
+Contribucion.create!({practica_id: 40, objetivo_id: 14, valor: 5})
 Contribucion.create!({practica_id: 4, objetivo_id: 14, valor: 4})
 Contribucion.create!({practica_id: 14, objetivo_id: 14, valor: 4})
 Contribucion.create!({practica_id: 27, objetivo_id: 14, valor: 4})
-Contribucion.create!({practica_id: 40, objetivo_id: 14, valor: 4})
-Contribucion.create!({practica_id: 7, objetivo_id: 14, valor: 2})
+Contribucion.create!({practica_id: 7, objetivo_id: 14, valor: 3})
 
 # Reducir el re-trabajo debido a trabajo defectuoso o incompleto detectado por el equipo
 Contribucion.create!({practica_id: 2, objetivo_id: 20, valor: 4})
@@ -459,38 +467,38 @@ Contribucion.create!({practica_id: 16, objetivo_id: 20, valor: 2})
 # Gestionar eficazmente los cambios, tanto en los trabajos como en sus prioridades, 
 Contribucion.create!({practica_id: 8, objetivo_id: 3, valor: 5})
 Contribucion.create!({practica_id: 24, objetivo_id: 3, valor: 5})
-Contribucion.create!({practica_id: 44, objetivo_id: 3, valor: 4})
 Contribucion.create!({practica_id: 1, objetivo_id: 3, valor: 4})
-Contribucion.create!({practica_id: 5, objetivo_id: 3, valor: 3})
-Contribucion.create!({practica_id: 9, objetivo_id: 3, valor: 3})
+Contribucion.create!({practica_id: 50, objetivo_id: 3, valor: 4})
+Contribucion.create!({practica_id: 44, objetivo_id: 3, valor: 4})
+Contribucion.create!({practica_id: 9, objetivo_id: 3, valor: 4})
 Contribucion.create!({practica_id: 25, objetivo_id: 3, valor: 3})
 Contribucion.create!({practica_id: 28, objetivo_id: 3, valor: 3})
-Contribucion.create!({practica_id: 50, objetivo_id: 3, valor: 2})
 Contribucion.create!({practica_id: 45, objetivo_id: 3, valor: 2})
+Contribucion.create!({practica_id: 5, objetivo_id: 3, valor: 2})
 
 # Promover la mejora continua del proceso empleado por el equipo
 Contribucion.create!({practica_id: 14, objetivo_id: 19, valor: 4})
 Contribucion.create!({practica_id: 27, objetivo_id: 19, valor: 4})
 
 # Mejorar la gestión de recursos humanos en el equipo
-Contribucion.create!({practica_id: 30, objetivo_id: 9, valor: 5})
-Contribucion.create!({practica_id: 8, objetivo_id: 9, valor: 5})
-Contribucion.create!({practica_id: 43, objetivo_id: 9, valor: 4})
-Contribucion.create!({practica_id: 42, objetivo_id: 9, valor: 4})
+Contribucion.create!({practica_id: 13, objetivo_id: 9, valor: 5})
+Contribucion.create!({practica_id: 42, objetivo_id: 9, valor: 5})
 Contribucion.create!({practica_id: 31, objetivo_id: 9, valor: 4})
+Contribucion.create!({practica_id: 43, objetivo_id: 9, valor: 4})
+Contribucion.create!({practica_id: 45, objetivo_id: 9, valor: 4})
 Contribucion.create!({practica_id: 6, objetivo_id: 9, valor: 4})
-Contribucion.create!({practica_id: 13, objetivo_id: 9, valor: 4})
-Contribucion.create!({practica_id: 15, objetivo_id: 9, valor: 4})
-Contribucion.create!({practica_id: 45, objetivo_id: 9, valor: 3})
-Contribucion.create!({practica_id: 39, objetivo_id: 9, valor: 3})
-Contribucion.create!({practica_id: 5, objetivo_id: 9, valor: 3})
+Contribucion.create!({practica_id: 30, objetivo_id: 9, valor: 4})
+Contribucion.create!({practica_id: 39, objetivo_id: 9, valor: 4})
 Contribucion.create!({practica_id: 12, objetivo_id: 9, valor: 3})
+Contribucion.create!({practica_id: 15, objetivo_id: 9, valor: 3})
+Contribucion.create!({practica_id: 5, objetivo_id: 9, valor: 3})
 Contribucion.create!({practica_id: 37, objetivo_id: 9, valor: 2})
+Contribucion.create!({practica_id: 32, objetivo_id: 9, valor: 2})
 
 # Mejorar la sistematización del trabajo
 Contribucion.create!({practica_id: 33, objetivo_id: 15, valor: 4})
+Contribucion.create!({practica_id: 17, objetivo_id: 15, valor: 4})
 Contribucion.create!({practica_id: 41, objetivo_id: 15, valor: 3})
-Contribucion.create!({practica_id: 17, objetivo_id: 15, valor: 3})
 Contribucion.create!({practica_id: 14, objetivo_id: 15, valor: 3})
 Contribucion.create!({practica_id: 23, objetivo_id: 15, valor: 2})
 
@@ -502,116 +510,116 @@ Contribucion.create!({practica_id: 23, objetivo_id: 15, valor: 2})
 Desafio.delete_all
 
 Desafio.create!({id: 42, 
-  name_es: 'Medir el progreso del trabajo respecto del grado de avance de las funcionalidades, características o servicios que aprovechará el cliente, no por volumen o avance de documentación u otros artefactos que acompañan al producto o servicio', 
-  name_en: ''})
+  name_es: 'Medir el progreso del trabajo respecto del grado de avance de las funcionalidades, características o servicios que aprovechará el cliente, no por volumen o avance de documentación u otros artefactos que acompañan al producto o servicio.',
+  name_en: 'Measuring the progress of the work with respect to the degree of advancement of the functionalities, features or services that the client will take advantage, not by volume or advancement of documentation or other artifacts  which don\'t give value to the client.'})
 Desafio.create!({id: 53, 
-  name_es: 'Definir el trabajo en términos de incrementos en las características que ofrece el producto o servicio que se le ofrece al cliente, no en términos de actividades o artefactos necesarios desde la perspectiva técnica', 
-  name_en: ''})
+  name_es: 'Definir el trabajo en términos de incrementos en las características que ofrece el producto o servicio que se le ofrece al cliente, no en términos de actividades o artefactos necesarios desde la perspectiva técnica.', 
+  name_en: 'Define the work in terms of increments in the features offered to the client by the product or service offered , not in terms of activities or necessary artifacts from a technical perspective.'})
 Desafio.create!({id: 10, 
-  name_es: 'Hábito de elaboración y aprovechamiento de la documentación durante el proceso, no solo para acompañar a la entrega', 
-  name_en: ''})
+  name_es: 'Hábito de elaboración y aprovechamiento de la documentación durante el proceso, no solo para acompañar a la entrega.', 
+  name_en: 'Habit of elaboration and use of the documentation during the process, not only as a complement included at the moment of delivery.'})
 Desafio.create!({id: 2, 
-  name_es: 'Experiencia en definición y aplicación de pruebas de aceptación', 
-  name_en: ''})
+  name_es: 'Experiencia en definición y aplicación de pruebas de aceptación.', 
+  name_en: 'Experience in the definition and application of acceptance tests.'})
 Desafio.create!({id: 5, 
-  name_es: 'Experiencia y hábito de realización de estimaciones (si el producto o servicio lo requiere)', 
-  name_en: ''})
+  name_es: 'Experiencia y hábito de realización de estimaciones (si el producto o servicio lo requiere).', 
+  name_en: 'Experience and habit of preparation of estimates (when the contex requires it).'})
 Desafio.create!({id: 29, 
-  name_es: 'Disciplina de registro del progreso del trabajo (si el producto o servicio lo requiere)', 
-  name_en: ''})
+  name_es: 'Disciplina de registro del progreso del trabajo (si el producto o servicio lo requiere).', 
+  name_en: 'Discipline of recording the progress of the work (when the context requires it).'})
 Desafio.create!({id: 38, 
-  name_es: 'Tener la posibilidad de racionalizar la documentación', 
-  name_en: ''})
+  name_es: 'Tener la posibilidad de racionalizar la documentación.', 
+  name_en: 'To be empowered to rationalize the documentation.'})
 Desafio.create!({id: 50, 
-  name_es: 'Conseguir el apoyo de la dirección para implantar esta práctica', 
-  name_en: ''})
+  name_es: 'Conseguir el apoyo de la dirección para implantar esta práctica.', 
+  name_en: 'Get support from the top executives to implement this practice.'})
 Desafio.create!({id: 6, 
-  name_es: 'Posibilidad de añadir, modificar o incluso eliminar total o parcialmente la documentación utilizada en el proceso', 
-  name_en: ''})
+  name_es: 'Posibilidad de añadir, modificar o incluso eliminar total o parcialmente la documentación utilizada en el proceso.', 
+  name_en: 'Be empowered to add, modify, or even eliminate totally or partially the documentation used in the process.'})
 Desafio.create!({id: 16, 
-  name_es: 'Conseguir reunir en el mismo espacio físico a todos los que intervienen en las actividades necasarias para realizar el trabajo', 
-  name_en: ''})
+  name_es: 'Conseguir reunir en el mismo espacio físico a todos los que intervienen en las actividades necasarias para realizar el trabajo.', 
+  name_en: 'Get together in the same physical space all team members.'})
 Desafio.create!({id: 22, 
-  name_es: 'Disponer de un espacio acondicionado para el trabajo en equipo', 
-  name_en: ''})
+  name_es: 'Disponer de un espacio acondicionado para el trabajo en equipo.', 
+  name_en: 'Have a work space suitable for teamwork.'})
 Desafio.create!({id: 23, 
-  name_es: 'Conseguir que los integrantes del equipo estén dispuestos a realizar actividades que no sean de su especialidad o preferencia', 
-  name_en: ''})
+  name_es: 'Conseguir que los integrantes del equipo estén dispuestos a realizar actividades que no sean de su especialidad o preferencia.', 
+  name_en: 'Get the team members be willing to carry out activities that are not of their specialty or preference.'})
 Desafio.create!({id: 24, 
-  name_es: 'Conseguir tener en el equipo integrantes que tengan habilidades para abordar todas las actividades necesarias para terminar un trabajo', 
-  name_en: ''})
+  name_es: 'Conseguir tener en el equipo integrantes que tengan habilidades para abordar todas las actividades necesarias para terminar un trabajo.', 
+  name_en: 'Get that team members jointly have the skills to address all the activities necessary to finish a job.'})
 Desafio.create!({id: 25, 
   name_es: 'Disciplina de reuniones efectivas, que incluya: tener un moderador, anticipar el propósito e información relevante, etc.', 
-  name_en: ''})
+  name_en: 'Establish a discipline of effective meetings, including good moderators and the proper organization.'})
 Desafio.create!({id: 28, 
-  name_es: 'Transparencia en cuanto a la información asociada al trabajo y a los encargados de realizarlo', 
-  name_en: ''})
+  name_es: 'Transparencia en cuanto a la información asociada al trabajo y a los encargados de realizarlo.', 
+  name_en: 'Transparency in terms of all information associated with the work.'})
 Desafio.create!({id: 30, 
-  name_es: 'Tener un representante de la parte cliente que ofrezca alta disponibilidad para que el equipo interactúe con él', 
-  name_en: ''})
+  name_es: 'Que el cliente que ofrezca alta disponibilidad para que el equipo interactúe con él.', 
+  name_en: 'Have a client offering high availability to communicate with the team.'})
 Desafio.create!({id: 41, 
-  name_es: 'Conseguir un único y buen representante de la parte cliente', 
-  name_en: ''})
+  name_es: 'Conseguir un único y buen representante de la parte cliente.', 
+  name_en: 'Have good one representative of the client side.'})
 Desafio.create!({id: 31, 
-  name_es: 'Experiencia en automatización de pruebas', 
-  name_en: ''})
+  name_es: 'Experiencia en automatización de pruebas.', 
+  name_en: 'Experience in test automation.'})
 Desafio.create!({id: 32, 
-  name_es: 'Infraestructura para la ejecución de pruebas automatizadas', 
-  name_en: ''})
+  name_es: 'Buena infraestructura para la ejecución de pruebas automatizadas.', 
+  name_en: 'Good infrastructure for the execution of automated tests.'})
 Desafio.create!({id: 33, 
-  name_es: 'Experiencia, infraestructura y disciplina para integración continua', 
-  name_en: ''})
+  name_es: 'Experiencia, infraestructura y disciplina para integración continua.', 
+  name_en: 'Experience, infrastructure and discipline for continuous integration.'})
 Desafio.create!({id: 34, 
-  name_es: 'Buena actitud de los miembros del equipo para trabajar en conjunto en una misma actividad para determinadas unidades de trabajo', 
-  name_en: ''})
+  name_es: 'Buena actitud de los miembros del equipo para trabajar en conjunto en una misma actividad para determinadas unidades de trabajo.', 
+  name_en: 'Good attitude of team members to work together in the same activity for certain units of work.'})
 Desafio.create!({id: 54, 
-  name_es: 'Contar con un mecanismo de incentivos que valore el desempeño del equipo, no solo el desempeño de cada integrante', 
-  name_en: ''})
+  name_es: 'Contar con un mecanismo de incentivos que valore el desempeño del equipo, no solo el desempeño de cada integrante.', 
+  name_en: 'Have a mechanism for incentives that values the performance of the team, not just the performance of each member.'})
 Desafio.create!({id: 37, 
-  name_es: 'Experiencia y capacidad de los miembros del equipo para tomar decisiones técnicas acertadas', 
-  name_en: ''})
+  name_es: 'Experiencia y capacidad de los miembros del equipo para tomar decisiones técnicas acertadas.', 
+  name_en: 'Experience and skills of team members to make the right technical decisions.'})
 Desafio.create!({id: 36, 
-  name_es: 'Proactividad y habilidad de los miembros del equipo para auto-gestionarse individualmente y/o en equipo', 
-  name_en: ''})
+  name_es: 'Proactividad y habilidad de los miembros del equipo para auto-gestionarse individualmente y/o en equipo.', 
+  name_en: 'Proactivity and skills of team members to become a self-organized team.'})
 Desafio.create!({id: 40, 
-  name_es: 'Experiencia en refactorización', 
-  name_en: ''})
+  name_es: 'Experiencia en refactorización.', 
+  name_en: 'Experience in refactoring.'})
 Desafio.create!({id: 44, 
-  name_es: 'Conseguir que el representante de la parte cliente asuma el liderazgo', 
-  name_en: ''})
+  name_es: 'Conseguir que el representante de la parte cliente asuma el liderazgo.', 
+  name_en: 'Have the representative of the client side assume leadership of the work.'})
 Desafio.create!({id: 43, 
-  name_es: 'Alinear la planificación con un proceso incremental, en el cual se acuerdan las unidades de trabajo que se entregan en cierto plazo, sin  detallar cómo se organiza el equipo para cumplir dicho plazo', 
-  name_en: ''})
+  name_es: 'Alinear la planificación con un proceso incremental, en el cual se acuerdan las unidades de trabajo que se entregan en cierto plazo, sin  detallar cómo se organiza el equipo para cumplir dicho plazo.', 
+  name_en: 'Have alignment between planning and an incremental process, it is agreed that work units are delivered at certain deadline, but without giving details of how the team is organized to meet that deadline.'})
 Desafio.create!({id: 1, 
-  name_es: 'Conseguir que no se añada trabajo adicional al acordado para un período planificado, excepto por urgencias y/o cambios de prioridades', 
-  name_en: ''})
+  name_es: 'Conseguir que no se añada trabajo adicional al acordado para un período planificado, excepto por urgencias y/o cambios de prioridades.', 
+  name_en: 'Avoid that extra work be added to the planned work for a period, except in case of emergencies or important changes in priorities.'})
 Desafio.create!({id: 46, 
-  name_es: 'Conseguir que representantes de la parte cliente participen en las revisiones de cada entrega', 
-  name_en: ''})
+  name_es: 'Conseguir que representantes de la parte cliente participen en las revisiones de cada entrega.', 
+  name_en: 'Have representative from the client side participate in review meetings of each delivery.'})
 Desafio.create!({id: 35, 
-  name_es: 'Que el equipo tenga un líder-facilitador en lugar de un jefe autoritario', 
-  name_en: ''})
+  name_es: 'Que el equipo tenga un líder-facilitador en lugar de un jefe autoritario.', 
+  name_en: 'The team has a lider-facilitador rather than an authoritarian boss.'})
 Desafio.create!({id: 48, 
-  name_es: 'Evitar que los miembros del equipo tengan damasiadas unidades de trabajo asignadas. Privilegiar el terminar unidades de trabajo asignadas en lugar de asignar(se) nuevas', 
-  name_en: ''})
+  name_es: 'Evitar que los miembros del equipo tengan damasiadas unidades de trabajo asignadas. Privilegiar el terminar unidades de trabajo asignadas en lugar de asignar(se) nuevas.', 
+  name_en: 'Avoid that team members have too many assigned work units. Give priority to complete assigned work rather than start others new works.'})
 Desafio.create!({id: 26, 
-  name_es: 'Evitar las interrupciones a miembros del equipo, en su lugar promover la realización de reuniones programadas, especialmente cuando la interrupción pueda ser de más de 10 minutos (orientativo)', 
-  name_en: ''})
+  name_es: 'Evitar las interrupciones a miembros del equipo, en su lugar promover la realización de reuniones programadas, especialmente cuando la interrupción pueda durar cierto tiempo.', 
+  name_en: 'Avoid interruptions to team members, especially when the interruption can last a while. Promote the realization of scheduled meetings.'})
 Desafio.create!({id: 52, 
-  name_es: 'Desistir de realizar un balanceo de carga de trabajo de los miembros del equipo pues sólo tendrían asignado el trabajo en el cual están trabajando, no se realizarían asignaciones a futuro, salvo en casos excepcionales.', 
-  name_en: ''})
+  name_es: 'Desistir de realizar un balanceo de carga de trabajo de los miembros del equipo. Solo tendrían asignado el trabajo en el cual están trabajando, no se realizarían asignaciones a futuro, salvo en casos excepcionales.', 
+  name_en: 'Not to perform load balancing of work for team members. They have only assigned the work in which they are working now, there are not assignments for the future, except in some specific cases where is neccesary that a particular person must do some work.'})
 Desafio.create!({id: 51, 
-  name_es: 'Que el cliente esté de acuerdo en recibir como entrega lo mínimo que pueda serle útil en un momento determinado', 
-  name_en: ''})
+  name_es: 'Que el cliente esté de acuerdo en recibir como entrega lo mínimo que pueda serle útil en un momento determinado.', 
+  name_en: 'Have the client agreed with receiving a minimal delivery, satisfactory to start using it, but it can be improved and complemented later.'})
 Desafio.create!({id: 49, 
-  name_es: 'Si existe un contrato con la parte cliente, que sea flexible en cuando a contenido. Que se puedan añadir, quitar o modificar parte del trabajo acordado, pero manteniendo la consistencia entre el esfuerzo previsto y la capacidad del equipo.', 
-  name_en: ''})
+  name_es: 'Si existe un contrato con la parte cliente, que sea flexible en cuanto a contenido. Que se puedan añadir, quitar o modificar parte del trabajo acordado, pero manteniendo la consistencia entre el esfuerzo previsto y la capacidad del equipo.', 
+  name_en: 'If there is a contract, it must be flexible in terms of scope. So the client can add, remove or modify part of the agreed work, while maintaining the consistency between planned effort and capacity of the team.'})
 Desafio.create!({id: 55, 
-  name_es: 'Contar con una de definición de puestos de trabajo y remuneraciones compatible con la diversidad de actividades que se pretende que puedan llegar a realizar los integrantes del equipo', 
-  name_en: ''})
+  name_es: 'Contar con una de definición de puestos de trabajo y remuneraciones que no sea un impedimento para que los integrantes del equipo realicen diversas actividades.', 
+  name_en: 'Have one definition of jobs and wages that is not an impediment to enable members of the team to perform diverse activities.'})
 Desafio.create!({id: 47, 
-  name_es: 'Evitar que el equipo esté simultaneamente trabajando en demasiados productos, servicios o proyectos. Priorizar el trabajo de manera que un equipo no se vea obligado a distribuir su capacidad entre contextos de trabajo diferentes', 
-  name_en: ''})
+  name_es: 'Evitar que el equipo esté simultaneamente trabajando en demasiados productos, servicios o proyectos. Priorizar el trabajo de manera que un equipo no se vea obligado a distribuir su capacidad entre contextos de trabajo diferentes.', 
+  name_en: 'Avoid that the team works simultaneously on too many products, services or projects. Prioritize work so that a team is not  obligated to distribute its capacity among different work contexts.'})
 
 # --- [END] Desafíos ---
 
