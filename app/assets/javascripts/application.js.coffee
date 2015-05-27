@@ -12,9 +12,7 @@
 #
 #= require jquery
 #= require jquery_ujs
-#= require jquery.ui.sortable
-#= require jquery.ui.effect-highlight
-#= require jquery.ui.touch-punch
+#= require jquery-ui
 #= require jquery.autosize
 #= require jquery.simulate.drag-sortable
 #= require wiselinks
