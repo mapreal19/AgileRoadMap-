@@ -44,27 +44,27 @@
         - @practicas.each do |practica|
           %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}", pracs_ids: "#{practica.practica.get_json_relacion_practicas_ids}"}, class: "item practica#{' no-margen' if practica.range == 4} #{' no-aplicable' if practica.no_aplicable}"}
             %td.handle{"style" => "cursor:move"}
-              %i.icon-move
+              %i.fa.fa-arrows
             %td.text_left
               %span.badge
                 = "#{practica.legacy_position_with_prefix}"
               / Ámbito de decisión
               - if practica.practica.ambito_decision == 'equipo'
-                %i.icon-group.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-group") }
+                %i.fa.fa-group.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-group") }
               - else
-                %i.icon-wrench.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-service") }
+                %i.fa.fa-wrench.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-service") }
               = if I18n.locale == :es then practica.name_es else practica.name_en end
               - unless practica.legacy_position.nil?
                 %br
                 %a{"href" => "#", "data-target" => "#myModal_#{practica.id}", "data-toggle" => "modal"}
-                  %i.icon-info-sign.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-moreinfo") }
+                  %i.fa.fa-info-circle.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-moreinfo") }
                 %a{"href" => "#", "data-target" => "#objetivos_de_#{practica.id}", "data-toggle" => "modal"}
-                  %i.icon-screenshot.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-objectives")}
+                  %i.fa.fa-bullseye.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-objectives")}
                 %a{"href" => "#", "data-target" => "#desafio_#{practica.id}", "data-toggle" => "modal"}
-                  %i.icon-exclamation-sign.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-challenges")}
+                  %i.fa.fa-exclamation-circle.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-challenges")}
                 %a.ver-practicas-relacionadas{href: '#', style: "text-decoration:none"}
-                  %i.icon-eye-open.practica-eye-open.icon-large.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-related")}
-                  %i.icon-eye-close.practica-eye-close.icon-large.tooltip-info{ style: "display:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-closerelated") }
+                  %i.fa.fa-eye.practica-eye-open.icon-large.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-related")}
+                  %i.fa.fa-eye-slash.practica-eye-close.icon-large.tooltip-info{ style: "display:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.tooltip-closerelated") }
               
             / Práctica ágil
             %td.hidden-xs.hidden-sm= practica.agile_method.blank? ? '---' : practica.agile_method

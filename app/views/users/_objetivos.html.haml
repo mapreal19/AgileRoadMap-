@@ -2,8 +2,8 @@
   %h2 
     = it "my_agile.objectives.title"
   %a#toggle_objetivos{href: '#', style: "text-decoration:none"}
-    %i.icon-eye-open.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "right", "title" => it("my_agile.objectives.tooltip-open")}
-    %i.icon-eye-close.icon-large.tooltip-info{"data-toggle" => "tooltip", "data-placement" => "right", "title" => it("my_agile.objectives.tooltip-close"), style: "display:none"}
+    %i.fa.fa-eye.icon-large.tooltip-info{"style" => "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "right", "title" => it("my_agile.objectives.tooltip-open")}
+    %i.fa.fa-eye-slash.icon-large.tooltip-info{"data-toggle" => "tooltip", "data-placement" => "right", "title" => it("my_agile.objectives.tooltip-close"), style: "display:none"}
 
 #checkbox_objetivo.row{ style: "display:none" } 
   .panel-body.hidden-xs
@@ -35,23 +35,23 @@
       - @objetivos.each do |objetivo|
         %tr.objetivo.item-objetivo{data: {ids: "#{objetivo.objetivo.get_json_practicas_ids}", item_id: "#{objetivo.id}"}, class: "#{' no-interesa' if objetivo.no_interesa}"}
           %td.handle{"style" => "cursor:move"}
-            %i.icon-move
+            %i.fa.fa-arrows
           %td.text_left
             %span.badge
               = "#{objetivo.objetivo.id_with_prefix}"
             = if I18n.locale == :es then objetivo.objetivo.name_es else objetivo.objetivo.name_en end
             %a.ver-practica.tooltip-info{href: '#', style: "text-decoration:none", "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.objectives.tooltip-remark")}
-              %i.icon-eye-open.objetivo-eye-open
-              %i.icon-eye-close.objetivo-eye-close{ style: "display:none"}
+              %i.fa.fa-eye.objetivo-eye-open
+              %i.fa.fa-eye-slash.objetivo-eye-close{ style: "display:none"}
           %td.hidden-xs
             -if objetivo.objetivo.sat_client
-              %i.icon-ok
+              %i.fa.fa-check
           %td.hidden-xs
             -if objetivo.objetivo.equipo
-              %i.icon-ok
+              %i.fa.fa-check
           %td.hidden-xs
             -if objetivo.objetivo.productivity
-              %i.icon-ok
+              %i.fa.fa-check
           %td.hidden-xs= text_area_tag 'objetivo_comment' + objetivo.objetivo.id.to_s, objetivo.comment, class: 'objetivo-comment form-control'
           %td.hidden-xs
             = check_box_tag 'no_interesa' + objetivo.objetivo.id.to_s, 

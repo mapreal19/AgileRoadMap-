@@ -11,11 +11,11 @@
             = it "login.access"
         .input-group.margin-bottom-20
           %span.input-group-addon
-            %i.icon-envelope-alt
+            %i.fa.fa-envelope
           = f.email_field :email, class: 'form-control', placeholder: 'Email', required: true
         .input-group.margin-bottom-20
           %span.input-group-addon
-            %i.icon-unlock
+            %i.fa.fa-unlock
           = f.password_field :password, class: 'form-control', placeholder: it("register.passwd"), required: true
         .row
           .col-md-6
