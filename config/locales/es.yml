@@ -30,7 +30,7 @@ es:
     four: 'Herramienta de apoyo para establecer'
     five: 'el Roadmap Ágil de tu equipo de trabajo'
   home:
-    intro: "¿Estás interesado en implantar métodos ágiles? ¿No sabes por dónde comenzar? Este sitio te ofrece conocimiento asociado a prácticas ágiles y te ayuda a establecer tu propio roadmap para implantación de prácticas ágiles. %{link_video:Ver video explicativo}"
+    intro: "¿Estás interesado en implantar métodos ágiles? ¿No sabes por dónde comenzar? Este sitio te ofrece conocimiento asociado a prácticas ágiles y te ayuda a establecer tu propio roadmap para implantación de prácticas ágiles."
     services:
       title:
         one: "Conoce las prácticas ágiles"

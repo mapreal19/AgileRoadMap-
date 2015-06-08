@@ -17,14 +17,15 @@
         %br/
         %i 
           = it('slider.five')
-      .da-img
-        %iframe{allowfullscreen: "",
-          frameborder: "0",
-          height: "300",
-          mozallowfullscreen: "",
-          src: "//www.youtube.com/embed/VaCHhjqVKTs?rel=0&showinfo=0",
-          webkitallowfullscreen: "",
-          width: "530"}
+      - if I18n.locale == :es then
+        .da-img
+          %iframe{allowfullscreen: "",
+            frameborder: "0",
+            height: "300",
+            mozallowfullscreen: "",
+            src: "//www.youtube.com/embed/VaCHhjqVKTs?rel=0&showinfo=0",
+            webkitallowfullscreen: "",
+            width: "530"}
     /.da-arrows
     /  %span.da-arrows-prev
     /  %span.da-arrows-next

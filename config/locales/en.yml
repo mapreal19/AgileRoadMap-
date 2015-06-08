@@ -63,7 +63,7 @@ en:
     four: 'Tool supporting the establisment of'
     five: 'an Agile Roadmap for your team'
   home:
-    intro: "Are you interested in applying agile methods? You don't know how to start? This site offers you the knowledge associated to agile practices and helps you to establish your own roadmap to apply agile practices. %{link_video:See this video}"
+    intro: "Are you interested in applying agile methods? You don't know how to start? This site offers you the knowledge associated to agile practices and helps you to establish your own roadmap to apply agile practices."
     services:
       title:
         one: "Know the agile practices"

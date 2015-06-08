@@ -6,7 +6,9 @@
     %h2 Agile Roadmap+
   .row
     .col-sm-12
-      = it "home.intro", link_video: 'https://www.youtube.com/v/VaCHhjqVKTs'
+      = t "home.intro"
+      - if I18n.locale == :es then
+        <a href='https://www.youtube.com/v/VaCHhjqVKTs'>Ver video explicativo</a>
 
     / Service Blocks
   .row{ style: 'margin-top: 40px'}
