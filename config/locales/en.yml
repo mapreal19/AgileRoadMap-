@@ -49,8 +49,8 @@ en:
     home: "Home"
     dropdown:
       title: "Agile Roadmap+"
-      one: "¿What's an Agile Roadmap?"
-      two: "¿What's Agile Roadmap+?"
+      one: "What's an Agile Roadmap?"
+      two: "What's Agile Roadmap+?"
       three: 'Steps in Agile Roadmap+'
       four: 'Agile Practices in Agile Roadmap+'
       five: 'Site Statistics'
@@ -63,7 +63,7 @@ en:
     four: 'Tool supporting the establisment of'
     five: 'an Agile Roadmap for your team'
   home:
-    intro: "¿Are you interested in applying agile methods? ¿You don't know how to start? This site offers you the knowledge associated to agile practices and helps you to establish your own roadmap to apply agile practices. %{link_video:See this video}"
+    intro: "Are you interested in applying agile methods? You don't know how to start? This site offers you the knowledge associated to agile practices and helps you to establish your own roadmap to apply agile practices. %{link_video:See this video}"
     services:
       title:
         one: "Know the agile practices"
@@ -74,13 +74,13 @@ en:
         two: "Think about the improvements objectives for your team and find what practices can help to achive those objectives."
         three: "Create your own ordered list of agile practices to guide your efforts and strategy to apply agilism in your context."
   agile_map_definition: 
-    title: "¿What's an Agile Roadmap?"
+    title: "What's an Agile Roadmap?"
     paragraph: 
       one: "An Agile Roadmap is a roadmap (also called Improvement Backlog) for the implementation of agile practices in a team. This is an ordered list of process improvements that will be implemented in the team over time."
       two: "To develop an Agile Roadmap one needs to know and understand the agile practices offered by agile methods. In %{link:Carta de Prácticas Ágiles: Arma tu propio menú ágil}, we elaborated a list of 42 practices collected from the most popular agile methods (Kanban, Lean Development, Scrum and Extreme Programming)."
       three: "To elaborate an Agile Roadmap is necesary because is difficult, and often not recommended, to implement many practices at the same time and/or in all its depth (recommended reading %{link:¿Revolución o evolución hacia el agilismo?}. Therefore, it is useful to have an ordered list of candidate practices that could be gradually implemented. It is also implicit that an Agile Roadmap focuses on implementing agile practices, not a specific agile method."
   what_is_agile_map:
-    title: "¿What's an Agile Roadmap+?"
+    title: "What's an Agile Roadmap+?"
     paragraph:
       one: "Agile Roadmap+ is part of the Tune-up approach  (%{tuneup_link: www.tuneupprocess.com}). Tune-up offers a comprehensive solution to improve production processes, focused on agile project management and teamwork. Tune-up covers four aspects to be addressed by an improvement process based on agile methods:"
       two: "Agile Roadmap+ synthesizes our experience at  the diagnosis and evaluation of agile practices."
@@ -172,7 +172,7 @@ en:
             tooltip: "Select when you consider that a practice directly will not be applied"
   register:
     new_account: "Sign Up"
-    already_registered: "¿Do you already have an account?"
+    already_registered: "Do you already have an account?"
     access_account: "Access to your account"
     name: "Name"
     email: "Email"
@@ -186,9 +186,9 @@ en:
     submit: 'Send'
   login:
     access: "Account access"
-    new: "¿New user?"
+    new: "New user?"
     now: "Sign Up now!"
-    forgot_passwd: "¿Forgot your password?"
+    forgot_passwd: "Forgot your password?"
     click: "Click here"
     restablish: "to reset it"
   passwd:
