@@ -72,7 +72,7 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'haml', '~> 4.0.3'
 gem 'haml-rails', '~> 0.4'
 
-gem 'font-awesome-sass-rails'
+gem 'font-awesome-sass', '~> 4.3.0'
 
 # https://github.com/swanandp/acts_as_list
 gem 'acts_as_list'

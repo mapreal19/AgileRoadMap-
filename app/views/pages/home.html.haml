@@ -14,7 +14,7 @@
   .row{ style: 'margin-top: 40px'}
     .col-md-4
       .service
-        %i.icon-resize-small.service-icon
+        = icon('compress', class: 'service-icon')
         .desc
           %h4 
             = it "home.services.title.one"
@@ -22,7 +22,7 @@
             = it "home.services.content.one"
     .col-md-4
       .service
-        %i.icon-cogs.service-icon
+        = icon('cogs', class: 'service-icon')
         .desc
           %h4 
             = it "home.services.title.two"
@@ -30,7 +30,7 @@
             = it "home.services.content.two"
     .col-md-4
       .service
-        %i.icon-plane.service-icon
+        = icon('plane', class: 'service-icon')
         .desc
           %h4 
             = it "home.services.title.three"

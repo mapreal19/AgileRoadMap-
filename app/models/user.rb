@@ -31,23 +31,23 @@ class User < ActiveRecord::Base
 	end
 
 	def clone_practicas
-		all_practicas = Practica.all
-
-		all_practicas.each do |practica|
-			self.user_practicas.build(practica_id: practica.id, name: practica.name,
+		Practica.find_each do |practica|
+			self.user_practicas.build(
+        practica_id: practica.id, 
+        name_es: practica.name_es,
+        name_en: practica.name_en,
 				agile_method: practica.agile_method, 
 				position: practica.position, 
 				legacy_position: practica.position,
 				effort: practica.effort,
-				range: -1).save
+				range: -1
+      ).save
 		end
 	end
 
 	def clone_objetivos
-		all_objetivos = Objetivo.all
-
 		index = 1
-		all_objetivos.each do |objetivo|
+		Objetivo.find_each do |objetivo|
 			self.user_objetivos.build(
 				objetivo_id: objetivo.id, 
 				position: index
