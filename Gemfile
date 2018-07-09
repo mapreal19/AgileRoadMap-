@@ -53,7 +53,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'selenium-webdriver', '~> 2.42.0'
+  gem 'selenium-webdriver'
   gem 'capybara', '~> 2.3.0'
   gem 'poltergeist'
   gem 'cucumber-rails', '~> 1.4.1', :require => false
