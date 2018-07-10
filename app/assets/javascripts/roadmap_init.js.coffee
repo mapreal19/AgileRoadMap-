@@ -1,4 +1,3 @@
-# 
 App.roadmapInitialize = () ->
 	App.checkBoxesLocalStorage()
 

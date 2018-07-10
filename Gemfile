@@ -13,7 +13,6 @@ gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby', '3.1.2' # Use ActiveModel has_secure_password
 
-
 # Addons
 gem 'acts_as_list'
 gem 'haml', '~> 4.0.3'
@@ -24,11 +23,6 @@ gem 'nprogress-rails' # https://github.com/caarlos0/nprogress-rails
 gem 'faker'
 gem 'chartkick'
 gem 'groupdate'
-
-# https://github.com/igor-alexandrov/wiselinks
-# to add wiselinks to a link, you have to give it a data attribute of push set to true, like so:
-# <% link_to "Home", root_path, data: { push: true } %>
-gem 'wiselinks'
 
 # Translations
 gem 'it' # Tool to improve the  with links embedded https://github.com/iGEL/it

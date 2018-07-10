@@ -9,8 +9,7 @@
             = it "register.new_account"
           %p
             = it "register.already_registered"
-            = link_to it('register.access_account'), signin_path, { 'class' => 'color-blue', 'data-push' => true }
-            -#%a.color-green{href: "page_login.html"} Sign In
+            = link_to it('register.access_account'), signin_path, { 'class' => 'color-blue' }
         = render 'shared/error_messages', object: f.object
         = f.label :name do
           = it "register.name"

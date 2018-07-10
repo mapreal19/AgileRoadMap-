@@ -15,13 +15,10 @@
 #= require jquery-ui
 #= require jquery.autosize
 #= require jquery.simulate.drag-sortable
-#= require wiselinks
 #= require nprogress
 #= require_tree .
 
 $(document).ready ->
-    window.wiselinks = new Wiselinks('.content')
-
     #---INITIALIZATION Unify scripts
     App.init()
     App.initSliders()

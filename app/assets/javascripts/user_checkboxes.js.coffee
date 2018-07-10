@@ -1,11 +1,7 @@
 App.checkBoxesLocalStorage = ->
-#https://github.com/igor-alexandrov/wiselinks/issues/41
-
 	cbLocalStorage('checkbox-margen', '#no_margen', '.no-margen')
 	cbLocalStorage('checkbox-aplicable', '#no_aplicable', '.no-aplicable')
-
 	cbLocalStorage('checkbox-interesa', '#no_interesa', '.no-interesa')
-	
 
 cbLocalStorage = (itemStorage, idCheckBox, classRows) -> 
 	cbChecked = localStorage.getItem(itemStorage)

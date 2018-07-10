@@ -16,10 +16,10 @@
           = link_to it('top.signout'), signout_path, method: "delete"
       - else
         %li
-          = link_to it('top.signup'), signup_path, {'data-push' => true}
+          = link_to it('top.signup'), signup_path
         %li.devider
         %li
-          = link_to it('top.signin'), signin_path, {'data-push' => true}
+          = link_to it('top.signin'), signin_path
     %ul.switch-language  
       - if I18n.locale == I18n.default_locale 
         %li.active Español

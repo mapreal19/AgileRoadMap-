@@ -1,4 +1,3 @@
-/ === Header ===
 .header
   .navbar.navbar-default{role: "navigation"}
     .container
@@ -9,37 +8,33 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand{href: "#{root_path}", "data-push" => true}
+        %a.navbar-brand{href: "#{root_path}"}
           AGILE ROADMAP+
-          -#= image_tag("logo1-default.png", alt: "Logo", id: 'logo-header')
-          -#%img#logo-header{alt: "Logo", src: "assets/logo1-default.png"}/
       / Collect the nav links, forms, and other content for toggling
       .collapse.navbar-collapse.navbar-responsive-collapse
         %ul.nav.navbar-nav.navbar-right
           %li.dropdown{ class: active_class('home', 'pages') }
-            %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{root_path}", 'data-push' => 'true'}
-              = it('header.home')
+            = link_to(it('header.home'), root_path)
           %li.dropdown{class: agile_roadmap_active?}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"}
               = it('header.dropdown.title') 
               %i.icon-angle-down
             %ul.dropdown-menu
               %li{ class: active_class('agile_map_definition', 'pages')}
-                = link_to it('header.dropdown.one'), agile_map_definition_path, { 'data-push' => true }
+                = link_to it('header.dropdown.one'), agile_map_definition_path
               %li{ class: active_class('what_is_agile_map', 'pages')}
-                = link_to it('header.dropdown.two'), what_is_agile_map_path, { 'data-push' => true }
+                = link_to it('header.dropdown.two'), what_is_agile_map_path
               %li{ class: active_class('agile_map_pasos', 'pages')}
-                = link_to it('header.dropdown.three'), agile_map_pasos_path, { 'data-push' => true }
+                = link_to it('header.dropdown.three'), agile_map_pasos_path
               %li{ class: active_class('index', 'practicas')}
-                = link_to it('header.dropdown.four'), practicas_path, { 'data-push' => true }
+                = link_to it('header.dropdown.four'), practicas_path
               %li{ class: active_class('stats', 'pages')}
                 = link_to it('header.dropdown.five'), stats_path
               %li{ class: active_class('agile_team', 'pages')}
-                = link_to it('header.dropdown.six'), agile_team_path, { 'data-push' => true }
+                = link_to it('header.dropdown.six'), agile_team_path
           - if signed_in?
             %li.dropdown{ class: active_class('dashboard', 'users') }
-              %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#{dashboard_path}", 'data-push' => 'true'}
-                = it('header.myagile')
+              = link_to(it('header.myagile'), dashboard_path)
 
 .container
   - flash.each do |key, value|
