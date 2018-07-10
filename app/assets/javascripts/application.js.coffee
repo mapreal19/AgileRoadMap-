@@ -27,24 +27,18 @@ $(document).ready ->
     $(document).off('page:loading').on(
       'page:loading'
       (event, $target, render, url) ->
-        # console.log("Loading: #{url} to #{$target.selector} within '#{render}'")
-        # code to start loading animation
         NProgress.start()
     )
 
     $(document).off('page:redirected').on(
       'page:redirected'
       (event, $target, render, url) ->
-        # console.log("Redirected to: #{url}")
-        # code to start loading animation
         NProgress.start()
     )
 
     $(document).off('page:always').on(
       'page:always'
       (event, xhr, settings) ->
-        # console.log("Wiselinks page loading completed")
-        # code to stop loading animation
         NProgress.done()
     )
 
