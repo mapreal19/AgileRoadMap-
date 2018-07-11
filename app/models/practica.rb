@@ -1,4 +1,4 @@
-class Practica < ActiveRecord::Base
+class Practica < ApplicationRecord
   default_scope { order('position') }
 
   has_many :contribucions

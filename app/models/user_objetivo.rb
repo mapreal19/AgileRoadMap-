@@ -1,4 +1,4 @@
-class UserObjetivo < ActiveRecord::Base
+class UserObjetivo < ApplicationRecord
 	belongs_to :user
 	belongs_to :objetivo
 

@@ -1,2 +1,2 @@
-class AmbitoTrabajo < ActiveRecord::Base
+class AmbitoTrabajo < ApplicationRecord
 end

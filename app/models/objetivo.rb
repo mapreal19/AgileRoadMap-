@@ -1,4 +1,4 @@
-class Objetivo < ActiveRecord::Base
+class Objetivo < ApplicationRecord
 	has_many :contribucions
 	has_many :practicas, through: :contribucions
 

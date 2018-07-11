@@ -1,2 +1,2 @@
-class SectorEmpresa < ActiveRecord::Base
+class SectorEmpresa < ApplicationRecord
 end

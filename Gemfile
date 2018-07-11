@@ -2,21 +2,21 @@ source 'https://rubygems.org'
 ruby '2.5.1'
 
 # Core
-gem 'rails', '4.2.10'
+gem 'rails', '~> 5.1.0'
 gem 'pg', '0.15.1'
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'jbuilder', '~> 1.2'
-gem 'bcrypt-ruby', '3.1.2' # Use ActiveModel has_secure_password
+gem 'jbuilder'
+gem 'bcrypt' # Use ActiveModel has_secure_password
 
 # Addons
 gem 'acts_as_list'
-gem 'haml', '~> 4.0.3'
-gem 'haml-rails', '~> 0.4'
-gem 'font-awesome-sass', '~> 4.3.0'
+gem 'haml'
+gem 'haml-rails'
+gem 'font-awesome-sass'
 gem 'touchpunch-rails' # http://touchpunch.furf.com/ Touch Event Support for jQuery UI
 gem 'nprogress-rails' # https://github.com/caarlos0/nprogress-rails
 gem 'faker'
@@ -25,11 +25,10 @@ gem 'groupdate'
 
 # Translations
 gem 'it' # Tool to improve the  with links embedded https://github.com/iGEL/it
-gem 'globalize', '~> 4.0.2' # Translations for databases
+gem 'globalize', '~> 5.1.0' # Translations for databases
 
 group :assets do
-  # HTML 5 support, http://modernizr.com/
-  gem "modernizr-rails", "~> 2.6.2.3"
+  gem 'modernizr-rails' # HTML 5 support, http://modernizr.com/
 end
 
 group :development do
@@ -49,13 +48,9 @@ end
 
 group :test do
   gem 'selenium-webdriver'
-  gem 'capybara', '~> 2.3.0'
+  gem 'capybara'
   gem 'poltergeist'
-  gem 'cucumber-rails', '~> 1.4.1', :require => false
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem 'launchy', '~> 2.4.2'
-end
-
-group :production do
-  gem 'rails_12factor', '0.0.2'
+  gem 'launchy'
 end
