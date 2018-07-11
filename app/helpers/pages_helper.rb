@@ -1,6 +1,6 @@
 module PagesHelper
   def active_class(action, controller)
-    if params[:action] == action and params[:controller] == controller
+    if (params[:action] == action) && (params[:controller] == controller)
       'active'
     else
       ''
@@ -8,7 +8,7 @@ module PagesHelper
   end
 
   def agile_roadmap_active?
-    if ['agile_map_definition', 'agile_map_pasos'].include? params[:action] or ['practicas'].include? params[:controller]
+    if %w[agile_map_definition agile_map_pasos].include?(params[:action]) || ['practicas'].include?(params[:controller])
       'active'
     else
       ''

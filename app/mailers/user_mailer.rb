@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class UserMailer < ActionMailer::Base
   default from: 'no-reply@tuneupprocess.com'
 
@@ -13,5 +11,4 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail to: user.email, subject: 'Restablecer contraseña AgileRoadmap+'
   end
-  
 end

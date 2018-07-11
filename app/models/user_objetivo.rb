@@ -1,9 +1,9 @@
 class UserObjetivo < ApplicationRecord
-	belongs_to :user
-	belongs_to :objetivo
+  belongs_to :user
+  belongs_to :objetivo
 
-	acts_as_list scope: :user
-  
+  acts_as_list scope: :user
+
   scope :only_interesa, -> { where(no_interesa: false) }
 
   def self.get_position_stats
@@ -22,7 +22,6 @@ class UserObjetivo < ApplicationRecord
   end
 
   def self.without_yopolt
-    UserObjetivo.joins(:user).where("email NOT LIKE ? ", 'yopolt%').only_interesa
+    UserObjetivo.joins(:user).where('email NOT LIKE ? ', 'yopolt%').only_interesa
   end
-
 end

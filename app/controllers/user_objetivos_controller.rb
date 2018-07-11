@@ -1,5 +1,4 @@
 class UserObjetivosController < ApplicationController
-
   def sort
     @user_objetivo = UserObjetivo.find(params[:id])
     if current_user?(@user_objetivo.user)
@@ -21,16 +20,13 @@ class UserObjetivosController < ApplicationController
 
   def update
     @user_objetivo = UserObjetivo.find(params[:id])
-    if current_user?(@user_objetivo.user)
-      @user_objetivo.update(user_objetivo_params)
-    end
+    @user_objetivo.update(user_objetivo_params) if current_user?(@user_objetivo.user)
     render nothing: true
   end
 
   private
-    
-    def user_objetivo_params
-      params.require(:user_objetivo).permit(:comment, :no_interesa)
-    end
 
+  def user_objetivo_params
+    params.require(:user_objetivo).permit(:comment, :no_interesa)
+  end
 end

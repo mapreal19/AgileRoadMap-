@@ -2,21 +2,21 @@ class UsersController < ApplicationController
   before_action :signed_in_user, only: [:dashboard]
 
   def new
-  	@user = User.new
+    @user = User.new
   end
 
   def create
-  	@user = User.new(user_params)
+    @user = User.new(user_params)
     @user.ip = request.remote_ip
-  	if @user.save
-  		sign_in @user
+    if @user.save
+      sign_in @user
       @user.clone_practicas
       @user.clone_objetivos
       flash[:success] = t(:welcome, url: 'https://www.youtube.com/watch?v=VaCHhjqVKTs').html_safe
-  		redirect_to dashboard_url and return
-  	else
-  		render 'new'
-  	end
+      redirect_to(dashboard_url) && return
+    else
+      render 'new'
+    end
   end
 
   def dashboard
@@ -26,8 +26,9 @@ class UsersController < ApplicationController
   end
 
   private
-  	def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :ambito_trabajo_id, :sector_empresa_id, :miembros_equipo)
-    end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password,
+                                 :password_confirmation, :ambito_trabajo_id, :sector_empresa_id, :miembros_equipo)
+   end
 end
