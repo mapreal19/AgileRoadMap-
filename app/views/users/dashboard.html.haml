@@ -2,41 +2,41 @@
 = render 'layouts/header'
 
 .container
-      
+
   = render 'objetivos'
 
   .headline
-    %h2#mapa 
+    %h2#mapa
       = it "my_agile.dashboard.title"
 
-  .row 
+  .row
     .panel-body.hidden-xs
-      .col-xs-12 
+      .col-xs-12
         .checkbox
           %label
             = check_box_tag 'no_margen', nil
             = it "my_agile.dashboard.hidemargin-checkbox" 
-      .col-xs-12 
+      .col-xs-12
         .checkbox
           %label
-            %input#no_aplicable{type: 'checkbox'} 
+            %input#no_aplicable{type: 'checkbox'}
               = it "my_agile.dashboard.hideapplicable-checkbox"
 
-  .col-xs-12.col-sm-12  
-    
+  .col-xs-12.col-sm-12
+
     %table.table.table-bordered#sortable{:data => { update_rest: user_practicas_update_path, update_url: user_practicas_sort_path, range_url:user_practicas_range_path, comment_url: user_practicas_comment_path, aplicable_url: user_practicas_aplicable_path}}
       %thead
         %tr
           %th.col-md-1.col-sm-1.col-xs-2
-          %th.col-md-3.col-sm-6.col-xs-10 
+          %th.col-md-3.col-sm-6.col-xs-10
             = it "my_agile.dashboard.table.col.one.name"
-          %th.col-md-1.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.table.col.two.tooltip"), "data-container" => 'body' } 
+          %th.col-md-1.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.table.col.two.tooltip"), "data-container" => 'body' }
             = it "my_agile.dashboard.table.col.two.name"
           %th.col-md-2.hidden-xs.hidden-sm.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.table.col.three.tooltip"), "data-container" => 'body' }
             = it "my_agile.dashboard.table.col.three.name" 
           %th.col-md-2.col-sm-2.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.table.col.four.tooltip"), "data-container" => 'body' }
             = it "my_agile.dashboard.table.col.four.name" 
-          %th.col-md-2.col-sm-2.hidden-xs 
+          %th.col-md-2.col-sm-2.hidden-xs
             = it "my_agile.dashboard.table.col.five.name"
           %th.col-md-1.col-sm-1.hidden-xs.tooltip-info{ "data-toggle" => "tooltip", "data-placement" => "top", "title" => it("my_agile.dashboard.table.col.six.tooltip"), "data-container" => 'body' }
             = it "my_agile.dashboard.table.col.six.name" 
@@ -44,7 +44,7 @@
         - @practicas.each do |practica|
           %tr{data: {item_id: "#{practica.id}", practica_id: "#{practica.practica_id}", pracs_ids: "#{practica.practica.get_json_relacion_practicas_ids}"}, class: "item practica#{' no-margen' if practica.range == 4} #{' no-aplicable' if practica.no_aplicable}"}
             %td.handle{"style" => "cursor:move"}
-              %i.fa.fa-arrows
+              %i.fas.fa-arrows-alt
             %td.text_left
               %span.badge
                 = "#{practica.legacy_position_with_prefix}"
@@ -83,7 +83,7 @@
             = render :partial => 'desafios', locals: {desafios: practica.practica.desafios, practica_id: practica.id, practica: practica}
             / Objetivos
             = render :partial => 'objetivos_de_practica', locals: {practica: practica}
-            
+
 
 :javascript
   $(document).ready( function() {

@@ -35,7 +35,7 @@
       - @objetivos.each do |objetivo|
         %tr.objetivo.item-objetivo{data: {ids: "#{objetivo.objetivo.get_json_practicas_ids}", item_id: "#{objetivo.id}"}, class: "#{' no-interesa' if objetivo.no_interesa}"}
           %td.handle{"style" => "cursor:move"}
-            %i.fa.fa-arrows
+            %i.fas.fa-arrows-alt
           %td.text_left
             %span.badge
               = "#{objetivo.objetivo.id_with_prefix}"
