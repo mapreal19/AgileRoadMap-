@@ -12,8 +12,10 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
+  validates :email,
+            presence: true,
+            format: { with: VALID_EMAIL_REGEX },
+            uniqueness: { case_sensitive: false }
 
   validates :ambito_trabajo_id, :sector_empresa_id, :miembros_equipo, presence: { on: :create }
 
@@ -58,14 +60,16 @@ class User < ApplicationRecord
 
   def self.get_size_team_stats
     size_teams = {}
-    key = nil
     User.without_yopolt.each do |user|
-      # 1-5, 6-10, 11-20, > 20
       key = case user.miembros_equipo
-            when 1..5 then '1-5'
-            when 6..10 then '6-10'
-            when 11..20 then '11-20'
-            else '> 20'
+            when 1..5 then
+              '1-5'
+            when 6..10 then
+              '6-10'
+            when 11..20 then
+              '11-20'
+            else
+              '> 20'
             end
       size_teams[key] ||= 0
       size_teams[key] += 1
@@ -76,10 +80,7 @@ class User < ApplicationRecord
   def self.get_countries_stats
     user_countries = {}
     User.without_yopolt.each do |user|
-      result = JSON.parse(
-        open("http://ip-api.com/json/#{user.ip}")
-         .read
-      )
+      result = JSON.parse(open("http://ip-api.com/json/#{user.ip}").read)
       country = result['country']
       user_countries[country] ||= 0
       user_countries[country] += 1
@@ -100,7 +101,7 @@ class User < ApplicationRecord
       hash_mappings[mapping[0]] = mapping[1]
     end
 
-    user_ambitos = Hash[user_ambitos.map { |k, v| [hash_mappings[k], v] }]
+    Hash[user_ambitos.map { |k, v| [hash_mappings[k], v] }]
   end
 
   def self.get_sector_empresa_stats
@@ -117,7 +118,7 @@ class User < ApplicationRecord
       hash_mappings[mapping[0]] = mapping[1]
     end
 
-    user_sectores = Hash[user_sectores.map { |k, v| [hash_mappings[k], v] }]
+    Hash[user_sectores.map { |k, v| [hash_mappings[k], v] }]
   end
 
   def send_password_reset
@@ -135,7 +136,7 @@ class User < ApplicationRecord
 
   def generate_token(column)
     begin
-        self[column] = SecureRandom.urlsafe_base64
-      end while User.exists?(column => self[column])
- end
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column: self[column])
+  end
 end

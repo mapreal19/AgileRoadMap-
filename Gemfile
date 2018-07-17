@@ -8,6 +8,7 @@ gem 'jbuilder'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pg', '0.15.1'
+gem 'puma'
 gem 'rails', '~> 5.1.0'
 gem 'sass-rails'
 gem 'uglifier'
@@ -25,7 +26,7 @@ gem 'rubocop', require: false
 gem 'touchpunch-rails' # http://touchpunch.furf.com/ Touch Event Support for jQuery UI
 
 # Translations
-gem 'globalize', '~> 5.1.0' # Translations for databases
+gem 'globalize' # Translations for databases
 gem 'it' # Tool to improve the  with links embedded https://github.com/iGEL/it
 
 group :assets do
@@ -35,23 +36,19 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'guard-cucumber'
   gem 'meta_request'
   gem 'spring'
 end
 
 group :development, :test do
-  gem 'sqlite3'
-
+  gem 'factory_bot_rails'
   gem 'rspec-rails'
-  gem 'spring-commands-cucumber'
+  gem 'sqlite3'
 end
 
 group :test do
   gem 'capybara'
-  gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
+  gem 'chromedriver-helper'
   gem 'launchy'
-  gem 'poltergeist'
   gem 'selenium-webdriver'
 end
