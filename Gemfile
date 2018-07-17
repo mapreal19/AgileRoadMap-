@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pg', '0.15.1'
 gem 'puma'
-gem 'rails', '~> 5.1.0'
+gem 'rails', '~> 5.2.0'
 gem 'sass-rails'
 gem 'uglifier'
 
@@ -26,7 +26,8 @@ gem 'rubocop', require: false
 gem 'touchpunch-rails' # http://touchpunch.furf.com/ Touch Event Support for jQuery UI
 
 # Translations
-gem 'globalize' # Translations for databases
+# NOTE: targeting master until they support Rails 5.2
+gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'it' # Tool to improve the  with links embedded https://github.com/iGEL/it
 
 group :assets do
@@ -42,6 +43,7 @@ end
 
 group :development, :test do
   gem 'factory_bot_rails'
+  gem 'pry'
   gem 'rspec-rails'
   gem 'sqlite3'
 end
