@@ -1,9 +1,7 @@
 AgileRoadMap::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # Mailer host TODO:
-  config.action_mailer.default_url_options = { :host => "agile-roadmap.tuneupprocess.com" }
-
+  config.action_mailer.default_url_options = { host: "agile-roadmap.tuneupprocess.com" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       address: 'authsmtp.tuneupprocess.com',
