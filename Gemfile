@@ -21,7 +21,6 @@ gem 'font-awesome-sass'
 gem 'groupdate'
 gem 'haml'
 gem 'haml-rails'
-gem 'nprogress-rails' # https://github.com/caarlos0/nprogress-rails
 gem 'rubocop', require: false
 gem 'touchpunch-rails' # http://touchpunch.furf.com/ Touch Event Support for jQuery UI
 

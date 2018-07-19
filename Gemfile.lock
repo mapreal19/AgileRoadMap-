@@ -162,7 +162,6 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
-    nprogress-rails (0.2.0.2)
     parallel (1.12.1)
     parser (2.5.1.2)
       ast (~> 2.4.0)
@@ -309,7 +308,6 @@ DEPENDENCIES
   launchy
   meta_request
   modernizr-rails
-  nprogress-rails
   pg
   pry
   puma
