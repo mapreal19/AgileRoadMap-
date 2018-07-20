@@ -14,13 +14,19 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Aplication wide
+// Application wide
 html, body {
   height: 100%;
 }
 
 .alert {
   margin-top: 10px;
+}
+
+.top {
+  .language-switcher {
+    margin-right: 5px;
+  }
 }
 
 /* helper classes */

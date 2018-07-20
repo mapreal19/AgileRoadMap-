@@ -28,17 +28,11 @@ en:
   spanish: 'Spanish'
   welcome: 'Welcome'
 
-#translation chains
-
-
-###############
-###############################    Translation chains     ##############################
 en:
   home: 'Home'
   about_us: 'About us'
   contact: 'Contact'
-  languages: 'Languages'
-  english: 'Inglish'
+  english: 'English'
   spanish: 'Español'
   welcome: "Welcome, if you want to know the features of Agile Roadmap+ access to <a href='%{url}' target='_blank'>this video</a>"
   top:
@@ -219,5 +213,3 @@ en:
         ambito_trabajo_id: 'Area of work'
         sector_empresa_id: 'Business sector'
         country: 'Country'
-
-###############################    End of translation chains     ##############################

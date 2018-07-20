@@ -55,13 +55,11 @@
 	color: #bbb;
 }
 
-/*Lenguages*/
 .top ul.lenguages {
 	top: 25px;
 	left: -5px;
 	display: none;
 	padding: 4px 0;
-	padding-left: 0; 
 	list-style: none;
 	min-width: 100px;
 	position: absolute;

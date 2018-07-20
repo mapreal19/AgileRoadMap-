@@ -4,8 +4,7 @@ es:
   home: 'Inicio'
   about_us: 'Sobre Nosotros'
   contact: 'Contacto'
-  languages: 'Idiomas'
-  english: 'Inglish'
+  english: 'English'
   spanish: 'Español'
   welcome: "Bienvenido, si quieres conocer las funcionalidades de Agile Roadmap+ accede al <a href='%{url}' target='_blank'>video introductorio</a>."
   top:
