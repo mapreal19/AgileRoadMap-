@@ -16,6 +16,5 @@ class Objetivo < ApplicationRecord
 
   def get_json_practicas_ids
     ActiveSupport::JSON.encode(contribucions.pluck(:practica_id, :valor))
-    # contribucions.pluck(:practica_id, :valor)
   end
 end
