@@ -20,11 +20,11 @@ class PasswordResetsController < ApplicationController
     else
       render :edit
     end
-end
+  end
 
   private
 
   def password_reset_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :miembros_equipo)
-   end
+  end
 end
