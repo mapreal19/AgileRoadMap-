@@ -7,6 +7,7 @@ AllCops:
     - 'Gemfile'
     - '**/*.rb'
   Exclude:
+    - 'app/assets/stylesheets/Unify/**/*'
     - 'bin/**/*'
     - 'config/**/*'
     - 'db/**/*'

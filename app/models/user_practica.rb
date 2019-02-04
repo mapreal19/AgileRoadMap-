@@ -8,7 +8,6 @@ class UserPractica < ApplicationRecord
 
   has_many :user_practicas, -> { order('position') }, dependent: :destroy
 
-  # http://apidock.com/rails/v2.3.8/ActiveModel/Validations/ClassMethods/validates_inclusion_of
   ESFUERZO = if I18n.locale == :es
                { 1 => 'Muy poco', 2 => 'Bajo', 3 => 'Medio', 4 => 'Alto', 5 => 'Muy alto' }.freeze
              else
@@ -17,7 +16,6 @@ class UserPractica < ApplicationRecord
 
   validates :effort, inclusion: { in: 1..5, allow_nil: true }
 
-  # MARGEN = { -1 => 'No definido', 0 => 'Ninguno', 1 => 'Poco', 2 => 'Medio', 3 => 'Alto'}
   if I18n.locale == :es
     MARGEN = { -1 => 'No definido', 0 => 'Muy Bajo', 1 => 'Bajo', 2 => 'Medio', 3 => 'Alto', 4 => 'Muy Alto' }.freeze
   else
@@ -26,9 +24,6 @@ class UserPractica < ApplicationRecord
 
   validates :range, inclusion: { in: -1..4, allow_nil: true }
 
-  # validates_length_of :comment, maximum: 150
-
-  # Getters
   def legacy_position_with_prefix
     'PRA' + self[:legacy_position].to_s
   end
@@ -45,7 +40,7 @@ class UserPractica < ApplicationRecord
       result[key] = array.inject(:+).to_f / array.size
     end
 
-    result.sort_by &:last
+    result.sort_by(&:last)
   end
 
   def self.get_aplicable_stats
