@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :user_practica do
     user
-    practica
 
     sequence :name_es do |n|
       "practica#{n}"

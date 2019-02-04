@@ -2,8 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Visitor Registers a User', type: :system do
   it 'successfully' do
-    create(:ambito_trabajo, name_es: 'Otro')
-    create(:sector_empresa, name_es: 'Otro')
     email = 'mario@gmail.com'
     password = 'password'
 

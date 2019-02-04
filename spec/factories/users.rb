@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :user do
-    ambito_trabajo
-    sector_empresa
+    ambito_trabajo_id { AmbitoTrabajo.first.id }
+    sector_empresa_id { SectorEmpresa.first.id }
 
     name { 'mario' }
     sequence :email do |n|

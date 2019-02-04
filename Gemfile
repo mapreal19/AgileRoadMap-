@@ -45,7 +45,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry'
   gem 'rspec-rails'
-  gem 'sqlite3'
 end
 
 group :test do

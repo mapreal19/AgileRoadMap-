@@ -4,13 +4,13 @@ require 'rails_helper'
 RSpec.describe 'User can change sort order', type: :system, selenium: true do
   it 'successfully' do
     user = create(:user, password: 'password')
-    practica1 = create(:user_practica, user: user, position: 1)
-    practica2 = create(:user_practica, user: user, position: 2)
-    practica3 = create(:user_practica, user: user, position: 3)
+    practica1 = create(:user_practica, user: user, practica: Practica.first, position: 1)
+    practica2 = create(:user_practica, user: user, practica: Practica.second, position: 2)
+    practica3 = create(:user_practica, user: user, practica: Practica.third, position: 3)
 
     login(email: user.email, password: 'password')
-    practica1_handler = page.find("tr[data-practica-id='#{practica1.id}'] td.handle")
-    practica3_handler = page.find("tr[data-practica-id='#{practica3.id}'] td.handle")
+    practica1_handler = page.find("tr[data-practica-id='#{practica1.practica.id}'] td.handle")
+    practica3_handler = page.find("tr[data-practica-id='#{practica3.practica.id}'] td.handle")
     practica3_handler.drag_to practica1_handler
 
     visit current_path
