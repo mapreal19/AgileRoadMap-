@@ -26,8 +26,8 @@ gem 'rubocop', require: false
 gem 'touchpunch-rails' # http://touchpunch.furf.com/ Touch Event Support for jQuery UI
 
 # Translations
-# NOTE: targeting master until they support Rails 5.2
-gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'globalize'
+gem 'i18n-js'
 gem 'it' # Tool to improve the  with links embedded https://github.com/iGEL/it
 
 group :assets do

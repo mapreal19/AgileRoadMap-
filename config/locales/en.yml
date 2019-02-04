@@ -213,3 +213,8 @@ en:
         ambito_trabajo_id: 'Area of work'
         sector_empresa_id: 'Business sector'
         country: 'Country'
+
+  ajax:
+    success: Saved
+    error_title: Error processing request
+    error_message: Changes didn't save in the server

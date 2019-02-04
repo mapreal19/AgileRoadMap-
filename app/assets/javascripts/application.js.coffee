@@ -16,6 +16,7 @@
 #= require jquery.autosize
 #= require jquery.simulate.drag-sortable
 #= require toastr
+#= require i18n/translations
 #= require_tree .
 
 $(document).ready ->

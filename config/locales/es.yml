@@ -1,5 +1,3 @@
-
-###############################    Translation chains     ##############################
 es:
   home: 'Inicio'
   about_us: 'Sobre Nosotros'
@@ -176,9 +174,9 @@ es:
   challenges:
     intro: 'Desafíos de la práctica: '
 
-
   footer: "Creado a partir de la obra en"
-  activerecord: 
+
+  activerecord:
     attributes:
       user:
         name: 'Nombre'
@@ -186,4 +184,7 @@ es:
         sector_empresa_id: 'Sector de la empresa'
         country: 'País'
 
-###############################    End of translation chains     ##############################
+  ajax:
+    success: Guardado
+    error_title: Error
+    error_message: Los cambios no se guardaron en el servidor

@@ -1,10 +1,7 @@
 $(document).ajaxSuccess(() ->
-  toastr.success("Saved")
+  toastr.success(I18n.t("ajax.success"))
 )
 
-$(document).ajaxError((request) ->
-  errorMessage = "changes didn't save in the server"
-  title = "Error processing request"
-
-  toastr.error(errorMessage, title)
+$(document).ajaxError(() ->
+  toastr.error(I18n.t("ajax.error_message"), I18n.t("ajax.error_title"))
 )
