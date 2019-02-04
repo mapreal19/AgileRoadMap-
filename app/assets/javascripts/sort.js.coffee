@@ -1,11 +1,8 @@
 jQuery ->
-
   App.sort = ->
-    
     $('#sortable').sortable(
       axis: 'y'
       items: '.item'
-
       handle: ".handle"
 
       # highlight the row on drop to indicate an update

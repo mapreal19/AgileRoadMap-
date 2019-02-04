@@ -1,11 +1,8 @@
 jQuery ->
-
   App.sort_objetivo = ->
-  
     $('#tabla_objetivos').sortable(
       axis: 'y'
       items: '.item-objetivo'
-
       handle: ".handle"
 
       # highlight the row on drop to indicate an update

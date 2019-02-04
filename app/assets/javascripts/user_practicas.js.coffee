@@ -55,11 +55,8 @@ jQuery ->
         data: { id: item_id, user_practica: { no_aplicable: @checked}}
         )
 
-  # Actualiza el maregen de aplicación vía AJAX
   App.updateRange = ->
     $(".range").change ->
-      # p.parent().parent().data('item-id')
-      # p.val()
       $this = $(this)
       fila_practica = $this.parent().parent()
       item_id = fila_practica.data('item-id')
@@ -68,10 +65,8 @@ jQuery ->
       # Si no se define margen añadir warning
       if range_new >= 0
         $this.removeClass("amarillo")
-        #fila_practica.removeClass("warning")
       else
-        $this.addClass "amarillo"
-        #fila_practica.addClass("warning")
+        $this.addClass("amarillo")
 
       # Si el rango es ninguno y el checkbox está activado
       if (range_new == "4" and $('#no_margen').is(':checked'))

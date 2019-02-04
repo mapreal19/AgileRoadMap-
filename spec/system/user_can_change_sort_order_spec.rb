@@ -12,8 +12,8 @@ RSpec.describe 'User can change sort order', type: :system, selenium: true do
     practica1_handler = page.find("tr[data-practica-id='#{practica1.id}'] td.handle")
     practica3_handler = page.find("tr[data-practica-id='#{practica3.id}'] td.handle")
     practica3_handler.drag_to practica1_handler
-    visit current_path
 
+    visit current_path
     expect(practica3.name_es).to appear_before(practica2.name_es)
   end
 

@@ -15,6 +15,7 @@
 #= require jquery-ui
 #= require jquery.autosize
 #= require jquery.simulate.drag-sortable
+#= require toastr
 #= require_tree .
 
 $(document).ready ->

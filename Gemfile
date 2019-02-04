@@ -21,6 +21,7 @@ gem 'font-awesome-sass'
 gem 'groupdate'
 gem 'haml'
 gem 'haml-rails'
+gem 'rails-assets-toastr', source: 'https://rails-assets.org'
 gem 'rubocop', require: false
 gem 'touchpunch-rails' # http://touchpunch.furf.com/ Touch Event Support for jQuery UI
 
