@@ -162,6 +162,9 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
+    orderly (0.0.3)
+      capybara (>= 1.1)
+      rspec (>= 2.14)
     parallel (1.12.1)
     parser (2.5.1.2)
       ast (~> 2.4.0)
@@ -208,6 +211,10 @@ GEM
       ffi (>= 0.5.0, < 2)
     request_store (1.4.1)
       rack (>= 1.4)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -308,6 +315,7 @@ DEPENDENCIES
   launchy
   meta_request
   modernizr-rails
+  orderly
   pg
   pry
   puma
@@ -325,4 +333,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.1
+   1.16.6

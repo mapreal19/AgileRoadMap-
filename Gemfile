@@ -51,5 +51,6 @@ group :test do
   gem 'capybara'
   gem 'chromedriver-helper'
   gem 'launchy'
+  gem 'orderly'
   gem 'selenium-webdriver'
 end
