@@ -1,20 +1,9 @@
 class UserPractica < ApplicationRecord
-  belongs_to :user
-  belongs_to :practica
-
-  acts_as_list scope: :user
-
-  scope :only_aplicable, -> { where(no_aplicable: false) }
-
-  has_many :user_practicas, -> { order('position') }, dependent: :destroy
-
   ESFUERZO = if I18n.locale == :es
                { 1 => 'Muy poco', 2 => 'Bajo', 3 => 'Medio', 4 => 'Alto', 5 => 'Muy alto' }.freeze
              else
                { 1 => 'Very little', 2 => 'Low', 3 => 'Medium', 4 => 'High', 5 => 'Very High' }.freeze
              end
-
-  validates :effort, inclusion: { in: 1..5, allow_nil: true }
 
   if I18n.locale == :es
     MARGEN = { -1 => 'No definido', 0 => 'Muy Bajo', 1 => 'Bajo', 2 => 'Medio', 3 => 'Alto', 4 => 'Muy Alto' }.freeze
@@ -22,11 +11,17 @@ class UserPractica < ApplicationRecord
     MARGEN = { -1 => 'Not defined', 0 => 'Very Low', 1 => 'Low', 2 => 'Medium', 3 => 'High', 4 => 'Very High' }.freeze
   end
 
-  validates :range, inclusion: { in: -1..4, allow_nil: true }
+  belongs_to :user
+  belongs_to :practica
+  has_many :user_practicas, -> { order('position') }, dependent: :destroy
 
-  def legacy_position_with_prefix
-    'PRA' + self[:legacy_position].to_s
-  end
+  scope :only_aplicable, -> { where(no_aplicable: false) }
+
+  validates :effort, inclusion: { in: 1..5, allow_nil: true }
+  validates :range, inclusion: { in: -1..4, allow_nil: true }
+  validates :position, uniqueness: { scope: :user }
+
+  acts_as_list scope: :user
 
   def self.get_prac_position_stats
     result = {}
@@ -47,7 +42,7 @@ class UserPractica < ApplicationRecord
     result = {}
     UserPractica.without_yopolt.each do |user_practica|
       result[user_practica.practica.position_with_prefix] ||= []
-      result[user_practica.practica.position_with_prefix].push (user_practica.no_aplicable ? 0 : 1) # Si no aplicable == true, no se aplica -> valor 0
+      result[user_practica.practica.position_with_prefix].push(user_practica.no_aplicable ? 0 : 1)
     end
 
     result.each do |key, array|
@@ -81,5 +76,9 @@ class UserPractica < ApplicationRecord
 
   def self.without_yopolt
     UserPractica.joins(:user).where('email NOT LIKE ? ', 'yopolt%').only_aplicable
+  end
+
+  def legacy_position_with_prefix
+    'PRA' + self[:legacy_position].to_s
   end
 end

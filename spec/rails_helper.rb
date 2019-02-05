@@ -10,6 +10,10 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.before(:each) do
+    I18n.locale = :es
+  end
+
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 

@@ -14,6 +14,8 @@ http://agile-roadmap.tuneupprocess.com/
 
 2) `git push heroku master`
 
+3) Migrate database if necessary: `heroku run rake db:migrate`
+
 ### Running tests
 
 1) Ensure you have seeded your test DB with `RAILS_ENV=test rails db:seed`

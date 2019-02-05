@@ -33,28 +33,30 @@ class User < ApplicationRecord
   end
 
   def clone_practicas
-    Practica.find_each do |practica|
-      user_practicas.build(
-        practica_id: practica.id,
-        name_es: practica.name_es,
-        name_en: practica.name_en,
-        agile_method: practica.agile_method,
-        position: practica.position,
-        legacy_position: practica.position,
-        effort: practica.effort,
-        range: -1
-      ).save
+    UserPractica.acts_as_list_no_update do
+      Practica.find_each do |practica|
+        user_practicas.build(
+          practica_id: practica.id,
+          name_es: practica.name_es,
+          name_en: practica.name_en,
+          agile_method: practica.agile_method,
+          position: practica.position,
+          legacy_position: practica.position,
+          effort: practica.effort,
+          range: -1
+        ).save!
+      end
     end
   end
 
   def clone_objetivos
-    index = 1
-    Objetivo.find_each do |objetivo|
-      user_objetivos.build(
-        objetivo_id: objetivo.id,
-        position: index
-      ).save
-      index += 1
+    UserObjetivo.acts_as_list_no_update do
+      Objetivo.find_each.with_index(1) do |objetivo, index|
+        user_objetivos.build(
+          objetivo_id: objetivo.id,
+          position: index
+        ).save!
+      end
     end
   end
 

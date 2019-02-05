@@ -183,6 +183,20 @@ es:
         ambito_trabajo_id: 'Ámbito de trabajo'
         sector_empresa_id: 'Sector de la empresa'
         country: 'País'
+      user_practica:
+        position: Posición
+      user_objetivo:
+        position: Posición
+    errors:
+      models:
+        user_practica:
+          attributes:
+            position:
+              taken: La posición no es válida
+        user_objetivo:
+          attributes:
+            position:
+              taken: La posición no es válida
 
   ajax:
     success: Guardado

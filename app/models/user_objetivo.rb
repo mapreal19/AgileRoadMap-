@@ -2,9 +2,11 @@ class UserObjetivo < ApplicationRecord
   belongs_to :user
   belongs_to :objetivo
 
-  acts_as_list scope: :user
-
   scope :only_interesa, -> { where(no_interesa: false) }
+
+  validates :position, uniqueness: { scope: :user }
+
+  acts_as_list scope: :user
 
   def self.get_position_stats
     result = {}
