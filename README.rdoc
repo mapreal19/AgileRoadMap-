@@ -1,5 +1,0 @@
-== Agile Roadmap+
-
-¿Estás interesado en implantar prácticas ágiles? ¿No sabes por dónde comenzar? Este sitio te ofrece conocimiento asociado a prácticas ágiles y te ayuda a establecer tu propio roadmap para implantación de prácticas ágiles
-
-http://agile-roadmap.tuneupprocess.com/
