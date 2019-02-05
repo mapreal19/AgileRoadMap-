@@ -8,6 +8,12 @@ http://agile-roadmap.tuneupprocess.com/
 
 ## Developing
 
+### Deploy
+
+1) Precompile assets with: `rails assets:precompile`
+
+2) `git push heroku master`
+
 ### Running tests
 
 1) Ensure you have seeded your test DB with `RAILS_ENV=test rails db:seed`
