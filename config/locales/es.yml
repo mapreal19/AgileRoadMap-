@@ -199,6 +199,7 @@ es:
               taken: La posición no es válida
 
   ajax:
-    success: Guardado
-    error_title: Error
+    error_title: Error al Guardar
     error_message: Los cambios no se guardaron en el servidor
+    error_network: Verifique su conexión a internet
+

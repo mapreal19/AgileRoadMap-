@@ -215,6 +215,6 @@ en:
         country: 'Country'
 
   ajax:
-    success: Saved
     error_title: Error processing request
     error_message: Changes didn't save in the server
+    error_network: Check your internet connection
