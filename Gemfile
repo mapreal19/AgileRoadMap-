@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.1'
+ruby '2.6.1'
 
 # Core
 gem 'bcrypt' # Use ActiveModel has_secure_password

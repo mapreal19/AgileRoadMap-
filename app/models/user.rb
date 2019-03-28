@@ -79,17 +79,6 @@ class User < ApplicationRecord
     size_teams
   end
 
-  def self.get_countries_stats
-    user_countries = {}
-    User.without_yopolt.each do |user|
-      result = JSON.parse(open("http://ip-api.com/json/#{user.ip}").read)
-      country = result['country']
-      user_countries[country] ||= 0
-      user_countries[country] += 1
-    end
-    user_countries
-  end
-
   def self.get_ambito_trabajo_stats
     user_ambitos = User.without_yopolt.group(:ambito_trabajo_id).count
 
